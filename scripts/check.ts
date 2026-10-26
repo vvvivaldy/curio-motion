@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import './check-time';
 import { pose, project } from '../src/examples/pink-monkey/motion';
 import { writeFileSync, mkdirSync } from 'node:fs';
 mkdirSync('qa', { recursive: true });

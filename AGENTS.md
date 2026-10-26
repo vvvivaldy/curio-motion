@@ -8,4 +8,4 @@
 - Preserve whole silhouettes, stable supports, continuous hand shape and deliberate holds. Do not add oscillation merely to keep pixels moving.
 - Original code MIT; dependency and artwork notices remain separate. Never call Remotion MIT.
 - Keep changes small and reviewable. Do not build a new language or huge framework as the first extraction step.
-- Publication is a separate authorized action; verify repository owner/name/auth before any GitHub operation. No remote URL is configured here.
+- Publication is a separate authorized action; verify repository owner/name/auth before any GitHub operation. The authorized destination is vvvivaldy/curio-motion; check origin and the recorded publication status.

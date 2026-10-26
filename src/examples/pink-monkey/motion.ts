@@ -1,3 +1,7 @@
+import { clamp, mix, tween } from '../../core/time';
+// Preserve the example's existing numeric exports for readers and callers.
+export { clamp, mix, smooth, tween } from '../../core/time';
+
 export type P = [
     number,
     number
@@ -7,13 +11,6 @@ export type V = [
     number,
     number
 ];
-export const clamp = (x: number) => Math.max(0, Math.min(1, x));
-export const mix = (a: number, b: number, t: number) => a + (b - a) * t;
-export const smooth = (x: number) => {
-    x = clamp(x);
-    return x * x * x * (10 - 15 * x + 6 * x * x);
-};
-export const tween = (t: number, a: number, b: number) => smooth((t - a) / (b - a));
 const add = (a: V, b: V): V => [a[0] + b[0], a[1] + b[1], a[2] + b[2]], sub = (a: V, b: V): V => [a[0] - b[0], a[1] - b[1], a[2] - b[2]], scale = (a: V, s: number): V => a.map(v => v * s) as V, dot = (a: V, b: V) => a.reduce((s, v, i) => s + v * b[i], 0), norm = (v: V) => Math.sqrt(dot(v, v));
 export function joint(a: V, b: V, l1: number, l2: number, pole: V): V {
     const d = sub(b, a), dist = norm(d);
