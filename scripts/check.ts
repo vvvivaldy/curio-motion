@@ -1,57 +1,69 @@
 import assert from 'node:assert/strict';
 import './check-time';
+import './check-quality';
 import { pose, project } from '../src/examples/pink-monkey/motion';
+import { approachX, groundY, boardingFeet, stairs, rideStarts } from '../src/examples/pink-monkey/layout';
+import { treadPoint } from '../src/core/contacts';
+import { transformPoint, type Point2 } from '../src/core/spatial';
 import { writeFileSync, mkdirSync } from 'node:fs';
 mkdirSync('qa', { recursive: true });
-let maxFoot = 0, maxJoint = 0, maxStep = 0, previous: ReturnType<typeof pose> | null = null;
+const distance = (a: number[], b: number[]) => Math.hypot(...a.map((v, i) => v - b[i]));
+const windows: { leg: number; start: number; end: number; target: Point2; surface: string }[] = [
+    { leg: 0, start: 2.8, end: 3, target: [approachX - 30, groundY], surface: 'floor' },
+    { leg: 0, start: 3.7, end: 5.1, target: [494, groundY], surface: 'floor' },
+    { leg: 1, start: 2.8, end: 3.85, target: [approachX + 30, groundY], surface: 'floor' },
+    { leg: 1, start: 4.55, end: 5.64, target: [526, groundY], surface: 'floor' },
+    { leg: 0, start: 5.78, end: 12, target: boardingFeet[0], surface: 'tread-0' },
+    { leg: 1, start: 6.35, end: 12, target: boardingFeet[1], surface: 'tread-0' },
+];
+let maxJoint = 0, maxContact = 0, maxProjection = 0, maxStep = 0, maxNoseScratch = 0;
+let previous: ReturnType<typeof pose> | null = null;
 const samples = [];
 for (let n = 0; n <= 574; n++) {
     const t = n / 48, q = pose(t);
-    for (const l of q.legs) {
-        const len = (a: number[], b: number[]) => Math.hypot(...a.map((x, i) => x - b[i]));
-        maxJoint = Math.max(maxJoint, Math.abs(len(l.hip, l.knee) - 70), Math.abs(len(l.knee, l.ankle) - 72));
-        if (t >= 6.4) {
-            maxFoot = Math.max(maxFoot, Math.abs(l.soleY - 620));
-            const p = project(l.ankle, q.yaw);
-            assert(p[0] + 640 - 18 >= 580 && p[0] + 640 + 42 <= 720);
+    assert(q.root.every(Number.isFinite));
+    for (const [i, leg] of q.legs.entries()) {
+        maxJoint = Math.max(maxJoint, Math.abs(distance(leg.hip, leg.knee) - 70), Math.abs(distance(leg.knee, leg.ankle) - 72));
+        const p = project(leg.ankle, q.yaw);
+        const drawnSole: Point2 = [q.root[0] + q.scale * p[0], q.root[1] + q.scale * (p[1] + 13)];
+        maxProjection = Math.max(maxProjection, distance(drawnSole, leg.screenSole));
+        if (t < 2.35 && leg.swing < 1e-8) {
+            assert(leg.planted && leg.surface === 'floor');
+            maxContact = Math.max(maxContact, distance(drawnSole, [approachX + leg.side * 30, groundY]));
+        }
+        for (const window of windows) if (i === window.leg && t >= window.start && t <= window.end) {
+            assert(Math.abs(leg.footYaw - (t <= (i === 0 ? 3 : 3.85) ? 0 : Math.PI / 2)) < 1e-8, `support heading changed at ${t}`);
+            assert(leg.planted && leg.surface === window.surface, `missing support at ${t}, leg ${i}`);
+            const world = window.surface === 'tread-0' ? transformPoint(window.target, q.platform) : window.target;
+            maxContact = Math.max(maxContact, distance(drawnSole, transformPoint(world, q.camera)));
+        }
+        if (t >= rideStarts) {
+            const tread = transformPoint(transformPoint(treadPoint(stairs, 0), q.platform), q.camera);
+            assert(drawnSole[0] - 18 >= tread[0] && drawnSole[0] + 42 <= tread[0] + stairs.run);
+            assert(Math.abs(drawnSole[1] - tread[1]) < 1e-8);
+        }
+        if (previous) {
+            const old = previous.legs[i], a = project(old.knee, previous.yaw), b = project(leg.knee, q.yaw);
+            maxStep = Math.max(maxStep, distance(
+                [previous.root[0] + a[0] * previous.scale, previous.root[1] + a[1] * previous.scale],
+                [q.root[0] + b[0] * q.scale, q.root[1] + b[1] * q.scale]));
         }
     }
-    if (previous) {
-        for (let i = 0; i < 2; i++)
-            maxStep = Math.max(maxStep, Math.hypot(...project(q.legs[i].knee, q.yaw).map((v, j) => v - project(previous!.legs[i].knee, previous!.yaw)[j])));
-    }
+    for (const arm of q.arms) maxJoint = Math.max(maxJoint,
+        Math.abs(distance(arm.sh, arm.elbow) - 107), Math.abs(distance(arm.elbow, arm.hand) - 108));
+    if (q.gesture > .999) maxNoseScratch = Math.max(maxNoseScratch, Math.hypot(q.scratch * .3, q.scratch * .55));
     previous = q;
-    samples.push({ t, root: q.root, legs: q.legs.map(l => ({ ankle: project(l.ankle, q.yaw), knee: project(l.knee, q.yaw), soleY: l.soleY })), gesture: q.gesture, wallTravel: q.wallTravel });
+    samples.push({ t, root: q.root, camera: q.camera, legs: q.legs.map(l => ({ position: l.screenSole, planted: l.planted, surface: l.surface })) });
 }
-assert(maxJoint < 1e-8);
-assert(maxFoot < 1e-8);
-assert(maxStep < 12);
-writeFileSync('qa/numeric-check.json', JSON.stringify({ samples: samples.length, maxLegLengthError: maxJoint, maxStandingFootError: maxFoot, maxHalfFrameKneeDisplacement: maxStep, flightNotRequired: true, poseSamples: samples }, null, 2));
-console.log({ maxJoint, maxFoot, maxStep });
-let plantedMax = 0, approachMax = 0, maxArmLength = 0, maxNoseScratch = 0;
-for (let n = 0; n <= 574; n++) {
-    const t = n / 48, q = pose(t);
-    for (const [i, l] of q.legs.entries()) {
-        const p = project(l.ankle, q.yaw), x = q.root[0] + q.scale * p[0], y = q.root[1] + q.scale * (p[1] + 13);
-        if (t < 2.35 && l.swing < 1e-8) {
-            approachMax = Math.max(approachMax, Math.abs(y - 650), Math.abs(x - (640 + l.side * 30)));
-        }
-        if (t >= 5.1) {
-            if (i === 1 && t <= 5.64)
-                plantedMax = Math.max(plantedMax, Math.abs(x - 526), Math.abs(y - 650));
-            if (i === 0 && t >= 5.78)
-                plantedMax = Math.max(plantedMax, Math.abs(x - 624), Math.abs(y - 620));
-            if (i === 1 && t >= 6.35)
-                plantedMax = Math.max(plantedMax, Math.abs(x - 656), Math.abs(y - 620));
-        }
-    }
-    for (const a of q.arms) {
-        const d = (u: number[], v: number[]) => Math.hypot(...u.map((x, i) => x - v[i]));
-        maxArmLength = Math.max(maxArmLength, Math.abs(d(a.sh, a.elbow) - 107), Math.abs(d(a.elbow, a.hand) - 108));
-    }
-    if (q.gesture > .999)
-        maxNoseScratch = Math.max(maxNoseScratch, Math.hypot(q.scratch * .3, q.scratch * .55));
+// Boundaries include the formerly unchecked deceleration/turn/contact transitions.
+for (const t of [2.35, 2.8, 3, 3.7, 3.85, 4.55, 5.1, 5.64, 5.78, 6.35, 6.4]) {
+    const a = pose(t - 1e-6), b = pose(t + 1e-6);
+    assert(distance(a.root, b.root) < .001, `root discontinuity at ${t}`);
+    for (let i = 0; i < 2; i++) assert(distance(a.legs[i].screenSole, b.legs[i].screenSole) < .001, `foot discontinuity at ${t}`);
 }
-assert(approachMax < 1e-7 && plantedMax < 1e-7 && maxArmLength < 1e-7 && maxNoseScratch < 1.3);
-writeFileSync('qa/contact-check.json', JSON.stringify({ approachStanceScreenError: approachMax, boardingPlantedScreenError: plantedMax, armLengthError: maxArmLength, noseContactMovementRadius: maxNoseScratch, standingStepBounds: [580, 720, 620], standingFeet: [624, 656], bodyFixedAfter: 6.4, graphicsContactRule: 'head() returns drawn nose anchor; hand outline endpoint follows that anchor plus scratch displacement', pass: true }, null, 2));
-console.log({ approachMax, plantedMax, maxArmLength, maxNoseScratch });
+assert(maxJoint < 1e-7 && maxContact < 1e-7 && maxProjection < 1e-7 && maxStep < 12 && maxNoseScratch < 1.3);
+writeFileSync('qa/numeric-check.json', JSON.stringify({ samples: samples.length, maxJointError: maxJoint,
+    maxHalfFrameKneeDisplacement: maxStep, poseSamples: samples }, null, 2));
+writeFileSync('qa/contact-check.json', JSON.stringify({ maxPlantedFootError: maxContact, maxDrawnSoleProjectionError: maxProjection,
+    contactWindows: windows, boundaryContinuity: 'PASS', noseContactMovementRadius: maxNoseScratch, pass: true }, null, 2));
+console.log({ maxJoint, maxContact, maxProjection, maxStep, maxNoseScratch });

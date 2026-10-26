@@ -3,7 +3,7 @@ import { createServer } from 'vite';
 import { mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { findTool } from './tools.mjs';
-const frames = [0,8,17,48,67,96,124,136,147,168,188,189,190,191,192,193,202,203,204,205,206,207,247,248,249,250,251,252,287,210,0,96,210,48,0];
+const frames = [0,8,17,18,19,20,21,48,50,51,52,67,72,84,96,104,106,108,109,110,111,112,114,122,123,124,136,147,168,188,189,190,191,192,193,202,203,204,205,206,207,236,247,248,249,250,251,252,287,210,0,96,210,48,0];
 const server = await createServer({ server: { host: '127.0.0.1', port: 0, open: false } });
 let browser;
 try {
@@ -37,7 +37,7 @@ try {
     if (baseline[frame] && baseline[frame] !== hash(second)) throw Error(`Reverse seek mismatch at ${frame}`);
     baseline[frame] = hash(second);
     records.push({ frame, sha256: hash(second), match: true });
-    if ([0,96,147,204].includes(frame)) await writeFile(`qa/port-key-${frame}.png`, second);
+    if ([0,19,51,96,108,110,112,136,147,168,204,236].includes(frame)) await writeFile(`qa/port-key-${frame}.png`, second);
   }
   if (errors.length || imageRequests.length) throw Error(JSON.stringify({ errors, imageRequests }));
   await writeFile('qa/port-check.json', JSON.stringify({ records, imageRequests, pageErrors: errors,

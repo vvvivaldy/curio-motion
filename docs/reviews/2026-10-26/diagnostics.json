@@ -1,0 +1,570 @@
+{
+  "turn": [
+    {
+      "t": 2.8,
+      "rootX": 640,
+      "yaw": 0,
+      "walk": 0,
+      "feet": [
+        {
+          "x": 610,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        },
+        {
+          "x": 670,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        }
+      ]
+    },
+    {
+      "t": 3,
+      "rootX": 639.2528428021938,
+      "yaw": 0.00902793678348046,
+      "walk": 0,
+      "feet": [
+        {
+          "x": 609.2532351705198,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        },
+        {
+          "x": 669.2524504338677,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        }
+      ]
+    },
+    {
+      "t": 3.5,
+      "rootX": 618.0456526322479,
+      "yaw": 0.2652754477111101,
+      "walk": 0,
+      "feet": [
+        {
+          "x": 588.3866266025377,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        },
+        {
+          "x": 647.704678661958,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        }
+      ]
+    },
+    {
+      "t": 4,
+      "rootX": 569.7077610686689,
+      "yaw": 0.8493445439655697,
+      "walk": 0,
+      "feet": [
+        {
+          "x": 543.397650292928,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        },
+        {
+          "x": 596.0178718444098,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        }
+      ]
+    },
+    {
+      "t": 4.5,
+      "rootX": 524.9903260283052,
+      "yaw": 1.389667487850899,
+      "walk": 0,
+      "feet": [
+        {
+          "x": 505.6626500913287,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        },
+        {
+          "x": 544.3180019652816,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        }
+      ]
+    },
+    {
+      "t": 5.1,
+      "rootX": 510,
+      "yaw": 1.5707963267948966,
+      "walk": 0,
+      "feet": [
+        {
+          "x": 494,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        },
+        {
+          "x": 526,
+          "soleY": 650,
+          "swing": 0,
+          "planted": false
+        }
+      ]
+    }
+  ],
+  "eyes": [
+    {
+      "frame": 96,
+      "t": 4,
+      "cosYaw": 0.6604754353529839,
+      "farEyeDrawn": true,
+      "farEyeRadius": 24,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 97,
+      "t": 4.041666666666667,
+      "cosYaw": 0.6198186193794837,
+      "farEyeDrawn": true,
+      "farEyeRadius": 24,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 98,
+      "t": 4.083333333333333,
+      "cosYaw": 0.5779246644211926,
+      "farEyeDrawn": true,
+      "farEyeRadius": 24,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 99,
+      "t": 4.125,
+      "cosYaw": 0.5351954464638616,
+      "farEyeDrawn": true,
+      "farEyeRadius": 24,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 100,
+      "t": 4.166666666666667,
+      "cosYaw": 0.49205048235014187,
+      "farEyeDrawn": true,
+      "farEyeRadius": 22.323028941008513,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 101,
+      "t": 4.208333333333333,
+      "cosYaw": 0.44891628464174926,
+      "farEyeDrawn": true,
+      "farEyeRadius": 19.734977078504954,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 102,
+      "t": 4.25,
+      "cosYaw": 0.40621592714680516,
+      "farEyeDrawn": true,
+      "farEyeRadius": 17.172955628808307,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 103,
+      "t": 4.291666666666667,
+      "cosYaw": 0.3643592349949121,
+      "farEyeDrawn": true,
+      "farEyeRadius": 14.661554099694722,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 104,
+      "t": 4.333333333333333,
+      "cosYaw": 0.3237339420583211,
+      "farEyeDrawn": true,
+      "farEyeRadius": 12.224036523499267,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 105,
+      "t": 4.375,
+      "cosYaw": 0.284698068302937,
+      "farEyeDrawn": true,
+      "farEyeRadius": 9.881884098176219,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 106,
+      "t": 4.416666666666667,
+      "cosYaw": 0.2475736684755216,
+      "farEyeDrawn": true,
+      "farEyeRadius": 7.654420108531295,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 107,
+      "t": 4.458333333333333,
+      "cosYaw": 0.2126419999924553,
+      "farEyeDrawn": true,
+      "farEyeRadius": 5.558519999547319,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 108,
+      "t": 4.5,
+      "cosYaw": 0.18014006019852677,
+      "farEyeDrawn": true,
+      "farEyeRadius": 3.608403611911606,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 109,
+      "t": 4.541666666666667,
+      "cosYaw": 0.15025835842586455,
+      "farEyeDrawn": true,
+      "farEyeRadius": 1.815501505551873,
+      "pupilRadius": 9.5,
+      "blink": 0,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 110,
+      "t": 4.583333333333333,
+      "cosYaw": 0.12313972200619674,
+      "farEyeDrawn": true,
+      "farEyeRadius": 0.18838332037180494,
+      "pupilRadius": 9.5,
+      "blink": 0.018865999845373786,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 111,
+      "t": 4.625,
+      "cosYaw": 0.09887889115669295,
+      "farEyeDrawn": false,
+      "farEyeRadius": -1.267266530598423,
+      "pupilRadius": 9.5,
+      "blink": 0.5412896727361675,
+      "floorLinesDrawn": true
+    },
+    {
+      "frame": 112,
+      "t": 4.666666666666667,
+      "cosYaw": 0.0775226370258085,
+      "farEyeDrawn": false,
+      "farEyeRadius": -2.54864177845149,
+      "pupilRadius": 9.5,
+      "blink": 0.9969653386589753,
+      "floorLinesDrawn": false
+    },
+    {
+      "frame": 113,
+      "t": 4.708333333333333,
+      "cosYaw": 0.05907013974170523,
+      "farEyeDrawn": false,
+      "farEyeRadius": -3.6557916154976855,
+      "pupilRadius": 9.5,
+      "blink": 0.6492574055008509,
+      "floorLinesDrawn": false
+    },
+    {
+      "frame": 114,
+      "t": 4.75,
+      "cosYaw": 0.04347338686203092,
+      "farEyeDrawn": false,
+      "farEyeRadius": -4.591596788278144,
+      "pupilRadius": 9.5,
+      "blink": 0.06026312439675498,
+      "floorLinesDrawn": false
+    }
+  ],
+  "boundary": [
+    {
+      "t": 5.1,
+      "before": {
+        "t": 5.0999989999999995,
+        "rootX": 509.9999999999998,
+        "yaw": 1.570796326794899,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 493.99999999999983,
+            "soleY": 650,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 525.9999999999998,
+            "soleY": 650,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      },
+      "at": {
+        "t": 5.1,
+        "rootX": 510,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 494,
+            "soleY": 650,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 526,
+            "soleY": 650,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      },
+      "after": {
+        "t": 5.100001,
+        "rootX": 510,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 494,
+            "soleY": 649.9998152004321,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 526,
+            "soleY": 650,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      }
+    },
+    {
+      "t": 5.78,
+      "before": {
+        "t": 5.779999,
+        "rootX": 578.6255962581828,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 623.9999999999999,
+            "soleY": 619.9998152004321,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 533.2511925163656,
+            "soleY": 625.1026764660986,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      },
+      "at": {
+        "t": 5.78,
+        "rootX": 578.6256650831971,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 624,
+            "soleY": 620,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 533.2513301663942,
+            "soleY": 625.1025005966185,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      },
+      "after": {
+        "t": 5.780001,
+        "rootX": 578.6257339089532,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 624,
+            "soleY": 620,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 533.2514678179062,
+            "soleY": 625.1023247272508,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      }
+    },
+    {
+      "t": 5.64,
+      "before": {
+        "t": 5.6399989999999995,
+        "rootX": 570.9349941839229,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 615.8699883678458,
+            "soleY": 597.7706236023453,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 526,
+            "soleY": 650,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      },
+      "at": {
+        "t": 5.64,
+        "rootX": 570.9350708381196,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 615.8701416762391,
+            "soleY": 597.7707356964668,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 526,
+            "soleY": 650,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      },
+      "after": {
+        "t": 5.640001,
+        "rootX": 570.9351474915052,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 615.8702949830102,
+            "soleY": 597.7708477914771,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 526,
+            "soleY": 649.9998230088646,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      }
+    },
+    {
+      "t": 6.35,
+      "before": {
+        "t": 6.3499989999999995,
+        "rootX": 640.0000000000001,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 624,
+            "soleY": 620,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 656.0000000000002,
+            "soleY": 619.9998230088646,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      },
+      "at": {
+        "t": 6.35,
+        "rootX": 640,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 624,
+            "soleY": 620,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 656,
+            "soleY": 620,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      },
+      "after": {
+        "t": 6.350001,
+        "rootX": 640,
+        "yaw": 1.5707963267948966,
+        "walk": 0,
+        "feet": [
+          {
+            "x": 624,
+            "soleY": 620,
+            "swing": 0,
+            "planted": false
+          },
+          {
+            "x": 656,
+            "soleY": 620,
+            "swing": 0,
+            "planted": false
+          }
+        ]
+      }
+    }
+  ]
+}

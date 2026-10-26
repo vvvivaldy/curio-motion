@@ -4,11 +4,11 @@
 
 **Code-authored 2D animation for AI agents.** A whole character reference and an action description become readable TypeScript illustration and motion—not a cut-up image puppet.
 
-This **0.1.0-beta.1** contains one reproducible, code-authored animation example and a small local TypeScript API extracted from it without changing the film. A general AI scene generator, provider API, queue and platform integration are not implemented.
+This development version contains one reproducible, code-authored animation example and a small local TypeScript API. Shared eye apertures, contact-aware steps, coordinate frames and a two-bone solver now support the example. A general AI scene generator, provider API, queue and platform integration are not implemented.
 
-[![The actual pink-monkey demo](docs/assets/poster.png)](docs/assets/demo.mp4)
+[![The current code-drawn pink-monkey animation](docs/assets/demo.gif)](docs/assets/demo-v2.mp4)
 
-[Watch the complete 12-second Remotion film](docs/assets/demo.mp4) · [Original visual baseline](docs/assets/baseline.mp4) · [Русский старт](README_RU.md)
+[Watch the complete 12-second Remotion film](docs/assets/demo-v2.mp4) · [Original visual baseline](docs/assets/baseline.mp4) · [Русский старт](README_RU.md)
 
 ## Try it locally
 
@@ -24,6 +24,8 @@ npm run demo
 Open `http://127.0.0.1:4176/viewer.html` for the film, reference and actual code. Open `/player.html` for the **live Remotion Player** with play/pause/seek. `/index.html` is a small direct-Pixi baseline. A port already in use makes Vite choose another port; use the printed address.
 
 The responsive viewer puts video first on narrow windows. `npm run build` produces `dist/`, including the local media; serve it over HTTP rather than opening files directly. No account or remote service is needed after installing dependencies.
+
+The inline GIF is a 720px, 12 fps preview of the current official Remotion render. The linked MP4 is the full 1280×720, 24 fps film. The original beta movie and approved baseline remain in `docs/assets/demo.mp4` and `docs/assets/baseline.mp4`.
 
 ### Render from code
 
@@ -44,6 +46,16 @@ npm run render
 Bundled preview movies live in `docs/assets/`; newly generated exports go to `outputs/`. The default output is `outputs/curio-motion-remotion.mp4`: 1280×720, 24 fps, 288 frames, silent H.264. Remotion's official `renderMedia()` owns the export. It uses its installed compositor/encoder package; no system FFmpeg is needed for the main export. Optional `npm run render:baseline` uses a separately installed FFmpeg (`FFMPEG_PATH` or PATH) for direct-Pixi regression only. Neither command installs tools. `RENDER_OUTPUT` overrides the output location.
 
 `npm run check:port` requires Chrome and compares intrinsic canvas pixels at selected direct-Pixi/Remotion Player frames, including adjacent gesture frames and backward/random seeks. Exact raster hashes depend on browser/GPU; the recorded run is macOS, not a cross-platform promise.
+
+### Rebuild the README GIF
+
+After rendering and reviewing a new film, copy the chosen MP4 to `docs/assets/demo-v2.mp4`, then run:
+
+```sh
+npm run preview:gif
+```
+
+This documentation-only export uses an existing FFmpeg (`FFMPEG_PATH` or PATH); it installs nothing. `GIF_INPUT` and `GIF_OUTPUT` override its paths. The GIF is never input to the scene.
 
 ## Two layers, one drawing
 
@@ -81,6 +93,10 @@ whole reference + action → agent-authored TypeScript
 | `src/examples/pink-monkey/environment.ts` | Station, horizontal treads, signs and parallax |
 | `src/examples/pink-monkey/scene.ts` | Example settings, display objects and drawing order |
 | `src/core/time.ts` | Easing, frame validation and pure pose evaluation |
+| `src/core/eye.ts` | Visible eye aperture and clipped pupil geometry |
+| `src/core/contacts.ts` | Step position/heading, exact support holds and tread geometry |
+| `src/core/spatial.ts` | Local/world/view frames and invertible yaw projection |
+| `src/core/kinematics.ts` | Finite two-bone solving with singular-case handling |
 | `src/core/stage.ts` | Typed scene/drawing context and stopped Pixi stage |
 | `src/stage.ts` | Compatible example entry point; `draw(integerFrame)` |
 | `src/remotion/Scene.tsx` | Thin frame/async bridge, no independent clock |
@@ -93,7 +109,7 @@ See the [small TypeScript API](docs/API.md), [architecture](docs/ARCHITECTURE.md
 
 This is an authoring prototype, not a production engine. Scene geometry and timings are still example-specific; the small shared API has only one visual consumer. No general action parser, natural-language runtime, automatic reference reconstruction, audio pipeline, asset marketplace or distributed rendering exists. There is no claim of a particular studio's artistic quality. Browser/GPU raster differences and platform setup need testing. macOS has been exercised; Windows/Linux instructions are prepared, not runtime-verified.
 
-Time/easing, frame-to-pose evaluation and the Pixi drawing context are now extracted **without changing the visual baseline**. A separately authorized second short example can later test whether this API generalizes. Do not start by inventing a large language or a platform.
+The original baseline remains preserved. The current example uses shared geometric helpers to fix eye artifacts, introduce planted turning steps and give the station one coherent view transform. A separately authorized second short example can later test whether this API generalizes. Do not start by inventing a large language or a platform.
 
 ## Contributing and licenses
 

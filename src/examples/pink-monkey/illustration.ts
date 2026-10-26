@@ -1,5 +1,6 @@
 import { Graphics } from 'pixi.js';
-import { P, Pose, project, mix, tween } from './motion';
+import { P, Pose, project, mix, tween, clamp } from './motion';
+import { eyeShape } from '../../core/eye';
 const INK = 0x3d2930, SKIN = 0xe9959a, LIGHT = 0xf3b5a8, SHADE = 0xd57986, BAG = 0xcdb48e;
 class Pen {
     constructor(public g: Graphics) {
@@ -70,17 +71,21 @@ function head(p: Pen, q: Pose) {
     p.path(g => g.moveTo(cx - 68, cy + 58).bezierCurveTo(cx - 106, cy + 35, cx - 103, cy - 43, cx - 65, cy - 75).bezierCurveTo(cx - 28, cy - 113, cx + 52, cy - 96, cx + 77, cy - 52).bezierCurveTo(cx + 99, cy - 13, cx + 90, cy + 41, cx + 57, cy + 67).bezierCurveTo(cx + 25, cy + 88, cx - 43, cy + 81, cx - 68, cy + 58).closePath(), SKIN);
     p.g.ellipse(cx - 8, cy + 47, 66, 31).fill({ color: SHADE, alpha: .35 });
     ear(cx - 94 * c - 48 * s, cy + 18, 37 + 7 * s, 52);
-    const drawEye = (x: number, rx: number, far = false) => {
+    const drawEye = (x: number, rx: number) => {
         const y = cy - 2, open = 1 - q.blink;
-        p.ellipse(x, y, rx, 32, 0xfff6d9, 2);
-        p.g.ellipse(x + 3 * s, y + 8 - q.gazeUp * 8, 9.5, 13).fill(0x251b1e);
-        const lid = y - 5 + 39 * (1 - open);
-        p.path(g => g.moveTo(x - rx - 2, lid).bezierCurveTo(x - rx - 5, y - 47, x + rx + 4, y - 46, x + rx + 2, lid).quadraticCurveTo(x, lid - 7 * (1 - q.blink), x - rx - 2, lid).closePath(), SKIN, 0);
-        p.line(g => g.moveTo(x - rx, lid).quadraticCurveTo(x, lid - 7 * (1 - q.blink), x + rx, lid), INK, 2.4);
-        p.line(g => g.moveTo(x - rx * .85, y - 43).quadraticCurveTo(x, y - 55 - q.gazeUp * 4, x + rx * .75, y - 46), INK, 3);
+        if (rx <= 0) return;
+        const eye = eyeShape({ center: [x, y], radius: [rx, 32], openness: open,
+            pupil: { center: [x + 3 * s, y + 8 - q.gazeUp * 8], radius: [9.5, 13] } });
+        const weight = Math.min(1, rx / 12);
+        if (eye.aperture.length) p.g.poly(eye.aperture.flat()).fill(0xfff6d9).stroke({ color: INK, width: 2 * weight });
+        if (eye.pupil.length) p.g.poly(eye.pupil.flat()).fill(0x251b1e);
+        p.line(g => {
+            g.moveTo(...eye.lid[0]);
+            for (const point of eye.lid.slice(1)) g.lineTo(...point);
+        }, INK, 2.4 * weight);
+        p.line(g => g.moveTo(x - rx * .85, y - 43).quadraticCurveTo(x, y - 55 - q.gazeUp * 4, x + rx * .75, y - 46), INK, 3 * weight);
     };
-    if (c > .12)
-        drawEye(cx + 34 * c + 73 * s, 24 * Math.min(1, (c - .12) / .4), true);
+    drawEye(cx + 34 * c + 73 * s, 24 * clamp((c - .12) / .4));
     drawEye(cx - 34 * c + 47 * s, 24 - 3 * s);
     const mx = cx + 48 * s, my = cy + 49;
     p.path(g => g.moveTo(mx - 49, my - 6).bezierCurveTo(mx - 48, my - 38, mx - 12, my - 38, mx + 11, my - 28).bezierCurveTo(mx + 42, my - 33, mx + 59, my - 14, mx + 49, my + 12).bezierCurveTo(mx + 28, my + 46, mx - 32, my + 40, mx - 48, my + 11).closePath(), LIGHT, 0);
@@ -115,13 +120,13 @@ export function drawMonkey(g: Graphics, q: Pose) {
     g.restore();
     const far = q.legs[1];
     limb(p, proj(far.hip), proj(far.knee), proj(far.ankle), 18, 15, 10, 0xd17e8b);
-    foot(p, proj(far.ankle), 1, q.yaw);
+    foot(p, proj(far.ankle), 1, far.footYaw);
     const fa = q.arms[1];
     limb(p, proj(fa.sh), proj(fa.elbow), proj(fa.hand), 19, 14, 11, SHADE);
     hand(p, proj(fa.hand), 0, [0, 0]);
     const near = q.legs[0];
     limb(p, proj(near.hip), proj(near.knee), proj(near.ankle), 18, 15, 10, SKIN);
-    foot(p, proj(near.ankle), -1, q.yaw);
+    foot(p, proj(near.ankle), -1, near.footYaw);
     p.line(z => {
         let k = proj(near.knee);
         return z.moveTo(k[0] - 5, k[1] - 2).quadraticCurveTo(k[0] + 3, k[1] + 3, k[0] + 7, k[1] - 1);
