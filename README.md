@@ -4,11 +4,11 @@
 
 **Code-authored 2D animation for AI agents.** A whole character reference and an action description become readable TypeScript illustration and motion—not a cut-up image puppet.
 
-This development version contains one reproducible, code-authored animation example and a small local TypeScript API. Shared eye apertures, contact-aware steps, coordinate frames and a two-bone solver now support the example. A general AI scene generator, provider API, queue and platform integration are not implemented.
+This development version contains one reproducible, code-authored animation example and a small local TypeScript API. Shared eye apertures, footstep tracks, support transfer, coordinate frames and limb constraints now support the example. A general AI scene generator, provider API, queue and platform integration are not implemented.
 
-[![The current code-drawn pink-monkey animation](docs/assets/demo.gif)](docs/assets/demo-v2.mp4)
+[![The current code-drawn pink-monkey animation](docs/assets/demo.gif)](docs/assets/demo-v3.mp4)
 
-[Watch the complete 12-second Remotion film](docs/assets/demo-v2.mp4) · [Original visual baseline](docs/assets/baseline.mp4) · [Русский старт](README_RU.md)
+[Watch the complete 12-second Remotion film](docs/assets/demo-v3.mp4) · [Original visual baseline](docs/assets/baseline.mp4) · [Русский старт](README_RU.md)
 
 ## Try it locally
 
@@ -25,7 +25,7 @@ Open `http://127.0.0.1:4176/viewer.html` for the film, reference and actual code
 
 The responsive viewer puts video first on narrow windows. `npm run build` produces `dist/`, including the local media; serve it over HTTP rather than opening files directly. No account or remote service is needed after installing dependencies.
 
-The inline GIF is a 720px, 12 fps preview of the current official Remotion render. The linked MP4 is the full 1280×720, 24 fps film. The original beta movie and approved baseline remain in `docs/assets/demo.mp4` and `docs/assets/baseline.mp4`.
+The inline GIF is a 720px, 12 fps preview of the current official Remotion render. The linked MP4 is the full 1280×720, 24 fps film. The original beta movie and approved baseline remain in `docs/assets/demo.mp4` and `docs/assets/baseline.mp4`; `demo-v2.mp4` preserves the preceding quality pass.
 
 ### Render from code
 
@@ -49,7 +49,7 @@ Bundled preview movies live in `docs/assets/`; newly generated exports go to `ou
 
 ### Rebuild the README GIF
 
-After rendering and reviewing a new film, copy the chosen MP4 to `docs/assets/demo-v2.mp4`, then run:
+After rendering and reviewing a new film, copy the chosen MP4 to `docs/assets/demo-v3.mp4`, then run:
 
 ```sh
 npm run preview:gif
@@ -77,12 +77,12 @@ whole reference + action → agent-authored TypeScript
 
 ## What the example does
 
-- A sleepy pink monkey approaches frontally with alternating supports and counter-swinging arms.
+- A sleepy pink monkey approaches with four advancing footfalls, heel/toe roll, support-driven weight shifts and delayed contralateral arms.
 - Continuous geometric front → three-quarter → profile turn; the far eye/ear disappear by projection, not a dissolve of stills.
 - Two deliberate steps onto a horizontal escalator tread, then fixed feet while the station and original ads scroll down-left.
 - Uneven blinks, a glance, one lazy nose-scratch gesture with a continuous hand silhouette and a settled return.
 
-[Turn detail](docs/assets/turn.png) · [Approach controls](docs/assets/walk.png) · [Hand continuity](docs/assets/hand-continuity.jpg)
+[Current gait review](docs/reviews/gait/approach.jpg) · [Original beta controls](docs/assets/walk.png) · [Hand continuity](docs/assets/hand-continuity.jpg)
 
 ## Read the source
 
@@ -90,10 +90,12 @@ whole reference + action → agent-authored TypeScript
 | --- | --- |
 | `src/examples/pink-monkey/motion.ts` | Time, projection, supports, limb constraints, gesture phases |
 | `src/examples/pink-monkey/illustration.ts` | Code-drawn character contours and face |
-| `src/examples/pink-monkey/environment.ts` | Station, horizontal treads, signs and parallax |
+| `src/examples/pink-monkey/environment.ts` | Station, horizontal treads, fixed fixtures and the tracking view |
 | `src/examples/pink-monkey/scene.ts` | Example settings, display objects and drawing order |
 | `src/core/time.ts` | Easing, frame validation and pure pose evaluation |
 | `src/core/eye.ts` | Visible eye aperture and clipped pupil geometry |
+| `src/examples/pink-monkey/steps.ts` | Authored contact schedules and projected approach path |
+| `src/core/gait.ts` | Seekable foot tracks, unloading, load acceptance and support balance |
 | `src/core/contacts.ts` | Step position/heading, exact support holds and tread geometry |
 | `src/core/spatial.ts` | Local/world/view frames and invertible yaw projection |
 | `src/core/kinematics.ts` | Finite two-bone solving with singular-case handling |
@@ -109,7 +111,7 @@ See the [small TypeScript API](docs/API.md), [architecture](docs/ARCHITECTURE.md
 
 This is an authoring prototype, not a production engine. Scene geometry and timings are still example-specific; the small shared API has only one visual consumer. No general action parser, natural-language runtime, automatic reference reconstruction, audio pipeline, asset marketplace or distributed rendering exists. There is no claim of a particular studio's artistic quality. Browser/GPU raster differences and platform setup need testing. macOS has been exercised; Windows/Linux instructions are prepared, not runtime-verified.
 
-The original baseline remains preserved. The current example uses shared geometric helpers to fix eye artifacts, introduce planted turning steps and give the station one coherent view transform. A separately authorized second short example can later test whether this API generalizes. Do not start by inventing a large language or a platform.
+The original baseline remains preserved. The current example uses shared helpers for eyes, contact sequences, load transfer, heel/toe pivots and body reach constraints. The approach advances along the floor, settles, then turns and boards with one foot supporting the other. The station uses one coherent view transform. A separately authorized second short example can later test whether this API generalizes. Do not start by inventing a large language or a platform.
 
 ## Contributing and licenses
 

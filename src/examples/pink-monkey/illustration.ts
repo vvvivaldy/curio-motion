@@ -31,12 +31,14 @@ function limb(p: Pen, a: P, k: P, b: P, r1: number, r2: number, r3: number, c: n
     let dx = k[0] - a[0], dy = k[1] - a[1], len = Math.hypot(dx, dy);
     p.path(g => g.moveTo(...L).bezierCurveTo(L[0] + (K[0] - L[0]) * .5, L[1] + (K[1] - L[1]) * .5, K[0] - tang[0], K[1] - tang[1], ...K).bezierCurveTo(K[0] + tang[0], K[1] + tang[1], B[0], B[1] - 7, ...B).quadraticCurveTo(b[0] + dy / len * r3, b[1] + r3, ...BR).bezierCurveTo(BR[0], BR[1] - 7, KR[0] - tr[0], KR[1] - tr[1], ...KR).bezierCurveTo(KR[0] + tr[0], KR[1] + tr[1], AR[0], AR[1], ...AR).quadraticCurveTo(a[0] - dx / len * r1, a[1] - dy / len * r1, ...L).closePath(), c);
 }
-function foot(p: Pen, ankle: P, side: number, yaw: number) {
+function foot(p: Pen, ankle: P, side: number, yaw: number, roll: number) {
     const [x, y] = ankle, s = Math.sin(yaw), dir = side * (1 - s) + s;
+    p.g.save().translateTransform(-x, -y).rotateTransform(roll).translateTransform(x, y);
     const tip = dir * 42, back = -dir * 18;
     p.path(g => g.moveTo(x - 11, y - 7).bezierCurveTo(x - 10, y + 1, x + back, y + 2, x + back, y + 9).bezierCurveTo(x + back, y + 13, x + tip * .7, y + 13, x + tip, y + 11).bezierCurveTo(x + tip + 5, y + 1, x + tip - 9, y - 1, x + 9, y - 5).lineTo(x + 9, y - 8).closePath(), LIGHT);
     p.line(g => g.moveTo(x + tip * .64, y + 4).quadraticCurveTo(x + tip * .88, y + 8, x + tip * .8, y + 15), INK, 1.6);
     p.line(g => g.moveTo(x + tip * .38, y + 6).quadraticCurveTo(x + tip * .61, y + 11, x + tip * .5, y + 17), INK, 1.5);
+    p.g.restore();
 }
 // Same six-cubic silhouette throughout: collect fingers, extend index near contact,
 // fold it before lowering. No state/threshold swap and no long wrist-to-nose needle.
@@ -105,10 +107,10 @@ export function drawMonkey(g: Graphics, q: Pose) {
         number
     ]) => project(v, q.yaw), s = Math.sin(q.yaw);
     g.clear();
-    const bodyTransform = () => g.save().translateTransform(q.sway, q.bob - 220).rotateTransform(q.lean).translateTransform(0, 220);
+    const bodyTransform = () => g.save().translateTransform(0, 220).rotateTransform(q.lean).translateTransform(q.sway, q.bob - 220);
     bodyTransform();
     // Tail: broad rounded ribbon, not a rigid rotated sprite.
-    const tx = -27 - 15 * s, ty = -147, sw = q.walk * Math.sin(q.phase - .5) * 7;
+    const tx = -27 - 15 * s, ty = -147, sw = q.tailSwing;
     p.path(g => g.moveTo(tx, ty).bezierCurveTo(-100, ty + 35, -135, -160, -130, -218 + sw).bezierCurveTo(-121, -269 + sw, -175, -275 + sw, -171, -231 + sw).quadraticCurveTo(-169, -214 + sw, -158, -218 + sw).bezierCurveTo(-143, -233 + sw, -156, -242 + sw, -151, -246 + sw).bezierCurveTo(-139, -254 + sw, -136, -234 + sw, -143, -211 + sw).bezierCurveTo(-164, -127, -79, -93, tx + 10, ty + 17).closePath(), SHADE);
     // Soft bag and knot, attached to the shoulder with an actual continuous strap.
     const bx = -57 - 28 * s, by = -245 + q.bagSwing * 90;
@@ -120,13 +122,13 @@ export function drawMonkey(g: Graphics, q: Pose) {
     g.restore();
     const far = q.legs[1];
     limb(p, proj(far.hip), proj(far.knee), proj(far.ankle), 18, 15, 10, 0xd17e8b);
-    foot(p, proj(far.ankle), 1, far.footYaw);
+    foot(p, proj(far.ankle), 1, far.footYaw, far.footRoll);
     const fa = q.arms[1];
     limb(p, proj(fa.sh), proj(fa.elbow), proj(fa.hand), 19, 14, 11, SHADE);
     hand(p, proj(fa.hand), 0, [0, 0]);
     const near = q.legs[0];
     limb(p, proj(near.hip), proj(near.knee), proj(near.ankle), 18, 15, 10, SKIN);
-    foot(p, proj(near.ankle), -1, near.footYaw);
+    foot(p, proj(near.ankle), -1, near.footYaw, near.footRoll);
     p.line(z => {
         let k = proj(near.knee);
         return z.moveTo(k[0] - 5, k[1] - 2).quadraticCurveTo(k[0] + 3, k[1] + 3, k[0] + 7, k[1] - 1);

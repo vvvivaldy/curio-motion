@@ -1,38 +1,41 @@
 import assert from 'node:assert/strict';
 import './check-time';
 import './check-quality';
+import './check-gait';
 import { pose, project } from '../src/examples/pink-monkey/motion';
-import { approachX, groundY, boardingFeet, stairs, rideStarts } from '../src/examples/pink-monkey/layout';
+import { stairs, rideStarts } from '../src/examples/pink-monkey/layout';
 import { treadPoint } from '../src/core/contacts';
-import { transformPoint, type Point2 } from '../src/core/spatial';
+import { footTracks } from '../src/examples/pink-monkey/steps';
+import { transformPoint, rotatePoint, type Point2 } from '../src/core/spatial';
 import { writeFileSync, mkdirSync } from 'node:fs';
 mkdirSync('qa', { recursive: true });
 const distance = (a: number[], b: number[]) => Math.hypot(...a.map((v, i) => v - b[i]));
-const windows: { leg: number; start: number; end: number; target: Point2; surface: string }[] = [
-    { leg: 0, start: 2.8, end: 3, target: [approachX - 30, groundY], surface: 'floor' },
-    { leg: 0, start: 3.7, end: 5.1, target: [494, groundY], surface: 'floor' },
-    { leg: 1, start: 2.8, end: 3.85, target: [approachX + 30, groundY], surface: 'floor' },
-    { leg: 1, start: 4.55, end: 5.64, target: [526, groundY], surface: 'floor' },
-    { leg: 0, start: 5.78, end: 12, target: boardingFeet[0], surface: 'tread-0' },
-    { leg: 1, start: 6.35, end: 12, target: boardingFeet[1], surface: 'tread-0' },
-];
+const windows = footTracks.flatMap((track, leg) => [
+    ...track.map((step, i) => ({ leg, start: i === 0 ? 0 : track[i - 1].end, end: step.start,
+        target: step.from, heading: step.fromHeading ?? 0, surface: 'floor' })),
+    { leg, start: track.at(-1)!.end, end: 12, target: track.at(-1)!.to, heading: Math.PI / 2, surface: 'tread-0' },
+]);
 let maxJoint = 0, maxContact = 0, maxProjection = 0, maxStep = 0, maxNoseScratch = 0;
 let previous: ReturnType<typeof pose> | null = null;
 const samples = [];
 for (let n = 0; n <= 574; n++) {
     const t = n / 48, q = pose(t);
     assert(q.root.every(Number.isFinite));
+    assert(q.legs.some(l => l.planted), `both feet airborne at ${t}`);
+    assert(Math.abs(q.legs.reduce((sum, l) => sum + l.load, 0) - 1) < 1e-9);
     for (const [i, leg] of q.legs.entries()) {
         maxJoint = Math.max(maxJoint, Math.abs(distance(leg.hip, leg.knee) - 70), Math.abs(distance(leg.knee, leg.ankle) - 72));
         const p = project(leg.ankle, q.yaw);
-        const drawnSole: Point2 = [q.root[0] + q.scale * p[0], q.root[1] + q.scale * (p[1] + 13)];
+        const rotated = rotatePoint(leg.footPivot, leg.footRoll);
+        const drawnPivot: Point2 = [q.root[0] + q.scale * (p[0] + rotated[0]), q.root[1] + q.scale * (p[1] + rotated[1])];
+        maxProjection = Math.max(maxProjection, distance(drawnPivot, leg.contactPivot));
+        const drawnSole: Point2 = [drawnPivot[0] - leg.footPivot[0] * q.scale,
+            drawnPivot[1] - (leg.footPivot[1] - 13) * q.scale];
         maxProjection = Math.max(maxProjection, distance(drawnSole, leg.screenSole));
-        if (t < 2.35 && leg.swing < 1e-8) {
-            assert(leg.planted && leg.surface === 'floor');
-            maxContact = Math.max(maxContact, distance(drawnSole, [approachX + leg.side * 30, groundY]));
-        }
+        if (!leg.planted) assert.equal(leg.load, 0, `load on airborne foot at ${t}`);
+        if (t < 2.8 && leg.load === 1) assert(Math.abs(q.root[0] - leg.screenSole[0]) < 18, `weight not over stance foot at ${t}`);
         for (const window of windows) if (i === window.leg && t >= window.start && t <= window.end) {
-            assert(Math.abs(leg.footYaw - (t <= (i === 0 ? 3 : 3.85) ? 0 : Math.PI / 2)) < 1e-8, `support heading changed at ${t}`);
+            assert(Math.abs(leg.footYaw - window.heading) < 1e-8, `support heading changed at ${t}`);
             assert(leg.planted && leg.surface === window.surface, `missing support at ${t}, leg ${i}`);
             const world = window.surface === 'tread-0' ? transformPoint(window.target, q.platform) : window.target;
             maxContact = Math.max(maxContact, distance(drawnSole, transformPoint(world, q.camera)));
@@ -56,12 +59,19 @@ for (let n = 0; n <= 574; n++) {
     samples.push({ t, root: q.root, camera: q.camera, legs: q.legs.map(l => ({ position: l.screenSole, planted: l.planted, surface: l.surface })) });
 }
 // Boundaries include the formerly unchecked deceleration/turn/contact transitions.
-for (const t of [2.35, 2.8, 3, 3.7, 3.85, 4.55, 5.1, 5.64, 5.78, 6.35, 6.4]) {
+const boundaries = [...new Set([2.35, 2.8, 2.88, rideStarts, ...footTracks.flatMap(track => track.flatMap(s =>
+    [s.start - .12, s.start, s.end, s.end + .12, s.end + .24]))])];
+for (const t of boundaries) {
     const a = pose(t - 1e-6), b = pose(t + 1e-6);
     assert(distance(a.root, b.root) < .001, `root discontinuity at ${t}`);
     for (let i = 0; i < 2; i++) assert(distance(a.legs[i].screenSole, b.legs[i].screenSole) < .001, `foot discontinuity at ${t}`);
 }
-assert(maxJoint < 1e-7 && maxContact < 1e-7 && maxProjection < 1e-7 && maxStep < 12 && maxNoseScratch < 1.3);
+for (const t of [3, 6.7, 7.1, 10.8, 11.9]) {
+    const q = pose(t);
+    assert(Math.abs(q.bob) < 1e-8 && Math.abs(q.weightShift) < 1e-8, `unmotivated body oscillation at ${t}`);
+}
+assert(maxJoint < 1e-7 && maxContact < 1e-7 && maxProjection < 1e-7 && maxStep < 12 && maxNoseScratch < 1.3,
+    JSON.stringify({ maxJoint, maxContact, maxProjection, maxStep, maxNoseScratch }));
 writeFileSync('qa/numeric-check.json', JSON.stringify({ samples: samples.length, maxJointError: maxJoint,
     maxHalfFrameKneeDisplacement: maxStep, poseSamples: samples }, null, 2));
 writeFileSync('qa/contact-check.json', JSON.stringify({ maxPlantedFootError: maxContact, maxDrawnSoleProjectionError: maxProjection,
