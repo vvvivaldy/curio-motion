@@ -75,3 +75,16 @@ The original beta film and approved baseline remain in `docs/assets/demo.mp4` an
 For drawing or timing changes, review actual frames around contact, blink, turn and gesture boundaries. Numeric checks alone cannot establish visual quality. See [verification](VERIFICATION.md), [architecture](ARCHITECTURE.md) and [artwork provenance](../ASSETS.md).
 
 `node scripts/verify-package.mjs` checks the original release ZIP manifest. It is only meaningful against that matching, unedited release archive, not a changing Git checkout.
+
+## Choose an example
+
+The viewer and Player offer both examples. Default URLs and `npm run render` keep the pink monkey. Add `?example=amber-robot` to `/viewer.html`, `/player.html` or `/index.html` for Amber. Its settings are 960×640, 30 fps and 300 frames; the first scene retains 1280×720, 24 fps and 288 frames.
+
+Render the second scene with the same official script (existing Chrome required):
+
+```sh
+COMPOSITION_ID=AmberRobot npm run render
+GIF_INPUT=docs/assets/amber-robot.mp4 GIF_OUTPUT=docs/assets/amber-robot.gif GIF_FPS=15 npm run preview:gif
+```
+
+In PowerShell, set `$env:COMPOSITION_ID = "AmberRobot"` before `npm run render`; set `$env:GIF_INPUT`, `$env:GIF_OUTPUT` and `$env:GIF_FPS` similarly. Remove the variables to return to defaults. The default new robot export is `outputs/amber-robot-remotion.mp4`. Review it before promoting it to documentation media. `npm run check:port` checks both examples; `EXAMPLE=pink-monkey` or `EXAMPLE=amber-robot` selects one case for diagnosis. A diagnostic subset is not the complete two-example check.

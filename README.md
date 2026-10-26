@@ -12,6 +12,12 @@
 
 **12 seconds · 1280 × 720 · 24 fps · silent.** [Watch the full film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/demo-v5.mp4). The GIF above comes from the actual Remotion export; the scene itself draws new contours for every frame.
 
+### A second character, a different action
+
+[![Amber robot picks up a watering can, waters a plant twice and returns the can](docs/assets/amber-robot.gif)](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot.mp4)
+
+**10 seconds · 960 × 640 · 30 fps · silent.** [Watch Amber's film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot.mp4). A separate character, mechanical grippers and a held prop use the same typed scene, contour, contact and Remotion bridge APIs. The first film and GIF above are preserved. See the [reuse report](docs/REUSE.md).
+
 ## Why Curio Motion?
 
 Curio Motion explores how developers and coding agents can author animation as readable, reviewable source. A whole character reference and an explicit action guide the author; TypeScript defines the resulting drawing and motion.
@@ -21,7 +27,7 @@ Curio Motion explores how developers and coding agents can author animation as r
 - **One frame owner.** Remotion controls composition, the live Player and official MP4 export. PixiJS draws the frame.
 - **Local workflow.** Inspect the example, change the source and render with an existing Chrome installation. No hosted AI service or account is required.
 
-The included example combines four advancing footfalls, support transfer, a geometric turn, escalator boarding, blinks and two nose-scratch strokes with deliberate holds. Shared TypeScript helpers cover eye apertures, foot tracks, coordinate spaces, limb constraints, compatible contours, contact anchors, authored whole views and solid stair geometry.
+The pink-monkey example combines advancing footfalls, support transfer, turning, escalator boarding and nose-scratch strokes. Amber the robot picks up a can, pours twice with a pause, places it on the bench and releases it. Both use deliberate holds. Shared TypeScript helpers cover eye apertures, foot tracks, coordinate spaces, limb constraints, compatible contours, contact anchors, authored whole views and solid stair geometry.
 
 ## Quick start
 
@@ -38,7 +44,8 @@ Open the address printed by Vite, usually **http://127.0.0.1:4176/viewer.html**.
 
 | Try | Open |
 | --- | --- |
-| Film, reference and source | `/viewer.html` |
+| First film, reference and source | `/viewer.html` |
+| Second film, whole design study and source | `/viewer.html?example=amber-robot` |
 | Live Remotion Player: play, pause and seek | `/player.html` |
 | Direct Pixi baseline | `/index.html` |
 
@@ -56,18 +63,19 @@ Rendering requires an **existing Chrome/Chromium**; no browser is downloaded. Se
 Inside a browser TypeScript module in this checkout, render a specific frame into an HTML element:
 
 ```ts
-import { createStage } from './src/stage';
+import { createPixiStage } from './src/core/stage';
+import { amberRobotScene } from './src/examples/amber-robot/scene';
 
 const host = document.createElement('div');
 document.body.append(host);
-const stage = await createStage(host);
+const stage = await createPixiStage(host, amberRobotScene);
 
-stage.draw(204); // 8.5 seconds at 24 fps
+stage.draw(120); // 4 seconds at 30 fps
 stage.draw(0);   // seek backward; no accumulated playback state
 stage.destroy(); // clean up when finished
 ```
 
-The example has 288 frames (`0`–`287`). This is a local source API; there is no npm package. See the [API reference](docs/API.md) to define a scene or use individual helpers.
+Use `pinkMonkeyScene` with the same function for the first film (288 frames at 24 fps). Amber has 300 frames at 30 fps. The original `createStage(host)` monkey entry point remains available. This is a local source API; there is no npm package. See the [API reference](docs/API.md) to define a scene or use individual helpers.
 
 ```text
 Reference + action → authored TypeScript → pose(frame / fps)
@@ -79,7 +87,7 @@ Reference + action → authored TypeScript → pose(frame / fps)
 
 ## Project status
 
-**Experimental beta with one authored example.** The shared API has one visual consumer so far. Geometry and timing remain partly example-specific; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
+**Experimental beta with two authored examples.** Shared geometry and the render bridge have two independent visual consumers with different proportions, actions and composition settings. Drawing, anatomy and action timing remain authored in each example; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
 
 macOS rendering has been exercised. Linux CI checks types, numerical behavior and the static build; Windows/Linux browser rendering is not yet verified. See [verification evidence](docs/VERIFICATION.md) and the [roadmap](docs/ROADMAP.md).
 
@@ -90,7 +98,8 @@ macOS rendering has been exercised. Linux CI checks types, numerical behavior an
 | [Development and rendering](docs/DEVELOPMENT.md) | Setup, commands, Chrome configuration, exports and previews |
 | [TypeScript API](docs/API.md) | Frame evaluation, scenes, eyes, contacts, gait and geometry |
 | [Architecture](docs/ARCHITECTURE.md) | How PixiJS and Remotion share one deterministic drawing |
-| [Example source](src/examples/pink-monkey) | Character illustration, motion, contacts and environment |
+| [Example sources](src/examples) | Pink monkey and Amber robot: drawing, motion and contacts |
+| [Reuse report](docs/REUSE.md) | What the second example reuses, what changed and what remains unproven |
 | [Roadmap](docs/ROADMAP.md) | Completed work, next steps and scope |
 | [Visual review](docs/reviews/gait/approach.jpg) | Rendered contact and gait evidence |
 
@@ -106,4 +115,4 @@ Maintained by [@vvvivaldy](https://github.com/vvvivaldy). Please use repository 
 
 Original project code is licensed under **[MIT](LICENSE)**. Dependencies retain their own terms: **Remotion uses the [Remotion License](docs/licenses/REMOTION-LICENSE.md)**. See [third-party notices](THIRD_PARTY_NOTICES.md) before reuse.
 
-The character reference was AI-generated for this experiment; the animation is authored as code. [Artwork provenance](ASSETS.md) documents the reference, films and review images separately from source-code licensing.
+The monkey reference was AI-generated; Amber uses an original whole vector design study. Both animations are authored as code. [Artwork provenance](ASSETS.md) documents the reference, films and review images separately from source-code licensing.
