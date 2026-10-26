@@ -110,3 +110,25 @@ const drawing = mapContour(shape, p => localPoint(p, frame));
 The example's `hands.ts` owns three compatible forms with wrist/palm/finger roles. `gesture.ts` owns gather, extension, reach, contact, withdrawal and return times. Pose places both visible hands in local wrist frames, blends forearm alignment with an authored wrist bend and solves the arm to the resulting origin. The drawing consumes contours/creases from pose and has no hand-specific absolute-time logic. `face.ts` supplies the actual nose-front curve to both drawing and contact sampling. Two authored excursions move its curve parameter, so the fingertip follows the surface rather than a small free-space sine.
 
 These helpers are reusable geometry and authoring tools. They do not create hand forms, discover compatible topology, solve arbitrary collisions or guarantee a good morph. The current forms are checked for area/winding and sampled self-intersections and reviewed in actual neighboring frames. One character remains the only visual consumer.
+
+## Authored whole views and solid stairs
+
+`core/views.ts` adds `contourView(views, value)`. Each `ContourView` has a finite `at` coordinate and a closed `contour`. Coordinates must increase strictly and all contours must share ordered semantic curve keys. The function holds the first/last shape outside the range and uses the existing quintic easing between neighboring views, with exact authored endpoints and zero velocity/acceleration at each key. It returns a fresh contour. The value may be yaw, a pose parameter or another author-chosen coordinate; the helper contains no character angles or anatomy.
+
+```ts
+const shape = contourView([
+  { at: 0, contour: front },
+  { at: Math.PI / 4, contour: threeQuarter },
+  { at: Math.PI / 2, contour: profile },
+], yaw);
+const attachment = contourAnchor(shape, 'earRoot', 1);
+```
+
+These are authored whole shapes, not slices of the reference. Matching keys do not prove a good interpolation: review the intermediate silhouettes and overlaps. `pink-monkey/model.ts` uses this mechanism for the cranium, near ear, muzzle, torso, belly and soft bag. Tail attachment follows an anchor on the actual hip contour. The front ear root shares the actual rear-jaw curve; the profile exposes the cup over the cranium. `feet.ts` blends full foot contours of consistent winding, avoiding a signed width passing through zero. Their flat sole still includes the previous contact anchor and heel/toe pivots. Action poses and the actual nose contact surface are unchanged.
+
+`core/stair-solid.ts` extends the same `Staircase2D` used by contacts:
+
+- `stairSolid(stairs, index, depth)` returns projected polygon points for a horizontal `tread` and its adjoining `riser`. `depth` is a finite nonzero 2D vector from the contact edge to the rear edge. The front tread endpoints are exactly `treadPoint(stairs, index, 0/1)`; the riser meets the next tread.
+- `stairPanel(stairs, first, last, offset, height)` returns a closed side-panel polygon along the incline between two integer steps. `offset` chooses the projected side; `height` is positive. Callers own colors, visibility, transforms and fill/overlap order.
+
+The example draws an opaque rear balustrade and undercarriage, solid treads/risers and a low near apron. Its platform transform is applied to the moving steps; the station shell retains the common camera transform. This is small projected geometry, not a general 3D modeller, escalator simulator or collision system.

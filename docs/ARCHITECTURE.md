@@ -18,7 +18,7 @@ The quality pass adds small pure modules for visible eye apertures/pupil clippin
 
 The pink-monkey pose now distinguishes platform-local contacts, world root/sole points and a camera view. During turning the camera is stationary: small lift/plant steps change each foot's position and heading, while grounded contacts hold. During riding the platform moves in world space and the camera follows it; station objects share one view transform. Character yaw affects the character only. The eye renderer consumes visible geometry from the shared helper instead of painting a full white ellipse and covering it with skin.
 
-The current film is `docs/assets/demo-v4.mp4`; `demo-v2.mp4` and `demo-v3.mp4` preserve preceding quality passes; `demo.gif` is a documentation derivative. `demo.mp4` and `baseline.mp4` retain the original beta visuals. None of these media files is loaded by the code scene.
+The current film is `docs/assets/demo-v5.mp4`; `demo-v2.mp4`, `demo-v3.mp4` and `demo-v4.mp4` preserve preceding quality passes; `demo.gif` is a documentation derivative. `demo.mp4` and `baseline.mp4` retain the original beta visuals. None of these media files is loaded by the code scene.
 
 
 ## Gait and body support
@@ -37,3 +37,9 @@ The original example, reference and earlier quality movie are retained. The stag
 The example owns the relaxed/gathered/pointing forms in `hands.ts` and action landmarks in `gesture.ts`. Pose evaluates the gesture, derives wrist orientation from the forearm with an authored bend, places the fingertip, then solves the arm. Both visible hands use the compatible contour path. The illustration draws the supplied contour/creases and does not derive hand phases from absolute time. The actual nose front in `face.ts` is shared by the face drawing and contact target; no approximate duplicate nose formula is used.
 
 Two excursions move the fingertip along that surface and return, separated by still holds. Withdrawal, finger folding and lowering have separate phases. The previous gait/body/support samples remain exactly unchanged; hand shape changes are intentional. The stage and Remotion frame/export ownership remain unchanged.
+
+## Authored volume and opaque scenery
+
+The fourth quality package reuses semantic cubic contours through `core/views.ts`: ordered whole views are sampled with exact endpoint holds and smooth transitions. The example owns front/¾/profile cranium, near ear, muzzle, torso, belly and bag forms in `model.ts`, plus complete foot forms in `feet.ts`. Ear roots and the actual head boundary share geometry in front views; the profile draws the revealed cup over the cranium. The model affects illustration only. All 575 sampled full action poses, including hands, legs, camera and supports, remain exactly equal to the preceding version.
+
+`core/stair-solid.ts` builds tread/riser and panel polygons from the existing shared rise/run/origin. The environment fills the rear balustrade, undercarriage and low near apron opaquely. The undercarriage begins at the projected rear edge, closing the triangular gaps that a front-edge-only fill left behind the treads. It does not hide the occupied contact edge. The current film is `docs/assets/demo-v5.mp4`; all preceding films remain available. The reference stays whole and is never a scene texture.
