@@ -1,0 +1,39 @@
+{
+  "name": "curio-motion",
+  "version": "0.1.0-beta.1",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=22.12.0"
+  },
+  "scripts": {
+    "dev": "vite --host 127.0.0.1 --port 4176",
+    "demo": "vite --host 127.0.0.1 --port 4176 --open /viewer.html",
+    "typecheck": "tsc --noEmit",
+    "test": "node --import tsx scripts/check.ts",
+    "build": "node scripts/build.mjs",
+    "check": "npm run typecheck && npm test && npm run build",
+    "render": "node scripts/render.mjs",
+    "render:baseline": "node scripts/render-baseline.mjs",
+    "check:port": "node scripts/check-port.mjs"
+  },
+  "dependencies": {
+    "pixi.js": "8.22.0",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "remotion": "4.0.539",
+    "@remotion/player": "4.0.539"
+  },
+  "devDependencies": {
+    "vite": "5.4.21",
+    "typescript": "5.9.3",
+    "tsx": "4.20.6",
+    "puppeteer-core": "25.12.0",
+    "@types/node": "22.15.30",
+    "@remotion/bundler": "4.0.539",
+    "@remotion/renderer": "4.0.539",
+    "@types/react": "18.3.24",
+    "@types/react-dom": "18.3.7"
+  }
+}

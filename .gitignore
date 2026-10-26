@@ -1,0 +1,9 @@
+node_modules/
+.vite-cache/
+dist/
+qa/
+outputs/
+.env
+.env.*
+*.log
+.DS_Store

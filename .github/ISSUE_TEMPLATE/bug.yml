@@ -1,0 +1,17 @@
+name: Bug report
+description: A reproducible visual or code problem
+title: "[Bug] "
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Expected and actual behavior
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproduction, frame/time and environment
+      description: Include OS, Node, browser, command and affected frame. Do not post secrets.
+    validations:
+      required: true

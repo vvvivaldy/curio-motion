@@ -1,0 +1,24 @@
+{
+  "name": "curio-motion",
+  "displayName": "Curio Motion",
+  "version": "0.1.0-beta.1",
+  "description": "Code-authored 2D animation for AI agents — PixiJS illustration with Remotion composition and export.",
+  "topics": [
+    "2d-animation",
+    "typescript",
+    "procedural-graphics",
+    "pixijs",
+    "remotion",
+    "ai-agents",
+    "creative-coding"
+  ],
+  "remoteUrl": null,
+  "publicationExecuted": false,
+  "defaultBranch": "main",
+  "featureBranchPrefix": "codex/",
+  "issues": true,
+  "pullRequests": true,
+  "proposedReleaseTag": "v0.1.0-beta.1",
+  "originalCodeLicense": "MIT",
+  "remotionLicense": "SEE LICENSE IN LICENSE.md"
+}

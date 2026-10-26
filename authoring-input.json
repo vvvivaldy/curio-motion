@@ -1,0 +1,15 @@
+{
+  "reference": {
+    "path": "reference/pink-monkey-reference.png",
+    "sha256": "02a0c65aeed03af92a436557e9de6956e6001f0b5f5002ea7cc195b16818c07c",
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "runtimeUsage": false
+  },
+  "prompt": "reference/IMAGEGEN_PROMPT.txt",
+  "action": "Front-facing approach carrying a soft bundle; turn to right profile, step onto an escalator; ride centered while station ads pass; blink, lazily scratch nose, return and hold.",
+  "method": "One agent-authored interpretation of a whole image plus action, not automatic arbitrary-scene generation.",
+  "ownerFeedback": "Already pretty good; standalone handoff authorized. Not validation of a universal engine."
+}

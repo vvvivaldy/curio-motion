@@ -1,0 +1,99 @@
+![Curio Motion](docs/assets/header.svg)
+
+# Curio Motion
+
+**Code-authored 2D animation for AI agents.** A whole character reference and an action description become readable TypeScript illustration and motion—not a cut-up image puppet.
+
+This **0.1.0-beta.1** contains one reproducible, code-authored animation example. A general AI scene generator, provider API, queue and platform integration are not implemented. Extracting a small reusable TypeScript API while preserving this visual baseline is the next step.
+
+[![The actual pink-monkey demo](docs/assets/poster.png)](docs/assets/demo.mp4)
+
+[Watch the complete 12-second Remotion film](docs/assets/demo.mp4) · [Original visual baseline](docs/assets/baseline.mp4) · [Русский старт](README_RU.md)
+
+## Try it locally
+
+Requires **Node ≥22.12**, npm and a modern WebGL-capable browser.
+
+```sh
+node scripts/verify-package.mjs # release ZIP checksums, before editing
+npm ci
+npm run check
+npm run demo
+```
+
+Open `http://127.0.0.1:4176/viewer.html` for the film, reference and actual code. Open `/player.html` for the **live Remotion Player** with play/pause/seek. `/index.html` is a small direct-Pixi baseline. A port already in use makes Vite choose another port; use the printed address.
+
+The responsive viewer puts video first on narrow windows. `npm run build` produces `dist/`, including the local media; serve it over HTTP rather than opening files directly. No account or remote service is needed after installing dependencies.
+
+### Render from code
+
+Install Chrome/Chromium separately. Nothing here downloads a browser. The delivery command starts and closes its own local bundler/browser resources:
+
+```sh
+# macOS/Linux: point to your installed browser if it is not auto-detected
+export CHROME_PATH="/path/to/chrome"
+npm run render
+```
+
+```powershell
+# Windows PowerShell (runtime not yet tested on Windows)
+$env:CHROME_PATH = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
+npm run render
+```
+
+Bundled preview movies live in `docs/assets/`; newly generated exports go to `outputs/`. The default output is `outputs/curio-motion-remotion.mp4`: 1280×720, 24 fps, 288 frames, silent H.264. Remotion's official `renderMedia()` owns the export. It uses its installed compositor/encoder package; no system FFmpeg is needed for the main export. Optional `npm run render:baseline` uses a separately installed FFmpeg (`FFMPEG_PATH` or PATH) for direct-Pixi regression only. Neither command installs tools. `RENDER_OUTPUT` overrides the output location.
+
+`npm run check:port` requires Chrome and compares intrinsic canvas pixels at selected direct-Pixi/Remotion Player frames, including adjacent gesture frames and backward/random seeks. Exact raster hashes depend on browser/GPU; the recorded run is macOS, not a cross-platform promise.
+
+## Two layers, one drawing
+
+```text
+whole reference + action → agent-authored TypeScript
+                                  ↓
+                      pose(frame / 24)
+                                  ↓
+                   Pixi Graphics: new contours
+                                  ↑
+          Remotion useCurrentFrame / Composition / Player
+                                  ↓
+                   official renderMedia → MP4
+```
+
+**PixiJS draws** Bezier silhouettes, fills, face, hands, bag, stairs and original advertisements. Internal joints locate a pose; the visible limb contour is rebuilt around the pose. There are no image textures, sliced PNG parts or prerecorded frames in the scene.
+
+**Remotion composes and exports** the deterministic frames. Its React component awaits Pixi initialization, stops the ticker and delays each frame until the corresponding draw is complete. It never plays the baseline MP4 as the composition. Reference/media images appear only in the separate viewer.
+
+## What the example does
+
+- A sleepy pink monkey approaches frontally with alternating supports and counter-swinging arms.
+- Continuous geometric front → three-quarter → profile turn; the far eye/ear disappear by projection, not a dissolve of stills.
+- Two deliberate steps onto a horizontal escalator tread, then fixed feet while the station and original ads scroll down-left.
+- Uneven blinks, a glance, one lazy nose-scratch gesture with a continuous hand silhouette and a settled return.
+
+[Turn detail](docs/assets/turn.png) · [Approach controls](docs/assets/walk.png) · [Hand continuity](docs/assets/hand-continuity.jpg)
+
+## Read the source
+
+| File | Role |
+| --- | --- |
+| `src/examples/pink-monkey/motion.ts` | Time, projection, supports, limb constraints, gesture phases |
+| `src/examples/pink-monkey/illustration.ts` | Code-drawn character contours and face |
+| `src/examples/pink-monkey/environment.ts` | Station, horizontal treads, signs and parallax |
+| `src/stage.ts` | Stopped Pixi stage; `draw(integerFrame)` |
+| `src/remotion/Scene.tsx` | Thin frame/async bridge, no independent clock |
+| `src/remotion/Root.tsx` | The 288-frame composition |
+| `scripts/render.mjs` | Official Remotion bundler/export |
+
+See [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md) and [agent handoff](AGENT_START_HERE_RU.md).
+
+## Limits and next step
+
+This is an authoring prototype, not a reusable production engine. Scene geometry and timings are still example-specific. No general action parser, natural-language runtime, automatic reference reconstruction, audio pipeline, asset marketplace or distributed rendering exists. There is no claim of a particular studio's artistic quality. Browser/GPU raster differences and platform setup need testing. macOS has been exercised; Windows/Linux instructions are prepared, not runtime-verified.
+
+The next small step is to extract a minimal typed API from this example **without changing its visual baseline**. A second short example can later test whether that API generalizes. Do not start by inventing a large language or a platform.
+
+## Contributing and licenses
+
+Original project code: [MIT](LICENSE). **The dependency stack is not all MIT:** PixiJS/React/Vite are MIT; Remotion has its own [Remotion License](docs/licenses/REMOTION-LICENSE.md). Review [third-party notices](THIRD_PARTY_NOTICES.md) and [artwork provenance](ASSETS.md). No repository has been published by this handoff, and no CI execution badge is claimed.
+
+Please read [CONTRIBUTING](CONTRIBUTING.md), [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) and [SECURITY](SECURITY.md). Publishing instructions are prepared in [GITHUB_LAUNCH](docs/GITHUB_LAUNCH.md); a future agent handles publication only after confirming the destination with the owner.

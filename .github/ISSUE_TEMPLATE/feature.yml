@@ -1,0 +1,13 @@
+name: Small feature proposal
+description: A focused improvement to authoring or rendering
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: Concrete authoring problem
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Smallest useful change and visual proof
