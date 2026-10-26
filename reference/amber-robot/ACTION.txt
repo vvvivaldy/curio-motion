@@ -1,0 +1,4 @@
+Design: compact amber garden robot, rounded rectangular casing, dark visor, cream circular joints, two short articulated legs, teal rubber feet and two mechanical grippers. Teal metal watering can. No monkey anatomy or assets.
+Action (10 seconds): notice the plant; lean and reach for the handle; close the gripper before lifting; lift and move the can toward the flowerpot; tilt and water in two finite pours with a pause; level and return the can to its original bench contact; release only after touchdown; withdraw, glance at the plant, nod once and hold.
+Staging: fixed camera, fixed feet, visible bench/sole/handle contacts. Fresh 960x640 contours at 30 fps. No image textures, prerecorded scene footage or accumulated playback state.
+Reference provenance: original agent-designed whole vector study design.svg, authored before the animation. It is not a generated-image reference or an automatic reconstruction experiment. It is never imported into the code scene.

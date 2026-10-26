@@ -4,9 +4,8 @@ import { pose, type Pose } from './motion';
 import { drawMonkey } from './illustration';
 import { drawEnvironment } from './environment';
 
-export const pinkMonkeySettings = {
-  width: 1280, height: 720, fps: 24, durationInFrames: 288, background: 0xe7e1d2,
-} as const;
+import { pinkMonkeySettings } from './settings';
+export { pinkMonkeySettings } from './settings';
 
 interface MonkeyDrawing {
   back: Graphics;

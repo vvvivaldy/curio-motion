@@ -1,0 +1,13 @@
+{
+  "reference": {
+    "path": "reference/amber-robot/design.svg",
+    "sha256": "918699241360ea7d5f66f2024504e6630f5f0c540d53ea54552754036db881b8",
+    "dimensions": [
+      1200,
+      760
+    ],
+    "runtimeUsage": false
+  },
+  "action": "reference/amber-robot/ACTION.txt",
+  "method": "Original agent-authored whole vector design study, made before the second animation source. Two authored examples test source API reuse; no automatic reference reconstruction."
+}

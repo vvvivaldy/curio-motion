@@ -132,3 +132,17 @@ These are authored whole shapes, not slices of the reference. Matching keys do n
 - `stairPanel(stairs, first, last, offset, height)` returns a closed side-panel polygon along the incline between two integer steps. `offset` chooses the projected side; `height` is positive. Callers own colors, visibility, transforms and fill/overlap order.
 
 The example draws an opaque rear balustrade and undercarriage, solid treads/risers and a low near apron. Its platform transform is applied to the moving steps; the station shell retains the common camera transform. This is small projected geometry, not a general 3D modeller, escalator simulator or collision system.
+
+## Second example and shared Remotion bridge
+
+The preceding quality-helper sections describe their original monkey consumer. They now also have the independent Amber consumer documented in [REUSE](REUSE.md). The old `createStage(host)` alias remains monkey-specific; `createPixiStage(host, scene)` is the shared entry point. No numeric core API needed to change for the second character.
+
+`createRemotionScene<Pose, Drawing>(scene)` in `src/remotion/create-scene.tsx` returns a stable React component. Define it once at module scope, then register it with a Remotion `Composition` using the same scene settings. The component uses `useCurrentFrame`, per-frame render handles, one scene initialization and cleanup. Background and logical dimensions come from that scene; it never selects a character or owns a playback clock. Both shipped compositions and the live Player use this function.
+
+```tsx
+const RobotScene = createRemotionScene(amberRobotScene);
+// <Composition id="AmberRobot" component={RobotScene}
+//   width={960} height={640} fps={30} durationInFrames={300} />
+```
+
+Amber uses 960×640 / 30 fps / 300 frames with a two-Graphics Drawing type, while the preserved monkey uses 1280×720 / 24 fps / 288 frames with its original container/layers. Both support direct and backward frame requests and independent simultaneous stages. Prop attachment reuses `attachAnchor`: the can's actual handle anchors the gripper and its actual base anchors the bench contact. Water trajectory/timing and mechanical anatomy remain example code.
