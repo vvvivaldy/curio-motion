@@ -2,6 +2,7 @@ import { Graphics } from 'pixi.js';
 import type { Pose } from './motion';
 import { inverseTransformPoint, transformPoint } from '../../core/spatial';
 import { treadPoint } from '../../core/contacts';
+import { stairSolid, stairPanel } from '../../core/stair-solid';
 import { stairs, floorHorizon } from './layout';
 const alphabet: Record<string, string> = { A: '01110/10001/10001/11111/10001/10001/10001', B: '11110/10001/10001/11110/10001/10001/11110', C: '01111/10000/10000/10000/10000/10000/01111', D: '11110/10001/10001/10001/10001/10001/11110', E: '11111/10000/10000/11110/10000/10000/11111', F: '11111/10000/10000/11110/10000/10000/10000', G: '01111/10000/10000/10111/10001/10001/01111', H: '10001/10001/10001/11111/10001/10001/10001', I: '111/010/010/010/010/010/111', K: '10001/10010/10100/11000/10100/10010/10001', L: '10000/10000/10000/10000/10000/10000/11111', M: '10001/11011/10101/10101/10001/10001/10001', N: '10001/11001/10101/10011/10001/10001/10001', O: '01110/10001/10001/10001/10001/10001/10001/01110', P: '11110/10001/10001/11110/10000/10000/10000', R: '11110/10001/10001/11110/10100/10010/10001', S: '01111/10000/10000/01110/00001/00001/11110', T: '11111/00100/00100/00100/00100/00100/00100', U: '10001/10001/10001/10001/10001/10001/01110', V: '10001/10001/10001/10001/10001/01010/00100', X: '10001/10001/01010/00100/01010/10001/10001', Y: '10001/10001/01010/00100/00100/00100/00100' };
 function letters(g: Graphics, text: string, x: number, y: number, size: number, color: number) {
@@ -67,27 +68,42 @@ export function drawEnvironment(g: Graphics, front: Graphics, q: Pose) {
     for (let x = -1800; x < 3200; x += 150)
         g.moveTo(x, 1000).lineTo(640, floorHorizon).stroke({ color: 0x969e93, width: 1 });
     const [enter, top] = stairs.origin, { run: w, rise } = stairs;
-    // Static stringer; moving treads use the same surface frame as planted feet.
-    g.moveTo(enter, top).lineTo(enter + 1120, top - rise * 8)
-        .lineTo(enter + 1120, 1400).lineTo(enter, 1400).closePath().fill(0x707f7c);
-    for (let i = -4; i < 9; i++) {
-        const [x, y] = transformPoint(treadPoint(stairs, i), q.platform);
+    const depth: [number, number] = [-48, -28];
+    const poly = (layer: Graphics, points: [number,number][], fill: number, stroke = 0x485d5c) =>
+        layer.poly(points.flat()).fill(fill).stroke({color:stroke,width:2,join:'round'});
+    // A closed rear balustrade: posts stop at the panel, and wall/signs cannot show through it.
+    const rear = stairPanel(stairs, 0, 9, depth, 182);
+    poly(g, rear, 0x8fa79c);
+    const railA = rear[3], railB = rear[2];
+    g.moveTo(...railA).lineTo(...railB).stroke({color:0x354e50,width:14,cap:'round'});
+    g.moveTo(railA[0],railA[1]-4).lineTo(railB[0],railB[1]-4).stroke({color:0xb9c7b5,width:3});
+    for (let i=1;i<9;i++) {
+        const [x,y] = treadPoint(stairs,i);
+        g.moveTo(x+depth[0],y+depth[1]-172).lineTo(x+depth[0],y+depth[1]-8)
+            .stroke({color:0x6f8c83,width:3});
+    }
+    // Filled undercarriage and opaque risers, with the same rise/run as the contact solver.
+    g.moveTo(enter+depth[0],top+depth[1]).lineTo(enter+1260+depth[0],top-rise*9+depth[1])
+        .lineTo(enter+1260,1400).lineTo(enter+depth[0],1400).closePath().fill(0x566e6a);
+    for (let i=10;i>=-5;i--) {
+        const solid = stairSolid(stairs,i,depth);
+        const tread = solid.tread.map(p => transformPoint(p,q.platform));
+        const riser = solid.riser.map(p => transformPoint(p,q.platform));
+        const [x,y] = tread[0];
         if (x < enter) continue;
-        g.moveTo(x, y).lineTo(x + w, y).lineTo(x + w, y - rise).lineTo(x + w + 6, y - rise)
-            .lineTo(x + w + 6, y + 8).lineTo(x, y + 8).closePath().fill(0xadb4a8).stroke({ color: 0x485d5c, width: 2 });
-        for (let k = 1; k < 14; k++)
-            g.moveTo(x + k * 10, y + 1).lineTo(x + k * 10, y + 6).stroke({ color: 0x6c7b75, width: 1 });
-        g.moveTo(x + 1, y).lineTo(x + w - 1, y).stroke({ color: 0xe8c861, width: 3 });
+        poly(g,riser,0x768b82);
+        poly(g,tread,0xb9bfae);
+        // Grooves lie on the tread plane, not on a paper-thin vertical strip.
+        for (let k=1;k<14;k++) {
+            const fx=x+k*w/14;
+            g.moveTo(fx,y-2).lineTo(fx+depth[0]+3,y+depth[1]+2)
+                .stroke({color:0x7b8e82,width:1});
+        }
+        g.moveTo(x+1,y).lineTo(x+w-1,y).stroke({color:0xe8c861,width:3});
     }
-    const railY = top - 210;
-    g.moveTo(enter - 180, railY + rise * 180 / w).lineTo(enter + 1120, railY - rise * 8)
-        .stroke({ color: 0x3e5556, width: 16, cap: 'round' });
-    g.moveTo(enter - 180, railY + rise * 180 / w - 5).lineTo(enter + 1120, railY - rise * 8 - 5)
-        .stroke({ color: 0x78918a, width: 3 });
-    for (let i = 0; i < 9; i++) {
-        const x = enter + i * 200, y = railY - (x - enter) * rise / w;
-        g.moveTo(x, y + 8).lineTo(x, y + 145).stroke({ color: 0x81928c, width: 5 });
-    }
-    front.moveTo(enter, top + 45).lineTo(enter + 1120, top - rise * 8 + 45).stroke({ color: 0x394e52, width: 12 });
-    front.moveTo(enter, top + 39).lineTo(enter + 1120, top - rise * 8 + 39).stroke({ color: 0xc3ccbc, width: 3 });
+    // Low near apron stays below the soles, so boarding contacts remain visible.
+    const apronA: [number,number] = [enter,top+43], apronB: [number,number] = [enter+1260,top-rise*9+43];
+    poly(front,[apronA,apronB,[apronB[0],1400],[apronA[0],1400]],0x405c59);
+    front.moveTo(...apronA).lineTo(...apronB).stroke({color:0x304a4b,width:10});
+    front.moveTo(apronA[0],apronA[1]-4).lineTo(apronB[0],apronB[1]-4).stroke({color:0xc3ccbc,width:3});
 }

@@ -58,7 +58,7 @@ Bundled preview movies live in `docs/assets/`; newly generated exports go to `ou
 
 ## Rebuild the README GIF
 
-After rendering and reviewing a new film, copy the chosen MP4 to `docs/assets/demo-v4.mp4`, then run:
+After rendering and reviewing a new film, copy the chosen MP4 to `docs/assets/demo-v5.mp4`, then run:
 
 ```sh
 npm run preview:gif
@@ -70,7 +70,7 @@ This documentation-only export uses an existing FFmpeg (`FFMPEG_PATH` or PATH); 
 
 macOS browser rendering has been exercised. Ubuntu CI runs installation, TypeScript, numerical tests and the static build; it does not render the film. Windows/Linux browser rendering is not yet verified. Record OS and browser when reporting results.
 
-The original beta film and approved baseline remain in `docs/assets/demo.mp4` and `docs/assets/baseline.mp4`; `demo-v2.mp4` and `demo-v3.mp4` preserve preceding quality passes. The current GIF is a 720px, 12 fps derivative of `demo-v4.mp4`. None of these media files is used as scene input.
+The original beta film and approved baseline remain in `docs/assets/demo.mp4` and `docs/assets/baseline.mp4`; `demo-v2.mp4`, `demo-v3.mp4` and `demo-v4.mp4` preserve preceding quality passes. The current GIF is a 720px, 12 fps derivative of `demo-v5.mp4`. None of these media files is used as scene input.
 
 For drawing or timing changes, review actual frames around contact, blink, turn and gesture boundaries. Numeric checks alone cannot establish visual quality. See [verification](VERIFICATION.md), [architecture](ARCHITECTURE.md) and [artwork provenance](../ASSETS.md).
 
