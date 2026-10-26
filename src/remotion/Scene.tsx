@@ -1,3 +1,4 @@
+import { pinkMonkeySettings as settings } from '../examples/pink-monkey/scene';
 import { useEffect, useMemo, useRef } from 'react';
 import { AbsoluteFill, cancelRender, continueRender, delayRender, useCurrentFrame } from 'remotion';
 import { createStage, type Stage } from '../stage';
@@ -22,6 +23,6 @@ export function MonkeyScene() {
     return () => { current = false; continueRender(handle); };
   }, [frame, handle]);
   return <AbsoluteFill style={{ backgroundColor: '#e7e1d2' }}>
-    <div ref={host} data-testid="code-scene" style={{ width: 1280, height: 720 }} />
+    <div ref={host} data-testid="code-scene" style={{ width: settings.width, height: settings.height }} />
   </AbsoluteFill>;
 }

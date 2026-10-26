@@ -4,7 +4,7 @@
 
 **Code-authored 2D animation for AI agents.** A whole character reference and an action description become readable TypeScript illustration and motion—not a cut-up image puppet.
 
-This **0.1.0-beta.1** contains one reproducible, code-authored animation example. A general AI scene generator, provider API, queue and platform integration are not implemented. Extracting a small reusable TypeScript API while preserving this visual baseline is the next step.
+This **0.1.0-beta.1** contains one reproducible, code-authored animation example and a small local TypeScript API extracted from it without changing the film. A general AI scene generator, provider API, queue and platform integration are not implemented.
 
 [![The actual pink-monkey demo](docs/assets/poster.png)](docs/assets/demo.mp4)
 
@@ -79,21 +79,24 @@ whole reference + action → agent-authored TypeScript
 | `src/examples/pink-monkey/motion.ts` | Time, projection, supports, limb constraints, gesture phases |
 | `src/examples/pink-monkey/illustration.ts` | Code-drawn character contours and face |
 | `src/examples/pink-monkey/environment.ts` | Station, horizontal treads, signs and parallax |
-| `src/stage.ts` | Stopped Pixi stage; `draw(integerFrame)` |
+| `src/examples/pink-monkey/scene.ts` | Example settings, display objects and drawing order |
+| `src/core/time.ts` | Easing, frame validation and pure pose evaluation |
+| `src/core/stage.ts` | Typed scene/drawing context and stopped Pixi stage |
+| `src/stage.ts` | Compatible example entry point; `draw(integerFrame)` |
 | `src/remotion/Scene.tsx` | Thin frame/async bridge, no independent clock |
 | `src/remotion/Root.tsx` | The 288-frame composition |
 | `scripts/render.mjs` | Official Remotion bundler/export |
 
-See [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md) and [agent handoff](AGENT_START_HERE_RU.md).
+See the [small TypeScript API](docs/API.md), [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md) and [agent handoff](AGENT_START_HERE_RU.md).
 
 ## Limits and next step
 
-This is an authoring prototype, not a reusable production engine. Scene geometry and timings are still example-specific. No general action parser, natural-language runtime, automatic reference reconstruction, audio pipeline, asset marketplace or distributed rendering exists. There is no claim of a particular studio's artistic quality. Browser/GPU raster differences and platform setup need testing. macOS has been exercised; Windows/Linux instructions are prepared, not runtime-verified.
+This is an authoring prototype, not a production engine. Scene geometry and timings are still example-specific; the small shared API has only one visual consumer. No general action parser, natural-language runtime, automatic reference reconstruction, audio pipeline, asset marketplace or distributed rendering exists. There is no claim of a particular studio's artistic quality. Browser/GPU raster differences and platform setup need testing. macOS has been exercised; Windows/Linux instructions are prepared, not runtime-verified.
 
-The next small step is to extract a minimal typed API from this example **without changing its visual baseline**. A second short example can later test whether that API generalizes. Do not start by inventing a large language or a platform.
+Time/easing, frame-to-pose evaluation and the Pixi drawing context are now extracted **without changing the visual baseline**. A separately authorized second short example can later test whether this API generalizes. Do not start by inventing a large language or a platform.
 
 ## Contributing and licenses
 
-Original project code: [MIT](LICENSE). **The dependency stack is not all MIT:** PixiJS/React/Vite are MIT; Remotion has its own [Remotion License](docs/licenses/REMOTION-LICENSE.md). Review [third-party notices](THIRD_PARTY_NOTICES.md) and [artwork provenance](ASSETS.md). No repository has been published by this handoff, and no CI execution badge is claimed.
+Original project code: [MIT](LICENSE). **The dependency stack is not all MIT:** PixiJS/React/Vite are MIT; Remotion has its own [Remotion License](docs/licenses/REMOTION-LICENSE.md). Review [third-party notices](THIRD_PARTY_NOTICES.md) and [artwork provenance](ASSETS.md). Publication status is recorded in [GITHUB_LAUNCH](docs/GITHUB_LAUNCH.md); no unverified CI badge is claimed.
 
-Please read [CONTRIBUTING](CONTRIBUTING.md), [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) and [SECURITY](SECURITY.md). Publishing instructions are prepared in [GITHUB_LAUNCH](docs/GITHUB_LAUNCH.md); a future agent handles publication only after confirming the destination with the owner.
+Please read [CONTRIBUTING](CONTRIBUTING.md), [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) and [SECURITY](SECURITY.md). The owner confirmed the standalone GitHub destination as `vvvivaldy/curio-motion`; publication does not include deployment or platform integration.

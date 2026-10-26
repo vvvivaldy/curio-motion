@@ -12,7 +12,7 @@
     "ai-agents",
     "creative-coding"
   ],
-  "remoteUrl": null,
+  "remoteUrl": "https://github.com/vvvivaldy/curio-motion",
   "publicationExecuted": false,
   "defaultBranch": "main",
   "featureBranchPrefix": "codex/",
@@ -20,5 +20,6 @@
   "pullRequests": true,
   "proposedReleaseTag": "v0.1.0-beta.1",
   "originalCodeLicense": "MIT",
-  "remotionLicense": "SEE LICENSE IN LICENSE.md"
+  "remotionLicense": "SEE LICENSE IN LICENSE.md",
+  "publicationStatus": "repository-created; source push requires workflow authorization"
 }
