@@ -1,120 +1,109 @@
-![Curio Motion](docs/assets/header.svg)
+![Curio Motion — illustration in code, motion with intent](docs/assets/header.svg)
 
 # Curio Motion
 
-**Code-authored 2D animation for AI agents.** A whole character reference and an action description become readable TypeScript illustration and motion—not a cut-up image puppet.
+**Code-authored 2D animation with PixiJS and Remotion.** Draw characters as TypeScript contours, author their motion, and export a film you can inspect frame by frame.
 
-This development version contains one reproducible, code-authored animation example and a small local TypeScript API. Shared eye apertures, footstep tracks, support transfer, coordinate frames and limb constraints now support the example. A general AI scene generator, provider API, queue and platform integration are not implemented.
+[![Checks](https://github.com/vvvivaldy/curio-motion/actions/workflows/ci.yml/badge.svg?branch=main)](https://github.com/vvvivaldy/curio-motion/actions/workflows/ci.yml) [![Original code: MIT](https://img.shields.io/badge/original_code-MIT-e9959a)](LICENSE) [![Status: experimental beta](https://img.shields.io/badge/status-experimental_beta-dac5a5)](#project-status) [![GitHub stars](https://img.shields.io/github/stars/vvvivaldy/curio-motion?style=flat)](https://github.com/vvvivaldy/curio-motion/stargazers)
 
-[![The current code-drawn pink-monkey animation](docs/assets/demo.gif)](docs/assets/demo-v3.mp4)
+[Quick start](#quick-start) · [Code example](#use-the-local-api) · [Documentation](#documentation) · [Contributing](CONTRIBUTING.md) · [Русский](README_RU.md)
 
-[Watch the complete 12-second Remotion film](docs/assets/demo-v3.mp4) · [Original visual baseline](docs/assets/baseline.mp4) · [Русский старт](README_RU.md)
+[![Actual code-rendered demo: a pink monkey walks, turns, boards an escalator and scratches its nose](docs/assets/demo.gif)](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/demo-v3.mp4)
 
-## Try it locally
+**12 seconds · 1280 × 720 · 24 fps · silent.** [Watch the full film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/demo-v3.mp4). The GIF above comes from the actual Remotion export; the scene itself draws new contours for every frame.
+
+## Why Curio Motion?
+
+Curio Motion explores how developers and coding agents can author animation as readable, reviewable source. A whole character reference and an explicit action guide the author; TypeScript defines the resulting drawing and motion.
+
+- **Editable geometry.** PixiJS draws continuous silhouettes, faces, hands and scenery, without sliced image parts or raster scene textures.
+- **Seekable motion.** A pure pose function evaluates the requested time directly, including backward and random seeks.
+- **One frame owner.** Remotion controls composition, the live Player and official MP4 export. PixiJS draws the frame.
+- **Local workflow.** Inspect the example, change the source and render with an existing Chrome installation. No hosted AI service or account is required.
+
+The included example combines four advancing footfalls, support transfer, a geometric turn, escalator boarding, blinks and a nose-scratch gesture. Shared TypeScript helpers cover eye apertures, foot tracks, coordinate spaces and limb constraints.
+
+## Quick start
 
 Requires **Node ≥22.12**, npm and a modern WebGL-capable browser.
 
 ```sh
-node scripts/verify-package.mjs # release ZIP checksums, before editing
+git clone https://github.com/vvvivaldy/curio-motion.git
+cd curio-motion
 npm ci
-npm run check
 npm run demo
 ```
 
-Open `http://127.0.0.1:4176/viewer.html` for the film, reference and actual code. Open `/player.html` for the **live Remotion Player** with play/pause/seek. `/index.html` is a small direct-Pixi baseline. A port already in use makes Vite choose another port; use the printed address.
+Open the address printed by Vite, usually **http://127.0.0.1:4176/viewer.html**.
 
-The responsive viewer puts video first on narrow windows. `npm run build` produces `dist/`, including the local media; serve it over HTTP rather than opening files directly. No account or remote service is needed after installing dependencies.
+| Try | Open |
+| --- | --- |
+| Film, reference and source | `/viewer.html` |
+| Live Remotion Player: play, pause and seek | `/player.html` |
+| Direct Pixi baseline | `/index.html` |
 
-The inline GIF is a 720px, 12 fps preview of the current official Remotion render. The linked MP4 is the full 1280×720, 24 fps film. The original beta movie and approved baseline remain in `docs/assets/demo.mp4` and `docs/assets/baseline.mp4`; `demo-v2.mp4` preserves the preceding quality pass.
-
-### Render from code
-
-Install Chrome/Chromium separately. Nothing here downloads a browser. The delivery command starts and closes its own local bundler/browser resources:
+To check the project and export the film:
 
 ```sh
-# macOS/Linux: point to your installed browser if it is not auto-detected
-export CHROME_PATH="/path/to/chrome"
+npm run check
 npm run render
 ```
 
-```powershell
-# Windows PowerShell (runtime not yet tested on Windows)
-$env:CHROME_PATH = 'C:\Program Files\Google\Chrome\Application\chrome.exe'
-npm run render
+Rendering requires an **existing Chrome/Chromium**; no browser is downloaded. Set `CHROME_PATH` if detection fails. The default export is `outputs/curio-motion-remotion.mp4`. See [development and rendering](docs/DEVELOPMENT.md) for platform commands, troubleshooting and GIF regeneration.
+
+## Use the local API
+
+Inside a browser TypeScript module in this checkout, render a specific frame into an HTML element:
+
+```ts
+import { createStage } from './src/stage';
+
+const host = document.createElement('div');
+document.body.append(host);
+const stage = await createStage(host);
+
+stage.draw(204); // 8.5 seconds at 24 fps
+stage.draw(0);   // seek backward; no accumulated playback state
+stage.destroy(); // clean up when finished
 ```
 
-Bundled preview movies live in `docs/assets/`; newly generated exports go to `outputs/`. The default output is `outputs/curio-motion-remotion.mp4`: 1280×720, 24 fps, 288 frames, silent H.264. Remotion's official `renderMedia()` owns the export. It uses its installed compositor/encoder package; no system FFmpeg is needed for the main export. Optional `npm run render:baseline` uses a separately installed FFmpeg (`FFMPEG_PATH` or PATH) for direct-Pixi regression only. Neither command installs tools. `RENDER_OUTPUT` overrides the output location.
-
-`npm run check:port` requires Chrome and compares intrinsic canvas pixels at selected direct-Pixi/Remotion Player frames, including adjacent gesture frames and backward/random seeks. Exact raster hashes depend on browser/GPU; the recorded run is macOS, not a cross-platform promise.
-
-### Rebuild the README GIF
-
-After rendering and reviewing a new film, copy the chosen MP4 to `docs/assets/demo-v3.mp4`, then run:
-
-```sh
-npm run preview:gif
-```
-
-This documentation-only export uses an existing FFmpeg (`FFMPEG_PATH` or PATH); it installs nothing. `GIF_INPUT` and `GIF_OUTPUT` override its paths. The GIF is never input to the scene.
-
-## Two layers, one drawing
+The example has 288 frames (`0`–`287`). This is a local source API; there is no npm package. See the [API reference](docs/API.md) to define a scene or use individual helpers.
 
 ```text
-whole reference + action → agent-authored TypeScript
-                                  ↓
-                      pose(frame / 24)
-                                  ↓
-                   Pixi Graphics: new contours
-                                  ↑
-          Remotion useCurrentFrame / Composition / Player
-                                  ↓
-                   official renderMedia → MP4
+Reference + action → authored TypeScript → pose(frame / fps)
+                                                  ↓
+                                         PixiJS contours
+                                                  ↓
+                              Remotion composition / Player / MP4
 ```
 
-**PixiJS draws** Bezier silhouettes, fills, face, hands, bag, stairs and original advertisements. Internal joints locate a pose; the visible limb contour is rebuilt around the pose. There are no image textures, sliced PNG parts or prerecorded frames in the scene.
+## Project status
 
-**Remotion composes and exports** the deterministic frames. Its React component awaits Pixi initialization, stops the ticker and delays each frame until the corresponding draw is complete. It never plays the baseline MP4 as the composition. Reference/media images appear only in the separate viewer.
+**Experimental beta with one authored example.** The shared API has one visual consumer so far. Geometry and timing remain partly example-specific; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
 
-## What the example does
+macOS rendering has been exercised. Linux CI checks types, numerical behavior and the static build; Windows/Linux browser rendering is not yet verified. See [verification evidence](docs/VERIFICATION.md) and the [roadmap](docs/ROADMAP.md).
 
-- A sleepy pink monkey approaches with four advancing footfalls, heel/toe roll, support-driven weight shifts and delayed contralateral arms.
-- Continuous geometric front → three-quarter → profile turn; the far eye/ear disappear by projection, not a dissolve of stills.
-- Two deliberate steps onto a horizontal escalator tread, then fixed feet while the station and original ads scroll down-left.
-- Uneven blinks, a glance, one lazy nose-scratch gesture with a continuous hand silhouette and a settled return.
+## Documentation
 
-[Current gait review](docs/reviews/gait/approach.jpg) · [Original beta controls](docs/assets/walk.png) · [Hand continuity](docs/assets/hand-continuity.jpg)
-
-## Read the source
-
-| File | Role |
+| Start here | What you will find |
 | --- | --- |
-| `src/examples/pink-monkey/motion.ts` | Time, projection, supports, limb constraints, gesture phases |
-| `src/examples/pink-monkey/illustration.ts` | Code-drawn character contours and face |
-| `src/examples/pink-monkey/environment.ts` | Station, horizontal treads, fixed fixtures and the tracking view |
-| `src/examples/pink-monkey/scene.ts` | Example settings, display objects and drawing order |
-| `src/core/time.ts` | Easing, frame validation and pure pose evaluation |
-| `src/core/eye.ts` | Visible eye aperture and clipped pupil geometry |
-| `src/examples/pink-monkey/steps.ts` | Authored contact schedules and projected approach path |
-| `src/core/gait.ts` | Seekable foot tracks, unloading, load acceptance and support balance |
-| `src/core/contacts.ts` | Step position/heading, exact support holds and tread geometry |
-| `src/core/spatial.ts` | Local/world/view frames and invertible yaw projection |
-| `src/core/kinematics.ts` | Finite two-bone solving with singular-case handling |
-| `src/core/stage.ts` | Typed scene/drawing context and stopped Pixi stage |
-| `src/stage.ts` | Compatible example entry point; `draw(integerFrame)` |
-| `src/remotion/Scene.tsx` | Thin frame/async bridge, no independent clock |
-| `src/remotion/Root.tsx` | The 288-frame composition |
-| `scripts/render.mjs` | Official Remotion bundler/export |
+| [Development and rendering](docs/DEVELOPMENT.md) | Setup, commands, Chrome configuration, exports and previews |
+| [TypeScript API](docs/API.md) | Frame evaluation, scenes, eyes, contacts, gait and geometry |
+| [Architecture](docs/ARCHITECTURE.md) | How PixiJS and Remotion share one deterministic drawing |
+| [Example source](src/examples/pink-monkey) | Character illustration, motion, contacts and environment |
+| [Roadmap](docs/ROADMAP.md) | Completed work, next steps and scope |
+| [Visual review](docs/reviews/gait/approach.jpg) | Rendered contact and gait evidence |
 
-See the [small TypeScript API](docs/API.md), [architecture](docs/ARCHITECTURE.md), [roadmap](docs/ROADMAP.md) and [agent handoff](AGENT_START_HERE_RU.md).
+## Get involved
 
-## Limits and next step
+Bug reports, documentation improvements and focused pull requests are welcome. Start with [CONTRIBUTING.md](CONTRIBUTING.md) for setup, useful first contributions and the checks expected for each kind of change.
 
-This is an authoring prototype, not a production engine. Scene geometry and timings are still example-specific; the small shared API has only one visual consumer. No general action parser, natural-language runtime, automatic reference reconstruction, audio pipeline, asset marketplace or distributed rendering exists. There is no claim of a particular studio's artistic quality. Browser/GPU raster differences and platform setup need testing. macOS has been exercised; Windows/Linux instructions are prepared, not runtime-verified.
+[Report a bug](https://github.com/vvvivaldy/curio-motion/issues/new?template=bug.yml) · [Propose an improvement](https://github.com/vvvivaldy/curio-motion/issues/new?template=feature.yml) · [Code of conduct](CODE_OF_CONDUCT.md) · [Security reporting](SECURITY.md)
 
-The original baseline remains preserved. The current example uses shared helpers for eyes, contact sequences, load transfer, heel/toe pivots and body reach constraints. The approach advances along the floor, settles, then turns and boards with one foot supporting the other. The station uses one coherent view transform. A separately authorized second short example can later test whether this API generalizes. Do not start by inventing a large language or a platform.
+Maintained by [@vvvivaldy](https://github.com/vvvivaldy). Please use repository issues for reproducible problems and small proposals.
 
-## Contributing and licenses
+## License and artwork
 
-Original project code: [MIT](LICENSE). **The dependency stack is not all MIT:** PixiJS/React/Vite are MIT; Remotion has its own [Remotion License](docs/licenses/REMOTION-LICENSE.md). Review [third-party notices](THIRD_PARTY_NOTICES.md) and [artwork provenance](ASSETS.md). Published source: [vvvivaldy/curio-motion](https://github.com/vvvivaldy/curio-motion). Publication and CI evidence are recorded in [GITHUB_LAUNCH](docs/GITHUB_LAUNCH.md).
+Original project code is licensed under **[MIT](LICENSE)**. Dependencies retain their own terms: **Remotion uses the [Remotion License](docs/licenses/REMOTION-LICENSE.md)**. See [third-party notices](THIRD_PARTY_NOTICES.md) before reuse.
 
-Please read [CONTRIBUTING](CONTRIBUTING.md), [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) and [SECURITY](SECURITY.md). The owner confirmed the standalone GitHub destination as `vvvivaldy/curio-motion`; publication does not include deployment or platform integration.
+The character reference was AI-generated for this experiment; the animation is authored as code. [Artwork provenance](ASSETS.md) documents the reference, films and review images separately from source-code licensing.

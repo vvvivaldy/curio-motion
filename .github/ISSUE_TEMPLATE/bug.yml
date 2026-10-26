@@ -1,17 +1,39 @@
 name: Bug report
-description: A reproducible visual or code problem
+description: Report a reproducible visual, rendering or setup problem
 title: "[Bug] "
 body:
+  - type: markdown
+    attributes:
+      value: |
+        Please check existing issues first. For sensitive vulnerabilities, follow SECURITY.md rather than posting exploit details here.
   - type: textarea
     id: problem
     attributes:
       label: Expected and actual behavior
+      description: What should happen, and what happens instead?
     validations:
       required: true
   - type: textarea
     id: reproduce
     attributes:
-      label: Reproduction, frame/time and environment
-      description: Include OS, Node, browser, command and affected frame. Do not post secrets.
+      label: Steps to reproduce
+      description: Include the command, page, commit and affected frame or time, if relevant.
+      placeholder: |
+        1. Run ...
+        2. Open /player.html
+        3. Seek to frame ...
     validations:
       required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, Node version, browser version, and GPU if the problem is visual.
+      placeholder: "macOS ..., Node ..., Chrome ..."
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Screenshots or logs
+      description: Attach a frame or small contact sheet for a visual issue. Remove tokens, personal paths and other sensitive data from logs.
