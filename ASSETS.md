@@ -9,3 +9,5 @@ The root MIT license covers original source code. AI-reference provenance is dis
 The quality-foundations development pass adds `docs/assets/demo-v2.mp4`, rendered from the updated TypeScript by official Remotion renderMedia, and `docs/assets/demo.gif`, a 720px/12 fps FFmpeg derivative for inline README playback. The original `demo.mp4` and `baseline.mp4` are preserved. Review contact sheets in `docs/reviews/` are labeled crops/frames of project-created films; they are evidence only, not scene textures.
 
 The gait pass adds `docs/assets/demo-v3.mp4` from official Remotion renderMedia and updates the README GIF from that movie. Both earlier movie versions and the whole reference remain unchanged. Gait review sheets are project-created frame comparisons, never scene inputs.
+
+The repository presentation pass adds `docs/assets/social-preview.png`: a project-created 1280×640 title card with a frame at 8.5 seconds from `demo-v3.mp4`, the existing project palette and system typography. It is documentation artwork only, not scene input.

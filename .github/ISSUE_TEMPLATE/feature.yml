@@ -1,13 +1,22 @@
 name: Small feature proposal
-description: A focused improvement to authoring or rendering
+description: Propose a focused improvement to authoring, documentation or rendering
 body:
   - type: textarea
     id: need
     attributes:
       label: Concrete authoring problem
+      description: What are you trying to do, and what gets in the way?
     validations:
       required: true
   - type: textarea
     id: scope
     attributes:
-      label: Smallest useful change and visual proof
+      label: Smallest useful change
+      description: Describe the resulting behavior and any alternatives you considered.
+    validations:
+      required: true
+  - type: textarea
+    id: proof
+    attributes:
+      label: How would we verify it?
+      description: Suggest an example, affected frames or a reproducible check. Keep the experimental scope in mind.

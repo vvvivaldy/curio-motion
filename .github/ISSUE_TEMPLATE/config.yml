@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Setup and rendering guide
+    url: https://github.com/vvvivaldy/curio-motion/blob/main/docs/DEVELOPMENT.md
+    about: Check requirements, local commands and Chrome configuration before opening an issue.
+  - name: Security reporting
+    url: https://github.com/vvvivaldy/curio-motion/blob/main/SECURITY.md
+    about: Read the reporting policy before sharing sensitive vulnerability details.
