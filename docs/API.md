@@ -32,7 +32,7 @@ stage.destroy(); // once, when the owner unmounts; do not draw afterwards
 
 `draw(frame)` returns the evaluated pose and marks `host.dataset.frame` only after rendering. An invalid frame throws before evaluating or drawing. `createDrawing` failures destroy the initialized stage and propagate the error. `createStage(host)` in `src/stage.ts` remains the compatible pink-monkey entry point.
 
-The example owns anatomy, projection, supports, hands, colors, environment and all timing landmarks in `src/examples/pink-monkey/`. `pinkMonkeySettings` supplies identical dimensions/fps/duration to Pixi, the Remotion Composition and the live Player. Remotion still owns `useCurrentFrame`, async initialization/frame readiness and official `renderMedia` export.
+The example chooses anatomy, coordinate spaces, contact schedules, hands, colors, environment and all timing landmarks in `src/examples/pink-monkey/`. `pinkMonkeySettings` supplies identical dimensions/fps/duration to Pixi, the Remotion Composition and the live Player. Remotion still owns `useCurrentFrame`, async initialization/frame readiness and official `renderMedia` export.
 
 No dependencies, raster scene inputs, second scene, hosted service or platform integration were added. The documentation GIF is an export derivative only. Original code is MIT; Remotion retains its separate license.
 
@@ -55,3 +55,32 @@ For a planted contact on a moving surface, transform its fixed surface-local poi
 The example's `layout.ts` owns the station dimensions and boarding slots. `motion.ts` authors two small turning steps, boarding, the moving tread frame and its tracking view. `environment.ts` draws fixed world geometry; wall fixtures inherit the wall/view transform and do not use character yaw. The stage/Remotion ownership contract is unchanged.
 
 These are geometric building blocks, not an automatic gait or anatomy generator. The author still chooses key poses, limb shapes, staging and contact intervals, then reviews the rendered result. Future shapes can consume the same aperture/contact/frame helpers without copying this example's action timeline.
+
+
+## Foot tracks and weight transfer
+
+`src/core/gait.ts` adds two pure functions; no skeleton, character proportions or action timestamps are prescribed.
+
+- `sampleFootsteps(time, steps, transfer = 0.12)` samples a nonempty ordered sequence of `Step2D`. Adjacent contacts/heading must join exactly. The same foot needs at least `2 * transfer` between swings to accept and release load. Endpoints and headings stay fixed during support.
+- Its result extends `sampleStep` with `ground` (the path without lift), `height`, `index`, raw `load` (0..1), normalized `roll` (+1 toe-off, -1 heel contact) and a single `compression` pulse after landing. Load releases in the interval before lift and is accepted after touchdown; airborne feet have zero load. Compression ends after `2 * transfer`, with no idle oscillation.
+- `supportBalance(contacts)` normalizes their nonnegative `load` values and returns `{center, weights}`. `center` is the weighted projected ground point. Zero total load throws: a jump/flight needs a separately authored body trajectory. This is an authoring aid, not a physical center-of-mass simulation.
+- `placeOnPivot(anchor, localAnchor, pivot, angle)` in `spatial.ts` returns `{origin, contact}`. Draw the rotated local contour at `origin`; its chosen pivot then stays exactly at `contact`. The pose uses this same origin for the ankle solver. `rotatePoint` applies the matching rotation.
+- `fitVerticalShift([{root, target, reach}, ...], desired = 0)` in `kinematics.ts` finds the closest common vertical translation satisfying all maximum reach spheres. An impossible intersection throws. Choosing reach slightly below total bone length reserves knee bend. Actual two-bone solving still checks both reach bounds.
+
+For example, these differently placed contacts can drive any authored two-foot drawing:
+
+```ts
+const left = sampleFootsteps(t, [
+  { start: 1, end: 1.5, from: [20, 80], to: [40, 90], lift: 16 },
+]);
+const right = sampleFootsteps(t, [
+  { start: 1.8, end: 2.3, from: [70, 80], to: [90, 90], lift: 16 },
+]);
+const support = supportBalance([left, right]);
+// Author the pelvis relative to support.center, then solve the limbs.
+// The renderer consumes each sampled contour origin, pivot and rotation.
+```
+
+The example's `steps.ts` owns four approach footfalls, two turns and two boarding steps. Its screen-space floor path and body scale advance together; stance points are independent of that scale. The pelvis shifts toward the loaded foot before lift, softens on contact and respects the shared reach constraint. Arm/bag/tail offsets follow delayed footfalls. No gait clock or per-playback state is added. Turn and boarding also use the same foot tracks. The renderer's Pixi transform order agrees with the pivot math; save/rotate/restore alone does not establish the correct rotation center.
+
+The single movie demonstrates one chosen style and set of dimensions. Numeric cases cover other layouts/scales/timings, but visual portability to another character remains future work.

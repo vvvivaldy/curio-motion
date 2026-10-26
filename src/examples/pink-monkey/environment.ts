@@ -2,7 +2,7 @@ import { Graphics } from 'pixi.js';
 import type { Pose } from './motion';
 import { inverseTransformPoint, transformPoint } from '../../core/spatial';
 import { treadPoint } from '../../core/contacts';
-import { stairs, groundY } from './layout';
+import { stairs, floorHorizon } from './layout';
 const alphabet: Record<string, string> = { A: '01110/10001/10001/11111/10001/10001/10001', B: '11110/10001/10001/11110/10001/10001/11110', C: '01111/10000/10000/10000/10000/10000/01111', D: '11110/10001/10001/10001/10001/10001/11110', E: '11111/10000/10000/11110/10000/10000/11111', F: '11111/10000/10000/11110/10000/10000/10000', G: '01111/10000/10000/10111/10001/10001/01111', H: '10001/10001/10001/11111/10001/10001/10001', I: '111/010/010/010/010/010/111', K: '10001/10010/10100/11000/10100/10010/10001', L: '10000/10000/10000/10000/10000/10000/11111', M: '10001/11011/10101/10101/10001/10001/10001', N: '10001/11001/10101/10011/10001/10001/10001', O: '01110/10001/10001/10001/10001/10001/10001/01110', P: '11110/10001/10001/11110/10000/10000/10000', R: '11110/10001/10001/11110/10100/10010/10001', S: '01111/10000/10000/01110/00001/00001/11110', T: '11111/00100/00100/00100/00100/00100/00100', U: '10001/10001/10001/10001/10001/10001/01110', V: '10001/10001/10001/10001/10001/01010/00100', X: '10001/10001/01010/00100/01010/10001/10001', Y: '10001/10001/01010/00100/00100/00100/00100' };
 function letters(g: Graphics, text: string, x: number, y: number, size: number, color: number) {
     let dx = x;
@@ -62,10 +62,10 @@ export function drawEnvironment(g: Graphics, front: Graphics, q: Pose) {
         g.roundRect(x - 4, y - 5, 188, 24, 8).stroke({ color: 0x6f8580, width: 3 });
     }
     for (let i = -1; i < 6; i++) poster(g, 120 + i * 480, 145, (i + 6) % 3);
-    g.rect(left, groundY, width, Math.max(1, bottom - groundY + 1000)).fill(0xb6b9aa);
-    g.moveTo(left, groundY).lineTo(right, groundY).stroke({ color: 0x6c7e78, width: 3 });
+    g.rect(left, floorHorizon, width, Math.max(1, bottom - floorHorizon + 1000)).fill(0xb6b9aa);
+    g.moveTo(left, floorHorizon).lineTo(right, floorHorizon).stroke({ color: 0x6c7e78, width: 3 });
     for (let x = -1800; x < 3200; x += 150)
-        g.moveTo(x, 1000).lineTo(640, groundY).stroke({ color: 0x969e93, width: 1 });
+        g.moveTo(x, 1000).lineTo(640, floorHorizon).stroke({ color: 0x969e93, width: 1 });
     const [enter, top] = stairs.origin, { run: w, rise } = stairs;
     // Static stringer; moving treads use the same surface frame as planted feet.
     g.moveTo(enter, top).lineTo(enter + 1120, top - rise * 8)

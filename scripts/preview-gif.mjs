@@ -4,7 +4,7 @@ import { resolve, dirname } from 'node:path';
 import { findTool, verifyFfmpeg } from './tools.mjs';
 
 // Documentation derivative only: never imported by the Pixi/Remotion scene.
-const input = resolve(process.env.GIF_INPUT ?? 'docs/assets/demo-v2.mp4');
+const input = resolve(process.env.GIF_INPUT ?? 'docs/assets/demo-v3.mp4');
 const output = resolve(process.env.GIF_OUTPUT ?? 'docs/assets/demo.gif');
 if (input === output) throw new Error('GIF input and output must differ');
 const ffmpeg = findTool('ffmpeg');
