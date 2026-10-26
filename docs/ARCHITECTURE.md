@@ -11,3 +11,11 @@ Coordinates: 1280×720 canvas, local character origin at the ground/root; 3D-lik
 The [minimal local API](API.md) is in `src/core/time.ts` and `src/core/stage.ts`: easing, validated frame evaluation and a typed `SceneDefinition<Pose, Drawing>`. The example's `scene.ts` owns settings, display objects and drawing order. Remotion Composition and Player read those same settings. Anatomy, geometry, supports and action timings remain in the example. No timeline channels, AI backend, arbitrary-scene generator, parser, server queue, persistence, platform integration or renderer farm exists. Tests cover frame/time bounds and existing contacts; a second visual consumer has not been implemented.
 
 Read the source in this order: motion → illustration/environment → stage → Remotion Scene/Root → render. Read [ROADMAP](ROADMAP.md) before adding abstraction.
+
+## Shared contacts, eye geometry and spaces
+
+The quality pass adds small pure modules for visible eye apertures/pupil clipping, step position and heading, horizontal tread targets, explicit coordinate frames and robust two-bone solving. Their API is documented in [API.md](API.md). They are exercised with arbitrary numeric layouts, not tied to one reference or action.
+
+The pink-monkey pose now distinguishes platform-local contacts, world root/sole points and a camera view. During turning the camera is stationary: small lift/plant steps change each foot's position and heading, while grounded contacts hold. During riding the platform moves in world space and the camera follows it; station objects share one view transform. Character yaw affects the character only. The eye renderer consumes visible geometry from the shared helper instead of painting a full white ellipse and covering it with skin.
+
+The improved film is `docs/assets/demo-v2.mp4`; `demo.gif` is a documentation derivative. `demo.mp4` and `baseline.mp4` retain the original beta visuals. None of these media files is loaded by the code scene.

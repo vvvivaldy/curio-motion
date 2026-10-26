@@ -16,7 +16,8 @@
     "check": "npm run typecheck && npm test && npm run build",
     "render": "node scripts/render.mjs",
     "render:baseline": "node scripts/render-baseline.mjs",
-    "check:port": "node scripts/check-port.mjs"
+    "check:port": "node scripts/check-port.mjs",
+    "preview:gif": "node scripts/preview-gif.mjs"
   },
   "dependencies": {
     "pixi.js": "8.22.0",
