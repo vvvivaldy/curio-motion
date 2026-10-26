@@ -18,7 +18,7 @@ The quality pass adds small pure modules for visible eye apertures/pupil clippin
 
 The pink-monkey pose now distinguishes platform-local contacts, world root/sole points and a camera view. During turning the camera is stationary: small lift/plant steps change each foot's position and heading, while grounded contacts hold. During riding the platform moves in world space and the camera follows it; station objects share one view transform. Character yaw affects the character only. The eye renderer consumes visible geometry from the shared helper instead of painting a full white ellipse and covering it with skin.
 
-The current film is `docs/assets/demo-v3.mp4`; `demo-v2.mp4` preserves the preceding quality pass; `demo.gif` is a documentation derivative. `demo.mp4` and `baseline.mp4` retain the original beta visuals. None of these media files is loaded by the code scene.
+The current film is `docs/assets/demo-v4.mp4`; `demo-v2.mp4` and `demo-v3.mp4` preserve preceding quality passes; `demo.gif` is a documentation derivative. `demo.mp4` and `baseline.mp4` retain the original beta visuals. None of these media files is loaded by the code scene.
 
 
 ## Gait and body support
@@ -28,3 +28,12 @@ The current film is `docs/assets/demo-v3.mp4`; `demo-v2.mp4` preserves the prece
 The approach now has separate contact, lift/pass, heel landing and settle poses. Floor contacts advance from y=608 to 650 while the body scale advances from 0.82 to 1 on the same path. The floor extends behind those contacts. Body translation follows the support distribution, and the shared vertical reach intersection reserves some knee bend without changing bone lengths. The foot drawing and IK share a heel/toe pivot placement. The Pixi contour transform order is checked visually against that placement. Landing compression has a finite duration; the settled body has no periodic idle motion. Delayed arms, bag and tail are driven by the actual footfall sequence.
 
 The original example, reference and earlier quality movie are retained. The stage, Remotion ownership, duration and rendering pipeline are unchanged.
+
+
+## Compatible contours and anchored gestures
+
+`core/contour.ts` provides closed cubic contours with named segment correspondence, interpolation, mapping and curve anchors. `LocalFrame2D` in `spatial.ts` places those contours using a wrist/segment frame; `attachAnchor` places a chosen contour point on its contact target. `core/gesture.ts` supplies a finite out-and-back excursion. These are small authoring tools, not a hand rig, automatic topology matcher or dynamics engine.
+
+The example owns the relaxed/gathered/pointing forms in `hands.ts` and action landmarks in `gesture.ts`. Pose evaluates the gesture, derives wrist orientation from the forearm with an authored bend, places the fingertip, then solves the arm. Both visible hands use the compatible contour path. The illustration draws the supplied contour/creases and does not derive hand phases from absolute time. The actual nose front in `face.ts` is shared by the face drawing and contact target; no approximate duplicate nose formula is used.
+
+Two excursions move the fingertip along that surface and return, separated by still holds. Withdrawal, finger folding and lowering have separate phases. The previous gait/body/support samples remain exactly unchanged; hand shape changes are intentional. The stage and Remotion frame/export ownership remain unchanged.

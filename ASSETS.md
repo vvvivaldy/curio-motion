@@ -11,3 +11,5 @@ The quality-foundations development pass adds `docs/assets/demo-v2.mp4`, rendere
 The gait pass adds `docs/assets/demo-v3.mp4` from official Remotion renderMedia and updates the README GIF from that movie. Both earlier movie versions and the whole reference remain unchanged. Gait review sheets are project-created frame comparisons, never scene inputs.
 
 The repository presentation pass adds `docs/assets/social-preview.png`: a project-created 1280×640 title card with a frame at 8.5 seconds from `demo-v3.mp4`, the existing project palette and system typography. It is documentation artwork only, not scene input.
+
+The third quality pass adds `docs/assets/demo-v4.mp4`, rendered from the updated contour/gesture code by official Remotion renderMedia, and rebuilds the README GIF from that movie. Earlier films, reference and social card are unchanged. Hand review sheets are decoded project-created frames, not scene textures.

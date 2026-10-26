@@ -8,9 +8,9 @@
 
 [Quick start](#quick-start) · [Code example](#use-the-local-api) · [Documentation](#documentation) · [Contributing](CONTRIBUTING.md) · [Русский](README_RU.md)
 
-[![Actual code-rendered demo: a pink monkey walks, turns, boards an escalator and scratches its nose](docs/assets/demo.gif)](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/demo-v3.mp4)
+[![Actual code-rendered demo: a pink monkey walks, turns, boards an escalator and scratches its nose](docs/assets/demo.gif)](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/demo-v4.mp4)
 
-**12 seconds · 1280 × 720 · 24 fps · silent.** [Watch the full film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/demo-v3.mp4). The GIF above comes from the actual Remotion export; the scene itself draws new contours for every frame.
+**12 seconds · 1280 × 720 · 24 fps · silent.** [Watch the full film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/demo-v4.mp4). The GIF above comes from the actual Remotion export; the scene itself draws new contours for every frame.
 
 ## Why Curio Motion?
 
@@ -21,7 +21,7 @@ Curio Motion explores how developers and coding agents can author animation as r
 - **One frame owner.** Remotion controls composition, the live Player and official MP4 export. PixiJS draws the frame.
 - **Local workflow.** Inspect the example, change the source and render with an existing Chrome installation. No hosted AI service or account is required.
 
-The included example combines four advancing footfalls, support transfer, a geometric turn, escalator boarding, blinks and a nose-scratch gesture. Shared TypeScript helpers cover eye apertures, foot tracks, coordinate spaces and limb constraints.
+The included example combines four advancing footfalls, support transfer, a geometric turn, escalator boarding, blinks and two nose-scratch strokes with deliberate holds. Shared TypeScript helpers cover eye apertures, foot tracks, coordinate spaces, limb constraints, compatible contours and contact anchors.
 
 ## Quick start
 

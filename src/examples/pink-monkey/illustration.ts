@@ -1,6 +1,7 @@
 import { Graphics } from 'pixi.js';
-import { P, Pose, project, mix, tween, clamp } from './motion';
+import { P, Pose, project, clamp } from './motion';
 import { eyeShape } from '../../core/eye';
+import { faceFeatures } from './face';
 const INK = 0x3d2930, SKIN = 0xe9959a, LIGHT = 0xf3b5a8, SHADE = 0xd57986, BAG = 0xcdb48e;
 class Pen {
     constructor(public g: Graphics) {
@@ -40,27 +41,17 @@ function foot(p: Pen, ankle: P, side: number, yaw: number, roll: number) {
     p.line(g => g.moveTo(x + tip * .38, y + 6).quadraticCurveTo(x + tip * .61, y + 11, x + tip * .5, y + 17), INK, 1.5);
     p.g.restore();
 }
-// Same six-cubic silhouette throughout: collect fingers, extend index near contact,
-// fold it before lowering. No state/threshold swap and no long wrist-to-nose needle.
-function hand(p: Pen, w: P, t: number, nose: P) {
-    const [x, y] = w;
-    const curl = tween(t, 7.75, 8.08) * (1 - tween(t, 10.04, 10.55));
-    const extension = tween(t, 8.08, 8.5) * (1 - tween(t, 9.65, 10.04));
-    const dx = nose[0] - x, dy = nose[1] - y, l = Math.hypot(dx, dy), cap = Math.min(1, 44 / Math.max(1, l));
-    const tx = mix(1, dx * cap, extension), ty = mix(4, dy * cap, extension);
-    const relaxed = [-11, -7, -21, 6, -24, 32, -11, 36, -5, 39, 2, 38, 3, 32, 10, 40, 19, 32, 18, 23, 27, 30, 31, 19, 23, 6, 19, -1, 15, -5, 12, -9, 4, -14, -5, -13, -11, -7];
-    const pointing = [-11, -7, -18, -9, -13, -20, -5, -18, -4, -17, tx - 3, ty + 5, tx - 3, ty, tx - 3, ty - 5, tx + 4, ty - 5, tx + 4, ty, tx + 5, ty + 4, 5, -6, 8, -5, 24, -14, 25, 3, 14, 10, 1, 20, -13, 17, -11, -7];
-    const a = relaxed.map((v, i) => mix(v, pointing[i], curl));
+// The pose supplies a local wrist frame, compatible contour and contact anchor.
+function hand(p: Pen, drawing: Pose['arms'][number]['drawing']) {
     p.path(g => {
-        g.moveTo(x + a[0], y + a[1]);
-        for (let i = 2; i < a.length; i += 6)
-            g.bezierCurveTo(x + a[i], y + a[i + 1], x + a[i + 2], y + a[i + 3], x + a[i + 4], y + a[i + 5]);
+        g.moveTo(...drawing.contour.start);
+        for (const c of drawing.contour.curves) g.bezierCurveTo(...c.c1, ...c.c2, ...c.to);
         g.closePath();
     }, SKIN);
-    p.line(g => g.moveTo(x + mix(3, 8, curl), y + mix(14, -3, curl)).quadraticCurveTo(x + mix(3, 14, curl), y + mix(22, 1, curl), x + mix(3, 9, curl), y + mix(29, 7, curl)), INK, 1.5);
+    for (const c of drawing.creases) p.line(g => g.moveTo(...c[0]).quadraticCurveTo(...c[1], ...c[2]), INK, 1.5);
 }
 function head(p: Pen, q: Pose) {
-    const s = Math.sin(q.yaw), c = Math.cos(q.yaw), cx = s * 9, cy = -370;
+    const s = Math.sin(q.yaw), c = Math.cos(q.yaw), face = faceFeatures(q.yaw), [cx, cy] = face.center;
     const ear = (x: number, y: number, rx: number, ry: number) => {
         p.ellipse(x, y, rx, ry, SKIN);
         p.ellipse(x, y + 5, rx * .75, ry * .74, 0xf1ae9d, 0);
@@ -91,8 +82,8 @@ function head(p: Pen, q: Pose) {
     drawEye(cx - 34 * c + 47 * s, 24 - 3 * s);
     const mx = cx + 48 * s, my = cy + 49;
     p.path(g => g.moveTo(mx - 49, my - 6).bezierCurveTo(mx - 48, my - 38, mx - 12, my - 38, mx + 11, my - 28).bezierCurveTo(mx + 42, my - 33, mx + 59, my - 14, mx + 49, my + 12).bezierCurveTo(mx + 28, my + 46, mx - 32, my + 40, mx - 48, my + 11).closePath(), LIGHT, 0);
-    const nx = cx + 78 * s, ny = cy + 23;
-    p.path(g => g.moveTo(nx - 16, ny - 3).bezierCurveTo(nx - 18, ny - 17, nx + 15, ny - 17, nx + 17, ny - 5).quadraticCurveTo(nx + 16, ny + 4, nx + 4, ny + 6).quadraticCurveTo(nx - 2, ny + 13, nx - 7, ny + 5).quadraticCurveTo(nx - 16, ny + 4, nx - 16, ny - 3).closePath(), 0x9c5868, 2);
+    const [nx, ny] = face.nose;
+    p.path(g => g.moveTo(nx - 16, ny - 3).bezierCurveTo(nx - 18, ny - 17, nx + 15, ny - 17, ...face.noseFront[0]).quadraticCurveTo(...face.noseFront[1], ...face.noseFront[2]).quadraticCurveTo(nx - 2, ny + 13, nx - 7, ny + 5).quadraticCurveTo(nx - 16, ny + 4, nx - 16, ny - 3).closePath(), 0x9c5868, 2);
     p.g.ellipse(nx - 5, ny + 1, 3.5, 2).fill(INK);
     p.g.ellipse(nx + 8, ny, 3, 2).fill(INK);
     p.line(g => g.moveTo(mx - 25, my + 8).bezierCurveTo(mx - 5, my + 25, mx + 24, my + 26, mx + 39, my + 12), INK, 2);
@@ -125,7 +116,7 @@ export function drawMonkey(g: Graphics, q: Pose) {
     foot(p, proj(far.ankle), 1, far.footYaw, far.footRoll);
     const fa = q.arms[1];
     limb(p, proj(fa.sh), proj(fa.elbow), proj(fa.hand), 19, 14, 11, SHADE);
-    hand(p, proj(fa.hand), 0, [0, 0]);
+    hand(p, fa.drawing);
     const near = q.legs[0];
     limb(p, proj(near.hip), proj(near.knee), proj(near.ankle), 18, 15, 10, SKIN);
     foot(p, proj(near.ankle), -1, near.footYaw, near.footRoll);
@@ -141,8 +132,7 @@ export function drawMonkey(g: Graphics, q: Pose) {
     p.path(z => z.moveTo(29, -291).bezierCurveTo(42, -288, 43, -277, 33, -263).bezierCurveTo(11, -222, -20, -188, -48, -174).lineTo(-55, -190).bezierCurveTo(-22, -215, 2, -246, 20, -282).closePath(), 0xdac5a5, 2.3);
     head(p, q);
     g.restore();
-    const nose: P = [87 * s + q.sway, -347 + q.bob];
     const ar = q.arms[0];
     limb(p, proj(ar.sh), proj(ar.elbow), proj(ar.hand), 20, 14, 11, SKIN);
-    hand(p, proj(ar.hand), q.t, [nose[0] + q.scratch * .3, nose[1] + q.scratch * .55]);
+    hand(p, ar.drawing);
 }
