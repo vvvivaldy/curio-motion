@@ -4,6 +4,11 @@ import { solveTwoBone as joint, fitVerticalShift } from '../../core/kinematics';
 import { project, unproject, transformPoint, inverseTransformPoint, placeOnPivot, type Point2 as P, type Vec3 as V, type Frame2D } from '../../core/spatial';
 import { approachX, groundY, stairs, rideStarts } from './layout';
 import { approachStartY, approachGroundAt, sampleFeet, boardingSteps } from './steps';
+import { handShape } from './hands';
+import { faceFeatures } from './face';
+import { gestureAt } from './gesture';
+import { mapContour, quadraticPoint } from '../../core/contour';
+import { localPoint, attachAnchor, segmentFrame, type LocalFrame2D } from '../../core/spatial';
 export { clamp, mix, smooth, tween } from '../../core/time';
 export { project } from '../../core/spatial';
 export { solveTwoBone as joint } from '../../core/kinematics';
@@ -38,8 +43,7 @@ export function pose(t: number) {
         approachGroundY + (stairs.origin[1] - groundY) * boarding[1]];
     const worldRoot = transformPoint(baseRoot, platform), root = transformPoint(worldRoot, camera);
     const actor: Frame2D = { origin: worldRoot, scale: scaleBody };
-    const gesture = tween(t, 7.75, 8.5) * (1 - tween(t, 9.65, 10.55));
-    const scratch = (t >= 8.52 && t <= 9.5) ? 2 * Math.sin((t - 8.52) * Math.PI * 6) * Math.sin((t - 8.52) / .98 * Math.PI) : 0;
+    const handGesture = gestureAt(t);
     const blink = Math.max(...[.78, 2.12, 4.67, 6.92, 9.84, 11.45].map(x => blinkAt(t, x)));
     const targets = [-1, 1].map((side, i) => {
         const state = feet[i], sole = state.position, planted = state.planted, footYaw = state.heading;
@@ -62,22 +66,43 @@ export function pose(t: number) {
         const hip = torso([leg.side * 22, -145, 0]);
         return { ...leg, hip, knee: joint(hip, leg.ankle, 70, 72, [leg.side * .4, 0, 1]) };
     });
+    const bodyFrame: LocalFrame2D = { origin: [sway - 220 * Math.sin(lean), bob - 220 + 220 * Math.cos(lean)], angle: lean, scale: 1 };
+    const face = faceFeatures(yaw);
+    const noseContact = localPoint(quadraticPoint(...face.noseFront, handGesture.surfaceParameter), bodyFrame);
+    const neutralContact = localPoint(quadraticPoint(...face.noseFront, .3), bodyFrame);
     // Contralateral arms and soft attachments follow the actual footfalls, with a short authored lag.
     const strideAt = (time: number) => {
         const delayed = sampleFeet(time);
         return Math.max(-1, Math.min(1, (delayed[0].ground[1] - delayed[1].ground[1]) / 14));
     };
     const stride = strideAt(t - .08) * walk;
-    const arms = [-1, 1].map((side, i) => {
+    const arms = [-1, 1].map(side => {
         const sh: V = torso([side * 45, -282, side < 0 ? 9 : -7]);
         const rest: V = torso([side * 65 + side * stride * 6, -88 - side * stride * 8, 18 + side * stride * 18]);
-        let hand: V = rest;
-        if (side < 0)
-            hand = [mix(rest[0], -12, gesture), mix(rest[1], -319 + scratch, gesture), mix(rest[2], 70, gesture)];
-        const elbow = joint(sh, hand, 107, 108, [mix(side * .4, side * .15, side < 0 ? gesture : 0), side < 0 ? gesture : 0, -(1 - (side < 0 ? gesture : 0))]);
-        return { side, sh, elbow, hand };
+        const reach = side < 0 ? handGesture.reach : 0;
+        const pole: V = [mix(side * .4, side * .15, reach), reach, -(1 - reach)];
+        const shape = handShape(side < 0 ? handGesture.gather : 0, side < 0 ? handGesture.extension : 0);
+        let frame: LocalFrame2D = { origin: project(rest, yaw), angle: 0, scale: 1 };
+        let hand = rest, elbow = joint(sh, hand, 107, 108, pole);
+        if (side < 0) {
+            const goal = attachAnchor({ ...frame, angle: -2.6 }, shape.tip, neutralContact).origin;
+            const free: P = frame.origin.map((v, i) => mix(v, goal[i], reach)) as P;
+            const depth = mix(-rest[0] * Math.sin(yaw) + rest[2] * Math.cos(yaw), 12, reach);
+            hand = unproject(free, yaw, depth);
+            elbow = joint(sh, hand, 107, 108, pole);
+            const forearm = segmentFrame(project(elbow, yaw), free, -2.6 * handGesture.orient);
+            frame = { origin: free, angle: mix(0, mix(forearm.angle, -2.6, handGesture.extension * .7), handGesture.orient), scale: 1 };
+            const attached = attachAnchor(frame, shape.tip, noseContact);
+            frame = { ...frame, origin: frame.origin.map((v, i) => mix(v, attached.origin[i], handGesture.contact)) as P };
+            hand = unproject(frame.origin, yaw, depth);
+            elbow = joint(sh, hand, 107, 108, pole);
+        }
+        const forearm = segmentFrame(project(elbow, yaw), project(hand, yaw), frame.angle);
+        const drawing = { contour: mapContour(shape.contour, p => localPoint(p, frame)),
+            creases: shape.creases.map(c => c.map(p => localPoint(p, frame)) as [P, P, P]) };
+        return { side, sh, elbow, hand, frame, drawing, tip: localPoint(shape.tip, frame), wristBend: frame.angle - forearm.angle };
     });
-    return { t, turn, yaw, walk, scale: scaleBody, root, gesture, scratch, blink, legs, arms, sway, bob, lean,
+    return { t, turn, yaw, walk, scale: scaleBody, root, handGesture, noseContact, blink, legs, arms, sway, bob, lean,
         balance, weightShift, approachGroundY, tailSwing: strideAt(t - .14) * walk * 5,
         wallTravel: Math.max(0, t - 6.4) * 76, gazeUp: tween(t, 7.05, 7.5) * (1 - tween(t, 9.6, 10.2)), camera, platform, worldRoot,
         bagSwing: strideAt(t - .14) * walk * .025 + (t > 2.8 && t < 6.9 ? Math.sin((t - 2.8) * 5) * Math.exp(-(t - 2.8)) * .025 : 0) };

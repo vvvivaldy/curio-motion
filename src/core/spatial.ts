@@ -22,6 +22,29 @@ export interface Frame2D {
   readonly scale: number;
 }
 
+/** A local contour/anchor frame. Rotation is applied before uniform scale and translation. */
+export interface LocalFrame2D extends Frame2D { readonly angle: number }
+
+export function localPoint(point: Point2, frame: LocalFrame2D): Point2 {
+  if (!Number.isFinite(frame.angle)) throw new RangeError('Finite local rotation required');
+  return transformPoint(rotatePoint(point, frame.angle), frame);
+}
+
+export function attachAnchor(frame: LocalFrame2D, anchor: Point2, target: Point2): LocalFrame2D {
+  const offset = localPoint(anchor, { ...frame, origin: [0, 0] });
+  if (!target.every(Number.isFinite)) throw new RangeError('Finite anchor target required');
+  return { ...frame, origin: [target[0] - offset[0], target[1] - offset[1]] };
+}
+
+/** Local +Y follows a segment. The reference chooses a continuous authored winding on any seek. */
+export function segmentFrame(from: Point2, to: Point2, reference = 0): LocalFrame2D {
+  if (![...from, ...to, reference].every(Number.isFinite) || Math.hypot(to[0] - from[0], to[1] - from[1]) < 1e-8)
+    throw new RangeError('A finite nonzero segment required');
+  const raw = Math.atan2(to[1] - from[1], to[0] - from[0]) - Math.PI / 2;
+  const angle = reference + Math.atan2(Math.sin(raw - reference), Math.cos(raw - reference));
+  return { origin: [...to], angle, scale: 1 };
+}
+
 export function transformPoint(point: Point2, frame: Frame2D): Point2 {
   if (![...point, ...frame.origin, frame.scale].every(Number.isFinite) || frame.scale <= 0)
     throw new RangeError('Finite coordinates and positive frame scale required');

@@ -84,3 +84,29 @@ const support = supportBalance([left, right]);
 The example's `steps.ts` owns four approach footfalls, two turns and two boarding steps. Its screen-space floor path and body scale advance together; stance points are independent of that scale. The pelvis shifts toward the loaded foot before lift, softens on contact and respects the shared reach constraint. Arm/bag/tail offsets follow delayed footfalls. No gait clock or per-playback state is added. Turn and boarding also use the same foot tracks. The renderer's Pixi transform order agrees with the pivot math; save/rotate/restore alone does not establish the correct rotation center.
 
 The single movie demonstrates one chosen style and set of dimensions. Numeric cases cover other layouts/scales/timings, but visual portability to another character remains future work.
+
+## Compatible contours, local frames and contact anchors
+
+`core/contour.ts` defines a deliberately small closed-cubic representation:
+
+- `CubicContour {start, curves}`; each curve has a unique semantic `key`, `c1`, `c2` and `to`. The last endpoint equals `start`. Authors choose the correspondence between forms; keys do not infer anatomy or repair incompatible shapes.
+- `morphContour(a, b, amount)` validates finite closed contours and matching ordered keys, clamps the blend and holds exact endpoint values. `mapContour(contour, pointMap)` maps all controls/endpoints.
+- `cubicPoint(from, curve, amount)` and `contourAnchor(contour, key, amount = 0.5)` evaluate an actual curve point, rather than an approximate drawing coordinate. `quadraticPoint` covers the example's existing nose surface.
+
+`LocalFrame2D {origin, angle, scale}` in `spatial.ts` rotates local points, then scales/translates them with `localPoint`. `segmentFrame(from, to, referenceAngle)` aligns local +Y with a nonzero segment ending at `to`; the reference chooses the intended angle winding on any seek. `attachAnchor(frame, localAnchor, target)` preserves angle/scale and places the anchor exactly on the target.
+
+```ts
+// shape is the author's compatible CubicContour, with a curve keyed 'tip'.
+const tip = contourAnchor(shape, 'tip');
+const frame = attachAnchor(
+  { origin: [0, 0], angle: -0.5, scale: 1.2 }, tip, [320, 100],
+);
+const drawing = mapContour(shape, p => localPoint(p, frame));
+// Render drawing directly; its chosen tip is at [320, 100].
+```
+
+`excursion(time, start, peak, end)` in `core/gesture.ts` returns one smooth 0→1→0 movement and stays zero outside the interval. Each landmark has zero velocity/acceleration. Separate calls with a gap create deliberate still holds; no oscillator or playback state is introduced.
+
+The example's `hands.ts` owns three compatible forms with wrist/palm/finger roles. `gesture.ts` owns gather, extension, reach, contact, withdrawal and return times. Pose places both visible hands in local wrist frames, blends forearm alignment with an authored wrist bend and solves the arm to the resulting origin. The drawing consumes contours/creases from pose and has no hand-specific absolute-time logic. `face.ts` supplies the actual nose-front curve to both drawing and contact sampling. Two authored excursions move its curve parameter, so the fingertip follows the surface rather than a small free-space sine.
+
+These helpers are reusable geometry and authoring tools. They do not create hand forms, discover compatible topology, solve arbitrary collisions or guarantee a good morph. The current forms are checked for area/winding and sampled self-intersections and reviewed in actual neighboring frames. One character remains the only visual consumer.
