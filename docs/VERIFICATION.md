@@ -8,7 +8,7 @@ The recorded run used macOS arm64, Node 26.4.0 and an existing Chrome headless s
 - 35 direct-Pixi versus Remotion Player intrinsic canvas captures match exactly, including neighboring hand transition/contact frames and backward/random seeks. No runtime image requests or page errors were observed.
 - The owner found this visual trial “already pretty good” and requested standalone packaging. This does not validate every future scene or arbitrary-reference generation.
 
-The handoff includes checksums and a separate clean-extraction report. GitHub Actions is only configured, not run on GitHub. Windows/Linux setup is documented but runtime unverified. The build can emit a dependency-level `use client` directive warning under Vite; Node 26 can emit a tsx module-registration deprecation warning. Neither prevented the recorded checks. No security audit is claimed.
+The handoff includes checksums and a separate clean-extraction report. GitHub Actions subsequently passed the [baseline](https://github.com/vvvivaldy/curio-motion/actions/runs/40373226829) and [API branch](https://github.com/vvvivaldy/curio-motion/actions/runs/40373227357) source checks (`npm ci` / `npm run check`) on Ubuntu/Node 22; browser/render verification remains macOS-only. Windows/Linux setup is documented but runtime unverified. The build can emit a dependency-level `use client` directive warning under Vite; Node 26 can emit a tsx module-registration deprecation warning. Neither prevented the recorded checks. No security audit is claimed.
 
 ## Minimal API extraction — 2026-10-26
 

@@ -6,4 +6,4 @@
 4. Improve tests and cross-platform rendering. Add real Linux/Windows evidence before claiming support.
 5. Evaluate an authoring-agent workflow (reference + explicit action → reviewed source) independently of any provider or product integration.
 
-Not in this handoff: new scenes, automatic arbitrary character conversion, hosted inference, publishing, production queues or integration into another platform. Future scope belongs to the owner.
+Outside the current implementation: new scenes, automatic arbitrary character conversion, hosted inference, production queues or integration into another platform. Repository publication is recorded separately in [GITHUB_LAUNCH](GITHUB_LAUNCH.md). Future scope belongs to the owner.

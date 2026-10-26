@@ -97,6 +97,6 @@ Time/easing, frame-to-pose evaluation and the Pixi drawing context are now extra
 
 ## Contributing and licenses
 
-Original project code: [MIT](LICENSE). **The dependency stack is not all MIT:** PixiJS/React/Vite are MIT; Remotion has its own [Remotion License](docs/licenses/REMOTION-LICENSE.md). Review [third-party notices](THIRD_PARTY_NOTICES.md) and [artwork provenance](ASSETS.md). Publication status is recorded in [GITHUB_LAUNCH](docs/GITHUB_LAUNCH.md); no unverified CI badge is claimed.
+Original project code: [MIT](LICENSE). **The dependency stack is not all MIT:** PixiJS/React/Vite are MIT; Remotion has its own [Remotion License](docs/licenses/REMOTION-LICENSE.md). Review [third-party notices](THIRD_PARTY_NOTICES.md) and [artwork provenance](ASSETS.md). Published source: [vvvivaldy/curio-motion](https://github.com/vvvivaldy/curio-motion). Publication and CI evidence are recorded in [GITHUB_LAUNCH](docs/GITHUB_LAUNCH.md).
 
 Please read [CONTRIBUTING](CONTRIBUTING.md), [CODE_OF_CONDUCT](CODE_OF_CONDUCT.md) and [SECURITY](SECURITY.md). The owner confirmed the standalone GitHub destination as `vvvivaldy/curio-motion`; publication does not include deployment or platform integration.
