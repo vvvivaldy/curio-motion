@@ -1,0 +1,470 @@
+{
+  "reviewer": "Codex (agent)",
+  "reviewMethod": "Whole-reference comparison, native/decoded contact sheets and browser playback frame captures at 1x/0.5x",
+  "examples": [
+    {
+      "example": "amber-robot",
+      "passes": [
+        {
+          "stage": "model",
+          "frames": [
+            0,
+            43,
+            120
+          ],
+          "method": "Official @remotion/renderer renderFrames",
+          "captureSha256": "00103aa65995f00c59c248fbcc9a1d03467cec2ee461386baea4f8d2b6a0b1b5",
+          "checks": [
+            {
+              "criterion": "Whole-reference proportions and characteristic shapes",
+              "verdict": "pass",
+              "notes": "Compared f0/f43/f120 with the whole SVG: amber casing, visor, cream joints, teal boots/can remain recognizable."
+            },
+            {
+              "criterion": "Continuous casing, jaws and can silhouettes",
+              "verdict": "pass",
+              "notes": "Head/torso and both jaw forms stay closed; can handle and spout have continuous drawn contours."
+            },
+            {
+              "criterion": "Authored view and overlap limits are explicit",
+              "verdict": "pass",
+              "notes": "This action uses front/three-quarter casing views. Full profile/hidden volume remain authored limitations, not reconstructed geometry."
+            }
+          ],
+          "issues": [
+            {
+              "id": "L01",
+              "frames": [
+                43
+              ],
+              "symptom": "The design study profile is not exercised by this film.",
+              "cause": "This authored action uses front/three-quarter casing views.",
+              "resolution": "Recorded as a scope limitation; no automatic reconstruction claim.",
+              "status": "limitation"
+            }
+          ],
+          "decision": "accept"
+        },
+        {
+          "stage": "blocking",
+          "frames": [
+            0,
+            55,
+            94,
+            120,
+            145,
+            160,
+            213,
+            249,
+            299
+          ],
+          "method": "Official @remotion/renderer renderFrames",
+          "captureSha256": "8171c732bfdf928087ac86e12da2b4187efa004aaf654df08cc87b8ad87bebe1",
+          "checks": [
+            {
+              "criterion": "Reach/grip/lift/pour/land/release order reads",
+              "verdict": "pass",
+              "notes": "f55 grip precedes f94 carry; f120/f160 pour separately; f213 is landed before f225 release."
+            },
+            {
+              "criterion": "Soles, handle and bench contacts agree with the drawing",
+              "verdict": "pass",
+              "notes": "Both soles stay on the floor; the drawn handle stays inside the closed jaws and the actual can base lands on the bench."
+            },
+            {
+              "criterion": "Intention and holds are legible in full frame",
+              "verdict": "pass",
+              "notes": "The initial pause, level pause at f145, landing hold and final f299 hold read without constant idle motion."
+            }
+          ],
+          "issues": [],
+          "decision": "accept"
+        },
+        {
+          "stage": "motion",
+          "frames": [
+            29,
+            30,
+            31,
+            65,
+            66,
+            67,
+            68,
+            69,
+            77,
+            78,
+            79,
+            80,
+            81,
+            103,
+            104,
+            105,
+            118,
+            119,
+            120,
+            121,
+            122,
+            144,
+            145,
+            146,
+            159,
+            160,
+            161,
+            196,
+            197,
+            198,
+            199,
+            200,
+            212,
+            213,
+            214,
+            224,
+            225,
+            226,
+            239,
+            240,
+            241
+          ],
+          "method": "Official @remotion/renderer renderFrames",
+          "captureSha256": "3ef3606ae35c62681f367180b785dba93561fde051fdc90cee50d29f7e77872f",
+          "checks": [
+            {
+              "criterion": "Elbow branch, extension reserve and wrist bend remain plausible",
+              "verdict": "pass",
+              "notes": "Inspected f77–81 and f196–200: elbow stays on one side. Wrist stays forward relative to the forearm; no upward snap toward the visor."
+            },
+            {
+              "criterion": "Grip, silhouette and overlaps are continuous across transitions",
+              "verdict": "pass",
+              "notes": "Neighbor crops retain the pinch, palm and handle. The final prop/plant staging leaves clearance throughout lift and return."
+            },
+            {
+              "criterion": "Water falls from the spout; pauses stay quiet",
+              "verdict": "pass",
+              "notes": "Two finite spout-to-soil streams and their impacts are legible; no upward particle launch or motion in the quiet gap. Browser 1x/0.5x playback covered all 300 frames."
+            }
+          ],
+          "issues": [
+            {
+              "id": "R01",
+              "frames": [
+                78,
+                79,
+                197,
+                198
+              ],
+              "symptom": "Old elbow changed branch between neighboring frames.",
+              "cause": "Fixed world-axis pole projection reversed planar bend side.",
+              "resolution": "Explicit planar branch; neighbor frames and dense samples inspected.",
+              "status": "resolved"
+            },
+            {
+              "id": "R02",
+              "frames": [
+                120
+              ],
+              "symptom": "Old gripper nearly reversed against forearm and rose near the visor.",
+              "cause": "Unreachable-looking prop layout and rotation about can body origin.",
+              "resolution": "Reachable staging, handle pivot, wrist limit and elbow extension reserve.",
+              "status": "resolved"
+            },
+            {
+              "id": "R03",
+              "frames": [
+                78,
+                79
+              ],
+              "symptom": "Intermediate repaired spout intersected a leaf during carry.",
+              "cause": "Plant remained too close to the new prop trajectory.",
+              "resolution": "Moved plant on bench; recaptured source and checked lift/return neighbors.",
+              "status": "resolved"
+            }
+          ],
+          "decision": "accept"
+        },
+        {
+          "stage": "final",
+          "frames": [
+            0,
+            54,
+            55,
+            56,
+            65,
+            66,
+            67,
+            68,
+            69,
+            77,
+            78,
+            79,
+            80,
+            81,
+            94,
+            118,
+            119,
+            120,
+            121,
+            122,
+            145,
+            160,
+            196,
+            197,
+            198,
+            199,
+            200,
+            212,
+            213,
+            214,
+            224,
+            225,
+            226,
+            263,
+            299
+          ],
+          "method": "Decoded official renderMedia MP4",
+          "captureSha256": "29770e275d3fdbade8e756be938b9417313660122a37d43924d0e5efaeec9350",
+          "checks": [
+            {
+              "criterion": "Full film watched at normal and slow speed",
+              "verdict": "pass",
+              "notes": "Reviewed the full encoded 10s film using decoded sequence/contact crops and browser 1x/0.5x playback captures (300 callbacks each)."
+            },
+            {
+              "criterion": "Encoded contact and transition frames match the intended repair",
+              "verdict": "pass",
+              "notes": "Decoded f78/f79 and f197/f198 remove the old branch flips; f118–122 wrist/handle and f212–214 bench contact remain continuous."
+            },
+            {
+              "criterion": "Previous film preserved; remaining limits stated",
+              "verdict": "pass",
+              "notes": "Original robot MP4/GIF and all monkey media hashes remain preserved. Dynamics, full profile and generic collision detection remain explicit limits."
+            }
+          ],
+          "issues": [
+            {
+              "id": "R01",
+              "frames": [
+                78,
+                79,
+                197,
+                198
+              ],
+              "symptom": "Old elbow changed branch between neighboring frames.",
+              "cause": "Fixed world-axis pole projection reversed planar bend side.",
+              "resolution": "Explicit planar branch; neighbor frames and dense samples inspected.",
+              "status": "resolved"
+            },
+            {
+              "id": "R02",
+              "frames": [
+                120
+              ],
+              "symptom": "Old gripper nearly reversed against forearm and rose near the visor.",
+              "cause": "Unreachable-looking prop layout and rotation about can body origin.",
+              "resolution": "Reachable staging, handle pivot, wrist limit and elbow extension reserve.",
+              "status": "resolved"
+            },
+            {
+              "id": "R03",
+              "frames": [
+                78,
+                79
+              ],
+              "symptom": "Intermediate repaired spout intersected a leaf during carry.",
+              "cause": "Plant remained too close to the new prop trajectory.",
+              "resolution": "Moved plant on bench; recaptured source and checked lift/return neighbors.",
+              "status": "resolved"
+            }
+          ],
+          "decision": "accept"
+        }
+      ],
+      "identity": "184521b5414bda2e78398f726271c1f6e265327e538effdd886aa4ba1fb5878d",
+      "sourceSha256": "a07fb1dc1d047160e1f94f6649fdc822233fafd9087c8eb898ab6355a7804292"
+    },
+    {
+      "example": "pink-monkey",
+      "passes": [
+        {
+          "stage": "model",
+          "frames": [
+            0,
+            96,
+            124
+          ],
+          "method": "Official @remotion/renderer renderFrames",
+          "captureSha256": "91f570dc57b0b5aebceba08f4b7e2392f7204387f0a84e2adaa8b8343eb1352b",
+          "checks": [
+            {
+              "criterion": "Whole-reference proportions and characteristic shapes",
+              "verdict": "pass",
+              "notes": "Whole pink reference retained; f0/f96/f124 keep the large ears, sleepy eyes, pale muzzle/belly and soft bundle."
+            },
+            {
+              "criterion": "Continuous head/ear/hand/foot silhouettes",
+              "verdict": "pass",
+              "notes": "Whole head/ear/hand/foot contours remain coherent in the three sampled views."
+            },
+            {
+              "criterion": "Front/three-quarter/profile overlaps remain coherent",
+              "verdict": "pass",
+              "notes": "Far eye/ear disappear through the authored profile overlap rather than protruding from the silhouette."
+            }
+          ],
+          "issues": [],
+          "decision": "accept"
+        },
+        {
+          "stage": "blocking",
+          "frames": [
+            0,
+            38,
+            74,
+            96,
+            136,
+            152,
+            204,
+            236,
+            287
+          ],
+          "method": "Official @remotion/renderer renderFrames",
+          "captureSha256": "216ce585629404df8421707e343b86e5662511608c6e7e9c1151311456832f17",
+          "checks": [
+            {
+              "criterion": "Action order reads in key poses",
+              "verdict": "pass",
+              "notes": "f0/f38 advance with weight, f74/f96 turn, f136/f152 board, f204/f236 scratch, f287 settles."
+            },
+            {
+              "criterion": "Weight, soles and tread contacts are visible",
+              "verdict": "pass",
+              "notes": "The planted sole/tread edges and body weight are visible in the full-frame poses."
+            },
+            {
+              "criterion": "Look, scratch and deliberate holds communicate intention",
+              "verdict": "pass",
+              "notes": "Gaze, two surface strokes and return/hold keep the already approved timing."
+            }
+          ],
+          "issues": [],
+          "decision": "accept"
+        },
+        {
+          "stage": "motion",
+          "frames": [
+            37,
+            38,
+            39,
+            95,
+            96,
+            97,
+            108,
+            109,
+            110,
+            111,
+            112,
+            135,
+            136,
+            137,
+            197,
+            198,
+            199,
+            203,
+            204,
+            205,
+            235,
+            236,
+            237,
+            245,
+            246,
+            247
+          ],
+          "method": "Official @remotion/renderer renderFrames",
+          "captureSha256": "7212b714f09bad0b31d4ca46a5e2ac0d1ad111944d79fefcff775e0509169ec8",
+          "checks": [
+            {
+              "criterion": "Supports and load transfer stay stable",
+              "verdict": "pass",
+              "notes": "Landing neighbors f37–39 and boarding f135–137 keep stable support; no new motion source was added."
+            },
+            {
+              "criterion": "Eyes/ears/hands remain continuous between key poses",
+              "verdict": "pass",
+              "notes": "f108–112 retain eye/ear continuity; f197–199/f203–205/f235–237 keep a whole hand near the nose."
+            },
+            {
+              "criterion": "Surface contact and quiet holds survive backward/random seeks",
+              "verdict": "pass",
+              "notes": "Random/reverse Player checks pass. Browser playback captures at 1x and 0.5x cover all 288 frames; quiet riding/gesture holds remain."
+            }
+          ],
+          "issues": [],
+          "decision": "accept"
+        },
+        {
+          "stage": "final",
+          "frames": [
+            0,
+            38,
+            96,
+            109,
+            110,
+            111,
+            136,
+            152,
+            203,
+            204,
+            205,
+            235,
+            236,
+            237,
+            287
+          ],
+          "method": "Decoded official renderMedia MP4",
+          "captureSha256": "d53eb0f519b7c9387e8a052ad4733b804e77116cbabeea51cb8689856194e06a",
+          "checks": [
+            {
+              "criterion": "Full film watched at normal and slow speed",
+              "verdict": "pass",
+              "notes": "Reviewed decoded final frames plus whole-film browser 1x/0.5x captures (288 callbacks each)."
+            },
+            {
+              "criterion": "Encoded action/contact frames preserve the approved film",
+              "verdict": "pass",
+              "notes": "All 288 re-exported decoded frames exactly match approved demo-v5; contact/turn/gesture samples preserve the film."
+            },
+            {
+              "criterion": "Reference/previous films preserved and limitations stated",
+              "verdict": "pass",
+              "notes": "Whole reference, all prior films and demo.gif are byte-preserved. This is a known-example review-process test, not an unseen-reference trial."
+            }
+          ],
+          "issues": [],
+          "decision": "accept"
+        }
+      ],
+      "identity": "e9d63c122f625427eb9f4444a2ced59c2b0d19b9e80035204e00a5944baf28f9",
+      "sourceSha256": "a07fb1dc1d047160e1f94f6649fdc822233fafd9087c8eb898ab6355a7804292"
+    }
+  ],
+  "intermediateRevision": {
+    "sourceSha256": "26495c3842d9e433acd64cb1284c766ec864a7893128a87111c2a8467500a084",
+    "captureSha256": "5e14121ab72ac0e92089b0d2d3d6ec80cee91aac1b0b3f55fe4fa8d4f9005f6b",
+    "decision": "revise",
+    "issues": [
+      {
+        "id": "R03",
+        "frames": [
+          78,
+          79,
+          80
+        ],
+        "symptom": "Spout overlaps left leaf",
+        "cause": "Plant too close to carry path",
+        "resolution": "Move plant and recapture affected evidence",
+        "status": "open"
+      }
+    ]
+  },
+  "finalRefresh": "Plan identity validation tightened; all native/decoded PNGs and preview/final MP4 bytes match previously visually inspected evidence."
+}

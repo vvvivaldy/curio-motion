@@ -1,4 +1,4 @@
-import type { Vec3 } from './spatial';
+import type { Vec3, Point2 } from './spatial';
 
 const add = (a: Vec3, b: Vec3): Vec3 => [a[0] + b[0], a[1] + b[1], a[2] + b[2]];
 const sub = (a: Vec3, b: Vec3): Vec3 => [a[0] - b[0], a[1] - b[1], a[2] - b[2]];
@@ -43,4 +43,33 @@ export function solveTwoBone(a: Vec3, b: Vec3, l1: number, l2: number, pole: Vec
   const along = (l1 * l1 - l2 * l2 + dist * dist) / (2 * dist);
   const height = Math.sqrt(Math.max(0, l1 * l1 - along * along));
   return add(a, add(scale(u, along), scale(p, height / length(p))));
+}
+
+/** Signed shortest angle. Useful for joint limits, independent of authored angle winding. */
+export function relativeAngle(angle: number, reference: number): number {
+  if (![angle, reference].every(Number.isFinite)) throw new RangeError('Finite angles required');
+  return Math.atan2(Math.sin(angle-reference), Math.cos(angle-reference));
+}
+
+/** Planar branch is explicit: +1 bends toward (-dy, dx). It never flips at shoulder height.
+ * Limits reject a bad target; clamping a joint would silently break the held contact.
+ */
+export function solvePlanarLimb(root: Point2, target: Point2, upper: number, lower: number,
+  options: { bendSide: -1 | 1; endAngle: number; wristRange: readonly [number, number]; minFlexion: number }) {
+  const {bendSide,endAngle,wristRange,minFlexion}=options;
+  if (![...root,...target,endAngle,...wristRange,minFlexion].every(Number.isFinite) ||
+      ![-1,1].includes(bendSide) || wristRange[0]>wristRange[1] ||
+      wristRange[0]<-Math.PI || wristRange[1]>Math.PI || minFlexion<0 || minFlexion>Math.PI)
+    throw new RangeError('Invalid planar limb limits');
+  const dx=target[0]-root[0],dy=target[1]-root[1];
+  if (Math.hypot(dx,dy)<1e-8) throw new RangeError('Planar limb needs a nonzero target direction');
+  const k=solveTwoBone([...root,0],[...target,0],upper,lower,[-dy*bendSide,dx*bendSide,0]);
+  const joint:Point2=[k[0],k[1]];
+  const upperAngle=Math.atan2(joint[1]-root[1],joint[0]-root[0]);
+  const lowerAngle=Math.atan2(target[1]-joint[1],target[0]-joint[0]);
+  const flexion=Math.abs(relativeAngle(lowerAngle,upperAngle));
+  const wristBend=relativeAngle(endAngle,lowerAngle);
+  if (flexion<minFlexion-1e-9 || wristBend<wristRange[0]-1e-9 || wristBend>wristRange[1]+1e-9)
+    throw new RangeError('Planar limb target exceeds joint limits');
+  return {joint,upperAngle,lowerAngle,flexion,wristBend};
 }

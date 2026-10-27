@@ -146,3 +146,11 @@ const RobotScene = createRemotionScene(amberRobotScene);
 ```
 
 Amber uses 960×640 / 30 fps / 300 frames with a two-Graphics Drawing type, while the preserved monkey uses 1280×720 / 24 fps / 288 frames with its original container/layers. Both support direct and backward frame requests and independent simultaneous stages. Prop attachment reuses `attachAnchor`: the can's actual handle anchors the gripper and its actual base anchors the bench contact. Water trajectory/timing and mechanical anatomy remain example code.
+
+## Planar limbs with joint limits
+
+`solvePlanarLimb(root, target, upperLength, lowerLength, {bendSide, endAngle, wristRange, minFlexion})` in `core/kinematics.ts` returns `joint`, upper/lower segment angles, elbow flexion and signed wrist bend. Points are in one 2D space and angles are radians. `bendSide: +1` chooses the perpendicular `(-dy, dx)`; `-1` chooses its opposite. It stays on that side as the target crosses shoulder height. This avoids the branch flip produced by projecting a fixed world-axis pole into a changing planar target direction.
+
+`endAngle` is the drawn hand's forward axis. `wristRange` bounds its signed angle relative to the forearm; `minFlexion` reserves elbow bend before full extension. Unreachable targets, a zero target direction and violated limits throw. The solver never silently clamps a joint and detaches a held object. Authors must place the root/contact/prop trajectory within the declared anatomy limits. `relativeAngle(angle, reference)` returns the shortest signed angular difference and validates finite input.
+
+The 3D `solveTwoBone` contract and existing monkey motion are unchanged. Amber uses the new planar solver with a 20° minimum elbow flexion and ±75° wrist limits. These are explicit mechanical illustration constraints, not a dynamics simulation or automatic anatomical inference. The [authoring process](AUTHORING.md) couples numerical checks with actual frame review.

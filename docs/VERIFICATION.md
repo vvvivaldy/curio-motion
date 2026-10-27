@@ -110,3 +110,30 @@ The numeric core did not need character-specific changes. The coupling was in th
 The environment is macOS arm64 / Node 26.4.0 / existing Chrome headless shell 152.0.7977.30. Known Remotion licensing/React ref warnings match the saved first-example UI; software-WebGL readback warnings remain. No new uncaught page errors were observed. Browser plugin unavailable: validation used the project's pinned Puppeteer/existing-Chrome workflow without new browser dependencies. Windows/Linux browser rendering remains unverified; Ubuntu CI checks source/tests/build only.
 
 Evidence: [whole design study and action](reviews/reuse/robot-action.jpg), [actual prop/bench/water contacts](reviews/reuse/prop-contacts.jpg). Detailed local records are in ignored `qa/reuse/`. The second example provides concrete reuse for the listed scene/geometry/bridge helpers; the robot does not exercise locomotion/staircase helpers and water is an authored analytic trajectory, not fluid dynamics. Additional characters and automated authoring-agent evaluation remain separate future work. Original code remains MIT; artwork provenance and the separate Remotion License are retained.
+
+## Package 6 — planar arm mechanics and staged authoring review (2026-10-27)
+
+Baseline: `77a4d18`, pinned `npm ci`, `npm run check`, both live scene/Player cases and 330 native comparisons reproduced. An official baseline robot export matches all 300 decoded frames of `amber-robot.mp4`. The baseline/source archive and previous media hashes are in ignored `qa/process/before` / `before-media.sha256`.
+
+The old near arm changes planar branch at f78→79 and f197→198. A 2400-pose/240 Hz audit measures a 127.257 px maximum elbow step and 179.999° maximum wrist bend. After explicit bend-side solving, reachable prop staging and handle-pivot tipping: 0.788 px maximum step, 70.545° maximum wrist bend (75° limit), 26.201° minimum elbow flexion (20° requirement). The 600-pose test keeps bone/contact errors below 1e−8 px and fixed soles. Independent rotated/translated, mirrored-branch and old-singularity tests verify the helper and rejection of unreachable/overextended/wrist-invalid targets.
+
+Visual review found an additional spout/leaf intersection in the first repaired intermediate film. The plant staging was repaired, the old motion review records `revise`, stale source evidence was rejected, and current passes were recaptured. [Actual old/new film frames and limitations](reviews/process/README.md) show the result; these numbers are not an artistic quality score.
+
+| Evidence | Result |
+| --- | --- |
+| `npm run check` | TypeScript, existing constraints, planar tests, 3 authoring-plan/review rejection tests, static build pass. |
+| `npm run check:port` | Pink monkey 207 + Amber 123 exact native Pixi/Player comparisons; random/reverse seek; zero image requests/page errors. Generated QA HTML no longer reloads live pages. |
+| Official full exports | PinkMonkey 288 frames/24 fps/1280×720; AmberRobot 300 frames/30 fps/960×640; no browser errors. Source/MP4 SHA receipts recorded. |
+| First-film regression | All 288 decoded re-exported frames exactly match `demo-v5.mp4`; all 207 baseline native records match. Existing monkey films and GIF remain byte-preserved. |
+| Four-pass tooling, both plans | Robot: model 3, blocking 9, motion 41, final 35 PNGs; monkey: 3, 9, 26, 15. 141 selected frames total, two official half-size motion previews, final PNGs decoded from the actual full MP4s. |
+| Explicit visual reviews | Eight current reviews accepted by the agent after whole-reference/frame/contact/playback inspection. Both delivery checks pass artifact hashes and current source/input/plan identity. [Recorded criteria and issue ledger](reviews/process/review-records.json). |
+| Rejection behavior | Actual pending review fails; a real source/staging change makes previous captures stale. Tests also reject changed artifacts, missing frames, invalid plan bounds, incomplete playback/criteria and unresolved/missing-frame issues. |
+| Live UI | Both viewers at 1440px/390px, current film size/duration/seek, no overflow; both Players play/pause, seek forward/backward through end/zero; frame bounds reject correctly. Both README GIFs animate in Chrome. |
+| Encoded-film playback | Browser playback at 1× and 0.5× reaches 10s/12s ends; 300/288 video-frame callbacks at each speed, with saved frame captures. Contacts and action timing inspected in those sequences and enlarged neighbors. |
+| Documentation media | `amber-robot-v2.mp4`: 440,982 bytes, SHA-256 `a42bc3d5c47ae50c88eafa70022cfedbc2f0822ca67b103dbb2eef355bd6b5f4`. Robot GIF: 720×480, 150 frames, 10,000ms, loop=0, 1,065,687 bytes. Original robot MP4 and `amber-robot-v1.gif` preserved. |
+
+Current render source fingerprint: `a07fb1dc1d047160e1f94f6649fdc822233fafd9087c8eb898ab6355a7804292`. Local logs/artifacts: `qa/process`, `qa/authoring/{amber-robot,pink-monkey}`. Review records identify Codex as the agent reviewer, not human approval. Immutable capture reports describe the initially pending capture; the subsequent decision lives in separate `review.json` and `delivery.json`.
+
+Environment: macOS 26.6.2 arm64, Node 26.4.0, existing Chrome headless shell 152.0.7977.30. Windows/Linux browser rendering remains unverified. The process tests two known authored scenes; no model backend, unseen-reference evaluation, force/mass simulation or general collision solver was added. The finite ballistic water illustration and authored anatomy/staging limits are explicit in the review.
+
+The final plan validator also rejects missing, non-string, empty or path-like IDs. After this tooling-only guard was tightened, both official exports remained byte-identical to the reviewed documentation films; current captures and reviews were refreshed against the final source.

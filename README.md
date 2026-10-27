@@ -14,9 +14,9 @@
 
 ### A second character, a different action
 
-[![Amber robot picks up a watering can, waters a plant twice and returns the can](docs/assets/amber-robot.gif)](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot.mp4)
+[![Amber robot picks up a watering can, waters a plant twice and returns the can](docs/assets/amber-robot.gif)](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot-v2.mp4)
 
-**10 seconds · 960 × 640 · 30 fps · silent.** [Watch Amber's film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot.mp4). A separate character, mechanical grippers and a held prop use the same typed scene, contour, contact and Remotion bridge APIs. The first film and GIF above are preserved. See the [reuse report](docs/REUSE.md).
+**10 seconds · 960 × 640 · 30 fps · silent.** [Watch Amber's film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot-v2.mp4). A separate character, mechanical grippers and a held prop use the same typed scene, contour, contact and Remotion bridge APIs. The first film and GIF above are preserved. The updated arm keeps a stable elbow branch and tips the can about its handle. See the [reuse report](docs/REUSE.md) and [frame review](docs/reviews/process/README.md).
 
 ## Why Curio Motion?
 
@@ -85,6 +85,16 @@ Reference + action → authored TypeScript → pose(frame / fps)
                               Remotion composition / Player / MP4
 ```
 
+## From reference to reviewed film
+
+A local four-pass process records model snapshots, blocking poses, motion previews and decoded final-film frames. Plans for both examples pin the whole input, action order, review frames and acceptance criteria. Source/film hashes detect stale evidence; visible failures need an explicit frame review.
+
+```sh
+npm run review -- --plan authoring/amber-robot.json --stage model
+```
+
+This renders inspection evidence and leaves the visual decision pending. Continue through [the authoring workflow](docs/AUTHORING.md); it uses the existing code API and official Remotion renderer. A coding agent or developer still authors and reviews the scene.
+
 ## Project status
 
 **Experimental beta with two authored examples.** Shared geometry and the render bridge have two independent visual consumers with different proportions, actions and composition settings. Drawing, anatomy and action timing remain authored in each example; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
@@ -99,6 +109,7 @@ macOS rendering has been exercised. Linux CI checks types, numerical behavior an
 | [TypeScript API](docs/API.md) | Frame evaluation, scenes, eyes, contacts, gait and geometry |
 | [Architecture](docs/ARCHITECTURE.md) | How PixiJS and Remotion share one deterministic drawing |
 | [Example sources](src/examples) | Pink monkey and Amber robot: drawing, motion and contacts |
+| [Authoring and quality process](docs/AUTHORING.md) | Whole input, staged renders, frame error ledger and delivery checks |
 | [Reuse report](docs/REUSE.md) | What the second example reuses, what changed and what remains unproven |
 | [Roadmap](docs/ROADMAP.md) | Completed work, next steps and scope |
 | [Visual review](docs/reviews/gait/approach.jpg) | Rendered contact and gait evidence |

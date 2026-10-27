@@ -45,3 +45,7 @@ const RobotComposition = createRemotionScene(amberRobotScene);
 ```
 
 The same definitions are exercised by direct Pixi, live Player and official `renderMedia`. Validation and visual evidence are recorded in [VERIFICATION](VERIFICATION.md). The first film/GIF and whole monkey reference are preserved. Windows/Linux browser rendering and any automated authoring-agent evaluation remain future work.
+
+## Subsequent mechanics/process pass
+
+The second example exposed a reusable planar-IK failure: a fixed projected pole can flip the elbow when the target crosses shoulder height. `solvePlanarLimb` now chooses an explicit signed planar branch and checks wrist/elbow limits. Amber uses it with a reachable prop layout and a handle pivot; the previous 3D solver and monkey remain unchanged. Both examples now also use the same [staged review tooling](AUTHORING.md), with their own input/timebase/contact criteria. This tests tooling reuse on known scenes; it is not an unseen-reference generation trial.

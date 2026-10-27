@@ -11,13 +11,15 @@
     "dev": "vite --host 127.0.0.1 --port 4176",
     "demo": "vite --host 127.0.0.1 --port 4176 --open /viewer.html",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx scripts/check.ts",
+    "test": "node --import tsx scripts/check.ts && npm run test:authoring",
     "build": "node scripts/build.mjs",
     "check": "npm run typecheck && npm test && npm run build",
     "render": "node scripts/render.mjs",
     "render:baseline": "node scripts/render-baseline.mjs",
     "check:port": "node scripts/check-port.mjs",
-    "preview:gif": "node scripts/preview-gif.mjs"
+    "preview:gif": "node scripts/preview-gif.mjs",
+    "review": "node scripts/review.mjs",
+    "test:authoring": "node --test scripts/check-authoring.mjs"
   },
   "dependencies": {
     "pixi.js": "8.22.0",

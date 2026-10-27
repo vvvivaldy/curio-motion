@@ -1,0 +1,239 @@
+{
+  "version": 1,
+  "id": "amber-robot",
+  "composition": "AmberRobot",
+  "settings": {
+    "width": 960,
+    "height": 640,
+    "fps": 30,
+    "durationInFrames": 300
+  },
+  "input": "reference/amber-robot/authoring-input.json",
+  "actionFiles": [
+    "reference/amber-robot/ACTION.txt"
+  ],
+  "observations": [
+    "Whole original design study: amber shell, dark visor, cream joints, teal boots and can.",
+    "Two rigid arm segments and a mechanical pinch gripper; handle, spout and base are distinct contacts."
+  ],
+  "assumptions": [
+    "Staging and joint ranges are authored, not reconstructed dynamics.",
+    "The study includes a profile; this film exercises front/three-quarter casing views only.",
+    "Water is a finite ballistic illustration, not a fluid simulation."
+  ],
+  "actionBeats": [
+    "0–0.65: attention and hold",
+    "0.65–1.85: reach then close on handle",
+    "1.85–2.1: establish grip before load",
+    "2.1–3.15: lift and extend toward plant",
+    "3.45–6.1: two handle-pivot pours, with a still level pause",
+    "6.25–7.1: lower and land",
+    "7.2–8.25: release then withdraw",
+    "8.45–9.05: one nod, then hold"
+  ],
+  "stages": {
+    "model": {
+      "criteria": [
+        "Whole-reference proportions and characteristic shapes",
+        "Continuous casing, jaws and can silhouettes",
+        "Authored view and overlap limits are explicit"
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Rest: whole silhouette and open jaws"
+        },
+        {
+          "frame": 43,
+          "label": "Three-quarter casing and handle approach"
+        },
+        {
+          "frame": 120,
+          "label": "Closed jaws, casing and tilted can forms"
+        }
+      ]
+    },
+    "blocking": {
+      "criteria": [
+        "Reach/grip/lift/pour/land/release order reads",
+        "Soles, handle and bench contacts agree with the drawing",
+        "Intention and holds are legible in full frame"
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Initial hold"
+        },
+        {
+          "frame": 55,
+          "label": "Grip before lifting"
+        },
+        {
+          "frame": 94,
+          "label": "Carry pose"
+        },
+        {
+          "frame": 120,
+          "label": "First pour"
+        },
+        {
+          "frame": 145,
+          "label": "Quiet gap"
+        },
+        {
+          "frame": 160,
+          "label": "Second pour"
+        },
+        {
+          "frame": 213,
+          "label": "Land before release"
+        },
+        {
+          "frame": 249,
+          "label": "Withdrawn hand"
+        },
+        {
+          "frame": 299,
+          "label": "Final hold"
+        }
+      ]
+    },
+    "motion": {
+      "criteria": [
+        "Elbow branch, extension reserve and wrist bend remain plausible",
+        "Grip, silhouette and overlaps are continuous across transitions",
+        "Water falls from the spout; pauses stay quiet"
+      ],
+      "samples": [
+        {
+          "frame": 30,
+          "radius": 1,
+          "label": "Approach wrist rotation"
+        },
+        {
+          "frame": 67,
+          "radius": 2,
+          "label": "Loaded lift transition"
+        },
+        {
+          "frame": 80,
+          "radius": 1,
+          "label": "Loaded carry"
+        },
+        {
+          "frame": 104,
+          "radius": 1,
+          "label": "Pour onset"
+        },
+        {
+          "frame": 120,
+          "radius": 2,
+          "label": "Maximum tilt/wrist bend"
+        },
+        {
+          "frame": 145,
+          "radius": 1,
+          "label": "Still gap"
+        },
+        {
+          "frame": 160,
+          "radius": 1,
+          "label": "Second pour"
+        },
+        {
+          "frame": 213,
+          "radius": 1,
+          "label": "Landing"
+        },
+        {
+          "frame": 225,
+          "radius": 1,
+          "label": "Release"
+        },
+        {
+          "frame": 240,
+          "radius": 1,
+          "label": "Withdrawal"
+        },
+        {
+          "frame": 79,
+          "radius": 2,
+          "label": "Old upward elbow flip: f78–79"
+        },
+        {
+          "frame": 198,
+          "radius": 2,
+          "label": "Old return elbow flip: f197–198"
+        }
+      ]
+    },
+    "final": {
+      "criteria": [
+        "Full film watched at normal and slow speed",
+        "Encoded contact and transition frames match the intended repair",
+        "Previous film preserved; remaining limits stated"
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Start"
+        },
+        {
+          "frame": 55,
+          "radius": 1,
+          "label": "Grip"
+        },
+        {
+          "frame": 67,
+          "radius": 2,
+          "label": "Loaded lift transition"
+        },
+        {
+          "frame": 94,
+          "label": "Carry"
+        },
+        {
+          "frame": 120,
+          "radius": 2,
+          "label": "Pour"
+        },
+        {
+          "frame": 145,
+          "label": "Gap"
+        },
+        {
+          "frame": 160,
+          "label": "Second pour"
+        },
+        {
+          "frame": 213,
+          "radius": 1,
+          "label": "Land"
+        },
+        {
+          "frame": 225,
+          "radius": 1,
+          "label": "Release"
+        },
+        {
+          "frame": 263,
+          "label": "Nod"
+        },
+        {
+          "frame": 299,
+          "label": "Hold"
+        },
+        {
+          "frame": 79,
+          "radius": 2,
+          "label": "Old upward elbow flip: f78–79"
+        },
+        {
+          "frame": 198,
+          "radius": 2,
+          "label": "Old return elbow flip: f197–198"
+        }
+      ]
+    }
+  }
+}

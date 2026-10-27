@@ -12,9 +12,9 @@
 
 ### Второй персонаж — робот Эмбер
 
-[![Робот берёт лейку, поливает растение дважды и ставит лейку обратно](docs/assets/amber-robot.gif)](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot.mp4)
+[![Робот берёт лейку, поливает растение дважды и ставит лейку обратно](docs/assets/amber-robot.gif)](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot-v2.mp4)
 
-[Второй фильм](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot.mp4): 10 секунд, 960×640, 30 fps. Другие пропорции, клешни и контакт с предметом используют те же API сцены, контуров, координат, якорей, IK, глаз и общий Remotion-мост. Первый фильм и GIF сохранены. [Что доказало переиспользование](docs/REUSE.md).
+[Второй фильм](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot-v2.mp4): 10 секунд, 960×640, 30 fps. Другие пропорции, клешни и контакт с предметом используют те же API сцены, контуров, координат, якорей, IK, глаз и общий Remotion-мост. Первый фильм и GIF сохранены. [Что доказало переиспользование](docs/REUSE.md).
 
 ## Быстрый запуск
 
@@ -61,3 +61,7 @@ npm run render # официальный экспорт MP4; нужен суще�
 Оригинальный код — **[MIT](LICENSE)**. Remotion имеет [отдельную лицензию](docs/licenses/REMOTION-LICENSE.md); сохранены [уведомления о зависимостях](THIRD_PARTY_NOTICES.md). AI-происхождение референса и материалы проекта описаны в [ASSETS.md](ASSETS.md).
 
 В viewer и Player можно переключать примеры. Прямая ссылка на второй: `/viewer.html?example=amber-robot`. Его официальный экспорт: `COMPOSITION_ID=AmberRobot npm run render`; команды для разных ОС — в [DEVELOPMENT](docs/DEVELOPMENT.md).
+
+## Процесс от референса до проверенного фильма
+
+Шестой пакет добавляет общий локальный процесс: цельный референс и действие → рисунок → ключевые позы → переходы → проверенный фильм. `npm run review -- --plan authoring/amber-robot.json --stage model` сохраняет реальные промежуточные кадры Remotion. Для обеих сцен есть планы, отчёты, журнал ошибок и проверка актуальности исходников/фильма. Визуальная оценка остаётся за автором; команда не вызывает нейросеть и не объявляет качество по одним метрикам. [Инструкция](docs/AUTHORING.md), [разбор руки робота](docs/reviews/process/README.md). Предыдущий фильм робота сохранён в `docs/assets/amber-robot.mp4`, текущий — `amber-robot-v2.mp4`.
