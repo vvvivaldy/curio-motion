@@ -23,7 +23,8 @@ export async function sourceSnapshot() {
   return {sha256:digest(JSON.stringify(records)),files:records};
 }
 export function validatePlan(plan) {
-  if(plan.version!==1||!/^[-a-z0-9]+$/.test(plan.id)||!plan.composition||!plan.input)throw Error('Invalid authoring plan identity');
+  if(plan.version!==1||typeof plan.id!=='string'||!/^[-a-z0-9]+$/.test(plan.id)||
+    typeof plan.composition!=='string'||!plan.composition.trim()||typeof plan.input!=='string'||!plan.input.trim())throw Error('Invalid authoring plan identity');
   const s=plan.settings;
   if(!s||!['width','height','durationInFrames'].every(k=>Number.isInteger(s[k])&&s[k]>0)||!Number.isFinite(s.fps)||s.fps<=0)throw Error('Invalid plan settings');
   for(const field of ['observations','assumptions','actionBeats'])if(!Array.isArray(plan[field])||!plan[field].length)throw Error(`Missing ${field}`);

@@ -6,6 +6,10 @@ const clone=v=>structuredClone(v);
 test('both whole-reference plans validate, keep fps and expand dangerous neighbors',async()=>{
   for(const id of ['pink-monkey','amber-robot']) {
     const {plan}=await loadPlan(`authoring/${id}.json`);
+    for(const value of [undefined,123,'', '../escape']) {
+      const badIdentity=clone(plan);badIdentity.id=value;
+      assert.throws(()=>validatePlan(badIdentity),/identity/);
+    }
     const fractional=clone(plan);fractional.settings.fps=29.97;validatePlan(fractional);
     assert(sampleFrames(plan,'motion').length>plan.stages.motion.samples.length);
     assert.equal(sampleFrames(plan,'final').at(-1),plan.settings.durationInFrames-1);

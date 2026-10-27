@@ -13,7 +13,7 @@
             120
           ],
           "method": "Official @remotion/renderer renderFrames",
-          "captureSha256": "2d993e44ea237cf8efe8688e86cb91ef2bb196525a137e09cfe9a17f2f8689ee",
+          "captureSha256": "00103aa65995f00c59c248fbcc9a1d03467cec2ee461386baea4f8d2b6a0b1b5",
           "checks": [
             {
               "criterion": "Whole-reference proportions and characteristic shapes",
@@ -59,7 +59,7 @@
             299
           ],
           "method": "Official @remotion/renderer renderFrames",
-          "captureSha256": "7b2811c7e2948003ec13ec541d8eb165eb473933d66ab6e256ebad8d573b852d",
+          "captureSha256": "8171c732bfdf928087ac86e12da2b4187efa004aaf654df08cc87b8ad87bebe1",
           "checks": [
             {
               "criterion": "Reach/grip/lift/pour/land/release order reads",
@@ -126,7 +126,7 @@
             241
           ],
           "method": "Official @remotion/renderer renderFrames",
-          "captureSha256": "e981c2f56fc46d6c4fec70fab34ebc07f31b336e078e6c0ab4d9874305c8e878",
+          "captureSha256": "3ef3606ae35c62681f367180b785dba93561fde051fdc90cee50d29f7e77872f",
           "checks": [
             {
               "criterion": "Elbow branch, extension reserve and wrist bend remain plausible",
@@ -222,7 +222,7 @@
             299
           ],
           "method": "Decoded official renderMedia MP4",
-          "captureSha256": "595851568a23649becfe7a3d2baa90f6556c160d6efb11f76bc4d99cc58588fb",
+          "captureSha256": "29770e275d3fdbade8e756be938b9417313660122a37d43924d0e5efaeec9350",
           "checks": [
             {
               "criterion": "Full film watched at normal and slow speed",
@@ -279,8 +279,8 @@
           "decision": "accept"
         }
       ],
-      "identity": "6212a56db36d06f81ffd8bd8f12ea9b8d47efa0f7ab6e08b472544eede2ccb0b",
-      "sourceSha256": "7f7fc95077fc7c92c467526b4ed81cb36c519d962bd3a520c2c05944f41bc399"
+      "identity": "184521b5414bda2e78398f726271c1f6e265327e538effdd886aa4ba1fb5878d",
+      "sourceSha256": "a07fb1dc1d047160e1f94f6649fdc822233fafd9087c8eb898ab6355a7804292"
     },
     {
       "example": "pink-monkey",
@@ -293,7 +293,7 @@
             124
           ],
           "method": "Official @remotion/renderer renderFrames",
-          "captureSha256": "1460c853786edab0e2547d4fcddcd83cfa9dc874372f3a14ae343f2f8f28d336",
+          "captureSha256": "91f570dc57b0b5aebceba08f4b7e2392f7204387f0a84e2adaa8b8343eb1352b",
           "checks": [
             {
               "criterion": "Whole-reference proportions and characteristic shapes",
@@ -328,7 +328,7 @@
             287
           ],
           "method": "Official @remotion/renderer renderFrames",
-          "captureSha256": "76756f9009888f5b34e58b5c44d0304018be0a4f503e6913eb965af5e1c8438b",
+          "captureSha256": "216ce585629404df8421707e343b86e5662511608c6e7e9c1151311456832f17",
           "checks": [
             {
               "criterion": "Action order reads in key poses",
@@ -380,7 +380,7 @@
             247
           ],
           "method": "Official @remotion/renderer renderFrames",
-          "captureSha256": "735ee8d841587cbc5ebb088045527d5f0dcd9818e46486a03c11a3bdf60d7ffb",
+          "captureSha256": "7212b714f09bad0b31d4ca46a5e2ac0d1ad111944d79fefcff775e0509169ec8",
           "checks": [
             {
               "criterion": "Supports and load transfer stay stable",
@@ -421,7 +421,7 @@
             287
           ],
           "method": "Decoded official renderMedia MP4",
-          "captureSha256": "aa7e18777677a0fc612225aa0ed580bf01ad0efff054a3879c41410a99e23828",
+          "captureSha256": "d53eb0f519b7c9387e8a052ad4733b804e77116cbabeea51cb8689856194e06a",
           "checks": [
             {
               "criterion": "Full film watched at normal and slow speed",
@@ -443,8 +443,8 @@
           "decision": "accept"
         }
       ],
-      "identity": "f7f00270654b2a0d77af09c8dcdc031c4114cd5ab35d33216d2214a7e3c0c127",
-      "sourceSha256": "7f7fc95077fc7c92c467526b4ed81cb36c519d962bd3a520c2c05944f41bc399"
+      "identity": "e9d63c122f625427eb9f4444a2ced59c2b0d19b9e80035204e00a5944baf28f9",
+      "sourceSha256": "a07fb1dc1d047160e1f94f6649fdc822233fafd9087c8eb898ab6355a7804292"
     }
   ],
   "intermediateRevision": {
@@ -465,5 +465,6 @@
         "status": "open"
       }
     ]
-  }
+  },
+  "finalRefresh": "Plan identity validation tightened; all native/decoded PNGs and preview/final MP4 bytes match previously visually inspected evidence."
 }
