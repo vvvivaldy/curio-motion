@@ -1,9 +1,10 @@
 import { bundle } from '@remotion/bundler';
 import { selectComposition, renderMedia } from '@remotion/renderer';
-import { mkdir, writeFile, mkdtemp, rm } from 'node:fs/promises';
+import { mkdir, writeFile, mkdtemp, rm, readFile } from 'node:fs/promises';
 import { resolve, join, dirname } from 'node:path';
 import { tmpdir } from 'node:os';
 import { findTool } from './tools.mjs';
+import { sourceSnapshot, digest } from './lib/authoring.mjs';
 const browserExecutable = findTool('chrome');
 const compositionId = process.env.COMPOSITION_ID ?? 'PinkMonkey';
 const fileStem = compositionId.replace(/([a-z0-9])([A-Z])/g, '$1-$2').toLowerCase().replace(/[^a-z0-9_-]+/g, '-');
@@ -11,6 +12,7 @@ const defaultOutput = compositionId === 'PinkMonkey' ? 'outputs/curio-motion-rem
 const output = resolve(process.env.RENDER_OUTPUT ?? defaultOutput);
 const temporary = await mkdtemp(join(tmpdir(), 'curio-remotion-'));
 const events = { pageErrors: [] };
+const source = await sourceSnapshot();
 try {
   await mkdir(resolve('qa'), { recursive: true });
   await mkdir(dirname(output), { recursive: true });
@@ -26,7 +28,10 @@ try {
     onBrowserDownload: () => { throw new Error('Automatic Chrome download disabled. Set CHROME_PATH.'); },
     onProgress: p => { if (p.renderedFrames % 48 === 0) console.log('Rendered', p.renderedFrames); },
   });
+  if ((await sourceSnapshot()).sha256 !== source.sha256) throw new Error('Source changed during export; rerender before review');
+  if (events.pageErrors.length) throw new Error(`Browser errors: ${events.pageErrors.join('; ')}`);
   await writeFile(compositionId === 'PinkMonkey' ? 'qa/remotion-render.json' : `qa/${compositionId}-render.json`, JSON.stringify({ method: 'official @remotion/renderer renderMedia',
+    sourceSha256: source.sha256, outputSha256: digest(await readFile(output)), output,
     composition: composition.id, frames: composition.durationInFrames, fps: composition.fps,
     width: composition.width, height: composition.height, bundleMs, renderMediaMs: performance.now() - renderStart,
     concurrency: 1, platform: process.platform, ...events,

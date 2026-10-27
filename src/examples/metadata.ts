@@ -6,6 +6,6 @@ export const examples={
     film:'docs/assets/demo-v5.mp4',reference:'reference/pink-monkey-reference.png',
     description:'Walk, turn, board, ride and scratch the nose. The preserved first film.'},
   'amber-robot':{title:'Amber robot · a little care',settings:amberRobotSettings,
-    film:'docs/assets/amber-robot.mp4',reference:'reference/amber-robot/design.svg',
+    film:'docs/assets/amber-robot-v2.mp4',reference:'reference/amber-robot/design.svg',
     description:'Take the watering can, pour twice, return it, release and hold. A second authored example through the same API.'},
 } as const;

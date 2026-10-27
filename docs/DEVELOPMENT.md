@@ -74,7 +74,7 @@ The original beta film and approved baseline remain in `docs/assets/demo.mp4` an
 
 For drawing or timing changes, review actual frames around contact, blink, turn and gesture boundaries. Numeric checks alone cannot establish visual quality. See [verification](VERIFICATION.md), [architecture](ARCHITECTURE.md) and [artwork provenance](../ASSETS.md).
 
-`node scripts/verify-package.mjs` checks the original release ZIP manifest. It is only meaningful against that matching, unedited release archive, not a changing Git checkout.
+`node scripts/verify-package.mjs` checks the payload snapshot in `MANIFEST.sha256`. Intentional file edits require regenerating that manifest before packaging; an old release manifest applies only to that matching snapshot.
 
 ## Choose an example
 
@@ -84,7 +84,13 @@ Render the second scene with the same official script (existing Chrome required)
 
 ```sh
 COMPOSITION_ID=AmberRobot npm run render
-GIF_INPUT=docs/assets/amber-robot.mp4 GIF_OUTPUT=docs/assets/amber-robot.gif GIF_FPS=15 npm run preview:gif
+GIF_INPUT=docs/assets/amber-robot-v2.mp4 GIF_OUTPUT=docs/assets/amber-robot.gif GIF_FPS=15 npm run preview:gif
 ```
 
 In PowerShell, set `$env:COMPOSITION_ID = "AmberRobot"` before `npm run render`; set `$env:GIF_INPUT`, `$env:GIF_OUTPUT` and `$env:GIF_FPS` similarly. Remove the variables to return to defaults. The default new robot export is `outputs/amber-robot-remotion.mp4`. Review it before promoting it to documentation media. `npm run check:port` checks both examples; `EXAMPLE=pink-monkey` or `EXAMPLE=amber-robot` selects one case for diagnosis. A diagnostic subset is not the complete two-example check.
+
+## Staged authoring and review
+
+See [AUTHORING](AUTHORING.md) for the four-pass workflow, both plans and the frame error ledger. `npm run review -- --plan authoring/amber-robot.json --stage drafts` writes real intermediate PNGs and a motion MP4; visual reviews start pending. Final review consumes a current official render and receipt, decodes its actual frames, and `--check` refuses stale/unfinished evidence. `npm run check` also runs plan/review rejection tests; it does not render or perform artistic review in CI.
+
+The current robot documentation film is `docs/assets/amber-robot-v2.mp4`. To rebuild its GIF use `GIF_INPUT=docs/assets/amber-robot-v2.mp4 GIF_OUTPUT=docs/assets/amber-robot.gif GIF_FPS=15 npm run preview:gif`. Its original film and `amber-robot-v1.gif` are preserved.

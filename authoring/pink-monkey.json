@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "id": "pink-monkey",
+  "composition": "PinkMonkey",
+  "settings": {"width": 1280, "height": 720, "fps": 24, "durationInFrames": 288},
+  "input": "authoring-input.json",
+  "actionFiles": ["reference/IMAGEGEN_PROMPT.txt"],
+  "observations": ["Whole AI-generated reference: pink bald monkey, large ears, sleepy eyes, pale muzzle/belly and a soft bundle.", "Preserve a whole silhouette; reference pixels are never runtime scene parts."],
+  "assumptions": ["Hidden/profile forms are authored interpretations of the whole reference.", "Gait, station staging and scratch timing are authored; no automatic action inference.", "Existing scenes demonstrate the review process on current source, not a reconstruction of historical intermediate drafts."],
+  "actionBeats": ["0–2.8: four advancing steps with load transfer", "2.8–3.1: stop and hold", "3.1–5.1: turn through planted pivot steps", "5.1–6.35: board one horizontal tread with two feet", "6.4–12: ride, look, two nose strokes, withdraw and hold"],
+  "stages": {
+    "model": {
+      "criteria": ["Whole-reference proportions and characteristic shapes", "Continuous head/ear/hand/foot silhouettes", "Front/three-quarter/profile overlaps remain coherent"],
+      "samples": [{"frame": 0, "label": "Front"}, {"frame": 96, "label": "Three-quarter"}, {"frame": 124, "label": "Profile"}]
+    },
+    "blocking": {
+      "criteria": ["Action order reads in key poses", "Weight, soles and tread contacts are visible", "Look, scratch and deliberate holds communicate intention"],
+      "samples": [{"frame": 0, "label": "Approach"}, {"frame": 38, "label": "Weight acceptance"}, {"frame": 74, "label": "Turn begins"}, {"frame": 96, "label": "Pivot"}, {"frame": 136, "label": "First tread contact"}, {"frame": 152, "label": "Both feet supported"}, {"frame": 204, "label": "Nose contact"}, {"frame": 236, "label": "Second stroke"}, {"frame": 287, "label": "Final hold"}]
+    },
+    "motion": {
+      "criteria": ["Supports and load transfer stay stable", "Eyes/ears/hands remain continuous between key poses", "Surface contact and quiet holds survive backward/random seeks"],
+      "samples": [{"frame": 38, "radius": 1, "label": "Landing"}, {"frame": 96, "radius": 1, "label": "Turn"}, {"frame": 110, "radius": 2, "label": "Far-eye/ear visibility"}, {"frame": 136, "radius": 1, "label": "Boarding"}, {"frame": 198, "radius": 1, "label": "Hand opening"}, {"frame": 204, "radius": 1, "label": "Contact"}, {"frame": 236, "radius": 1, "label": "Second stroke"}, {"frame": 246, "radius": 1, "label": "Withdraw"}]
+    },
+    "final": {
+      "criteria": ["Full film watched at normal and slow speed", "Encoded action/contact frames preserve the approved film", "Reference/previous films preserved and limitations stated"],
+      "samples": [{"frame": 0, "label": "Front"}, {"frame": 38, "label": "Load"}, {"frame": 96, "label": "Turn"}, {"frame": 110, "radius": 1, "label": "Profile transition"}, {"frame": 136, "label": "Boarding"}, {"frame": 152, "label": "Supported"}, {"frame": 204, "radius": 1, "label": "Nose contact"}, {"frame": 236, "radius": 1, "label": "Second stroke"}, {"frame": 287, "label": "Hold"}]
+    }
+  }
+}
