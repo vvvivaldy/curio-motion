@@ -18,6 +18,12 @@
 
 **10 seconds · 960 × 640 · 30 fps · silent.** [Watch Amber's film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot-v2.mp4). A separate character, mechanical grippers and a held prop use the same typed scene, contour, contact and Remotion bridge APIs. The first film and GIF above are preserved. The updated arm keeps a stable elbow branch and tips the can about its handle. See the [reuse report](docs/REUSE.md) and [frame review](docs/reviews/process/README.md).
 
+### Black cat climbs a chair
+
+[![Black cat approaches a red chair, pulls itself up, sits, turns and jumps down](docs/assets/black-cat-chair-v3.gif)](docs/assets/black-cat-chair-v3.mp4)
+
+**20 seconds · 1280 × 720 · 24 fps · silent.** [Watch the full film](docs/assets/black-cat-chair-v3.mp4). A code-authored character approaches on two feet, pulls up at fixed hand grips, sits, turns toward the landing and jumps down onto hands and feet before standing. The GIF is derived from the official Remotion export. This rendered demonstration follows owner feedback on arm motion, action order and the continuous body silhouette.
+
 ## Why Curio Motion?
 
 Curio Motion explores how developers and coding agents can author animation as readable, reviewable source. A whole character reference and an explicit action guide the author; TypeScript defines the resulting drawing and motion.
@@ -97,7 +103,7 @@ This renders inspection evidence and leaves the visual decision pending. Continu
 
 ## Project status
 
-**Experimental beta with two authored examples.** Shared geometry and the render bridge have two independent visual consumers with different proportions, actions and composition settings. Drawing, anatomy and action timing remain authored in each example; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
+**Experimental beta with two runnable authored examples and an additional rendered cat demonstration.** Shared geometry and the render bridge have two independent visual consumers with different proportions, actions and composition settings. Drawing, anatomy and action timing remain authored in each example; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
 
 macOS rendering has been exercised. Linux CI checks types, numerical behavior and the static build; Windows/Linux browser rendering is not yet verified. See [verification evidence](docs/VERIFICATION.md) and the [roadmap](docs/ROADMAP.md).
 

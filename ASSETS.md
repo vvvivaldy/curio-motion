@@ -1,6 +1,6 @@
 # Artwork and media provenance
 
-The whole pink-monkey reference is an original AI-generated design reference created for this experiment with the built-in image-generation tool. Its exact prompt is [IMAGEGEN_PROMPT](reference/IMAGEGEN_PROMPT.txt); its bytes and role are pinned in [authoring input](authoring-input.json). It was not imported from another studio or used as a runtime texture. No external character, advertisement brand, voice or music is included.
+The whole pink-monkey reference is an original AI-generated design reference created for this experiment with the built-in image-generation tool. Its exact prompt is [IMAGEGEN_PROMPT](reference/IMAGEGEN_PROMPT.txt); its bytes and role are pinned in [authoring input](authoring-input.json). It was not imported from another studio or used as a runtime texture. No external character, advertisement brand, voice or music is included in the pink-monkey example.
 
 The authoring agent interpreted that reference and action as TypeScript geometry. The film, poster, controls and header are project-created outputs of this code/design process. The baseline film preserves the visually reviewed trial; the Remotion film is a separate official renderer output. They are labeled separately.
 
@@ -19,3 +19,7 @@ The fourth quality pass adds `docs/assets/demo-v5.mp4`, an official Remotion exp
 The fifth pass adds a second authored example, Amber the garden robot. `reference/amber-robot/design.svg` is an original whole vector design study authored locally before the motion/illustration source, with front/¾/profile views and the can. It was not produced by a network image model or another studio; it is not a render of the finished animation. `reference/amber-robot/ACTION.txt` records the brief. The SVG is reference material in the viewer only and is never imported into a runtime scene. `docs/assets/amber-robot.mp4` is official Remotion output and `amber-robot.gif` its README derivative. Reuse review sheets are project-created decoded frames. The monkey reference, all first-film versions and its current GIF remain unchanged.
 
 The sixth pass preserves `docs/assets/amber-robot.mp4` and copies its original README derivative to `amber-robot-v1.gif`. `amber-robot-v2.mp4` is a new official Remotion export with corrected arm mechanics and prop staging; `amber-robot.gif` is rebuilt from v2. Process review sheets are labeled old/new decoded film frames, never runtime artwork. The whole references and all monkey films/GIF remain unchanged. Intermediate local reports and captures in ignored `qa/authoring` are development evidence, not additional scene textures.
+
+## Black cat chair demonstration
+
+`docs/assets/black-cat-chair-v3.mp4` is an official Remotion export of a code-authored character and red chair; `black-cat-chair-v3.gif` is its inline README derivative. The cat design follows an owner-supplied reference photograph of a drawn mascot. That photograph remains local authoring material and is not included in this publication or used as a runtime texture. Original source-code licensing and reference-artwork rights remain separate.
