@@ -7,3 +7,4 @@ outputs/
 .env.*
 *.log
 .DS_Store
+/reference/black-cat-chair/whole.*

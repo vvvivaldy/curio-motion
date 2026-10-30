@@ -6,6 +6,7 @@ import './check-gesture';
 import './check-model';
 import './check-reuse';
 import './check-planar';
+import './check-black-cat';
 import { pose, project } from '../src/examples/pink-monkey/motion';
 import { stairs, rideStarts } from '../src/examples/pink-monkey/layout';
 import { treadPoint } from '../src/core/contacts';

@@ -19,7 +19,8 @@
     "check:port": "node scripts/check-port.mjs",
     "preview:gif": "node scripts/preview-gif.mjs",
     "review": "node scripts/review.mjs",
-    "test:authoring": "node --test scripts/check-authoring.mjs"
+    "test:authoring": "node --test scripts/check-authoring.mjs",
+    "demo:cat": "vite --host 127.0.0.1 --port 4176 --open \"/player.html?example=black-cat-chair\""
   },
   "dependencies": {
     "pixi.js": "8.22.0",

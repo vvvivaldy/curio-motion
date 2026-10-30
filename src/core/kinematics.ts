@@ -55,11 +55,12 @@ export function relativeAngle(angle: number, reference: number): number {
  * Limits reject a bad target; clamping a joint would silently break the held contact.
  */
 export function solvePlanarLimb(root: Point2, target: Point2, upper: number, lower: number,
-  options: { bendSide: -1 | 1; endAngle: number; wristRange: readonly [number, number]; minFlexion: number }) {
+  options: { bendSide: -1 | 1; endAngle: number; wristRange: readonly [number, number]; minFlexion: number; maxFlexion?: number }) {
   const {bendSide,endAngle,wristRange,minFlexion}=options;
-  if (![...root,...target,endAngle,...wristRange,minFlexion].every(Number.isFinite) ||
+  const maxFlexion=options.maxFlexion??Math.PI;
+  if (![...root,...target,endAngle,...wristRange,minFlexion,maxFlexion].every(Number.isFinite) ||
       ![-1,1].includes(bendSide) || wristRange[0]>wristRange[1] ||
-      wristRange[0]<-Math.PI || wristRange[1]>Math.PI || minFlexion<0 || minFlexion>Math.PI)
+      wristRange[0]<-Math.PI || wristRange[1]>Math.PI || minFlexion<0 || minFlexion>Math.PI || maxFlexion<minFlexion || maxFlexion>Math.PI)
     throw new RangeError('Invalid planar limb limits');
   const dx=target[0]-root[0],dy=target[1]-root[1];
   if (Math.hypot(dx,dy)<1e-8) throw new RangeError('Planar limb needs a nonzero target direction');
@@ -69,7 +70,14 @@ export function solvePlanarLimb(root: Point2, target: Point2, upper: number, low
   const lowerAngle=Math.atan2(target[1]-joint[1],target[0]-joint[0]);
   const flexion=Math.abs(relativeAngle(lowerAngle,upperAngle));
   const wristBend=relativeAngle(endAngle,lowerAngle);
-  if (flexion<minFlexion-1e-9 || wristBend<wristRange[0]-1e-9 || wristBend>wristRange[1]+1e-9)
+  if (flexion<minFlexion-1e-7 || flexion>maxFlexion+1e-7 || wristBend<wristRange[0]-1e-9 || wristBend>wristRange[1]+1e-9)
     throw new RangeError('Planar limb target exceeds joint limits');
   return {joint,upperAngle,lowerAngle,flexion,wristBend};
+}
+
+/** Forward rest pose: author a small actual bend rather than an arbitrary shorter reach. */
+export function planarEndpoint(root:Point2,upper:number,lower:number,upperAngle:number,flexion:number,bendSide:-1|1):Point2{
+  if(![...root,upper,lower,upperAngle,flexion].every(Number.isFinite)||upper<=0||lower<=0||flexion<0||flexion>Math.PI||![-1,1].includes(bendSide))throw new RangeError('Invalid planar rest pose');
+  const lowerAngle=upperAngle-bendSide*flexion;
+  return [root[0]+upper*Math.cos(upperAngle)+lower*Math.cos(lowerAngle),root[1]+upper*Math.sin(upperAngle)+lower*Math.sin(lowerAngle)];
 }

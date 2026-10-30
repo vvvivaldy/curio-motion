@@ -17,7 +17,7 @@ try {
     args: ['--no-sandbox', '--enable-unsafe-swiftshader'] });
   const imageRequests = [], errors = [], results = [];
   const robotFrames = [...new Set([...Array.from({length:76},(_,i)=>Math.min(299,i*4)),43,44,45,54,55,56,62,63,64,65,103,104,105,110,115,118,120,124,128,130,136,140,141,142,145,146,150,155,160,164,169,170,175,183,184,185,187,188,190,194,195,198,205,209,212,213,214,215,216,220,221,224,225,226,230,253,261,263,299]),0,214,44,299,120,0];
-  const specs=[{key:'pink-monkey',frames:monkeyFrames,keys:[0,19,51,96,108,110,112,136,147,168,204,236]},
+  const specs=[{"key":"black-cat-chair","frames":[0,8,14,24,38,60,79,81,85,110,121,125,126,127,130,134,136,137,140,144,148,153,155,158,160,161,162,163,164,168,170,172,173,174,178,180,184,187,192,200,205,216,234,238,240,245,249,252,260,276,282,284,288,291,308,309,315,320,324,325,326,327,328,329,338,339,345,351,352,355,361,362,363,364,365,366,367,370,373,374,375,376,377,378,379,380,383,388,431,0,431,326,144,378,0,160,161,178,179,192,269,281,292,298,306,312,313,322,323,328,334,338,343,347,350,351,355,359,363,364,372,379,380,381,383,389,396,406,417,418,422,430,434,438,441,443,479,0,479,396,281,179,334,0,382,412,416,419,420,421,426],"keys":[0,24,60,79,121,126,130,136,144,162,174,184,192,216,240,252,284,291,308,315,324,325,326,327,328,329,338,362,363,366,374,375,376,377,378,379,380,388,431,160,161,178,179,269,281,292,298,306,312,313,322,323,334,343,347,350,351,355,359,364,372,381,383,389,396,406,417,418,422,430,434,438,441,443,479,382,412,416,419,420,421,426]},{key:'pink-monkey',frames:monkeyFrames,keys:[0,19,51,96,108,110,112,136,147,168,204,236]},
     {key:'amber-robot',frames:robotFrames,keys:[0,44,55,64,104,120,140,160,188,213,225,263,299]}];
   for (const spec of specs) {
     if(process.env.EXAMPLE && process.env.EXAMPLE!==spec.key)continue;
@@ -27,17 +27,17 @@ try {
       page.on('pageerror',error=>errors.push(error.message));
     }
     await direct.goto(`http://127.0.0.1:${port}/?example=${spec.key}`);
-    await direct.waitForFunction(()=>document.documentElement.dataset.ready==='1');
+    await direct.waitForFunction(()=>document.documentElement.dataset.ready==='1',{polling:100});
     const settings=await direct.evaluate(()=>window.demo.settings);
     await direct.setViewport({width:settings.width,height:settings.height,deviceScaleFactor:1});
     await player.setViewport({width:settings.width+40,height:settings.height+280,deviceScaleFactor:1});
     await player.goto(`http://127.0.0.1:${port}/player.html?example=${spec.key}`);
-    await player.waitForFunction(()=>window.curioPlayer&&document.querySelector('[data-testid="code-scene"]').dataset.frame==='0');
+    await player.waitForFunction(()=>window.curioPlayer&&document.querySelector('[data-testid="code-scene"]').dataset.frame==='0',{polling:100});
     const baseline={},records=[];
     for(const frame of spec.frames) {
       await direct.evaluate(n=>window.demo.render(n),frame);
       await player.evaluate(n=>window.curioPlayer.seekTo(n),frame);
-      await player.waitForFunction(n=>document.querySelector('[data-testid="code-scene"]').dataset.frame===String(n),{},frame);
+      await player.waitForFunction(n=>document.querySelector('[data-testid="code-scene"]').dataset.frame===String(n),{polling:100},frame);
       const extract=page=>page.evaluate(()=>document.querySelector('canvas').toDataURL('image/png').split(',')[1]);
       const [a,b]=await Promise.all([extract(direct),extract(player)]);
       const first=Buffer.from(a,'base64'),second=Buffer.from(b,'base64');

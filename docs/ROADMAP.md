@@ -8,3 +8,9 @@
 6. Completed locally: [staged authoring and quality workflow](AUTHORING.md), with pinned whole input, model/blocking/motion/final captures, explicit visual reviews, a frame error ledger and stale-evidence rejection. Both examples exercise it. It remains a coding-agent/developer process; model-provider automation and unseen-reference quality trials are future scope.
 
 Outside the current implementation: additional unrequested scenes, automatic arbitrary character conversion, hosted inference, production queues or integration into another platform. Repository publication is recorded separately in [GITHUB_LAUNCH](GITHUB_LAUNCH.md). Future scope belongs to the owner.
+
+## Runnable black cat example — 30 October 2026
+
+The owner accepted the black-cat chair film after corrections to gait, pulling up, sitting, turning before the jump and torso continuity. Its editable source is now included with the required shared geometry helpers, a live `npm run demo:cat` command and the existing official `BlackCatChair` export. The private reference photograph and development QA history are not prerequisites for running the example. See [run and edit the cat](BLACK_CAT.md).
+
+The publication step preserves the six accepted scene files and checks the existing monkey and robot alongside the cat. It does not add an automatic motion planner or publish other locally developed scenes. A further portability trial on a separately chosen character/action is a proposed next step and requires the owner's choice; it has not been started by this publication task.

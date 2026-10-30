@@ -24,6 +24,15 @@
 
 **20 seconds · 1280 × 720 · 24 fps · silent.** [Watch the full film](docs/assets/black-cat-chair-v3.mp4). A code-authored character approaches on two feet, pulls up at fixed hand grips, sits, turns toward the landing and jumps down onto hands and feet before standing. The GIF is derived from the official Remotion export. This rendered demonstration follows owner feedback on arm motion, action order and the continuous body silhouette.
 
+[Editable scene source](src/examples/black-cat-chair) · [Run, render and edit the cat](docs/BLACK_CAT.md)
+
+```sh
+npm ci
+npm run demo:cat
+```
+
+The command opens the live code-rendered cat in Remotion Player. Its original reference photograph stays private and is not required to run or export the scene.
+
 ## Why Curio Motion?
 
 Curio Motion explores how developers and coding agents can author animation as readable, reviewable source. A whole character reference and an explicit action guide the author; TypeScript defines the resulting drawing and motion.
@@ -52,6 +61,8 @@ Open the address printed by Vite, usually **http://127.0.0.1:4176/viewer.html**.
 | --- | --- |
 | First film, reference and source | `/viewer.html` |
 | Second film, whole design study and source | `/viewer.html?example=amber-robot` |
+| Black cat: live code and seek controls | `/player.html?example=black-cat-chair` |
+| Black cat: film and editable sources | `/viewer.html?example=black-cat-chair` |
 | Live Remotion Player: play, pause and seek | `/player.html` |
 | Direct Pixi baseline | `/index.html` |
 
@@ -103,7 +114,7 @@ This renders inspection evidence and leaves the visual decision pending. Continu
 
 ## Project status
 
-**Experimental beta with two runnable authored examples and an additional rendered cat demonstration.** Shared geometry and the render bridge have two independent visual consumers with different proportions, actions and composition settings. Drawing, anatomy and action timing remain authored in each example; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
+**Experimental beta with three runnable authored examples.** Shared geometry and the render bridge have three independent visual consumers with different proportions, actions and composition settings. Drawing, anatomy and action timing remain authored in each example; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
 
 macOS rendering has been exercised. Linux CI checks types, numerical behavior and the static build; Windows/Linux browser rendering is not yet verified. See [verification evidence](docs/VERIFICATION.md) and the [roadmap](docs/ROADMAP.md).
 
@@ -114,7 +125,7 @@ macOS rendering has been exercised. Linux CI checks types, numerical behavior an
 | [Development and rendering](docs/DEVELOPMENT.md) | Setup, commands, Chrome configuration, exports and previews |
 | [TypeScript API](docs/API.md) | Frame evaluation, scenes, eyes, contacts, gait and geometry |
 | [Architecture](docs/ARCHITECTURE.md) | How PixiJS and Remotion share one deterministic drawing |
-| [Example sources](src/examples) | Pink monkey and Amber robot: drawing, motion and contacts |
+| [Example sources](src/examples) | Pink monkey, Amber robot and black cat: drawing, motion and contacts |
 | [Authoring and quality process](docs/AUTHORING.md) | Whole input, staged renders, frame error ledger and delivery checks |
 | [Reuse report](docs/REUSE.md) | What the second example reuses, what changed and what remains unproven |
 | [Roadmap](docs/ROADMAP.md) | Completed work, next steps and scope |
@@ -132,4 +143,4 @@ Maintained by [@vvvivaldy](https://github.com/vvvivaldy). Please use repository 
 
 Original project code is licensed under **[MIT](LICENSE)**. Dependencies retain their own terms: **Remotion uses the [Remotion License](docs/licenses/REMOTION-LICENSE.md)**. See [third-party notices](THIRD_PARTY_NOTICES.md) before reuse.
 
-The monkey reference was AI-generated; Amber uses an original whole vector design study. Both animations are authored as code. [Artwork provenance](ASSETS.md) documents the reference, films and review images separately from source-code licensing.
+The monkey reference was AI-generated; Amber uses an original whole vector design study; the cat follows an owner-supplied mascot reference that remains private. All three animations are authored as code. [Artwork provenance](ASSETS.md) documents the reference, films and review images separately from source-code licensing.

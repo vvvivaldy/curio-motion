@@ -44,3 +44,21 @@ export function supportBalance(contacts: readonly { ground: Point2; load: number
   contacts.forEach((c, i) => { center[0] += c.ground[0] * weights[i]; center[1] += c.ground[1] * weights[i]; });
   return { center, weights };
 }
+
+/** Evidence for finite authored walking tracks, not an automatic gait planner.
+ * A regular swing must start behind, pass, and land ahead of a stationary opposite foot.
+ * Startup/closing exceptions belong to the caller's explicit action plan.
+ */
+export function inspectFootPasses(tracks:readonly [readonly Step2D[],readonly Step2D[]],forward:Point2=[1,0],transfer=.12){
+  const length=Math.hypot(...forward);
+  if(!forward.every(Number.isFinite)||length<1e-9)throw new RangeError('Finite nonzero forward direction required');
+  const station=(p:Point2)=>(p[0]*forward[0]+p[1]*forward[1])/length;
+  return tracks.flatMap((track,foot)=>track.map((step,index)=>{
+    // Sampling validates contact continuity, intervals and transfer before reporting.
+    sampleFootsteps(step.start,track,transfer);
+    const opposite=tracks[1-foot],atLift=sampleFootsteps(step.start,opposite,transfer),atLand=sampleFootsteps(step.end,opposite,transfer);
+    const behind=station(step.from)-station(atLift.position),ahead=station(step.to)-station(atLand.position);
+    const fixedOpposite=!opposite.some(other=>other.start<step.end&&other.end>step.start);
+    return {foot,index,start:step.start,end:step.end,behind,ahead,fixedOpposite,passed:fixedOpposite&&behind< -1e-6&&ahead>1e-6};
+  })).sort((a,b)=>a.start-b.start);
+}

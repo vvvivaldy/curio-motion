@@ -1,8 +1,3 @@
-import { pinkMonkeySettings } from '../examples/pink-monkey/scene';
-import { amberRobotSettings } from '../examples/amber-robot/scene';
-import { Composition, registerRoot } from 'remotion';
-import { MonkeyScene, RobotScene } from './Scene';
-registerRoot(() => <>
-  <Composition id="PinkMonkey" component={MonkeyScene} {...pinkMonkeySettings} />
-  <Composition id="AmberRobot" component={RobotScene} {...amberRobotSettings} />
-</>);
+import {Composition,registerRoot} from 'remotion';
+import {scenes} from '../examples/scenes';
+registerRoot(()=><>{Object.values(scenes).map(scene=><Composition key={scene.id} id={scene.id} component={scene.Component} {...scene.settings}/>)}</>);
