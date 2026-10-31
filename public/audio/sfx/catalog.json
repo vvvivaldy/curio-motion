@@ -1,0 +1,48 @@
+{
+  "schema": "curio-distributed-chair-sfx-v1",
+  "entries": [
+    {
+      "id": "chair-creak-cc0-01",
+      "authors": [
+        "unkleceeg"
+      ],
+      "sourceTitle": "Chair creaking back and forth 01.wav",
+      "sourcePage": "https://freesound.org/people/unkleceeg/sounds/276473/",
+      "sourceURLs": [
+        "https://freesound.org/people/unkleceeg/sounds/276473/",
+        "https://cdn.freesound.org/previews/276/276473_3327014-hq.mp3"
+      ],
+      "licenseAsDistributed": "CC0-1.0",
+      "licenseURL": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Chair creaking back and forth 01.wav \u2014 unkleceeg \u2014 Freesound276473 \u2014 CC0 1.0.",
+      "staticFilePath": "audio/sfx/chair/chair-creak-cc0-01.wav",
+      "sha256": "889c62fb45b269682e60a8afe56c3c961d0d9f3915e003c78b868c79494c6bbc",
+      "durationSeconds": 0.548,
+      "sampleRate": 48000,
+      "channels": 1,
+      "derivation": {
+        "sourceCut": {
+          "coordinateSystem": "Decoded officialMP3 timeline from first output sample, mono48kHz. FFmpeg handles MP3 priming before cuts. NOT original native-WAV sample offsets.",
+          "startSampleInclusive": 228096,
+          "endSampleExclusive": 254400,
+          "startSeconds": 4.752,
+          "endSeconds": 5.3
+        },
+        "processing": {
+          "downmix": "Existing FFmpeg default stereo-to-mono, before cut",
+          "gainDb": 0.0,
+          "fadeInSamples": 96,
+          "fadeOutSamples": 1440,
+          "fadeShape": "raised cosine",
+          "timeStretch": false,
+          "pitchShift": false,
+          "denoise": false,
+          "synthesis": false
+        },
+        "scriptSha256": "e4c83574dbe96d22065a93cfce929b23f1ed56ea0a1334b066183dbba494a1f1",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers"
+      },
+      "originalRecordingSha256": "e7652d394e6ef808f31590181a49ae3134bf170468ef3072cdcfc21ec295cb04"
+    }
+  ]
+}

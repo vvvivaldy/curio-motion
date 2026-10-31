@@ -18,6 +18,14 @@
 
 **10 seconds · 960 × 640 · 30 fps · silent.** [Watch Amber's film](https://github.com/vvvivaldy/curio-motion/blob/main/docs/assets/amber-robot-v2.mp4). A separate character, mechanical grippers and a held prop use the same typed scene, contour, contact and Remotion bridge APIs. The first film and GIF above are preserved. The updated arm keeps a stable elbow branch and tips the can about its handle. See the [reuse report](docs/REUSE.md) and [frame review](docs/reviews/process/README.md).
 
+### Paper cat story: running, contacts and recorded sound
+
+[![Paper cat runs to a chair, climbs, reacts to a falling picture and leaves](docs/assets/cat-picture-story-v3.gif)](docs/assets/cat-picture-story-v3.mp4)
+
+**35 seconds · 1280×720 · 24 fps · recorded sound.** [Watch the film](docs/assets/cat-picture-story-v3.mp4). The example uses an opt-in ordinary-run plan, explicit body/limb spaces, opaque paper surfaces and contact-driven foley through the same Pixi/Remotion scene API. The GIF comes from the official film; runtime frames are drawn from code. The run lifts the rear heel after toe-off, brings the rear elbow to the back line and finishes with two shorter braking steps.
+
+[Run, render and inspect the source](docs/CAT_PICTURE_STORY.md). After `npm ci`, run `npm run dev` and open `http://127.0.0.1:4176/player.html?example=cat-picture-story-v3`. Whole authoring references remain private; no upload service or image-to-animation conversion is implied. Earlier examples are preserved. Audio credits include a CC BY 4.0 hiss; see the linked sound notices.
+
 ### Black cat climbs a chair
 
 [![Black cat approaches a red chair, pulls itself up, sits, turns and jumps down](docs/assets/black-cat-chair-v3.gif)](docs/assets/black-cat-chair-v3.mp4)
@@ -114,7 +122,7 @@ This renders inspection evidence and leaves the visual decision pending. Continu
 
 ## Project status
 
-**Experimental beta with three runnable authored examples.** Shared geometry and the render bridge have three independent visual consumers with different proportions, actions and composition settings. Drawing, anatomy and action timing remain authored in each example; automatic reference reconstruction, arbitrary scene generation, an action parser, audio and a hosted rendering service are not implemented.
+**Experimental beta with four runnable authored examples.** Shared geometry and the render bridge support different proportions, actions and composition settings. Drawing, anatomy and action timing remain authored in each example. The paper-cat story adds recorded event-driven foley; automatic reference reconstruction, arbitrary scene generation, an action parser and a hosted rendering service are not implemented.
 
 macOS rendering has been exercised. Linux CI checks types, numerical behavior and the static build; Windows/Linux browser rendering is not yet verified. See [verification evidence](docs/VERIFICATION.md) and the [roadmap](docs/ROADMAP.md).
 
@@ -125,7 +133,7 @@ macOS rendering has been exercised. Linux CI checks types, numerical behavior an
 | [Development and rendering](docs/DEVELOPMENT.md) | Setup, commands, Chrome configuration, exports and previews |
 | [TypeScript API](docs/API.md) | Frame evaluation, scenes, eyes, contacts, gait and geometry |
 | [Architecture](docs/ARCHITECTURE.md) | How PixiJS and Remotion share one deterministic drawing |
-| [Example sources](src/examples) | Pink monkey, Amber robot and black cat: drawing, motion and contacts |
+| [Example sources](src/examples) | Pink monkey, Amber robot, chair-climbing cat and paper-cat story: drawing, motion and contacts |
 | [Authoring and quality process](docs/AUTHORING.md) | Whole input, staged renders, frame error ledger and delivery checks |
 | [Reuse report](docs/REUSE.md) | What the second example reuses, what changed and what remains unproven |
 | [Roadmap](docs/ROADMAP.md) | Completed work, next steps and scope |
@@ -143,4 +151,4 @@ Maintained by [@vvvivaldy](https://github.com/vvvivaldy). Please use repository 
 
 Original project code is licensed under **[MIT](LICENSE)**. Dependencies retain their own terms: **Remotion uses the [Remotion License](docs/licenses/REMOTION-LICENSE.md)**. See [third-party notices](THIRD_PARTY_NOTICES.md) before reuse.
 
-The monkey reference was AI-generated; Amber uses an original whole vector design study; the cat follows an owner-supplied mascot reference that remains private. All three animations are authored as code. [Artwork provenance](ASSETS.md) documents the reference, films and review images separately from source-code licensing.
+The monkey reference was AI-generated; Amber uses an original whole vector design study; the chair-climbing mascot follows a private owner-supplied reference. Whole authoring references for the separate paper-cat story also remain private. All animations are authored as code. [Artwork provenance](ASSETS.md) documents the reference, films and review images separately from source-code licensing.

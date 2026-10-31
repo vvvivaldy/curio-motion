@@ -1,3 +1,7 @@
+import './check-run';
+import './check-spatial-controls';
+import './check-cat-story-head';
+import './check-cat-story-v3';
 import assert from 'node:assert/strict';
 import './check-time';
 import './check-quality';

@@ -23,3 +23,8 @@ The sixth pass preserves `docs/assets/amber-robot.mp4` and copies its original R
 ## Black cat chair demonstration
 
 `docs/assets/black-cat-chair-v3.mp4` is an official Remotion export of a code-authored character and red chair; `black-cat-chair-v3.gif` is its inline README derivative. The cat design follows an owner-supplied reference photograph of a drawn mascot. That photograph remains local authoring material and is not included in this publication or used as a runtime texture. Original source-code licensing and reference-artwork rights remain separate.
+
+
+## Paper cat story
+
+`docs/assets/cat-picture-story-v3.mp4` is an official Remotion export of code-authored vector geometry; the corresponding GIF is its README derivative. Whole owner-supplied authoring references stay private and are neither redistributed nor used as runtime textures. The package includes only11 selected processed WAVs:10 story cuts and1 CC0 chair cut. [Story credits](public/audio/sfx/story/CREDITS.md) and [chair credit](public/audio/sfx/chair/CREDITS.md) preserve sources, processing and distinct recording rights, including cdonahueucsd's CC BY 4.0 Cat Hiss. Raw source downloads, unrelated sound candidates and private QA are not included.

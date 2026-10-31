@@ -1,0 +1,454 @@
+{
+  "schema": "curio-story-distributed-sfx-v1",
+  "sources": [
+    {
+      "id": "clock",
+      "author": "sounds-mp3",
+      "page": "https://freesound.org/people/sounds-mp3/sounds/539880/",
+      "officialPreview": "https://cdn.freesound.org/previews/539/539880_12003363-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "dcea7abc5f237e6ed979cf253d3a6b6766181bef57348a7481989476f59b8cb4",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "title": "Ticking mechanical clock with a pendulum.mp3"
+    },
+    {
+      "id": "wood-drop",
+      "author": "CosmoX45",
+      "page": "https://freesound.org/people/CosmoX45/sounds/723568/",
+      "officialPreview": "https://cdn.freesound.org/previews/723/723568_15336673-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "ffd07f84af8fa51f57923b178109001dce7e5a6545b271b74544bcc2b28013a3",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "title": "wood drop"
+    },
+    {
+      "id": "cat-hiss",
+      "author": "cdonahueucsd",
+      "page": "https://freesound.org/people/cdonahueucsd/sounds/620962/",
+      "officialPreview": "https://cdn.freesound.org/previews/620/620962_5955158-hq.mp3",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceSha256": "ab3267cfd69f458880f5b9febd06e0f695967e41a0e11eff169d14a4eb001383",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "title": "Cat Hiss"
+    },
+    {
+      "id": "barefoot-tile",
+      "author": "SpliceSound",
+      "page": "https://freesound.org/people/SpliceSound/sounds/197402/",
+      "officialPreview": "https://cdn.freesound.org/previews/197/197402_1480854-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "19d3f0f905cae363f9e8cbecdd30ddc7a5c856e7c775aaaa2d508603eeac7153",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "title": "01-11 Footsteps, Tile, Male Barefoot, Medium Pace.wav"
+    },
+    {
+      "id": "frame-scrape",
+      "author": "seema_grewal",
+      "page": "https://freesound.org/people/seema_grewal/sounds/842107/",
+      "officialPreview": "https://cdn.freesound.org/previews/842/842107_11920353-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "86f3a0c8266b7ad987653b97b344c29d6be25b70ee5c9f395c1fb8930c4d479a",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "title": "Wood Scrape Floor"
+    },
+    {
+      "id": "soft-rustle",
+      "author": "IENBA",
+      "page": "https://freesound.org/people/IENBA/sounds/850704/",
+      "officialPreview": "https://cdn.freesound.org/previews/850/850704_9616576-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceSha256": "b178990c879e0aae69933790d1dfd639f607e70a04f2d8d495494e485189d257",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "title": "Soft Fabric Rustle 2"
+    }
+  ],
+  "assets": [
+    {
+      "id": "clock-tick",
+      "file": "audio/sfx/story/clock-tick.wav",
+      "sha256": "e33e43368898b9b759aef64e24f80eb60da385f111ba7b328207b5e7bca80e66",
+      "sourceId": "clock",
+      "sourceSha256": "dcea7abc5f237e6ed979cf253d3a6b6766181bef57348a7481989476f59b8cb4",
+      "sourcePage": "https://freesound.org/people/sounds-mp3/sounds/539880/",
+      "author": "sounds-mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        0.075,
+        0.26
+      ],
+      "sourceCutSamples48k": [
+        3600,
+        12480
+      ],
+      "gain": 0.2,
+      "cosineFadeSeconds": [
+        0.002,
+        0.012
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 8880,
+      "durationSeconds": 0.185,
+      "samplePeakDbFS": -18.872493718377775,
+      "technicalActivityAnchorSeconds": 0.04,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.0420625,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false
+    },
+    {
+      "id": "clock-tock",
+      "file": "audio/sfx/story/clock-tock.wav",
+      "sha256": "275c2f14c4247b5c6499e666bea4142efd8f4b396443e31064be42e5041cba80",
+      "sourceId": "clock",
+      "sourceSha256": "dcea7abc5f237e6ed979cf253d3a6b6766181bef57348a7481989476f59b8cb4",
+      "sourcePage": "https://freesound.org/people/sounds-mp3/sounds/539880/",
+      "author": "sounds-mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        0.38,
+        0.61
+      ],
+      "sourceCutSamples48k": [
+        18240,
+        29280
+      ],
+      "gain": 0.2,
+      "cosineFadeSeconds": [
+        0.002,
+        0.012
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 11040,
+      "durationSeconds": 0.23,
+      "samplePeakDbFS": -15.955588639149116,
+      "technicalActivityAnchorSeconds": 0.045,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.051,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false
+    },
+    {
+      "id": "paw-tile-01",
+      "file": "audio/sfx/story/paw-tile-01.wav",
+      "sha256": "f00b4232df974fb8b33b9e2919562ee9c6bd63894c604d84ec99ab0dcd91a099",
+      "sourceId": "barefoot-tile",
+      "sourceSha256": "19d3f0f905cae363f9e8cbecdd30ddc7a5c856e7c775aaaa2d508603eeac7153",
+      "sourcePage": "https://freesound.org/people/SpliceSound/sounds/197402/",
+      "author": "SpliceSound",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        0.99,
+        1.23
+      ],
+      "sourceCutSamples48k": [
+        47520,
+        59040
+      ],
+      "gain": 0.7,
+      "cosineFadeSeconds": [
+        0.001,
+        0.008
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 11520,
+      "durationSeconds": 0.24,
+      "samplePeakDbFS": -18.70875644860587,
+      "technicalActivityAnchorSeconds": 0.045,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.049958333333333334,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false,
+      "foley": {
+        "recordedSubject": "Human barefoot footsteps on tile",
+        "proposedUse": "Cat paw contacts on tile; artistic foley, not a recording of real cat paws",
+        "contextListeningPending": true
+      }
+    },
+    {
+      "id": "paw-tile-02",
+      "file": "audio/sfx/story/paw-tile-02.wav",
+      "sha256": "f897c9ffd40a5a0cd4b297604471d50ed63991c08fe0e429315302b97fa09b81",
+      "sourceId": "barefoot-tile",
+      "sourceSha256": "19d3f0f905cae363f9e8cbecdd30ddc7a5c856e7c775aaaa2d508603eeac7153",
+      "sourcePage": "https://freesound.org/people/SpliceSound/sounds/197402/",
+      "author": "SpliceSound",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        1.355,
+        1.59
+      ],
+      "sourceCutSamples48k": [
+        65040,
+        76320
+      ],
+      "gain": 0.7,
+      "cosineFadeSeconds": [
+        0.001,
+        0.008
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 11280,
+      "durationSeconds": 0.235,
+      "samplePeakDbFS": -17.273749751592142,
+      "technicalActivityAnchorSeconds": 0.04,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.04620833333333333,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false,
+      "foley": {
+        "recordedSubject": "Human barefoot footsteps on tile",
+        "proposedUse": "Cat paw contacts on tile; artistic foley, not a recording of real cat paws",
+        "contextListeningPending": true
+      }
+    },
+    {
+      "id": "paw-tile-03",
+      "file": "audio/sfx/story/paw-tile-03.wav",
+      "sha256": "87de7f2d2efbb470e1fb00ba630e3ef0b4cf4ab071661a70bc9378000d88b845",
+      "sourceId": "barefoot-tile",
+      "sourceSha256": "19d3f0f905cae363f9e8cbecdd30ddc7a5c856e7c775aaaa2d508603eeac7153",
+      "sourcePage": "https://freesound.org/people/SpliceSound/sounds/197402/",
+      "author": "SpliceSound",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        2.14,
+        2.4
+      ],
+      "sourceCutSamples48k": [
+        102720,
+        115200
+      ],
+      "gain": 0.7,
+      "cosineFadeSeconds": [
+        0.001,
+        0.008
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 12480,
+      "durationSeconds": 0.26,
+      "samplePeakDbFS": -19.082199870016336,
+      "technicalActivityAnchorSeconds": 0.055,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.05616666666666666,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false,
+      "foley": {
+        "recordedSubject": "Human barefoot footsteps on tile",
+        "proposedUse": "Cat paw contacts on tile; artistic foley, not a recording of real cat paws",
+        "contextListeningPending": true
+      }
+    },
+    {
+      "id": "frame-impact",
+      "file": "audio/sfx/story/frame-impact.wav",
+      "sha256": "f2518b37452f707263de87045b60f84b5f59a18f7970ebc87ab930acd437547e",
+      "sourceId": "wood-drop",
+      "sourceSha256": "ffd07f84af8fa51f57923b178109001dce7e5a6545b271b74544bcc2b28013a3",
+      "sourcePage": "https://freesound.org/people/CosmoX45/sounds/723568/",
+      "author": "CosmoX45",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        0.08,
+        0.365
+      ],
+      "sourceCutSamples48k": [
+        3840,
+        17520
+      ],
+      "gain": 0.45,
+      "cosineFadeSeconds": [
+        0.001,
+        0.01
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 13680,
+      "durationSeconds": 0.285,
+      "samplePeakDbFS": -6.984542007752673,
+      "technicalActivityAnchorSeconds": 0.0,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.03777083333333333,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false
+    },
+    {
+      "id": "frame-bounce",
+      "file": "audio/sfx/story/frame-bounce.wav",
+      "sha256": "b80c3392144189976e46caa070343c4eee66a5c13eb604ac09ac4d76293358ec",
+      "sourceId": "wood-drop",
+      "sourceSha256": "ffd07f84af8fa51f57923b178109001dce7e5a6545b271b74544bcc2b28013a3",
+      "sourcePage": "https://freesound.org/people/CosmoX45/sounds/723568/",
+      "author": "CosmoX45",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        0.425,
+        0.93
+      ],
+      "sourceCutSamples48k": [
+        20400,
+        44640
+      ],
+      "gain": 0.35,
+      "cosineFadeSeconds": [
+        0.001,
+        0.015
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 24240,
+      "durationSeconds": 0.505,
+      "samplePeakDbFS": -9.376754517825448,
+      "technicalActivityAnchorSeconds": 0.025,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.043104166666666666,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false
+    },
+    {
+      "id": "frame-slide",
+      "file": "audio/sfx/story/frame-slide.wav",
+      "sha256": "7d1d3e5a854749686c2c46a74dd6fed30b6d7d4ea8c7c69564da512075846413",
+      "sourceId": "frame-scrape",
+      "sourceSha256": "86f3a0c8266b7ad987653b97b344c29d6be25b70ee5c9f395c1fb8930c4d479a",
+      "sourcePage": "https://freesound.org/people/seema_grewal/sounds/842107/",
+      "author": "seema_grewal",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        1.15,
+        1.65
+      ],
+      "sourceCutSamples48k": [
+        55200,
+        79200
+      ],
+      "gain": 0.9,
+      "cosineFadeSeconds": [
+        0.01,
+        0.025
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 24000,
+      "durationSeconds": 0.5,
+      "samplePeakDbFS": -24.798164931168166,
+      "technicalActivityAnchorSeconds": 0.135,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.1443125,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false
+    },
+    {
+      "id": "cat-hiss",
+      "file": "audio/sfx/story/cat-hiss.wav",
+      "sha256": "e700dfb458d3998f140b6f3298e68e31a25a1424b6f76bdb68d59b0621b2861f",
+      "sourceId": "cat-hiss",
+      "sourceSha256": "ab3267cfd69f458880f5b9febd06e0f695967e41a0e11eff169d14a4eb001383",
+      "sourcePage": "https://freesound.org/people/cdonahueucsd/sounds/620962/",
+      "author": "cdonahueucsd",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        0.0,
+        0.65
+      ],
+      "sourceCutSamples48k": [
+        0,
+        31200
+      ],
+      "gain": 2.5,
+      "cosineFadeSeconds": [
+        0.003,
+        0.02
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 31200,
+      "durationSeconds": 0.65,
+      "samplePeakDbFS": -14.174548637670734,
+      "technicalActivityAnchorSeconds": 0.015,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.2687083333333333,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false
+    },
+    {
+      "id": "groom-rustle",
+      "file": "audio/sfx/story/groom-rustle.wav",
+      "sha256": "ed0398291050e84387dc05fb56360803beaa0486492af5ee5beae246cb8a71e0",
+      "sourceId": "soft-rustle",
+      "sourceSha256": "b178990c879e0aae69933790d1dfd639f607e70a04f2d8d495494e485189d257",
+      "sourcePage": "https://freesound.org/people/IENBA/sounds/850704/",
+      "author": "IENBA",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceKind": "official public HQ MP3 preview, not an original WAV master",
+      "sourceCutSeconds": [
+        4.85,
+        5.45
+      ],
+      "sourceCutSamples48k": [
+        232800,
+        261600
+      ],
+      "gain": 6.0,
+      "cosineFadeSeconds": [
+        0.015,
+        0.035
+      ],
+      "sampleRate": 48000,
+      "channels": 1,
+      "format": "PCM16",
+      "samples": 28800,
+      "durationSeconds": 0.6,
+      "samplePeakDbFS": -17.31840738023798,
+      "technicalActivityAnchorSeconds": 0.01,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; not a claim of perceived onset",
+      "peakSeconds": 0.1956875,
+      "pitchOrPlaybackRateModified": false,
+      "auditioned": false,
+      "foley": {
+        "recordedSubject": "Soft fabric handling",
+        "proposedUse": "Grooming/fur rustle; artistic foley, not a recording of cat fur",
+        "contextListeningPending": true
+      }
+    }
+  ],
+  "note": "Processed excerpts of official HQ MP3 previews; these WAVs are not lossless original masters. Technical activity anchors do not establish heard timing or artistic fit."
+}

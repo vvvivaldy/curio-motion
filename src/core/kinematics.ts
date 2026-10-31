@@ -81,3 +81,25 @@ export function planarEndpoint(root:Point2,upper:number,lower:number,upperAngle:
   const lowerAngle=upperAngle-bendSide*flexion;
   return [root[0]+upper*Math.cos(upperAngle)+lower*Math.cos(lowerAngle),root[1]+upper*Math.sin(upperAngle)+lower*Math.sin(lowerAngle)];
 }
+/** Closest common root height inside extension/flexion limits; contacts stay fixed.
+ * Supports default to root above target. Reaching arms may opt into either side.
+ * Disconnected allowed bands are retained, never bridged by clamping a contact.
+ */
+export function fitPlanarPostureHeight(constraints:readonly {root:Point2;target:Point2;upper:number;lower:number;minFlexion:number;maxFlexion:number;rootSide?:'above'|'either'}[],desired=0):number{
+  if(!constraints.length||!Number.isFinite(desired))throw new RangeError('Posture constraints required');
+  let bands: [number,number][]=[[-Infinity,Infinity]];
+  for(const {root,target,upper,lower,minFlexion,maxFlexion,rootSide='above'} of constraints){
+    if(![...root,...target,upper,lower,minFlexion,maxFlexion].every(Number.isFinite)||upper<=0||lower<=0||minFlexion<0||maxFlexion<minFlexion||maxFlexion>Math.PI||!['above','either'].includes(rootSide))throw new RangeError('Invalid posture limits');
+    const minR2=upper*upper+lower*lower+2*upper*lower*Math.cos(maxFlexion),maxR2=upper*upper+lower*lower+2*upper*lower*Math.cos(minFlexion),dx2=(target[0]-root[0])**2;
+    if(dx2>maxR2+1e-8)throw new RangeError('Posture exceeds lateral reach');
+    const maxY=Math.sqrt(Math.max(0,maxR2-dx2)),minY=Math.sqrt(Math.max(0,minR2-dx2)),centre=target[1]-root[1];
+    const allowed:[number,number][]=[[centre-maxY,centre-minY]];
+    if(rootSide==='either')allowed.push([centre+minY,centre+maxY]);
+    bands=bands.flatMap(([low,high])=>allowed.map(([a,b]):[number,number]=>[Math.max(low,a),Math.min(high,b)]).filter(([a,b])=>a<=b));
+    if(!bands.length)throw new RangeError('No common posture within joint limits');
+  }
+  const candidates=bands.map(([low,high])=>Math.max(low,Math.min(high,desired)));
+  const shift=candidates.reduce((best,c)=>Math.abs(c-desired)<Math.abs(best-desired)?c:best);
+  if(constraints.some(c=>Math.hypot(c.root[0]-c.target[0],c.root[1]+shift-c.target[1])<1e-8))throw new RangeError('Posture needs a nonzero target direction');
+  return shift;
+}

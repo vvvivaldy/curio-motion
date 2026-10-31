@@ -1,3 +1,6 @@
+import storyMotion from './examples/cat-picture-story/run-v3.ts?raw';
+import storyModel from './examples/cat-picture-story/spatial-model.ts?raw';
+import storyEnvironment from './examples/cat-picture-story/environment.ts?raw';
 import catMotion from './examples/black-cat-chair/motion.ts?raw';
 import catDesign from './examples/black-cat-chair/design.ts?raw';
 import catScene from './examples/black-cat-chair/scene.ts?raw';
@@ -11,17 +14,18 @@ import robotMotion from './examples/amber-robot/motion.ts?raw';
 import robotArt from './examples/amber-robot/illustration.ts?raw';
 const key=exampleChoice(location.search),example=examples[key];
 const sources={
+ 'cat-picture-story-v3':{motion:storyMotion,art:storyModel,environment:storyEnvironment},
  'pink-monkey':{motion:monkeyMotion,art:monkeyArt,environment:monkeyEnvironment},
  'amber-robot':{motion:robotMotion,art:robotArt,environment:'Garden and bench are authored in illustration.ts. The bench, handle and spout share pose contact geometry.'},
  'black-cat-chair':{motion:catMotion,art:catDesign+'\n\n'+catScene,environment:catLayout+'\n\n'+catScene},
 }[key];
 const video=document.querySelector<HTMLVideoElement>('#v')!,seek=document.querySelector<HTMLInputElement>('#seek')!,counter=document.querySelector('#f')!;
 const last=example.settings.durationInFrames-1;
-video.src=example.film;video.style.aspectRatio=`${example.settings.width} / ${example.settings.height}`;
+video.muted=key!=='cat-picture-story-v3';video.src=example.film;video.style.aspectRatio=`${example.settings.width} / ${example.settings.height}`;
 seek.max=String(last);counter.textContent=`0 / ${last}`;
 document.querySelector('#example-title')!.textContent=example.title;
 document.querySelector('#description')!.textContent=example.description;
-document.querySelector('#format')!.textContent=`${example.settings.durationInFrames/example.settings.fps} seconds · ${example.settings.width}×${example.settings.height} · ${example.settings.fps} fps · silent.`;
+document.querySelector('#format')!.textContent=`${example.settings.durationInFrames/example.settings.fps} seconds · ${example.settings.width}×${example.settings.height} · ${example.settings.fps} fps · ${key==='cat-picture-story-v3'?'recorded sound':'silent'}.`;
 const reference=document.querySelector<HTMLImageElement>('#reference')!;
 if(example.reference){reference.src=example.reference;reference.hidden=false;}
 else{

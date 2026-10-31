@@ -1,0 +1,30 @@
+/** Bounded regressions from actual V3 stitch failures; not artistic/whole-film approval. */
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {storyRunPose,storyRunPlans,storyRunTravelEvents,storyRunSoundCues,soundAssets} from '../src/examples/cat-picture-story/run-v3';
+import {buildSpatialCat,type SpatialCat} from '../src/examples/cat-picture-story/spatial-model';
+import {sub3,cross3,dot3} from '../src/core/frame3';
+type Triangle=SpatialCat['triangles'][number];
+// Same bounded transverse edge/triangle test as the independently found failure.
+// Parallel/coplanar containment is outside this regression's claim.
+function crosses(a:Triangle,b:Triangle){
+ if([0,1,2].some(axis=>Math.max(...a.vertices.map(p=>p[axis]))<Math.min(...b.vertices.map(p=>p[axis]))-1e-8||Math.max(...b.vertices.map(p=>p[axis]))<Math.min(...a.vertices.map(p=>p[axis]))-1e-8))return false;
+ for(const[poly,tri]of[[a.vertices,b.vertices],[b.vertices,a.vertices]])for(let edge=0;edge<3;edge++){
+  const start=poly[edge],direction=sub3(poly[(edge+1)%3],start),e1=sub3(tri[1],tri[0]),e2=sub3(tri[2],tri[0]),h=cross3(direction,e2),det=dot3(e1,h);if(Math.abs(det)<1e-10)continue;
+  const f=1/det,s=sub3(start,tri[0]),u=f*dot3(s,h);if(u< -1e-8||u>1+1e-8)continue;const q=cross3(s,e1),v=f*dot3(direction,q),t=f*dot3(e2,q);if(v>=-1e-8&&u+v<=1+1e-8&&t>=-1e-8&&t<=1+1e-8)return true;
+ }return false;
+}
+function armCrossings(cat:SpatialCat){const torso=cat.triangles.filter(t=>t.owner.startsWith('torso/')),arms=cat.triangles.filter(t=>/^(left|right)\/arm\/(lower|paw)/.test(t.owner));return torso.flatMap(a=>arms.filter(b=>crosses(a,b)).map(b=>[a.id,b.id]));}
+// Actual recorded bad arm/torso pose at31.4167, before the rollout correction.
+// Keep this fixture independent of later valid arm-timing preset changes.
+const recordedBad:Parameters<typeof buildSpatialCat>[0]={"body":{"origin":[-145.00241131252713,63.747589656826406,-20],"x":[6.123233995736766e-17,0,1],"y":[-0.05974555945422201,0.9982136385190807,3.658360407444044e-18],"z":[-0.9982136385190807,-0.05974555945422201,6.112295686388127e-17]},"headYaw":0,"feet":[[-154.86985482280275,17.39930995612863,-8],[-144,0,-32]],"hands":[[-148.02591455495343,46.57520309246861,18.42290425216264],[-151.0614554383436,46.66122343173655,-58.3683694866207]],"shoulderYaw":[0,0],"footYaw":[-1.5707963267948966,-1.5707963267948966],"shoulderRoll":[0.2013124065634647,-0.2013124065634647],"jointFrames":{"arms":[{"origin":[-147.75070704742134,109.66541702870413,7],"x":[-0.0009885838290461932,0.1995607320523987,0.9798849610667181],"y":[-0.060767197236853004,0.9780625884398768,-0.19925089920566388],"z":[-0.9981514767018032,-0.05974183891544492,0.01115984950663216]},{"origin":[-147.75070704742134,109.66541702870413,-47],"x":[-0.008117567907361397,-0.19846671385615725,0.9800740117880933],"y":[-0.06258414281156219,0.9782857004007857,0.19758621778830118],"z":[-0.9980066784144338,-0.059733172379191485,-0.020362169769119177]}],"legs":[{"origin":[-145.00241131252713,63.747589656826406,-8],"x":[5.742995567530218e-17,-1.4777373270628507e-17,1],"y":[-0.059745559454222025,0.998213638519081,1.8182160371480794e-17],"z":[-0.998213638519081,-0.059745559454222025,5.644448258131537e-17]},{"origin":[-145.00241131252713,63.747589656826406,-32],"x":[6.121254838998162e-17,1.1006780984156551e-18,1],"y":[-0.059745559454222025,0.998213638519081,2.558466059720335e-18],"z":[-0.998213638519081,-0.059745559454222025,6.116896128015771e-17]}]},"handFrames":[{"origin":[-148.02591455495343,46.57520309246861,18.42290425216264],"x":[6.123233995736766e-17,0,1],"y":[0,1,0],"z":[-1,0,6.123233995736766e-17]},{"origin":[-151.0614554383436,46.66122343173655,-58.3683694866207],"x":[6.123233995736766e-17,0,1],"y":[0,1,0],"z":[-1,0,6.123233995736766e-17]}]};
+assert.ok(armCrossings(buildSpatialCat(recordedBad)).length>0,'Known linear-roll counterexample must remain detectable from real surfaces');
+for(const time of[.43,.47,.5,.55,.6,.65,31.33,31.35,31.38,31.4,754/24,31.45,31.5,34.35,34.45,34.5,34.55,34.58,34.65,34.7]){const pose=storyRunPose(time);assert.deepEqual(armCrossings(pose.cat),[],`Actual forearm/paw crosses torso at${time}`);assert.ok(pose.cat.triangles.every(t=>t.vertices.every(p=>p[1]>=-1e-7)),'Actual cat surfaces stay above floor');}
+const physical=(time:number)=>new Map(storyRunPose(time).cat.triangles.filter(t=>/^(head\/|torso\/|neck|ear\/|tail\/|left\/|right\/)/.test(t.owner)).map(t=>[t.id,t]));
+for(const time of[.4,4.75,5.15,5.28,5.30,5.43,5.45,31.05,31.25,31.3,34.7]){const h=1e-7,a=physical(time-h),b=physical(time),c=physical(time+h);for(const[id,from]of a){const mid=b.get(id),to=c.get(id);if(!mid||!to)continue;for(let vertex=0;vertex<3;vertex++){const gap=Math.hypot(...from.vertices[vertex].map((v,i)=>to.vertices[vertex][i]-v)),velocityGap=Math.hypot(...from.vertices[vertex].map((v,i)=>(to.vertices[vertex][i]-2*mid.vertices[vertex][i]+v)/h));assert.ok(gap<.002,`Physical boundary gap ${id}@${time}`);assert.ok(velocityGap<.05,`Physical boundary velocity jump ${id}@${time}`);}}}
+const events=storyRunTravelEvents();for(const e of events.filter(e=>e.kind==='hind-land')){const sole=storyRunPose(e.time).request.feet[e.actor==='hind-0'?0:1];assert.ok(Math.hypot(...sole.map((v,i)=>v-e.point[i]))<1e-8,`Cue contact differs from actual sole:${e.id}`);assert.ok(e.time!==storyRunPlans.entrance.start&&e.time!==storyRunPlans.exit.start,'No fake initial landing');}
+for(const asset of Object.values(soundAssets)){const sha=createHash('sha256').update(readFileSync(`public/${asset.file}`)).digest('hex');assert.equal(sha,asset.sha256,`Distributed sound differs:${asset.file}`);}
+for(const time of[.6,5.2,31.4,34.58]){const first=storyRunPose(time);storyRunPose(35-time);assert.deepEqual(storyRunPose(time).cat.triangles,first.cat.triangles,'Independent seek changes actual geometry');}
+assert.ok(storyRunSoundCues.length>0);
+console.log('PASS bounded V3 actual-surface arm regression/counterexample, physical joins, floor, real cue contacts, distributed WAV identity and seek; not whole-film or listening approval');

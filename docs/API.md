@@ -154,3 +154,25 @@ Amber uses 960×640 / 30 fps / 300 frames with a two-Graphics Drawing type, whil
 `endAngle` is the drawn hand's forward axis. `wristRange` bounds its signed angle relative to the forearm; `minFlexion` reserves elbow bend before full extension. Unreachable targets, a zero target direction and violated limits throw. The solver never silently clamps a joint and detaches a held object. Authors must place the root/contact/prop trajectory within the declared anatomy limits. `relativeAngle(angle, reference)` returns the shortest signed angular difference and validates finite input.
 
 The 3D `solveTwoBone` contract and existing monkey motion are unchanged. Amber uses the new planar solver with a 20° minimum elbow flexion and ±75° wrist limits. These are explicit mechanical illustration constraints, not a dynamics simulation or automatic anatomical inference. The [authoring process](AUTHORING.md) couples numerical checks with actual frame review.
+
+
+## Rigid spaces and directed joints
+
+`core/frame3.ts` exports rigid `Frame3` composition and point/vector conversions. Axes are right-handed and orthonormal; character convention is +X anatomical left, +Y up, +Z forward. Keep anatomical IDs across turns. `affineProject` and its projection ray include camera elevation; use that same view in visibility and diagnostics.
+
+`core/hinge.ts` solves a two-bone hinge in an explicit root frame, directed normal, bend sign and signed flexion range. A rejected target stays rejected; it is not silently projected or clamped. Orient the shoulder/hip or revise the authored pose. `fitPlanarPostureHeight` in kinematics adds a shared height constraint without moving held endpoints; it does not choose a character's motion intent.
+
+## Opaque paper surfaces
+
+`core/paper-visibility.ts` clips actual triangle fragments using the view ray and per-surface depth. An average/root-depth sort cannot resolve crossing surfaces. `core/paper-fill.ts` supplies optional seam coverage for the same visible fragments; it is a drawing setting, not contact geometry. Keep surface anchors and rendered outlines consistent.
+
+## Finite trajectories and ordinary running
+
+`createTrajectory` in `core/trajectory.ts` uses explicit positions, optional velocities and accelerations, with finite endpoint holds. Its distance table is an approximation with caller-selected sampling, not collision avoidance.
+
+`createRunPlan({upper,lower,soleToAnkle,start?,duration?,from?,to?,ramp?,firstSide?,forwardLean?})` in `core/run.ts` is opt-in flat-floor running. Lengths use the character's drawing units, time is seconds, `forwardLean` is radians (default Math.PI/8). Station increases forward and height increases up. Use the real sole-to-ankle anchor. Existing walking functions keep their published behavior.
+
+`sample(time)` returns root station/height/velocity, fixed-support or swinging feet, phase, lean and arm timing. The default has a brief recurring flight, early rear-heel recovery, late extension and two shorter braking contacts. The caller supplies its character rig, transforms, contours and camera. It does not infer anatomy from an image or simulate unrestricted physical dynamics. Check the actual leg silhouette and ground clearance; flags alone cannot establish convincing running.
+
+
+`runningUpperArm(centre,drive,upperLength,backDepth,referenceSwing)` in `core/arm-motion.ts` adds a smooth rear shoulder excursion from the actual drawn upper-arm length and back depth. All angles are radians. Forward swing and neutral pose are preserved; negative drive reaches toward the back line. `referenceSwing` is an explicit motion calibration supplied by the caller, not an anatomical constant. The example measures its elbow against the actual torso section at elbow height; inspect that silhouette and reachable joints as well as the wrist.
