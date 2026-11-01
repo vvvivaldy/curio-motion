@@ -4,15 +4,15 @@
 
 **Editable 2D animation authored in TypeScript.** PixiJS draws vector contours; Remotion owns composition, live Player, frame time and official MP4 export.
 
-**1.0.0-rc.1 is a local release candidate, awaiting final gates and owner acceptance.** It remains an editable source project with `private: true`, not an npm package. [RC status](docs/RC_1_0_0_RU.md) · [Migration from 0.2](docs/COMPATIBILITY_RU.md) · [Русский](README_RU.md)
+**Curio Motion 1.0.0** is an editable source project with `private: true`, not an npm package. [Release page and verified ZIP](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0) · [Release guide](docs/RELEASE_1_0_0_RU.md) · [Migration from0.2](docs/COMPATIBILITY_RU.md) · [Русский](README_RU.md)
 
-The latest published version is still [0.2.0-beta.1](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1); its tag and archive are preserved. Use this RC’s delivered ZIP and matching SHA256. Public `main` is not claimed to contain this local candidate.
+Use the matching versioned ZIP, SHA256 and external release-verification report. This file describes the frozen source; actual publication, tag/commit and downloaded-asset verification are recorded separately. Earlier beta/RC archives remain historical artifacts.
 
 ## Start locally
 
-The candidate’s officially verified scope is **macOS arm64**. Current Linux/Windows installation, build, Player and export are **unverified**; earlier beta CI is historical evidence. The minimum remains Node 22.12.0; the recommended test version is Node 26.13.0 LTS.
+The release’s officially verified scope is **macOS arm64**. Current Linux/Windows installation, build, Player and export are **unverified**; earlier beta CI is historical evidence. The minimum remains Node 22.12.0; the recommended test version is Node 26.13.0 LTS.
 
-Use **Node ≥22.12**, npm and a WebGL-capable browser. Unpack the supplied RC ZIP; when using a source checkout, select the exact commit listed in its external verification report. Then run in the project root:
+Use **Node ≥22.12**, npm and a WebGL-capable browser. Unpack the matching1.0.0 release ZIP; when using a source checkout, select the exact commit listed in its external verification report. Then run in the project root:
 
 ```sh
 npm ci
@@ -96,10 +96,10 @@ The local [typed API](docs/API.md) includes scenes/time, coordinates, contours, 
 | [API](docs/API.md) / [architecture](docs/ARCHITECTURE.md) | Current contracts and implementation boundaries |
 | [Authoring](docs/AUTHORING.md) / [local skill](.agents/skills/curio-authoring/SKILL.md) | Scaffold, control drawings, staged evidence and honest review |
 | [Sound catalog](docs/SFX_CATALOG_RU.md) | Effects by material/action, variants, sources and licenses |
-| [RC status](docs/RC_1_0_0_RU.md) / [roadmap](docs/ROADMAP.md) | Current candidate, supported scope and owner acceptance; [BETA](BETA.md) is history |
+| [Release status](docs/RELEASE_1_0_0_RU.md) / [roadmap](docs/ROADMAP.md) | Versioned delivery, supported scope and public verification; [BETA](BETA.md) is history |
 | [Verification history](docs/VERIFICATION.md) | Historical checks of their specific source/film versions |
 
-The RC ships as an editable source project. Archive verification is separate from acceptance of an example film. The external RC report identifies the actual Git commit and ZIP SHA and records final checks. This local candidate has no claimed public tag/release; older beta publication records remain historical. Review actual rendered frames, continuity and audio; report what was really inspected. For a complete packaged archive, `npm run verify:package` checks its manifest before edits; it will intentionally fail after payload changes until repackaged.
+The release ships as an editable source project. Archive verification is separate from acceptance of an example film. The external release report identifies the actual Git commit and ZIP SHA and records final checks. Source is frozen before upload; the external publication receipt confirms the actual tag, commit and downloaded release asset. Review actual rendered frames, continuity and audio; report what was really inspected. For a complete packaged archive, `npm run verify:package` checks its manifest before edits; it will intentionally fail after payload changes until repackaged.
 
 ## Contributing and rights
 

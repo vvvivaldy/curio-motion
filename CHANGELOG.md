@@ -1,5 +1,11 @@
 # Changes
 
+##1.0.0 — 2026-11-01
+
+Promotes the owner-accepted 1.0.0-rc.1 source project to version 1.0.0. The20 stable source API names, scripts, dependency graph, drawings, recorded audio and accepted films are unchanged; root version metadata and current release documentation are updated. macOS arm64 remains the officially verified end-to-end scope.
+
+The versioned release ZIP and external verification identify the actual tag/commit, newly checked stable payload and downloaded public bytes. Source snapshots are prepared before upload; this entry is not itself proof of publication. Earlier beta/RC archives and receipts are preserved.
+
 ## 1.0.0-rc.1 — local candidate, 2026-11-01
 
 This RC is prepared locally and is not a published stable 1.0. The latest public prerelease remains 0.2.0-beta.1. Final RC checks and owner acceptance are recorded separately from this frozen source document.

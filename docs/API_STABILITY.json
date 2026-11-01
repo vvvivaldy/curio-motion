@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "scope": "1.0 contract baseline; local 1.0.0-rc.1 candidate, not a stable publication",
+  "scope": "1.x stable source contract; source version 1.0.0, publication verified externally",
   "unlistedSourcePaths": "internal; editable examples are templates, not stable export contracts",
   "modules": {
     "src/core/arm-motion.ts": {

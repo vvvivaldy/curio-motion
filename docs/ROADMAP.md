@@ -4,7 +4,7 @@ Curio Motion supports a coding agent or developer authoring short 2D scenes from
 
 ## Current beta and path to 1.0
 
-[0.2.0-beta.1](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1) remains the latest public prerelease. Work packages 1–4 of the [1.0 plan](PLAN_1_0_RU.md) are complete for the agreed macOS scope. Package 5 prepares local 1.0.0-rc.1, exact Git/ZIP identity and final gates; owner acceptance and publication remain separate. See [RC status](RC_1_0_0_RU.md).
+The five preparation packages are complete and the exact RC is owner-accepted. The owner separately authorized stable 1.0 publication. [Release 1.0](RELEASE_1_0_0_RU.md) describes delivery and external public-verification receipts; preserved beta/RC records remain historical. Future work follows concrete user obstacles rather than a feature quota.
 
 ## Existing foundations
 
