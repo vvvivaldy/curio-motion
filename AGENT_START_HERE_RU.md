@@ -7,9 +7,9 @@ Curio Motion — локальный проект для 2D-анимации ко
 1. [README_RU](README_RU.md): установка, Player и примеры.
 2. [USAGE_RU](docs/USAGE_RU.md): задание, роли и порядок работы с человеком.
 3. [Локальный навык](.agents/skills/curio-authoring/SKILL.md), [API](docs/API.md), [AUTHORING](docs/AUTHORING.md): фактические интерфейсы, scaffold и проверка.
-4. [Выпуск 1.0](docs/RELEASE_1_0_0_RU.md), [совместимость/переход](docs/COMPATIBILITY_RU.md); [BETA](BETA.md) сохраняет историю0.2. [Архитектура](docs/ARCHITECTURE.md) объясняет внутренние решения; старые QA-отчёты являются историей конкретных версий.
+4. [Выпуск 1.0](docs/RELEASE_1_0_0_RU.md), [совместимость/переход](docs/COMPATIBILITY_RU.md); [каталог примеров](docs/EXAMPLES.md) отделяет бета-пробы. [Архитектура](docs/ARCHITECTURE.md) объясняет внутренние решения; старые QA-отчёты являются историей конкретных версий.
 
-Официально проверяемая среда кандидата — macOS arm64; Windows/Linux не проверены. Нужны Node ≥22.12 (контрольная LTS 26.13.0), npm, WebGL и установленный отдельно Chrome/Chromium. В корне проекта:
+Официально проверенная среда релиза — macOS arm64; Windows/Linux не проверены. Нужны Node ≥22.12 (контрольная LTS 26.13.0), npm, WebGL и установленный отдельно Chrome/Chromium. В корне проекта:
 
 ```sh
 npm ci
@@ -51,6 +51,6 @@ npm run create:example -- --id new-owl --composition NewOwl \
 
 Проверяй только относящееся к изменению поведение, сохраняй исходный вариант и честно указывай пределы просмотра/прослушивания. Для небольшой сцены достаточно автора и человека. Независимый критик нужен при сложных взаимодействиях; математик подключается к конкретной геометрической проблеме.
 
-[Стабильный API до 1.0](docs/API_STABILITY.md) · [Границы поддержки](docs/SUPPORT_RU.md) · [Совместимость](docs/COMPATIBILITY_RU.md) · [Прогресс этапа 1](docs/STAGE_1_RU.md)
+[Стабильный API 1.0](docs/API_STABILITY.md) · [Границы поддержки](docs/SUPPORT_RU.md) · [Совместимость](docs/COMPATIBILITY_RU.md)
 
-[Повторяемая упаковка и проверка поставки](docs/PACKAGING_RU.md) · [Этап 3](docs/STAGE_3_RU.md)
+[Повторяемая упаковка и проверка поставки](docs/PACKAGING_RU.md)

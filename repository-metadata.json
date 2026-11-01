@@ -18,34 +18,18 @@
     "ai-agents"
   ],
   "remoteUrl": "https://github.com/vvvivaldy/curio-motion",
-  "publicationExecuted": false,
   "defaultBranch": "main",
   "featureBranchPrefix": "codex/",
   "issues": true,
   "pullRequests": true,
-  "proposedReleaseTag": "v1.0.0",
   "originalCodeLicense": "MIT",
   "remotionLicense": "SEE LICENSE IN LICENSE.md",
-  "publicationStatus": "source-snapshot-prepared; see external release verification",
-  "releaseUrl": null,
-  "publicationHistory": [
-    {
-      "version": "0.1.0-beta.1",
-      "url": "https://github.com/vvvivaldy/curio-motion/releases/tag/v0.1.0-beta.1"
-    }
-  ],
-  "publicationFlagsDescribe": "State at source snapshot creation before upload; not live GitHub status",
-  "targetReleaseUrl": "https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0",
-  "publishedBaselineAtPreparation": {
-    "version": "0.2.0-beta.1",
-    "tag": "v0.2.0-beta.1",
-    "url": "https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1",
-    "baseCommit": "968cde12cece5ca4282fa17cfe5eb7151bd1cb4a"
-  },
-  "acceptedReleaseCandidate": {
-    "version": "1.0.0-rc.1",
-    "commit": "16402397ea5a4467fb92aa444ce99dc330874ff0",
-    "zipSha256": "5bb616d21d60b5467bc1b5763dba4a33588efd609a2e5baee2d33eb40b48deee",
-    "ownerAccepted": true
+  "release": {
+    "version": "1.0.0",
+    "tag": "v1.0.0",
+    "url": "https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0",
+    "commit": "03e70695b3626a23ca177a6ab5a906b836de968e",
+    "status": "published-stable",
+    "notes": "The release tag/ZIP are immutable; main may contain subsequent housekeeping."
   }
 }

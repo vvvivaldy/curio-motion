@@ -1,18 +1,16 @@
-![Curio Motion — illustration in code, motion with intent](docs/assets/header.svg)
+![Curio Motion](docs/assets/header.svg)
 
 # Curio Motion
 
-**Editable 2D animation authored in TypeScript.** PixiJS draws vector contours; Remotion owns composition, live Player, frame time and official MP4 export.
+**Editable 2D animation in TypeScript.** PixiJS draws vector geometry; Remotion controls frames, live preview and MP4 export.
 
-**Curio Motion 1.0.0** is an editable source project with `private: true`, not an npm package. [Release page and verified ZIP](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0) · [Release guide](docs/RELEASE_1_0_0_RU.md) · [Migration from0.2](docs/COMPATIBILITY_RU.md) · [Русский](README_RU.md)
+[Stable 1.0.0 and verified ZIP](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0) · [Русский](README_RU.md) · [Documentation](docs/README.md)
 
-Use the matching versioned ZIP, SHA256 and external release-verification report. This file describes the frozen source; actual publication, tag/commit and downloaded-asset verification are recorded separately. Earlier beta/RC archives remain historical artifacts.
+## Start
 
-## Start locally
+This is a source project, not an npm package. The verified environment is **macOS arm64** with Node ≥22.12 (release test versions: 22.12.0 and 26.13.0), npm and a WebGL browser. Windows/Linux browser playback and export are unverified.
 
-The release’s officially verified scope is **macOS arm64**. Current Linux/Windows installation, build, Player and export are **unverified**; earlier beta CI is historical evidence. The minimum remains Node 22.12.0; the recommended test version is Node 26.13.0 LTS.
-
-Use **Node ≥22.12**, npm and a WebGL-capable browser. Unpack the matching1.0.0 release ZIP; when using a source checkout, select the exact commit listed in its external verification report. Then run in the project root:
+Download the release ZIP or clone the repository, then run:
 
 ```sh
 npm ci
@@ -20,93 +18,44 @@ npm run check
 npm run demo:raccoon
 ```
 
-Use the address printed by Vite, normally `http://127.0.0.1:4176/player.html?example=raccoon-courier`. Click play to hear audio. `npm run dev` starts the server without opening a page; an occupied port can change the printed address.
+Open the address printed by Vite. Click play to hear sound. `npm run dev` starts the server without opening a page. No AI account, API key or hosted service is required.
 
-| Try | Live code-rendered Player | Official composition |
+## Examples
+
+[![Cat story: running, climbing and a falling picture](docs/assets/cat-picture-story-v3.gif)](docs/assets/cat-picture-story-v3.mp4)
+
+| Example | Live Player | Film |
 | --- | --- | --- |
-| Raccoon: envelope, grips and recorded sound | `/player.html?example=raccoon-courier` | `RaccoonCourier` |
-| Educational delivery infographic | `/player.html?example=delivery-infographic` | `DeliveryInfographic` |
-| Amber robot: watering-can interaction | `/player.html?example=amber-robot` | `AmberRobot` |
-| Paper cat: 35-second story and sound | `/player.html?example=cat-picture-story-v3` | `CatPictureStoryV3` |
-| Black cat: chair climb and landing | `/player.html?example=black-cat-chair` | `BlackCatChair` |
-| Pink monkey: preserved first scene | `/player.html?example=pink-monkey` | `PinkMonkey` |
+| Morning delivery: character, sound and infographic | `/player.html?example=morning-delivery` | [36 seconds](docs/assets/morning-delivery-accepted-v1.mp4) |
+| Raccoon courier: envelope, grips and bag | `/player.html?example=raccoon-courier` | [16 seconds](docs/assets/raccoon-courier-anatomy-sound-v3.mp4) |
+| Educational infographic with editable synthetic data | `/player.html?example=delivery-infographic` | [12 seconds](docs/assets/delivery-infographic-first-pass.mp4) |
+| Cat: chair, clock and falling picture | `/player.html?example=cat-picture-story-v3` | [35 seconds](docs/assets/cat-picture-story-v3.mp4) |
+| Neon drawing with glow and floor reflection | `/player.html?example=human-chair-neon-confident` | [8 seconds](docs/assets/human-chair-neon-confident-v1.mp4) |
 
-`/viewer.html?example=…` shows a preserved exported movie/reference/source where available; `/index.html?example=…` draws the direct Pixi baseline. Private authoring inputs are absent from the archive and are not needed to run the included scenes.
+[All current examples and beta archive](docs/EXAMPLES.md). Cleanup applies to the main branch; the original 1.0.0 release ZIP is unchanged. Earlier experiments are labelled separately; superseded exports and production logs are available in Git history rather than the current checkout. These examples are authored scenes, not automatic conversion of an arbitrary reference.
 
-Install **Chrome/Chromium separately** for export. No browser is downloaded automatically. If detection fails, point `CHROME_PATH` at its executable:
+`/viewer.html?example=…` shows the saved film and source; `/index.html?example=…` shows direct Pixi rendering. Private authoring references are not needed to run the included scenes.
+
+## Export
+
+Install Chrome/Chromium separately. No browser is downloaded automatically.
 
 ```sh
-# macOS/Linux; replace with your actual installed executable
+# Set this only if the installed browser is not detected.
 export CHROME_PATH="/path/to/installed/chrome"
 COMPOSITION_ID=RaccoonCourier RENDER_AUDIO_CODEC=aac npm run render
-COMPOSITION_ID=DeliveryInfographic npm run render
 ```
 
-Outputs: `outputs/raccoon-courier-remotion.mp4` and `outputs/delivery-infographic-remotion.mp4`. Plain `npm run render` exports the default monkey. [PowerShell, commands and troubleshooting](docs/DEVELOPMENT.md).
+The result is `outputs/raccoon-courier-remotion.mp4`. [Other compositions, PowerShell and troubleshooting](docs/DEVELOPMENT.md).
 
-No runtime account, AI API key or hosted generator is required. `npm ci` needs npm registry access. The current candidate’s supported installation/build/Player/export path is **macOS arm64**. Windows/Linux are unverified; earlier beta CI is historical evidence. Main MP4 export uses Remotion's installed encoder; optional GIF/baseline/review tools may require system FFmpeg.
+## Create your own scene
 
-## Examples and source
+Open this folder in a coding agent and provide the whole reference and an explicit action. Start with [AGENTS.md](AGENTS.md), [the local authoring skill](.agents/skills/curio-authoring/SKILL.md) and [practical user/team guidance](docs/USAGE_RU.md). A small task needs an author and a human reviewer; complex interactions benefit from an independent critic.
 
-[![Paper cat runs, climbs, reacts to a falling picture and leaves](docs/assets/cat-picture-story-v3.gif)](docs/assets/cat-picture-story-v3.mp4)
+`npm run create:example -- …` creates a blank typed scene and instructions. The author still draws the character and plans motion. [Authoring](docs/AUTHORING.md) · [API](docs/API.md) · [Stable contracts](docs/API_STABILITY.md) · [Sound catalog](docs/SFX_CATALOG_RU.md).
 
-[Paper cat film](docs/assets/cat-picture-story-v3.mp4) · [run/export notes](docs/CAT_PICTURE_STORY.md). The GIF derives from the official film; live frames are drawn from code.
+## Rights and support
 
-| Source | What it demonstrates |
-| --- | --- |
-| [Raccoon courier](src/examples/raccoon-courier) | Supported regrips, bounded arms, bag containment and event-based recorded effects; [film](docs/assets/raccoon-courier-anatomy-sound-v3.mp4) |
-| [Delivery infographic](src/examples/delivery-infographic) | Three explicit **synthetic** values in `data.ts`, derived totals/percentages, one scale; [film](docs/assets/delivery-infographic-first-pass.mp4) |
-| [Amber robot](src/examples/amber-robot) | Different proportions, held-prop anchors and a shared scene bridge; [film](docs/assets/amber-robot-v2.mp4) |
-| [Black cat](src/examples/black-cat-chair) | Chair grips, climb, sit, turn, four-limb landing; [film](docs/assets/black-cat-chair-v3.mp4) |
-| [Pink monkey](src/examples/pink-monkey) | Walk, turn, stair support and a finite gesture; [film](docs/assets/demo-v5.mp4) |
-| [Boar A/B](docs/reviews/boar-ab/README.md) | Preserved before/after review of one known task, including failed observations and repairs |
+Original code is [MIT](LICENSE). Artwork, audio and Remotion have separate terms: [ASSETS](ASSETS.md), [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md).
 
-These are authored examples, not an arbitrary-reference generation benchmark. The author interprets the whole reference and writes geometry, anatomy, staging and timing. Shared helpers make that work editable; numerical checks cannot approve artistic quality or sound.
-
-## Work with an agent
-
-Open the project folder in a coding agent. It should read [AGENTS.md](AGENTS.md), [the local authoring skill](.agents/skills/curio-authoring/SKILL.md) and your whole reference/action. No previous chat is required. [Practical user/team guidance in Russian](docs/USAGE_RU.md) includes setup, copyable author/critic tasks and the recommended small team: an author plus a human, with an independent critic for complex interactions and a mathematician only for a concrete geometry problem.
-
-Use `npm run create:example -- …` to prepare a blank typed scene, whole input copy, unchanged action and review plan. It does not draw, infer anatomy or register the scene automatically. The generated instructions list the required registry edits. Start with held control drawings, then blocking, transitions, sound and actual encoded-film review. Preserve the original version when repairing a defect.
-
-## Use the local API
-
-In a browser TypeScript module in this checkout:
-
-```ts
-import { createPixiStage } from './src/core/stage';
-import { amberRobotScene } from './src/examples/amber-robot/scene';
-
-const host = document.createElement('div');
-document.body.append(host);
-const stage = await createPixiStage(host, amberRobotScene);
-stage.draw(120); // 4 seconds at 30 fps
-stage.draw(0);   // backward seek, without accumulated state
-stage.destroy();
-```
-
-The local [typed API](docs/API.md) includes scenes/time, coordinates, contours, contacts, gait, run and constrained-limb helpers. Scene anatomy/style remain in `src/examples/`. Automatic recognition, a universal rig, an action-language parser, hosted rendering and physics simulation are not implemented.
-
-## Documentation and status
-
-| Read | Purpose |
-| --- | --- |
-| [Development](docs/DEVELOPMENT.md) | Installation, Chrome, live pages, official exports and troubleshooting |
-| [User guide](docs/USAGE_RU.md) / [agent entry](AGENT_START_HERE_RU.md) | Practical task setup, roles and short prompts |
-| [API](docs/API.md) / [architecture](docs/ARCHITECTURE.md) | Current contracts and implementation boundaries |
-| [Authoring](docs/AUTHORING.md) / [local skill](.agents/skills/curio-authoring/SKILL.md) | Scaffold, control drawings, staged evidence and honest review |
-| [Sound catalog](docs/SFX_CATALOG_RU.md) | Effects by material/action, variants, sources and licenses |
-| [Release status](docs/RELEASE_1_0_0_RU.md) / [roadmap](docs/ROADMAP.md) | Versioned delivery, supported scope and public verification; [BETA](BETA.md) is history |
-| [Verification history](docs/VERIFICATION.md) | Historical checks of their specific source/film versions |
-
-The release ships as an editable source project. Archive verification is separate from acceptance of an example film. The external release report identifies the actual Git commit and ZIP SHA and records final checks. Source is frozen before upload; the external publication receipt confirms the actual tag, commit and downloaded release asset. Review actual rendered frames, continuity and audio; report what was really inspected. For a complete packaged archive, `npm run verify:package` checks its manifest before edits; it will intentionally fail after payload changes until repackaged.
-
-## Contributing and rights
-
-[Contributing](CONTRIBUTING.md) · [report a reproducible bug](https://github.com/vvvivaldy/curio-motion/issues/new?template=bug.yml) · [security](SECURITY.md).
-
-Original project code is [MIT](LICENSE). Artwork/audio and Remotion have separate terms: [ASSETS](ASSETS.md), [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md), [Remotion license](docs/licenses/REMOTION-LICENSE.md). Keep required source attributions with derived media; the code license does not relicense dependencies or all assets.
-
-[1.0 API boundary](docs/API_STABILITY.md) · [Support scope](docs/SUPPORT_RU.md) · [Compatibility](docs/COMPATIBILITY_RU.md) · [Stage 1 progress](docs/STAGE_1_RU.md)
-
-[Повторяемая упаковка и проверка поставки](docs/PACKAGING_RU.md) · [Этап 3](docs/STAGE_3_RU.md)
+[Support scope](docs/SUPPORT_RU.md) · [Compatibility](docs/COMPATIBILITY_RU.md) · [Contributing](CONTRIBUTING.md) · [Security](SECURITY.md) · [Changelog](CHANGELOG.md).

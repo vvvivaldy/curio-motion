@@ -53,3 +53,7 @@ Preserve the [MIT source license](LICENSE), [dependency notices](THIRD_PARTY_NOT
 ## Questions and security
 
 Use [issues](https://github.com/vvvivaldy/curio-motion/issues) for setup problems and focused proposals. Follow the [code of conduct](CODE_OF_CONDUCT.md). For sensitive vulnerabilities, follow [SECURITY.md](SECURITY.md) instead of posting exploit details publicly. No response SLA is promised.
+
+## Keep the repository useful
+
+Keep setup/API guides, functional authoring inputs, licences and selected final examples in the maintained tree. Temporary plans, progress updates, screenshots and intermediate exports belong in ignored qa/ or outputs/. Mark retained beta studies as historical; superseded media can be recovered from Git tags instead of duplicated in the current gallery.

@@ -10,7 +10,7 @@ npm run check
 npm run dev
 ```
 
-Open `http://127.0.0.1:4176/player.html?example=cat-picture-story-v3` for live code rendering or `viewer.html?example=cat-picture-story-v3` for the exported film and source view. Both use the same typed scene. The public package preserves the earlier three examples.
+Open `http://127.0.0.1:4176/player.html?example=cat-picture-story-v3` for live code rendering or `viewer.html?example=cat-picture-story-v3` for the exported film and source view. Both use the same typed scene. The current checkout includes V3; superseded V1/V2 exports remain in Git history.
 
 ```sh
 CHROME_PATH='/path/to/existing/Chrome' COMPOSITION_ID=CatPictureStoryV3 RENDER_AUDIO_CODEC=aac npm run render

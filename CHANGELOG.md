@@ -1,14 +1,20 @@
 # Changes
 
-##1.0.0 — 2026-11-01
+## Unreleased — repository housekeeping
+
+- Remove completed production plans, progress receipts, review dumps and superseded media from the maintained checkout. Their history remains in the unchanged v1.0.0 tag.
+- Separate beta studies from current examples in documentation and demo navigation. Keep selected films, API contracts, privacy manifests and media credits.
+- Update setup/release links to the published stable version; runtime dependencies and animation geometry are unchanged.
+
+## 1.0.0 — 2026-11-01
 
 Promotes the owner-accepted 1.0.0-rc.1 source project to version 1.0.0. The20 stable source API names, scripts, dependency graph, drawings, recorded audio and accepted films are unchanged; root version metadata and current release documentation are updated. macOS arm64 remains the officially verified end-to-end scope.
 
-The versioned release ZIP and external verification identify the actual tag/commit, newly checked stable payload and downloaded public bytes. Source snapshots are prepared before upload; this entry is not itself proof of publication. Earlier beta/RC archives and receipts are preserved.
+The versioned release ZIP and external verification identify the actual tag/commit, newly checked stable payload and downloaded public bytes. [Stable release and verification reports](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0) are published. Earlier beta/RC archives and receipts are preserved.
 
 ## 1.0.0-rc.1 — local candidate, 2026-11-01
 
-This RC is prepared locally and is not a published stable 1.0. The latest public prerelease remains 0.2.0-beta.1. Final RC checks and owner acceptance are recorded separately from this frozen source document.
+Historical local candidate, later accepted and promoted to stable 1.0.0. The items below describe that preparation, not the current publication status.
 
 - Names 20 stable source API exports and eight stable commands, with numeric/time/lifecycle contracts, experimental/internal boundaries and a migration policy. Existing import paths remain available.
 - Rejects a timeline whose final frame time would overflow to Infinity before pose evaluation. Fixes the observed Player reverse-seek audio-pool exhaustion through the supported Remotion Player option.
@@ -31,7 +37,7 @@ GitHub prerelease: [v0.2.0-beta.1](https://github.com/vvvivaldy/curio-motion/rel
 - Ships the example scaffold, private-input distribution filter, current user/agent instructions and author/critic task examples.
 - Adds setup/export aliases and a checksum verifier for the initial source payload. Direct dependencies stay pinned; the project does not install global tools.
 
-Beta APIs may change. This archive is a local TypeScript source project, not an npm package. Rendering support is verified only for the recorded macOS environment; browser/export on Windows/Linux is not claimed. See [BETA](BETA.md) and the verification report supplied next to the ZIP. Historical films and reports are evidence for their own versions, not automatic approval of every changed scene.
+Beta APIs may change. This archive is a local TypeScript source project, not an npm package. Rendering support is verified only for the recorded macOS environment; browser/export on Windows/Linux is not claimed. See [BETA](https://github.com/vvvivaldy/curio-motion/blob/v1.0.0/BETA.md) and the verification report supplied next to the ZIP. Historical films and reports are evidence for their own versions, not automatic approval of every changed scene.
 
 ## Dependency corrections found during the clean-install trial
 
