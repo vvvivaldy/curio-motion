@@ -4,11 +4,15 @@
 
 **Editable 2D animation authored in TypeScript.** PixiJS draws vector contours; Remotion owns composition, live Player, frame time and official MP4 export.
 
-**[0.2.0-beta.1](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1) is a source-project beta.** Download the verified ZIP and checksum from the prerelease, or clone this repository. It remains a local editable project with `private: true`, not an npm package. [Beta scope](BETA.md) · [Verification](docs/BETA_0_2_0_VERIFICATION_RU.md) · [Русский](README_RU.md)
+**Curio Motion 1.0.0** is an editable source project with `private: true`, not an npm package. [Release page and verified ZIP](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0) · [Release guide](docs/RELEASE_1_0_0_RU.md) · [Migration from0.2](docs/COMPATIBILITY_RU.md) · [Русский](README_RU.md)
+
+Use the matching versioned ZIP, SHA256 and external release-verification report. This file describes the frozen source; actual publication, tag/commit and downloaded-asset verification are recorded separately. Earlier beta/RC archives remain historical artifacts.
 
 ## Start locally
 
-Use **Node ≥22.12**, npm and a WebGL-capable browser. Unpack the release ZIP or clone the repository, then run in its root:
+The release’s officially verified scope is **macOS arm64**. Current Linux/Windows installation, build, Player and export are **unverified**; earlier beta CI is historical evidence. The minimum remains Node 22.12.0; the recommended test version is Node 26.13.0 LTS.
+
+Use **Node ≥22.12**, npm and a WebGL-capable browser. Unpack the matching1.0.0 release ZIP; when using a source checkout, select the exact commit listed in its external verification report. Then run in the project root:
 
 ```sh
 npm ci
@@ -40,7 +44,7 @@ COMPOSITION_ID=DeliveryInfographic npm run render
 
 Outputs: `outputs/raccoon-courier-remotion.mp4` and `outputs/delivery-infographic-remotion.mp4`. Plain `npm run render` exports the default monkey. [PowerShell, commands and troubleshooting](docs/DEVELOPMENT.md).
 
-No runtime account, AI API key or hosted generator is required. `npm ci` needs npm registry access. Browser preview/export has been exercised on **macOS**; Windows/Linux browser rendering is unverified. Linux type/test/build CI is a separate check. Main MP4 export uses Remotion's installed encoder; optional GIF/baseline/review tools may require system FFmpeg.
+No runtime account, AI API key or hosted generator is required. `npm ci` needs npm registry access. The current candidate’s supported installation/build/Player/export path is **macOS arm64**. Windows/Linux are unverified; earlier beta CI is historical evidence. Main MP4 export uses Remotion's installed encoder; optional GIF/baseline/review tools may require system FFmpeg.
 
 ## Examples and source
 
@@ -92,13 +96,17 @@ The local [typed API](docs/API.md) includes scenes/time, coordinates, contours, 
 | [API](docs/API.md) / [architecture](docs/ARCHITECTURE.md) | Current contracts and implementation boundaries |
 | [Authoring](docs/AUTHORING.md) / [local skill](.agents/skills/curio-authoring/SKILL.md) | Scaffold, control drawings, staged evidence and honest review |
 | [Sound catalog](docs/SFX_CATALOG_RU.md) | Effects by material/action, variants, sources and licenses |
-| [Beta conditions](BETA.md) / [roadmap](docs/ROADMAP.md) | Current beta, limitations and beta → 1.0 gates |
+| [Release status](docs/RELEASE_1_0_0_RU.md) / [roadmap](docs/ROADMAP.md) | Versioned delivery, supported scope and public verification; [BETA](BETA.md) is history |
 | [Verification history](docs/VERIFICATION.md) | Historical checks of their specific source/film versions |
 
-The beta ships as source, not a separately installable library package. Archive verification is separate from acceptance of an example film. The attached ZIP is the exact clean-tested payload; the Git tag adds publication documentation and its own updated manifest without changing rendering inputs. Review actual rendered frames, continuity and audio; report what was really inspected. For a complete packaged archive, `npm run verify:package` checks its manifest before edits; it will intentionally fail after payload changes until repackaged.
+The release ships as an editable source project. Archive verification is separate from acceptance of an example film. The external release report identifies the actual Git commit and ZIP SHA and records final checks. Source is frozen before upload; the external publication receipt confirms the actual tag, commit and downloaded release asset. Review actual rendered frames, continuity and audio; report what was really inspected. For a complete packaged archive, `npm run verify:package` checks its manifest before edits; it will intentionally fail after payload changes until repackaged.
 
 ## Contributing and rights
 
 [Contributing](CONTRIBUTING.md) · [report a reproducible bug](https://github.com/vvvivaldy/curio-motion/issues/new?template=bug.yml) · [security](SECURITY.md).
 
 Original project code is [MIT](LICENSE). Artwork/audio and Remotion have separate terms: [ASSETS](ASSETS.md), [THIRD_PARTY_NOTICES](THIRD_PARTY_NOTICES.md), [Remotion license](docs/licenses/REMOTION-LICENSE.md). Keep required source attributions with derived media; the code license does not relicense dependencies or all assets.
+
+[1.0 API boundary](docs/API_STABILITY.md) · [Support scope](docs/SUPPORT_RU.md) · [Compatibility](docs/COMPATIBILITY_RU.md) · [Stage 1 progress](docs/STAGE_1_RU.md)
+
+[Повторяемая упаковка и проверка поставки](docs/PACKAGING_RU.md) · [Этап 3](docs/STAGE_3_RU.md)

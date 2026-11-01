@@ -22,6 +22,8 @@ export function validateTimeline(timeline: Timeline): void {
     throw new RangeError('fps must be finite and positive');
   if (!Number.isSafeInteger(timeline.durationInFrames) || timeline.durationInFrames <= 0)
     throw new RangeError('durationInFrames must be a positive safe integer');
+  if (!Number.isFinite((timeline.durationInFrames - 1) / timeline.fps))
+    throw new RangeError('Last frame time must be representable and finite');
 }
 
 /** No clock or accumulated state: seeking evaluates the requested pose directly. */

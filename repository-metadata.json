@@ -1,7 +1,7 @@
 {
   "name": "curio-motion",
   "displayName": "Curio Motion",
-  "version": "0.1.0-beta.1",
+  "version": "1.0.0",
   "description": "Code-authored 2D character animation in TypeScript. PixiJS contours, seekable motion and local MP4 export with Remotion.",
   "topics": [
     "2d-animation",
@@ -18,14 +18,34 @@
     "ai-agents"
   ],
   "remoteUrl": "https://github.com/vvvivaldy/curio-motion",
-  "publicationExecuted": true,
+  "publicationExecuted": false,
   "defaultBranch": "main",
   "featureBranchPrefix": "codex/",
   "issues": true,
   "pullRequests": true,
-  "proposedReleaseTag": "v0.1.0-beta.1",
+  "proposedReleaseTag": "v1.0.0",
   "originalCodeLicense": "MIT",
   "remotionLicense": "SEE LICENSE IN LICENSE.md",
-  "publicationStatus": "source-published",
-  "releaseUrl": "https://github.com/vvvivaldy/curio-motion/releases/tag/v0.1.0-beta.1"
+  "publicationStatus": "source-snapshot-prepared; see external release verification",
+  "releaseUrl": null,
+  "publicationHistory": [
+    {
+      "version": "0.1.0-beta.1",
+      "url": "https://github.com/vvvivaldy/curio-motion/releases/tag/v0.1.0-beta.1"
+    }
+  ],
+  "publicationFlagsDescribe": "State at source snapshot creation before upload; not live GitHub status",
+  "targetReleaseUrl": "https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0",
+  "publishedBaselineAtPreparation": {
+    "version": "0.2.0-beta.1",
+    "tag": "v0.2.0-beta.1",
+    "url": "https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1",
+    "baseCommit": "968cde12cece5ca4282fa17cfe5eb7151bd1cb4a"
+  },
+  "acceptedReleaseCandidate": {
+    "version": "1.0.0-rc.1",
+    "commit": "16402397ea5a4467fb92aa444ce99dc330874ff0",
+    "zipSha256": "5bb616d21d60b5467bc1b5763dba4a33588efd609a2e5baee2d33eb40b48deee",
+    "ownerAccepted": true
+  }
 }

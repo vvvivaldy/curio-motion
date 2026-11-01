@@ -1,6 +1,6 @@
 {
   "name": "curio-motion",
-  "version": "0.2.0-beta.1",
+  "version": "1.0.0",
   "private": true,
   "type": "module",
   "license": "MIT",
@@ -11,7 +11,7 @@
     "dev": "vite --host 127.0.0.1 --port 4176",
     "demo": "vite --host 127.0.0.1 --port 4176 --open /viewer.html",
     "typecheck": "tsc --noEmit",
-    "test": "node --import tsx scripts/check.ts && npm run test:authoring",
+    "test": "node --import tsx scripts/check.ts && npm run test:authoring && npm run test:release",
     "build": "node scripts/build.mjs",
     "check": "npm run typecheck && npm test && npm run build",
     "render": "node scripts/render.mjs",
@@ -32,7 +32,15 @@
     "demo:cat": "vite --host 127.0.0.1 --port 4176 --open \"/player.html?example=black-cat-chair\"",
     "demo:raccoon": "vite --host 127.0.0.1 --port 4176 --open \"/player.html?example=raccoon-courier\"",
     "demo:infographic": "vite --host 127.0.0.1 --port 4176 --open \"/player.html?example=delivery-infographic\"",
-    "verify:package": "node scripts/verify-package.mjs"
+    "verify:package": "node scripts/verify-package.mjs",
+    "check:api": "node --import tsx scripts/check-public-api.ts",
+    "check:api:browser": "node scripts/check-public-api-browser.mjs",
+    "package:source": "node scripts/package-release.mjs pack",
+    "verify:release": "node scripts/package-release.mjs verify",
+    "manifest:update": "node scripts/package-release.mjs manifest --write",
+    "check:publication": "node scripts/package-release.mjs scan",
+    "provenance:redact": "node scripts/package-release.mjs redact",
+    "test:release": "node --test scripts/check-package-checksums.mjs scripts/check-release.mjs"
   },
   "dependencies": {
     "pixi.js": "8.22.0",

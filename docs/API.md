@@ -1,11 +1,13 @@
-# Minimal TypeScript API
+# TypeScript authoring API
+
+Stability is defined by the [20-name stable boundary](API_STABILITY.md) and [machine-readable registry](API_STABILITY.json). Other documented helpers remain experimental (diagnostics internal). [Environment limits](SUPPORT_RU.md) and [compatibility/migration](COMPATIBILITY_RU.md) are explicit.
 
 This is a local source API, not an npm package or an automatic scene generator. The registered character examples share the scene/stage/Remotion contracts; each keeps its own anatomy, staging and action timing.
 
 | Import | Contract |
 | --- | --- |
 | `src/core/time.ts` | `clamp`, `mix`, quintic `smooth`, `tween(time, start, end)` |
-| `Timeline` | Positive finite `fps`, positive safe integer `durationInFrames` |
+| `Timeline` | Positive finite `fps`, positive safe integer `durationInFrames`, finite last-frame time |
 | `evaluateFrame(timeline, pose, frame)` | Validate an integer frame in `0..durationInFrames-1`, evaluate `pose(frame/fps)`, return `{frame, time, pose}` |
 | `src/core/stage.ts` | `SceneSettings`, `SceneDefinition<Pose, Drawing>`, `createPixiStage(host, scene)` |
 
@@ -94,7 +96,7 @@ const support = supportBalance([left, right]);
 
 The example's `steps.ts` owns four approach footfalls, two turns and two boarding steps. Its screen-space floor path and body scale advance together; stance points are independent of that scale. The pelvis shifts toward the loaded foot before lift, softens on contact and respects the shared reach constraint. Arm/bag/tail offsets follow delayed footfalls. No gait clock or per-playback state is added. Turn and boarding also use the same foot tracks. The renderer's Pixi transform order agrees with the pivot math; save/rotate/restore alone does not establish the correct rotation center.
 
-The single movie demonstrates one chosen style and set of dimensions. Numeric cases cover other layouts/scales/timings, but visual portability to another character remains future work.
+The original monkey movie demonstrates one chosen style and set of dimensions. Later Amber robot, cat and courier examples provide authored reuse evidence with their own anatomy and review records. Numeric cases cover additional layouts/scales/timings; they do not establish arbitrary-reference portability.
 
 ## Compatible contours, local frames and contact anchors
 
@@ -104,7 +106,7 @@ The single movie demonstrates one chosen style and set of dimensions. Numeric ca
 - `morphContour(a, b, amount)` validates finite closed contours and matching ordered keys, clamps the blend and holds exact endpoint values. `mapContour(contour, pointMap)` maps all controls/endpoints.
 - `cubicPoint(from, curve, amount)` and `contourAnchor(contour, key, amount = 0.5)` evaluate an actual curve point, rather than an approximate drawing coordinate. `quadraticPoint` covers the example's existing nose surface.
 
-`LocalFrame2D {origin, angle, scale}` in `spatial.ts` rotates local points, then scales/translates them with `localPoint`. `segmentFrame(from, to, referenceAngle)` aligns local +Y with a nonzero segment ending at `to`; the reference chooses the intended angle winding on any seek. `attachAnchor(frame, localAnchor, target)` preserves angle/scale and places the anchor exactly on the target.
+`LocalFrame2D {origin, angle, scale}` in `spatial.ts` rotates local points, then scales/translates them with `localPoint`. `segmentFrame(from, to, referenceAngle)` aligns local +Y with a segment of length at least `1e-8` ending at `to`; the reference chooses the intended angle winding on any seek. `attachAnchor(frame, localAnchor, target)` preserves angle/scale and places the anchor exactly on the target.
 
 ```ts
 // shape is the author's compatible CubicContour, with a curve keyed 'tip'.
@@ -148,7 +150,7 @@ The example draws an opaque rear balustrade and undercarriage, solid treads/rise
 
 The preceding quality-helper sections describe their original monkey consumer. They now also have the independent Amber consumer documented in [REUSE](REUSE.md). The old `createStage(host)` alias remains monkey-specific; `createPixiStage(host, scene)` is the shared entry point. No numeric core API needed to change for the second character.
 
-`createRemotionScene<Pose, Drawing>(scene)` in `src/remotion/create-scene.tsx` returns a stable React component. Define it once at module scope, then register it with a Remotion `Composition` using the same scene settings. The component uses `useCurrentFrame`, per-frame render handles, one scene initialization and cleanup. Background and logical dimensions come from that scene; it never selects a character or owns a playback clock. Both shipped compositions and the live Player use this function.
+`createRemotionScene<Pose, Drawing>(scene)` in `src/remotion/create-scene.tsx` returns a React component with stable identity when the factory is called once at module scope. Define it once at module scope, then register it with a Remotion `Composition` using the same scene settings. The component uses `useCurrentFrame`, per-frame render handles, one scene initialization and cleanup. Background and logical dimensions come from that scene; it never selects a character or owns a playback clock. Both shipped compositions and the live Player use this function.
 
 ```tsx
 const RobotScene = createRemotionScene(amberRobotScene);

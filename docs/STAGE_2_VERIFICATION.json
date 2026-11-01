@@ -1,0 +1,167 @@
+{
+  "schemaVersion": 1,
+  "status": "STAGE_2_COMPLETE_OWNER_ACCEPTED",
+  "stage": 2,
+  "progress": {
+    "percent": 100,
+    "completedTasks": 6,
+    "totalTasks": 6
+  },
+  "ownerAcceptance": {
+    "status": "ACCEPTED",
+    "recordedDate": "2026-11-01",
+    "message": "молодец, да, мне нравится результат, особо не докапаться",
+    "filmSha256": "49dc9b46b89d3a21d6b5f39180f7d1ecadb6beeb0fc878d97a4e298ee0ae7736",
+    "scope": "Owner acceptance of the delivered film; no playback-speed or audition log inferred."
+  },
+  "composition": "MorningDelivery",
+  "film": "outputs/morning-delivery-remotion.mp4",
+  "filmSha256": "49dc9b46b89d3a21d6b5f39180f7d1ecadb6beeb0fc878d97a4e298ee0ae7736",
+  "sourceSha256": "7b0cfb3381bdc4de2832f9b7cdcdb2b064b0dbc0dcb9b9739954988f3e8695b9",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "frames": 864
+  },
+  "scene": {
+    "sourceDrawn": true,
+    "prerecordedVideoLayer": false,
+    "unchangedChildPoseSamples": 672,
+    "protectedChildCoreAndAcceptedFiles": 14,
+    "nativeChildPixelMatches": 53,
+    "nativeWholeControlsReviewedByCritic": 47,
+    "encodedWholeControlsReviewedByCritic": 49,
+    "currentFilmData": {
+      "values": [
+        12,
+        18,
+        30
+      ],
+      "total": 60,
+      "shares": [
+        20,
+        30,
+        50
+      ]
+    },
+    "actorExit": 417,
+    "firstEmptyActorFrame": 418
+  },
+  "checks": {
+    "fullCheck": {
+      "exitCode": 0,
+      "logSha256": "37dfb066ccb0df8a5767b8357a1e7b84c51740b70e27965ce365a3c1421f54f3"
+    },
+    "pilotPort": {
+      "examples": 1,
+      "comparisons": 150,
+      "pageErrors": [],
+      "imageRequests": [],
+      "sha256": "0733a9bea27e778431abad94a982b0895eadfe03fcb2e242d136c84729247030"
+    },
+    "priorPort": {
+      "examples": 25,
+      "comparisons": 1920,
+      "pageErrors": [],
+      "imageRequests": [],
+      "sha256": "4a0b6d7da0ed4cc49d7a16d293f2fa8895b43ee2903da2efc1e139bcdc99e965"
+    },
+    "mutableDataVariant": {
+      "status": "pass",
+      "values": [
+        24,
+        16,
+        8
+      ],
+      "total": 48,
+      "cleanInstallClaim": false
+    },
+    "privateWholeExcludedFromActualBuild": true
+  },
+  "audio": {
+    "cues": 36,
+    "distinctRecordedAssets": 8,
+    "additionalDistantContacts": 5,
+    "additionalCueStartsAfterCompleteActorExit": 2,
+    "format": "AAC-LC 48kHz stereo",
+    "peak": 0.1143755167722702,
+    "peakDbfs": -18.833338613773147,
+    "sampleClipping": 0,
+    "lastActivitySeconds": 18.1246875,
+    "rendererReferenceCorrelation": 0.9998408340920923,
+    "actuallyListenedByAgents": false
+  },
+  "independentFrameReview": {
+    "status": "LIMITED_ENCODED_FRAME_VISUAL_AND_TECHNICAL_PASS",
+    "sourceSha256": "7b0cfb3381bdc4de2832f9b7cdcdb2b064b0dbc0dcb9b9739954988f3e8695b9",
+    "wholeFramesActuallyViewed": [
+      0,
+      12,
+      36,
+      60,
+      69,
+      70,
+      71,
+      72,
+      73,
+      77,
+      120,
+      170,
+      210,
+      226,
+      240,
+      254,
+      279,
+      292,
+      324,
+      379,
+      412,
+      417,
+      418,
+      420,
+      453,
+      454,
+      455,
+      456,
+      457,
+      480,
+      501,
+      502,
+      503,
+      504,
+      505,
+      576,
+      606,
+      630,
+      684,
+      720,
+      768,
+      789,
+      790,
+      791,
+      792,
+      793,
+      828,
+      852,
+      863
+    ],
+    "requiredOpenFindings": [],
+    "continuousPlayback": "OPEN",
+    "listening": "OPEN"
+  },
+  "observedRepairs": [
+    "Keep the complete 3-second chart reading hold; no end fade.",
+    "Fix Player reverse412→379 allocation of6 Html5Audio tags beyond default5: use existing Player pool option8.",
+    "Remove hardcoded chart data from global tests; alternate24/16/8 passes in isolated copied sources.",
+    "Remove missing favicon requests in Direct/Player and retain frame/state diagnostics on port timeout.",
+    "Keep distant exit contacts and complete recorded tails beyond the image cutoff."
+  ],
+  "provenanceNotes": [
+    "Native comparison source413a1243 predates preview-only pool fix; drawing/motion/sound unchanged, official movie byte identical. Final port/render/encoded review are bound to source7b0cfb33.",
+    "Audio audit decoded earlier byte-identical final movie; no additional audition claimed.",
+    "All author/independent QA playback reviews remain pending where continuous playback/listening has not occurred; no review --check delivery PASS is claimed.",
+    "Model capture is historical before preview fix; current final capture is49 decoded frames. Original accepted child evidence is reused explicitly.",
+    "No new public release; version remains0.2.0-beta.1."
+  ]
+}

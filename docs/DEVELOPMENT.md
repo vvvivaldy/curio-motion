@@ -4,7 +4,9 @@
 
 ## Requirements and first run
 
-Use **Node ≥22.12**, npm and a WebGL-capable browser. This is a source-project beta (`private: true`), not an npm-distributed library package. Unpack the matching archive into a writable project folder. Installation needs npm registry access; included scene preview/export needs no account, API key or remote AI service.
+The verified scope is macOS arm64 with the recorded Chrome/WebGL environment; Linux/Windows are unverified. Node 22.12.0 / npm 10.9.0 is the compatibility minimum; the recommended control runtime is Node 26.13.0 LTS / npm 11.20.0. See [release status](RELEASE_1_0_0_RU.md) for the exact archive receipt and public-verification state.
+
+Use **Node ≥22.12**, npm and a WebGL-capable browser. This is the 1.0.0 source project (`private: true`), not an npm-distributed library package. Unpack the matching archive into a writable project folder. Installation needs npm registry access; included scene preview/export needs no account, API key or remote AI service.
 
 ```sh
 npm ci

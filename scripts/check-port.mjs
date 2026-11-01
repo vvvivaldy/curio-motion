@@ -79,7 +79,15 @@ try {
     for(const frame of spec.frames) {
       await direct.evaluate(n=>window.demo.render(n),frame);
       await player.evaluate(n=>window.curioPlayer.seekTo(n),frame);
-      await player.waitForFunction(n=>document.querySelector('[data-testid="code-scene"]').dataset.frame===String(n),{polling:100,timeout:120000},frame);
+      try {
+        await player.waitForFunction(n=>document.querySelector('[data-testid="code-scene"]')?.dataset.frame===String(n),{polling:100,timeout:120000},frame);
+      } catch (error) {
+        const state=await player.evaluate(()=>({currentFrame:window.curioPlayer?.getCurrentFrame(),
+          drawnFrame:document.querySelector('[data-testid="code-scene"]')?.dataset.frame,
+          canvasCount:document.querySelectorAll('canvas').length,bodyText:document.body.innerText.slice(-1000)}));
+        await writeFile('qa/port-failure.json',JSON.stringify({example:spec.key,requestedFrame:frame,state,pageErrors:errors,imageRequests},null,2));
+        throw new Error(`Player did not draw ${spec.key} frame ${frame}; see qa/port-failure.json`,{cause:error});
+      }
       const extract=page=>page.evaluate(()=>document.querySelector('canvas').toDataURL('image/png').split(',')[1]);
       const [a,b]=await Promise.all([extract(direct),extract(player)]);
       const first=Buffer.from(a,'base64'),second=Buffer.from(b,'base64');

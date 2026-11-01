@@ -10,6 +10,9 @@ function Preview() {
   const player = useRef<PlayerRef>(null);
   useEffect(() => { Object.assign(window, { curioPlayer: player.current }); }, []);
   return <Player ref={player} component={Scene} durationInFrames={settings.durationInFrames} fps={settings.fps}
+    // A seek can briefly keep the old and new audio groups mounted together.
+    // The current pilot peaks at three cues: 3 + 3 plus two spare shared tags.
+    numberOfSharedAudioTags={8}
     compositionWidth={settings.width} compositionHeight={settings.height} controls loop
     style={{ width: '100%', aspectRatio: `${settings.width} / ${settings.height}` }} />;
 }

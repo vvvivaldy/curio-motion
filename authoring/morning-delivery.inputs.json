@@ -1,0 +1,17 @@
+{
+  "reference": {
+    "path": "reference/morning-delivery/whole.png",
+    "sha256": "aa83861e03c1fa15d8bf46ec6b6f51860d0d439ab9b00955253c9ca1ebf5faf6",
+    "provenance": "Цельный кадр220 из принятого собственного фильма raccoon-courier-anatomy-sound-v3.mp4; контрольный вход для переиспользования существующего рисунка. Не новый референс от владельца.",
+    "mediaType": "image/png",
+    "whole": true,
+    "runtimeUsage": false,
+    "distribution": "local-only"
+  },
+  "action": {
+    "path": "authoring/morning-delivery.action.txt",
+    "sha256": "08f9c204bfa8acd35288d785f8bbf9f5640e7c1da6e83cbbd85084ac220f23fe",
+    "unchanged": true
+  },
+  "method": "Local source scaffold only. The supplied whole reference and ACTION remain authoring inputs, never runtime textures or generated scene instructions."
+}

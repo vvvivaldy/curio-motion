@@ -1,4 +1,27 @@
-# Changes for 0.2.0-beta.1
+# Changes
+
+##1.0.0 — 2026-11-01
+
+Promotes the owner-accepted 1.0.0-rc.1 source project to version 1.0.0. The20 stable source API names, scripts, dependency graph, drawings, recorded audio and accepted films are unchanged; root version metadata and current release documentation are updated. macOS arm64 remains the officially verified end-to-end scope.
+
+The versioned release ZIP and external verification identify the actual tag/commit, newly checked stable payload and downloaded public bytes. Source snapshots are prepared before upload; this entry is not itself proof of publication. Earlier beta/RC archives and receipts are preserved.
+
+## 1.0.0-rc.1 — local candidate, 2026-11-01
+
+This RC is prepared locally and is not a published stable 1.0. The latest public prerelease remains 0.2.0-beta.1. Final RC checks and owner acceptance are recorded separately from this frozen source document.
+
+- Names 20 stable source API exports and eight stable commands, with numeric/time/lifecycle contracts, experimental/internal boundaries and a migration policy. Existing import paths remain available.
+- Rejects a timeline whose final frame time would overflow to Infinity before pose evaluation. Fixes the observed Player reverse-seek audio-pool exhaustion through the supported Remotion Player option.
+- Adds the owner-accepted 36-second MorningDelivery pilot, editable educational chart values and the exact preserved film.
+- Provides repeatable deterministic source packaging, complete root/nested checksums, SFX provenance bindings, known-pattern credential checks, backed-up cached-page redaction and exact Git/ZIP/outgoing-history checks.
+- Records the stage 4 macOS arm64 baseline: Node 22.12.0 / npm 10.9.0 and Node 26.13.0 LTS / npm 11.20.0, four clean Git/ZIP routes, 25 configured scenes / 1920 comparisons plus MorningDelivery / 150, Player/API/objects/starter, four full MP4s and bounded resource/error cleanup. Linux/Windows remain unverified by explicit owner scope.
+- RC preparation changes only root version metadata and current release documentation relative to that tested baseline; source, scripts, recorded media and dependency versions are preserved. The root version changes the image-export-v2 fingerprint, so old receipts are not relabeled as current RC runs.
+
+Original code remains MIT. Remotion, artwork and recorded audio retain their separate terms and attribution. The project remains an editable TypeScript source project (`private: true`), not an npm package.
+
+The sections below preserve earlier release history and its version-specific evidence.
+
+## Changes for 0.2.0-beta.1
 
 GitHub prerelease: [v0.2.0-beta.1](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1). The preceding public prerelease is 0.1.0-beta.1. The attached source ZIP preserves the exact clean-tested payload; this tag also includes publication documentation and a corresponding manifest. Rendering inputs are unchanged.
 

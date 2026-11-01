@@ -23,5 +23,10 @@ for (const fps of [0, -1, NaN, Infinity])
 for (const durationInFrames of [0, -1, .5, NaN, Infinity, Number.MAX_SAFE_INTEGER + 1])
   assert.throws(() => evaluateFrame({ ...timeline, durationInFrames }, sample, 0), /durationInFrames/);
 assert.equal(times.length, 5);
+// Positive finite fps alone did not prevent an infinite time reaching the callback.
+assert.throws(() => evaluateFrame({ fps: Number.MIN_VALUE, durationInFrames: 2 }, sample, 1), RangeError);
+assert.equal(times.length, 5, 'overflow must be rejected before pose evaluation');
+assert.equal(evaluateFrame({ fps: Number.MIN_VALUE, durationInFrames: 1 }, t => t, 0).time, 0);
+assert(Number.isFinite(evaluateFrame({ fps: 1e-300, durationInFrames: 2 }, t => t, 1).time));
 assert.equal(evaluateFrame({ fps: 23.976, durationInFrames: 1 }, sample, 0).time, 0);
 console.log('PASS time helpers, configurable frame bounds and deterministic reverse seek');
