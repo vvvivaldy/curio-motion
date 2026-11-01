@@ -1,0 +1,27 @@
+{
+  "role": "original-authoring-snapshot",
+  "runtimeUsage": false,
+  "description": "Снимок исходного учебного задания. Для нового графика редактируется только data.ts; этот снимок не ограничивает новые значения.",
+  "kind": "synthetic",
+  "title": "Утренние доставки",
+  "unit": "доставки",
+  "categories": [
+    {
+      "label": "Пункт А",
+      "value": 12,
+      "sharePercent": 20
+    },
+    {
+      "label": "Пункт Б",
+      "value": 18,
+      "sharePercent": 30
+    },
+    {
+      "label": "Пункт В",
+      "value": 30,
+      "sharePercent": 50
+    }
+  ],
+  "total": 60,
+  "note": "Учебные данные; не реальная статистика"
+}

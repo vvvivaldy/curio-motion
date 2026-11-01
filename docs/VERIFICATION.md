@@ -1,4 +1,8 @@
-# Local beta verification
+# Verification history
+
+Current beta: [0.2.0-beta.1 verification](BETA_0_2_0_VERIFICATION_RU.md) and [GitHub prerelease](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1). The records below remain historical and apply to their stated source/film versions.
+
+## Original local beta verification — 2026-10-26
 
 The recorded run used macOS arm64, Node 26.4.0 and an existing Chrome headless shell 152.0.7977.30. Dependencies were installed with this project's own `npm ci`; no adjacent workspace's node_modules or symlink is required.
 
@@ -125,15 +129,45 @@ Visual review found an additional spout/leaf intersection in the first repaired 
 | `npm run check:port` | Pink monkey 207 + Amber 123 exact native Pixi/Player comparisons; random/reverse seek; zero image requests/page errors. Generated QA HTML no longer reloads live pages. |
 | Official full exports | PinkMonkey 288 frames/24 fps/1280×720; AmberRobot 300 frames/30 fps/960×640; no browser errors. Source/MP4 SHA receipts recorded. |
 | First-film regression | All 288 decoded re-exported frames exactly match `demo-v5.mp4`; all 207 baseline native records match. Existing monkey films and GIF remain byte-preserved. |
-| Four-pass tooling, both plans | Robot: model 3, blocking 9, motion 41, final 35 PNGs; monkey: 3, 9, 26, 15. 141 selected frames total, two official half-size motion previews, final PNGs decoded from the actual full MP4s. |
+| Four-pass tooling, both plans | Robot: model 3, blocking 9, motion 41, final 35 PNGs; monkey: 3, 9, 26, 15. 141 selected frames total, two official half-size motion previews, final PNGs decoded from the actual full MP4 s. |
 | Explicit visual reviews | Eight current reviews accepted by the agent after whole-reference/frame/contact/playback inspection. Both delivery checks pass artifact hashes and current source/input/plan identity. [Recorded criteria and issue ledger](reviews/process/review-records.json). |
 | Rejection behavior | Actual pending review fails; a real source/staging change makes previous captures stale. Tests also reject changed artifacts, missing frames, invalid plan bounds, incomplete playback/criteria and unresolved/missing-frame issues. |
 | Live UI | Both viewers at 1440px/390px, current film size/duration/seek, no overflow; both Players play/pause, seek forward/backward through end/zero; frame bounds reject correctly. Both README GIFs animate in Chrome. |
-| Encoded-film playback | Browser playback at 1× and 0.5× reaches 10s/12s ends; 300/288 video-frame callbacks at each speed, with saved frame captures. Contacts and action timing inspected in those sequences and enlarged neighbors. |
-| Documentation media | `amber-robot-v2.mp4`: 440,982 bytes, SHA-256 `a42bc3d5c47ae50c88eafa70022cfedbc2f0822ca67b103dbb2eef355bd6b5f4`. Robot GIF: 720×480, 150 frames, 10,000ms, loop=0, 1,065,687 bytes. Original robot MP4 and `amber-robot-v1.gif` preserved. |
+| Encoded-film playback | Browser playback at 1× and 0.5× reaches 10 s/12 s ends; 300/288 video-frame callbacks at each speed, with saved frame captures. Contacts and action timing inspected in those sequences and enlarged neighbors. |
+| Documentation media | `amber-robot-v2.mp4`: 440,982 bytes, SHA-256 `a42bc3d5c47ae50c88eafa70022cfedbc2f0822ca67b103dbb2eef355bd6b5f4`. Robot GIF: 720×480, 150 frames, 10,000 ms, loop=0, 1,065,687 bytes. Original robot MP4 and `amber-robot-v1.gif` preserved. |
 
 Current render source fingerprint: `a07fb1dc1d047160e1f94f6649fdc822233fafd9087c8eb898ab6355a7804292`. Local logs/artifacts: `qa/process`, `qa/authoring/{amber-robot,pink-monkey}`. Review records identify Codex as the agent reviewer, not human approval. Immutable capture reports describe the initially pending capture; the subsequent decision lives in separate `review.json` and `delivery.json`.
 
 Environment: macOS 26.6.2 arm64, Node 26.4.0, existing Chrome headless shell 152.0.7977.30. Windows/Linux browser rendering remains unverified. The process tests two known authored scenes; no model backend, unseen-reference evaluation, force/mass simulation or general collision solver was added. The finite ballistic water illustration and authored anatomy/staging limits are explicit in the review.
 
 The final plan validator also rejects missing, non-string, empty or path-like IDs. After this tooling-only guard was tightened, both official exports remained byte-identical to the reviewed documentation films; current captures and reviews were refreshed against the final source.
+
+## Independent whole-video trial — 2026-10-27
+
+Historical A report: the owner subsequently rejected visible label/anatomy/emotion defects. The prior recorded agent acceptance below does not establish owner approval or current visual quality. A remains preserved; the current A/B status is recorded in the following section.
+
+The owner supplied a whole 19.316667-second shop recording before this scene was written, requesting a serious boar, packaged insects, the same action/infographic and a satisfied snack under a savanna tree. The recording is pinned locally and excluded from Git/static output. The agent authored the new vector design and action through the existing scene API. [The trial review](reviews/independent-boar/README.md) includes actual early/final frames, four material repairs and explicit limits.
+
+- `npm ci` with the existing pinned lockfile and `npm run check` passed: types, existing scene constraints, nested Graphics-frame composition/error cleanup, 2,304 boar pose samples, four authoring validator tests and the static build. No dependency or browser version changed.
+- Final `npm run check:port` passed all 423 native direct-Pixi/Player comparisons: monkey 207, robot 123, boar 93. Backward/random seeking passed, with zero image requests and page errors. All 330 previous-example hashes match the saved pre-trial baseline exactly, including duplicate reverse-seek requests.
+- Official `renderMedia` produced `docs/assets/serious-boar.mp4`: H.264, 1280×720, 24 fps, 576 frames, 24 seconds, no audio. SHA-256: `17f435d3fe39021e3e5281e89a31f10748deac8f2557ea73ffab9d1e67f4bcc1`; source fingerprint: `ec2f944c6f075061a9c93d0bdc254e5e05a873c6b109d641112818c99fb2ae23`.
+- Model (3), blocking (13), native motion-neighbor (45) and decoded final-film (18) frames were inspected. Motion/final previews played through at normal and half speed. Review covered package containment, hooves, cart grip, departure/text timing, shop-to-savanna cut, relaxed smile and three bag-to-mouth bites with pauses. Codex is identified as the agent reviewer; this is not owner approval.
+- `npm run review -- --plan authoring/serious-boar.json --check` passed four current captures, explicit reviews and artifact hashes. Local evidence is in `qa/authoring/serious-boar` and `qa/boar-intake`. Four completed model captures, two blocking, two motion and one final capture document iterations; they are not independent generation attempts.
+- The 11 existing MP4/GIF assets are byte-identical to their Git baseline. The new README GIF is a 720×405 / 12 fps, 288-frame, 24-second looping derivative of the reviewed boar export. Its full-film 256-color palette preserves the olive tree after the scene cut; the earlier 128-color changed-pixel palette visibly shifted it brown. The local source recording is not distributed; the static viewer explains its absence, hides the unavailable video and the code scene renders without it.
+
+Environment: the same macOS arm64, Node 26.4.0 and existing Chrome 152.0.7977.30. Windows/Linux browser rendering remains unverified. This is one manually authored independent task with a simplified original vector style, broad organic wrist limits and no general collision/dynamics solver. At that trial snapshot, source/input/plan changes invalidated all captures and narrower QA invalidation, a starter and targeted clearance diagnostics were future work. The following pass implements those tools.
+
+
+## Shared authoring assistance and reviewed boar B — 2026-10-27
+
+[Matched-action comparison, repair ledger and limits](reviews/boar-ab/README.md) · [machine-readable verification](reviews/boar-ab/verification.json).
+
+General additions are illustrated object/label ownership with measured fit and clipping; common-space contact/containment/clearance/ownership relations; continuous limb geometry and shared debug overlay; finite normalized travel; a typed local starter; project-local authoring skill; v2 frame-linked criteria/diagnostics; separate QA/image fingerprints; and manifest-driven private-input exclusion. Independent review also repaired unchecked pinned ACTION bytes and case-insensitive private-input leakage.
+
+Final `npm run check` passed (types, numerical core,18 authoring/scaffold/distribution tests, build). Existing Chrome 152 ran505 direct-Pixi/Player comparisons;423 previous records are exactly unchanged and 82 cover B. All288 decoded frames of a new default official monkey export match v5. The13 pre-existing MP4/GIF assets and the pinned whole reference/ACTION remain byte-identical. Actual browser object/starter fixtures are documented in AUTHORING/DEVELOPMENT; their results do not approve B's appearance.
+
+Official B is 1280×720/24 fps/576 frames/24 s/silent H.264,2,205,456 bytes, source SHA `02e52f56a803f81acad4186baca12142c2df0a0b30d67516485cd4add8aebc33`, film SHA `04fc516d9b8d3e8299e212a9258605c1cbe5f8782f3b8ccbd4d88677ccc3b057`, no page errors. The current four captures contain15/46/96/96 PNGs. All576 integer poses passed 18,799 geometry checks. The GIF has 288 frames,720×405,24,000 ms,loop0; old A GIF is preserved. Private whole source is absent from the actual static build. Excerpt frame counts46/51 match inclusive ranges and a QA excerpt receipt is rejected as a final film.
+
+**Follow-up agent visual review completed.** Full final and motion MP4s were inspected at 1× and 0.5× through CUA in an isolated local playback folder containing only authored media and controls. Final runs: 24.035 s and 48.011 s, 576 callbacks each; motion: 24.003 s/575 callbacks (frame zero already shown as poster), 48.030 s/576 callbacks. Live screen sequences, whole-film overviews and enlarged approach/push/bite regions were examined alongside native/decoded images; these judgments were not inferred from callback counts. No new blocking defect was found, source stayed unchanged, and all four reviews plus delivery pass. [Playback record](reviews/boar-ab/playback.json), [review decisions](reviews/boar-ab/review-records.json). The earlier browser denial and broad-server rejection were resolved with a narrow media-only page; no policy override or security weakening was used.
+
+The final checks ran in a source-hash-identical internal recovery workspace after external SSD I/O failures; artifacts were copied back. macOS arm64/Node 24.22.1/existing Chrome 152.0.7977.30. No new package/browser/model service, GitHub operation or deployment. Windows/Linux browser rendering, an unseen-reference quality benchmark and automatic inference remain unverified/unimplemented.

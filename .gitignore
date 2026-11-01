@@ -7,4 +7,5 @@ outputs/
 .env.*
 *.log
 .DS_Store
-/reference/black-cat-chair/whole.*
+# Whole user-provided screen recording: local authoring input, not distributed.
+reference/serious-boar/source.mp4

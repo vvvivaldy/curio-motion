@@ -1,0 +1,55 @@
+{
+  "reference": {
+    "path": "reference/cat-picture-story/whole.png",
+    "sha256": "14948586eb7249512e2c57435b2371c9a31cd26af69dc43c0523dcce0ef8b31f",
+    "provenance": "Owner-supplied whole cut-paper style reference; first of5, all inputs authoring-only and local-only; new original cat/room, no reference pixels in runtime",
+    "mediaType": "image/png",
+    "whole": true,
+    "runtimeUsage": false,
+    "distribution": "local-only",
+    "personallyViewed": true
+  },
+  "action": {
+    "path": "authoring/cat-picture-story.action.txt",
+    "sha256": "d5ae571f943edef6b5591eae3b9df6acf3129fe94f57008d23c984d3587c4b1d",
+    "unchanged": true
+  },
+  "method": "Local source scaffold only. The supplied whole reference and ACTION remain authoring inputs, never runtime textures or generated scene instructions.",
+  "additionalWholeStyleReferences": [
+    {
+      "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/cat-picture-story-2026-10-31/whole-owner-references/reference-1.png",
+      "sha256": "14948586eb7249512e2c57435b2371c9a31cd26af69dc43c0523dcce0ef8b31f",
+      "runtimeUsage": false,
+      "distribution": "local-only",
+      "personallyViewedByRoot": true
+    },
+    {
+      "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/cat-picture-story-2026-10-31/whole-owner-references/reference-2.png",
+      "sha256": "c32f08e141ac3cefbdf33c62928632808b8fa8b61d85bbc3c1c49cba48622e28",
+      "runtimeUsage": false,
+      "distribution": "local-only",
+      "personallyViewedByRoot": true
+    },
+    {
+      "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/cat-picture-story-2026-10-31/whole-owner-references/reference-3.png",
+      "sha256": "57c3f01dd09550461d660c03287e4ed6c1d20c61a7eff4fbbdd4499df3a008bb",
+      "runtimeUsage": false,
+      "distribution": "local-only",
+      "personallyViewedByRoot": true
+    },
+    {
+      "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/cat-picture-story-2026-10-31/whole-owner-references/reference-4.png",
+      "sha256": "e9f70d57d7fbb4fb4a46894bc8e968f9e09c46b156dd95b29c78ed5ab9974a3c",
+      "runtimeUsage": false,
+      "distribution": "local-only",
+      "personallyViewedByRoot": true
+    },
+    {
+      "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/cat-picture-story-2026-10-31/whole-owner-references/reference-5.png",
+      "sha256": "ca4564ffc4a483141811a2a79d8e302a288eace94552b33e11e39bc700f33d5a",
+      "runtimeUsage": false,
+      "distribution": "local-only",
+      "personallyViewedByRoot": true
+    }
+  ]
+}

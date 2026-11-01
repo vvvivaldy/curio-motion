@@ -13,7 +13,7 @@ const ffmpeg = findTool('ffmpeg');
 verifyFfmpeg(ffmpeg);
 await mkdir(dirname(output), { recursive: true });
 const filter = `[0:v]fps=${fps},scale=720:-1:flags=lanczos,split[a][b];`
-  + '[a]palettegen=max_colors=128:stats_mode=diff[p];'
+  + '[a]palettegen=max_colors=256:stats_mode=full[p];'
   + '[b][p]paletteuse=dither=bayer:bayer_scale=3:diff_mode=rectangle';
 const result = spawnSync(ffmpeg, ['-v', 'error', '-y', '-i', input, '-filter_complex', filter,
   '-loop', '0', output], { encoding: 'utf8', windowsHide: true });

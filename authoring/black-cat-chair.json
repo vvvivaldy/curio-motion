@@ -1,0 +1,2412 @@
+{
+  "version": 2,
+  "id": "black-cat-chair",
+  "composition": "BlackCatChair",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "durationInFrames": 480
+  },
+  "input": "authoring/black-cat-chair.inputs.json",
+  "actionFiles": [
+    "authoring/black-cat-chair.action.txt",
+    "authoring/black-cat-chair.revision-feedback.txt",
+    "authoring/black-cat-chair.body-gap-feedback.txt"
+  ],
+  "observations": [
+    "Whole source photograph and all five owner feedback images personally inspected. Target remains the drawn mascot on the central white package, with a broad black head, two large ears, heavy white eyes and a thin body. Owner explicitly rejects the elongated ear/tuft in v1; clean compact ears take priority over uncertain photo pixels.",
+    "V1 was explicitly rejected by owner for ears, crab-like arm gait, missing distinct pull, awkward sitting and backward jump. Its source, films and all reviews are preserved under qa/black-cat-chair-revision-2026-10-30/before. Historical agent passes do not override owner rejection.",
+    "V2 was rejected by owner for a white body gap in deep landing/recovery. Prior author and independent frame acceptance missed a torso self-intersection and are incomplete. Source96 and all v2 artifacts/reviews are preserved in qa/black-cat-body-gap-2026-10-30/before-v2. No old positive acceptance transfers to v3."
+  ],
+  "assumptions": [
+    "Revised20-second480-frame local vector episode. Original whole input and ACTION remain unchanged; exact owner feedback is a separately pinned action file. No raster reference, texture, puppet or film in runtime.",
+    "Existing core contact/constraint/gait/projection/contour-view helpers, no new universal rig. Fore34/32,hind36/34,torso44. A local supported turn uses actual3D bones and their exact projection; head and torso preserve authored volume. Other phases use full2D lengths.",
+    "Fixed-grip pull6..6.7s raises pelvis20px while both hind paws hang below seat; first hind seat touch7.45s (frame178.8, first integer179). Arm swing is contralateral to actual foot lead and shoulder driven; bent elbows describe a brisk approach, not a maximum sprint.",
+    "Actual pelvis touch11.2s; rear feet then hang in front of seat and are explicitly NOT seat supports. Both return before pelvis unload/rise. Seated hold11.7..12.4s uses only the actual rump anchor.",
+    "Supported turn13.45..14.6s moves far foot13.7..14.08, near14.09..14.5; one foot stays planted. Local actor orientation reaches left before left push/takeoff15.148433s. Camera and chair never mirror. Floor targets are fixed in world coordinates after landing at380/24s.",
+    "V1 study guard failure0.71326px remains preserved as historical failure, not waived. Revised landing geometry has changed and requires its own assessment; no old numeric or visual pass is transferred automatically. Full1x/0.5x observation and owner acceptance remain separate from frame/numeric checks.",
+    "Checkpoint01 CECB was rejected after actual77 decoded-frame inspection for crab-like arm alternation and farfore/hind knot. Current chosen repair uses neutral relative wrist.15, full contralateral shoulder drive and actual arm-root narrowing; measure-chair now joins freeArms(rest) without the old43px stop jump. Floor impact compresses20px, constant-deceleration stop40/560, settled hips630550 and weight-back636558; palms532600/550592 become fixed after.06s. Rear soles632600/622592 stay fixed. Free paws first lift8px at angle0 over.05s before FK curl; exact cubic lower extrema are checked through release. The644 rear-foot alternative is preserved as reserve, not this implementation.",
+    "V3 changes only actual torso geometry at deep shoulder/pelvis lean: same4curvekeys, existing morphContour, continuously transported width in shoulder→pelvis anatomical frame. Upright/shallow |dx|≤22 retain exact control points;22..34 smoothstep transition. Motion, contacts, limb/head geometry, timing and draw order are unchanged. Fractional phase body self-crossing/spine-fill regression does not substitute for visible whole-body inspection."
+  ],
+  "actionBeats": [
+    {
+      "time": [
+        0,
+        3.55
+      ],
+      "action": "Brisk alternating biped approach with contralateral shoulder-led bent-arm swing."
+    },
+    {
+      "time": [
+        3.55,
+        5.6666666667
+      ],
+      "action": "Look, crouch, ballistic hop to chair grip."
+    },
+    {
+      "time": [
+        5.6666666667,
+        6
+      ],
+      "action": "Fixed grips absorb the catch."
+    },
+    {
+      "time": [
+        6,
+        6.7
+      ],
+      "action": "Visible fixed-grip upper-body pull, hind paws still hanging."
+    },
+    {
+      "time": [
+        6.7,
+        8.7
+      ],
+      "action": "Lift first hind paw above seat, plant at7.45; accept weight, step and regrip."
+    },
+    {
+      "time": [
+        8.7,
+        10
+      ],
+      "action": "Release hands and stand on seat."
+    },
+    {
+      "time": [
+        10,
+        11.2
+      ],
+      "action": "Lower actual rump to seat."
+    },
+    {
+      "time": [
+        11.2,
+        12.4
+      ],
+      "action": "Let feet hang, relax hands and hold a clear seated pose."
+    },
+    {
+      "time": [
+        12.4,
+        13.45
+      ],
+      "action": "Restore both rear feet, then unload pelvis and rise."
+    },
+    {
+      "time": [
+        13.45,
+        14.6
+      ],
+      "action": "Supported whole-character turn left with separate foot steps and spatial yaw."
+    },
+    {
+      "time": [
+        14.6,
+        15.148433373365364
+      ],
+      "action": "Left-facing reposition, crouch and push."
+    },
+    {
+      "time": [
+        15.148433373365364,
+        15.833333333333334
+      ],
+      "action": "Unsupported leftward ballistic flight, landing-facing fore and rear paws."
+    },
+    {
+      "time": [
+        15.833333333333334,
+        18.433333333333334
+      ],
+      "action": "Four-paw impact, fixed support hold, hand release and recovery."
+    },
+    {
+      "time": [
+        18.433333333333334,
+        20
+      ],
+      "action": "Finite left-facing final hold."
+    }
+  ],
+  "stages": {
+    "model": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Revision model actual frame 0"
+        },
+        {
+          "frame": 16,
+          "label": "Revision model actual frame 16"
+        },
+        {
+          "frame": 24,
+          "label": "Revision model actual frame 24"
+        },
+        {
+          "frame": 38,
+          "label": "Revision model actual frame 38"
+        },
+        {
+          "frame": 60,
+          "label": "Revision model actual frame 60"
+        },
+        {
+          "frame": 85,
+          "label": "Revision model actual boundary frame 85"
+        },
+        {
+          "frame": 86,
+          "label": "Revision model actual boundary frame 86"
+        },
+        {
+          "frame": 144,
+          "label": "Revision model actual frame 144"
+        },
+        {
+          "frame": 153,
+          "label": "Revision model actual frame 153"
+        },
+        {
+          "frame": 160,
+          "label": "Revision model actual frame 160"
+        },
+        {
+          "frame": 179,
+          "label": "Revision model actual frame 179"
+        },
+        {
+          "frame": 240,
+          "label": "Revision model actual frame 240"
+        },
+        {
+          "frame": 269,
+          "label": "Revision model actual frame 269"
+        },
+        {
+          "frame": 281,
+          "label": "Revision model actual frame 281"
+        },
+        {
+          "frame": 292,
+          "label": "Revision model actual frame 292"
+        },
+        {
+          "frame": 313,
+          "label": "Revision model actual frame 313"
+        },
+        {
+          "frame": 323,
+          "label": "Revision model actual frame 323"
+        },
+        {
+          "frame": 334,
+          "label": "Revision model actual frame 334"
+        },
+        {
+          "frame": 343,
+          "label": "Revision model actual frame 343"
+        },
+        {
+          "frame": 350,
+          "label": "Revision model actual frame 350"
+        },
+        {
+          "frame": 359,
+          "label": "Revision model actual frame 359"
+        },
+        {
+          "frame": 363,
+          "label": "Revision model actual frame 363"
+        },
+        {
+          "frame": 380,
+          "label": "Revision model actual frame 380"
+        },
+        {
+          "frame": 382,
+          "label": "Revision model actual boundary frame 382"
+        },
+        {
+          "frame": 396,
+          "label": "Revision model actual frame 396"
+        },
+        {
+          "frame": 418,
+          "label": "Revision model actual boundary frame 418"
+        },
+        {
+          "frame": 419,
+          "label": "Revision model actual boundary frame 419"
+        },
+        {
+          "frame": 420,
+          "label": "Revision model actual boundary frame 420"
+        },
+        {
+          "frame": 443,
+          "label": "Revision model actual frame 443"
+        },
+        {
+          "frame": 479,
+          "label": "Revision model actual frame 479"
+        },
+        {
+          "frame": 364,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 372,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 378,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 379,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 381,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 383,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 389,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 406,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 412,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 416,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 417,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 421,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 422,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 426,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 430,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 438,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ear-and-head",
+          "description": "Two clean coherent large cat ears, no elongated horn/extra tuft; broad head and cheeky heavy eyes remain recognizable in right/front/left views.",
+          "frames": [
+            0,
+            24,
+            60,
+            281,
+            343,
+            350,
+            396,
+            479
+          ],
+          "relations": [
+            "whole-contours",
+            "chair-scale"
+          ],
+          "required": true
+        },
+        {
+          "id": "arm-gait",
+          "description": "Actual continuous shoulder-led forward/back bent-arm swing near torso, opposite the corresponding advancing leg. No crab paddling or unexplained elbows frozen at the waist; inspect a complete cycle.",
+          "frames": [
+            16,
+            24,
+            60,
+            85,
+            86
+          ],
+          "relations": [
+            "rigid-limbs",
+            "joint-ranges",
+            "actual-supports"
+          ],
+          "required": true
+        },
+        {
+          "id": "pull-before-hind",
+          "description": "Both fixed hand grips bear a distinct upward shoulder/body pull with increasing elbow flexion while rear paws still hang, BEFORE first hind lift/seat contact; then a traceable hind support/regrip.",
+          "frames": [
+            144,
+            153,
+            160,
+            179
+          ],
+          "relations": [
+            "rigid-limbs",
+            "joint-ranges",
+            "actual-supports"
+          ],
+          "required": true
+        },
+        {
+          "id": "sit",
+          "description": "Actual rump lowers onto seat before feet hang in front. Knees/feet read as legs; both forepaws relax down beside hips instead of a bar/akimbo. Rear supports return before standing; pelvis-only seated hold is explicit.",
+          "frames": [
+            240,
+            269,
+            281,
+            292,
+            313
+          ],
+          "relations": [
+            "actual-supports",
+            "whole-contours"
+          ],
+          "required": true
+        },
+        {
+          "id": "face-left-before-jump",
+          "description": "Rise then supported whole head/body/arm/foot turn left. One planted foot stays world fixed while the other steps; no frame mirror or instantaneous contact swap. Silhouette/toes/eyes face travel before takeoff and landing; four paws support impact then release/rise.",
+          "frames": [
+            323,
+            334,
+            343,
+            350,
+            359,
+            363,
+            380,
+            382,
+            396,
+            418,
+            419,
+            420,
+            443,
+            479
+          ],
+          "relations": [
+            "actual-supports",
+            "rigid-limbs",
+            "joint-ranges",
+            "floor-contour-clearance",
+            "implemented-control"
+          ],
+          "required": true
+        },
+        {
+          "id": "body-continuity",
+          "description": "Actual whole torso continuously connects shoulder belt and pelvis through deep lean, landing hold, release and rise. No white slit, hourglass self-crossing, disconnected floating pelvis or lost body mass. Inspect whole silhouette and neck/hips joins with adjacent frames, not only limbs or scalars.",
+          "frames": [
+            0,
+            24,
+            160,
+            281,
+            350,
+            363,
+            364,
+            372,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            412,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            426,
+            430,
+            438,
+            443,
+            479
+          ],
+          "relations": [
+            "whole-contours"
+          ],
+          "required": true
+        }
+      ]
+    },
+    "blocking": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Revision blocking actual frame 0"
+        },
+        {
+          "frame": 8,
+          "label": "Revision blocking actual frame 8"
+        },
+        {
+          "frame": 12,
+          "label": "Revision blocking actual frame 12"
+        },
+        {
+          "frame": 16,
+          "label": "Revision blocking actual frame 16"
+        },
+        {
+          "frame": 20,
+          "label": "Revision blocking actual frame 20"
+        },
+        {
+          "frame": 24,
+          "label": "Revision blocking actual frame 24"
+        },
+        {
+          "frame": 28,
+          "label": "Revision blocking actual frame 28"
+        },
+        {
+          "frame": 32,
+          "label": "Revision blocking actual frame 32"
+        },
+        {
+          "frame": 36,
+          "label": "Revision blocking actual frame 36"
+        },
+        {
+          "frame": 40,
+          "label": "Revision blocking actual frame 40"
+        },
+        {
+          "frame": 44,
+          "label": "Revision blocking actual frame 44"
+        },
+        {
+          "frame": 48,
+          "label": "Revision blocking actual frame 48"
+        },
+        {
+          "frame": 52,
+          "label": "Revision blocking actual frame 52"
+        },
+        {
+          "frame": 56,
+          "label": "Revision blocking actual frame 56"
+        },
+        {
+          "frame": 60,
+          "label": "Revision blocking actual frame 60"
+        },
+        {
+          "frame": 64,
+          "label": "Revision blocking actual frame 64"
+        },
+        {
+          "frame": 68,
+          "label": "Revision blocking actual frame 68"
+        },
+        {
+          "frame": 72,
+          "label": "Revision blocking actual frame 72"
+        },
+        {
+          "frame": 76,
+          "label": "Revision blocking actual frame 76"
+        },
+        {
+          "frame": 80,
+          "label": "Revision blocking actual frame 80"
+        },
+        {
+          "frame": 85,
+          "label": "Revision blocking actual boundary frame 85"
+        },
+        {
+          "frame": 86,
+          "label": "Revision blocking actual boundary frame 86"
+        },
+        {
+          "frame": 136,
+          "label": "Revision blocking actual frame 136"
+        },
+        {
+          "frame": 144,
+          "label": "Revision blocking actual frame 144"
+        },
+        {
+          "frame": 148,
+          "label": "Revision blocking actual frame 148"
+        },
+        {
+          "frame": 153,
+          "label": "Revision blocking actual frame 153"
+        },
+        {
+          "frame": 158,
+          "label": "Revision blocking actual frame 158"
+        },
+        {
+          "frame": 160,
+          "label": "Revision blocking actual frame 160"
+        },
+        {
+          "frame": 161,
+          "label": "Revision blocking actual frame 161"
+        },
+        {
+          "frame": 168,
+          "label": "Revision blocking actual frame 168"
+        },
+        {
+          "frame": 172,
+          "label": "Revision blocking actual frame 172"
+        },
+        {
+          "frame": 178,
+          "label": "Revision blocking actual frame 178"
+        },
+        {
+          "frame": 179,
+          "label": "Revision blocking actual frame 179"
+        },
+        {
+          "frame": 180,
+          "label": "Revision blocking actual frame 180"
+        },
+        {
+          "frame": 184,
+          "label": "Revision blocking actual frame 184"
+        },
+        {
+          "frame": 190,
+          "label": "Revision blocking actual frame 190"
+        },
+        {
+          "frame": 192,
+          "label": "Revision blocking actual frame 192"
+        },
+        {
+          "frame": 240,
+          "label": "Revision blocking actual frame 240"
+        },
+        {
+          "frame": 252,
+          "label": "Revision blocking actual frame 252"
+        },
+        {
+          "frame": 264,
+          "label": "Revision blocking actual frame 264"
+        },
+        {
+          "frame": 268,
+          "label": "Revision blocking actual frame 268"
+        },
+        {
+          "frame": 269,
+          "label": "Revision blocking actual frame 269"
+        },
+        {
+          "frame": 275,
+          "label": "Revision blocking actual frame 275"
+        },
+        {
+          "frame": 281,
+          "label": "Revision blocking actual frame 281"
+        },
+        {
+          "frame": 292,
+          "label": "Revision blocking actual frame 292"
+        },
+        {
+          "frame": 298,
+          "label": "Revision blocking actual frame 298"
+        },
+        {
+          "frame": 306,
+          "label": "Revision blocking actual frame 306"
+        },
+        {
+          "frame": 312,
+          "label": "Revision blocking actual frame 312"
+        },
+        {
+          "frame": 313,
+          "label": "Revision blocking actual frame 313"
+        },
+        {
+          "frame": 322,
+          "label": "Revision blocking actual frame 322"
+        },
+        {
+          "frame": 323,
+          "label": "Revision blocking actual frame 323"
+        },
+        {
+          "frame": 328,
+          "label": "Revision blocking actual frame 328"
+        },
+        {
+          "frame": 334,
+          "label": "Revision blocking actual frame 334"
+        },
+        {
+          "frame": 338,
+          "label": "Revision blocking actual frame 338"
+        },
+        {
+          "frame": 343,
+          "label": "Revision blocking actual frame 343"
+        },
+        {
+          "frame": 347,
+          "label": "Revision blocking actual frame 347"
+        },
+        {
+          "frame": 350,
+          "label": "Revision blocking actual frame 350"
+        },
+        {
+          "frame": 351,
+          "label": "Revision blocking actual frame 351"
+        },
+        {
+          "frame": 355,
+          "label": "Revision blocking actual frame 355"
+        },
+        {
+          "frame": 359,
+          "label": "Revision blocking actual frame 359"
+        },
+        {
+          "frame": 363,
+          "label": "Revision blocking actual frame 363"
+        },
+        {
+          "frame": 364,
+          "label": "Revision blocking actual frame 364"
+        },
+        {
+          "frame": 372,
+          "label": "Revision blocking actual frame 372"
+        },
+        {
+          "frame": 379,
+          "label": "Revision blocking actual frame 379"
+        },
+        {
+          "frame": 380,
+          "label": "Revision blocking actual frame 380"
+        },
+        {
+          "frame": 381,
+          "label": "Revision blocking actual frame 381"
+        },
+        {
+          "frame": 382,
+          "label": "Revision blocking actual boundary frame 382"
+        },
+        {
+          "frame": 383,
+          "label": "Revision blocking actual frame 383"
+        },
+        {
+          "frame": 389,
+          "label": "Revision blocking actual frame 389"
+        },
+        {
+          "frame": 396,
+          "label": "Revision blocking actual frame 396"
+        },
+        {
+          "frame": 406,
+          "label": "Revision blocking actual frame 406"
+        },
+        {
+          "frame": 417,
+          "label": "Revision blocking actual frame 417"
+        },
+        {
+          "frame": 418,
+          "label": "Revision blocking actual frame 418"
+        },
+        {
+          "frame": 419,
+          "label": "Revision blocking actual boundary frame 419"
+        },
+        {
+          "frame": 420,
+          "label": "Revision blocking actual boundary frame 420"
+        },
+        {
+          "frame": 422,
+          "label": "Revision blocking actual frame 422"
+        },
+        {
+          "frame": 430,
+          "label": "Revision blocking actual frame 430"
+        },
+        {
+          "frame": 434,
+          "label": "Revision blocking actual frame 434"
+        },
+        {
+          "frame": 438,
+          "label": "Revision blocking actual frame 438"
+        },
+        {
+          "frame": 441,
+          "label": "Revision blocking actual frame 441"
+        },
+        {
+          "frame": 443,
+          "label": "Revision blocking actual frame 443"
+        },
+        {
+          "frame": 479,
+          "label": "Revision blocking actual frame 479"
+        },
+        {
+          "frame": 378,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 412,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 416,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 421,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 426,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ear-and-head",
+          "description": "Two clean coherent large cat ears, no elongated horn/extra tuft; broad head and cheeky heavy eyes remain recognizable in right/front/left views.",
+          "frames": [
+            0,
+            24,
+            60,
+            281,
+            343,
+            350,
+            396,
+            479
+          ],
+          "relations": [
+            "whole-contours",
+            "chair-scale"
+          ],
+          "required": true
+        },
+        {
+          "id": "arm-gait",
+          "description": "Actual continuous shoulder-led forward/back bent-arm swing near torso, opposite the corresponding advancing leg. No crab paddling or unexplained elbows frozen at the waist; inspect a complete cycle.",
+          "frames": [
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            68,
+            72,
+            76,
+            80,
+            85,
+            86
+          ],
+          "relations": [
+            "rigid-limbs",
+            "joint-ranges",
+            "actual-supports"
+          ],
+          "required": true
+        },
+        {
+          "id": "pull-before-hind",
+          "description": "Both fixed hand grips bear a distinct upward shoulder/body pull with increasing elbow flexion while rear paws still hang, BEFORE first hind lift/seat contact; then a traceable hind support/regrip.",
+          "frames": [
+            136,
+            144,
+            148,
+            153,
+            158,
+            160,
+            161,
+            168,
+            172,
+            178,
+            179,
+            180,
+            184,
+            190,
+            192
+          ],
+          "relations": [
+            "rigid-limbs",
+            "joint-ranges",
+            "actual-supports"
+          ],
+          "required": true
+        },
+        {
+          "id": "sit",
+          "description": "Actual rump lowers onto seat before feet hang in front. Knees/feet read as legs; both forepaws relax down beside hips instead of a bar/akimbo. Rear supports return before standing; pelvis-only seated hold is explicit.",
+          "frames": [
+            240,
+            252,
+            264,
+            268,
+            269,
+            275,
+            281,
+            292,
+            298,
+            306,
+            312,
+            313,
+            322
+          ],
+          "relations": [
+            "actual-supports",
+            "whole-contours"
+          ],
+          "required": true
+        },
+        {
+          "id": "face-left-before-jump",
+          "description": "Rise then supported whole head/body/arm/foot turn left. One planted foot stays world fixed while the other steps; no frame mirror or instantaneous contact swap. Silhouette/toes/eyes face travel before takeoff and landing; four paws support impact then release/rise.",
+          "frames": [
+            323,
+            328,
+            334,
+            338,
+            343,
+            347,
+            350,
+            351,
+            355,
+            359,
+            363,
+            364,
+            372,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            417,
+            418,
+            419,
+            420,
+            422,
+            430,
+            434,
+            438,
+            441,
+            443,
+            479
+          ],
+          "relations": [
+            "actual-supports",
+            "rigid-limbs",
+            "joint-ranges",
+            "floor-contour-clearance",
+            "implemented-control"
+          ],
+          "required": true
+        },
+        {
+          "id": "whole-playback-and-intent",
+          "description": "Actually observe complete encoded20s film at1x and0.5x for continuous arm gait, pull-before-hind, sitting, supported left turn and landing/recovery. Timers, successful export and decoded stills cannot mark playback observed.",
+          "frames": [
+            0,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            68,
+            72,
+            76,
+            80,
+            85,
+            86,
+            136,
+            144,
+            148,
+            153,
+            158,
+            160,
+            161,
+            168,
+            172,
+            178,
+            179,
+            180,
+            184,
+            190,
+            192,
+            240,
+            252,
+            264,
+            268,
+            269,
+            275,
+            281,
+            292,
+            298,
+            306,
+            312,
+            313,
+            322,
+            323,
+            328,
+            334,
+            338,
+            343,
+            347,
+            350,
+            351,
+            355,
+            359,
+            363,
+            364,
+            372,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            412,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            426,
+            430,
+            434,
+            438,
+            441,
+            443,
+            479
+          ],
+          "relations": [],
+          "required": true
+        },
+        {
+          "id": "body-continuity",
+          "description": "Actual whole torso continuously connects shoulder belt and pelvis through deep lean, landing hold, release and rise. No white slit, hourglass self-crossing, disconnected floating pelvis or lost body mass. Inspect whole silhouette and neck/hips joins with adjacent frames, not only limbs or scalars.",
+          "frames": [
+            0,
+            24,
+            160,
+            281,
+            350,
+            363,
+            364,
+            372,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            412,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            426,
+            430,
+            438,
+            443,
+            479
+          ],
+          "relations": [
+            "whole-contours"
+          ],
+          "required": true
+        }
+      ]
+    },
+    "motion": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Revision motion actual frame 0"
+        },
+        {
+          "frame": 8,
+          "label": "Revision motion actual frame 8"
+        },
+        {
+          "frame": 12,
+          "label": "Revision motion actual frame 12"
+        },
+        {
+          "frame": 16,
+          "label": "Revision motion actual frame 16"
+        },
+        {
+          "frame": 20,
+          "label": "Revision motion actual frame 20"
+        },
+        {
+          "frame": 24,
+          "label": "Revision motion actual frame 24"
+        },
+        {
+          "frame": 28,
+          "label": "Revision motion actual frame 28"
+        },
+        {
+          "frame": 32,
+          "label": "Revision motion actual frame 32"
+        },
+        {
+          "frame": 36,
+          "label": "Revision motion actual frame 36"
+        },
+        {
+          "frame": 40,
+          "label": "Revision motion actual frame 40"
+        },
+        {
+          "frame": 44,
+          "label": "Revision motion actual frame 44"
+        },
+        {
+          "frame": 48,
+          "label": "Revision motion actual frame 48"
+        },
+        {
+          "frame": 52,
+          "label": "Revision motion actual frame 52"
+        },
+        {
+          "frame": 56,
+          "label": "Revision motion actual frame 56"
+        },
+        {
+          "frame": 60,
+          "label": "Revision motion actual frame 60"
+        },
+        {
+          "frame": 64,
+          "label": "Revision motion actual frame 64"
+        },
+        {
+          "frame": 68,
+          "label": "Revision motion actual frame 68"
+        },
+        {
+          "frame": 72,
+          "label": "Revision motion actual frame 72"
+        },
+        {
+          "frame": 76,
+          "label": "Revision motion actual frame 76"
+        },
+        {
+          "frame": 80,
+          "label": "Revision motion actual frame 80"
+        },
+        {
+          "frame": 85,
+          "label": "Revision motion actual boundary frame 85"
+        },
+        {
+          "frame": 86,
+          "label": "Revision motion actual boundary frame 86"
+        },
+        {
+          "frame": 136,
+          "label": "Revision motion actual frame 136"
+        },
+        {
+          "frame": 144,
+          "label": "Revision motion actual frame 144"
+        },
+        {
+          "frame": 148,
+          "label": "Revision motion actual frame 148"
+        },
+        {
+          "frame": 153,
+          "label": "Revision motion actual frame 153"
+        },
+        {
+          "frame": 158,
+          "label": "Revision motion actual frame 158"
+        },
+        {
+          "frame": 160,
+          "label": "Revision motion actual frame 160"
+        },
+        {
+          "frame": 161,
+          "label": "Revision motion actual frame 161"
+        },
+        {
+          "frame": 168,
+          "label": "Revision motion actual frame 168"
+        },
+        {
+          "frame": 172,
+          "label": "Revision motion actual frame 172"
+        },
+        {
+          "frame": 178,
+          "label": "Revision motion actual frame 178"
+        },
+        {
+          "frame": 179,
+          "label": "Revision motion actual frame 179"
+        },
+        {
+          "frame": 180,
+          "label": "Revision motion actual frame 180"
+        },
+        {
+          "frame": 184,
+          "label": "Revision motion actual frame 184"
+        },
+        {
+          "frame": 190,
+          "label": "Revision motion actual frame 190"
+        },
+        {
+          "frame": 192,
+          "label": "Revision motion actual frame 192"
+        },
+        {
+          "frame": 240,
+          "label": "Revision motion actual frame 240"
+        },
+        {
+          "frame": 252,
+          "label": "Revision motion actual frame 252"
+        },
+        {
+          "frame": 264,
+          "label": "Revision motion actual frame 264"
+        },
+        {
+          "frame": 268,
+          "label": "Revision motion actual frame 268"
+        },
+        {
+          "frame": 269,
+          "label": "Revision motion actual frame 269"
+        },
+        {
+          "frame": 275,
+          "label": "Revision motion actual frame 275"
+        },
+        {
+          "frame": 281,
+          "label": "Revision motion actual frame 281"
+        },
+        {
+          "frame": 292,
+          "label": "Revision motion actual frame 292"
+        },
+        {
+          "frame": 298,
+          "label": "Revision motion actual frame 298"
+        },
+        {
+          "frame": 306,
+          "label": "Revision motion actual frame 306"
+        },
+        {
+          "frame": 312,
+          "label": "Revision motion actual frame 312"
+        },
+        {
+          "frame": 313,
+          "label": "Revision motion actual frame 313"
+        },
+        {
+          "frame": 322,
+          "label": "Revision motion actual frame 322"
+        },
+        {
+          "frame": 323,
+          "label": "Revision motion actual frame 323"
+        },
+        {
+          "frame": 328,
+          "label": "Revision motion actual frame 328"
+        },
+        {
+          "frame": 334,
+          "label": "Revision motion actual frame 334"
+        },
+        {
+          "frame": 338,
+          "label": "Revision motion actual frame 338"
+        },
+        {
+          "frame": 343,
+          "label": "Revision motion actual frame 343"
+        },
+        {
+          "frame": 347,
+          "label": "Revision motion actual frame 347"
+        },
+        {
+          "frame": 350,
+          "label": "Revision motion actual frame 350"
+        },
+        {
+          "frame": 351,
+          "label": "Revision motion actual frame 351"
+        },
+        {
+          "frame": 355,
+          "label": "Revision motion actual frame 355"
+        },
+        {
+          "frame": 359,
+          "label": "Revision motion actual frame 359"
+        },
+        {
+          "frame": 363,
+          "label": "Revision motion actual frame 363"
+        },
+        {
+          "frame": 364,
+          "label": "Revision motion actual frame 364"
+        },
+        {
+          "frame": 372,
+          "label": "Revision motion actual frame 372"
+        },
+        {
+          "frame": 379,
+          "label": "Revision motion actual frame 379"
+        },
+        {
+          "frame": 380,
+          "label": "Revision motion actual frame 380"
+        },
+        {
+          "frame": 381,
+          "label": "Revision motion actual frame 381"
+        },
+        {
+          "frame": 382,
+          "label": "Revision motion actual boundary frame 382"
+        },
+        {
+          "frame": 383,
+          "label": "Revision motion actual frame 383"
+        },
+        {
+          "frame": 389,
+          "label": "Revision motion actual frame 389"
+        },
+        {
+          "frame": 396,
+          "label": "Revision motion actual frame 396"
+        },
+        {
+          "frame": 406,
+          "label": "Revision motion actual frame 406"
+        },
+        {
+          "frame": 417,
+          "label": "Revision motion actual frame 417"
+        },
+        {
+          "frame": 418,
+          "label": "Revision motion actual frame 418"
+        },
+        {
+          "frame": 419,
+          "label": "Revision motion actual boundary frame 419"
+        },
+        {
+          "frame": 420,
+          "label": "Revision motion actual boundary frame 420"
+        },
+        {
+          "frame": 422,
+          "label": "Revision motion actual frame 422"
+        },
+        {
+          "frame": 430,
+          "label": "Revision motion actual frame 430"
+        },
+        {
+          "frame": 434,
+          "label": "Revision motion actual frame 434"
+        },
+        {
+          "frame": 438,
+          "label": "Revision motion actual frame 438"
+        },
+        {
+          "frame": 441,
+          "label": "Revision motion actual frame 441"
+        },
+        {
+          "frame": 443,
+          "label": "Revision motion actual frame 443"
+        },
+        {
+          "frame": 479,
+          "label": "Revision motion actual frame 479"
+        },
+        {
+          "frame": 378,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 412,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 416,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 421,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 426,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ear-and-head",
+          "description": "Two clean coherent large cat ears, no elongated horn/extra tuft; broad head and cheeky heavy eyes remain recognizable in right/front/left views.",
+          "frames": [
+            0,
+            24,
+            60,
+            281,
+            343,
+            350,
+            396,
+            479
+          ],
+          "relations": [
+            "whole-contours",
+            "chair-scale"
+          ],
+          "required": true
+        },
+        {
+          "id": "arm-gait",
+          "description": "Actual continuous shoulder-led forward/back bent-arm swing near torso, opposite the corresponding advancing leg. No crab paddling or unexplained elbows frozen at the waist; inspect a complete cycle.",
+          "frames": [
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            68,
+            72,
+            76,
+            80,
+            85,
+            86
+          ],
+          "relations": [
+            "rigid-limbs",
+            "joint-ranges",
+            "actual-supports"
+          ],
+          "required": true
+        },
+        {
+          "id": "pull-before-hind",
+          "description": "Both fixed hand grips bear a distinct upward shoulder/body pull with increasing elbow flexion while rear paws still hang, BEFORE first hind lift/seat contact; then a traceable hind support/regrip.",
+          "frames": [
+            136,
+            144,
+            148,
+            153,
+            158,
+            160,
+            161,
+            168,
+            172,
+            178,
+            179,
+            180,
+            184,
+            190,
+            192
+          ],
+          "relations": [
+            "rigid-limbs",
+            "joint-ranges",
+            "actual-supports"
+          ],
+          "required": true
+        },
+        {
+          "id": "sit",
+          "description": "Actual rump lowers onto seat before feet hang in front. Knees/feet read as legs; both forepaws relax down beside hips instead of a bar/akimbo. Rear supports return before standing; pelvis-only seated hold is explicit.",
+          "frames": [
+            240,
+            252,
+            264,
+            268,
+            269,
+            275,
+            281,
+            292,
+            298,
+            306,
+            312,
+            313,
+            322
+          ],
+          "relations": [
+            "actual-supports",
+            "whole-contours"
+          ],
+          "required": true
+        },
+        {
+          "id": "face-left-before-jump",
+          "description": "Rise then supported whole head/body/arm/foot turn left. One planted foot stays world fixed while the other steps; no frame mirror or instantaneous contact swap. Silhouette/toes/eyes face travel before takeoff and landing; four paws support impact then release/rise.",
+          "frames": [
+            323,
+            328,
+            334,
+            338,
+            343,
+            347,
+            350,
+            351,
+            355,
+            359,
+            363,
+            364,
+            372,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            417,
+            418,
+            419,
+            420,
+            422,
+            430,
+            434,
+            438,
+            441,
+            443,
+            479
+          ],
+          "relations": [
+            "actual-supports",
+            "rigid-limbs",
+            "joint-ranges",
+            "floor-contour-clearance",
+            "implemented-control"
+          ],
+          "required": true
+        },
+        {
+          "id": "whole-playback-and-intent",
+          "description": "Actually observe complete encoded20s film at1x and0.5x for continuous arm gait, pull-before-hind, sitting, supported left turn and landing/recovery. Timers, successful export and decoded stills cannot mark playback observed.",
+          "frames": [
+            0,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            68,
+            72,
+            76,
+            80,
+            85,
+            86,
+            136,
+            144,
+            148,
+            153,
+            158,
+            160,
+            161,
+            168,
+            172,
+            178,
+            179,
+            180,
+            184,
+            190,
+            192,
+            240,
+            252,
+            264,
+            268,
+            269,
+            275,
+            281,
+            292,
+            298,
+            306,
+            312,
+            313,
+            322,
+            323,
+            328,
+            334,
+            338,
+            343,
+            347,
+            350,
+            351,
+            355,
+            359,
+            363,
+            364,
+            372,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            412,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            426,
+            430,
+            434,
+            438,
+            441,
+            443,
+            479
+          ],
+          "relations": [],
+          "required": true
+        },
+        {
+          "id": "body-continuity",
+          "description": "Actual whole torso continuously connects shoulder belt and pelvis through deep lean, landing hold, release and rise. No white slit, hourglass self-crossing, disconnected floating pelvis or lost body mass. Inspect whole silhouette and neck/hips joins with adjacent frames, not only limbs or scalars.",
+          "frames": [
+            0,
+            24,
+            160,
+            281,
+            350,
+            363,
+            364,
+            372,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            412,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            426,
+            430,
+            438,
+            443,
+            479
+          ],
+          "relations": [
+            "whole-contours"
+          ],
+          "required": true
+        }
+      ]
+    },
+    "final": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Revision final actual frame 0"
+        },
+        {
+          "frame": 8,
+          "label": "Revision final actual frame 8"
+        },
+        {
+          "frame": 12,
+          "label": "Revision final actual frame 12"
+        },
+        {
+          "frame": 16,
+          "label": "Revision final actual frame 16"
+        },
+        {
+          "frame": 20,
+          "label": "Revision final actual frame 20"
+        },
+        {
+          "frame": 24,
+          "label": "Revision final actual frame 24"
+        },
+        {
+          "frame": 28,
+          "label": "Revision final actual frame 28"
+        },
+        {
+          "frame": 32,
+          "label": "Revision final actual frame 32"
+        },
+        {
+          "frame": 36,
+          "label": "Revision final actual frame 36"
+        },
+        {
+          "frame": 40,
+          "label": "Revision final actual frame 40"
+        },
+        {
+          "frame": 44,
+          "label": "Revision final actual frame 44"
+        },
+        {
+          "frame": 48,
+          "label": "Revision final actual frame 48"
+        },
+        {
+          "frame": 52,
+          "label": "Revision final actual frame 52"
+        },
+        {
+          "frame": 56,
+          "label": "Revision final actual frame 56"
+        },
+        {
+          "frame": 60,
+          "label": "Revision final actual frame 60"
+        },
+        {
+          "frame": 64,
+          "label": "Revision final actual frame 64"
+        },
+        {
+          "frame": 68,
+          "label": "Revision final actual frame 68"
+        },
+        {
+          "frame": 72,
+          "label": "Revision final actual frame 72"
+        },
+        {
+          "frame": 76,
+          "label": "Revision final actual frame 76"
+        },
+        {
+          "frame": 80,
+          "label": "Revision final actual frame 80"
+        },
+        {
+          "frame": 85,
+          "label": "Revision final actual boundary frame 85"
+        },
+        {
+          "frame": 86,
+          "label": "Revision final actual boundary frame 86"
+        },
+        {
+          "frame": 136,
+          "label": "Revision final actual frame 136"
+        },
+        {
+          "frame": 144,
+          "label": "Revision final actual frame 144"
+        },
+        {
+          "frame": 148,
+          "label": "Revision final actual frame 148"
+        },
+        {
+          "frame": 153,
+          "label": "Revision final actual frame 153"
+        },
+        {
+          "frame": 158,
+          "label": "Revision final actual frame 158"
+        },
+        {
+          "frame": 160,
+          "label": "Revision final actual frame 160"
+        },
+        {
+          "frame": 161,
+          "label": "Revision final actual frame 161"
+        },
+        {
+          "frame": 168,
+          "label": "Revision final actual frame 168"
+        },
+        {
+          "frame": 172,
+          "label": "Revision final actual frame 172"
+        },
+        {
+          "frame": 178,
+          "label": "Revision final actual frame 178"
+        },
+        {
+          "frame": 179,
+          "label": "Revision final actual frame 179"
+        },
+        {
+          "frame": 180,
+          "label": "Revision final actual frame 180"
+        },
+        {
+          "frame": 184,
+          "label": "Revision final actual frame 184"
+        },
+        {
+          "frame": 190,
+          "label": "Revision final actual frame 190"
+        },
+        {
+          "frame": 192,
+          "label": "Revision final actual frame 192"
+        },
+        {
+          "frame": 240,
+          "label": "Revision final actual frame 240"
+        },
+        {
+          "frame": 252,
+          "label": "Revision final actual frame 252"
+        },
+        {
+          "frame": 264,
+          "label": "Revision final actual frame 264"
+        },
+        {
+          "frame": 268,
+          "label": "Revision final actual frame 268"
+        },
+        {
+          "frame": 269,
+          "label": "Revision final actual frame 269"
+        },
+        {
+          "frame": 275,
+          "label": "Revision final actual frame 275"
+        },
+        {
+          "frame": 281,
+          "label": "Revision final actual frame 281"
+        },
+        {
+          "frame": 292,
+          "label": "Revision final actual frame 292"
+        },
+        {
+          "frame": 298,
+          "label": "Revision final actual frame 298"
+        },
+        {
+          "frame": 306,
+          "label": "Revision final actual frame 306"
+        },
+        {
+          "frame": 312,
+          "label": "Revision final actual frame 312"
+        },
+        {
+          "frame": 313,
+          "label": "Revision final actual frame 313"
+        },
+        {
+          "frame": 322,
+          "label": "Revision final actual frame 322"
+        },
+        {
+          "frame": 323,
+          "label": "Revision final actual frame 323"
+        },
+        {
+          "frame": 328,
+          "label": "Revision final actual frame 328"
+        },
+        {
+          "frame": 334,
+          "label": "Revision final actual frame 334"
+        },
+        {
+          "frame": 338,
+          "label": "Revision final actual frame 338"
+        },
+        {
+          "frame": 343,
+          "label": "Revision final actual frame 343"
+        },
+        {
+          "frame": 347,
+          "label": "Revision final actual frame 347"
+        },
+        {
+          "frame": 350,
+          "label": "Revision final actual frame 350"
+        },
+        {
+          "frame": 351,
+          "label": "Revision final actual frame 351"
+        },
+        {
+          "frame": 355,
+          "label": "Revision final actual frame 355"
+        },
+        {
+          "frame": 359,
+          "label": "Revision final actual frame 359"
+        },
+        {
+          "frame": 363,
+          "label": "Revision final actual frame 363"
+        },
+        {
+          "frame": 364,
+          "label": "Revision final actual frame 364"
+        },
+        {
+          "frame": 372,
+          "label": "Revision final actual frame 372"
+        },
+        {
+          "frame": 379,
+          "label": "Revision final actual frame 379"
+        },
+        {
+          "frame": 380,
+          "label": "Revision final actual frame 380"
+        },
+        {
+          "frame": 381,
+          "label": "Revision final actual frame 381"
+        },
+        {
+          "frame": 382,
+          "label": "Revision final actual boundary frame 382"
+        },
+        {
+          "frame": 383,
+          "label": "Revision final actual frame 383"
+        },
+        {
+          "frame": 389,
+          "label": "Revision final actual frame 389"
+        },
+        {
+          "frame": 396,
+          "label": "Revision final actual frame 396"
+        },
+        {
+          "frame": 406,
+          "label": "Revision final actual frame 406"
+        },
+        {
+          "frame": 417,
+          "label": "Revision final actual frame 417"
+        },
+        {
+          "frame": 418,
+          "label": "Revision final actual frame 418"
+        },
+        {
+          "frame": 419,
+          "label": "Revision final actual boundary frame 419"
+        },
+        {
+          "frame": 420,
+          "label": "Revision final actual boundary frame 420"
+        },
+        {
+          "frame": 422,
+          "label": "Revision final actual frame 422"
+        },
+        {
+          "frame": 430,
+          "label": "Revision final actual frame 430"
+        },
+        {
+          "frame": 434,
+          "label": "Revision final actual frame 434"
+        },
+        {
+          "frame": 438,
+          "label": "Revision final actual frame 438"
+        },
+        {
+          "frame": 441,
+          "label": "Revision final actual frame 441"
+        },
+        {
+          "frame": 443,
+          "label": "Revision final actual frame 443"
+        },
+        {
+          "frame": 479,
+          "label": "Revision final actual frame 479"
+        },
+        {
+          "frame": 378,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 412,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 416,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 421,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        },
+        {
+          "frame": 426,
+          "label": "Body continuity / preserved action control",
+          "radius": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ear-and-head",
+          "description": "Two clean coherent large cat ears, no elongated horn/extra tuft; broad head and cheeky heavy eyes remain recognizable in right/front/left views.",
+          "frames": [
+            0,
+            24,
+            60,
+            281,
+            343,
+            350,
+            396,
+            479
+          ],
+          "relations": [
+            "whole-contours",
+            "chair-scale"
+          ],
+          "required": true
+        },
+        {
+          "id": "arm-gait",
+          "description": "Actual continuous shoulder-led forward/back bent-arm swing near torso, opposite the corresponding advancing leg. No crab paddling or unexplained elbows frozen at the waist; inspect a complete cycle.",
+          "frames": [
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            68,
+            72,
+            76,
+            80,
+            85,
+            86
+          ],
+          "relations": [
+            "rigid-limbs",
+            "joint-ranges",
+            "actual-supports"
+          ],
+          "required": true
+        },
+        {
+          "id": "pull-before-hind",
+          "description": "Both fixed hand grips bear a distinct upward shoulder/body pull with increasing elbow flexion while rear paws still hang, BEFORE first hind lift/seat contact; then a traceable hind support/regrip.",
+          "frames": [
+            136,
+            144,
+            148,
+            153,
+            158,
+            160,
+            161,
+            168,
+            172,
+            178,
+            179,
+            180,
+            184,
+            190,
+            192
+          ],
+          "relations": [
+            "rigid-limbs",
+            "joint-ranges",
+            "actual-supports"
+          ],
+          "required": true
+        },
+        {
+          "id": "sit",
+          "description": "Actual rump lowers onto seat before feet hang in front. Knees/feet read as legs; both forepaws relax down beside hips instead of a bar/akimbo. Rear supports return before standing; pelvis-only seated hold is explicit.",
+          "frames": [
+            240,
+            252,
+            264,
+            268,
+            269,
+            275,
+            281,
+            292,
+            298,
+            306,
+            312,
+            313,
+            322
+          ],
+          "relations": [
+            "actual-supports",
+            "whole-contours"
+          ],
+          "required": true
+        },
+        {
+          "id": "face-left-before-jump",
+          "description": "Rise then supported whole head/body/arm/foot turn left. One planted foot stays world fixed while the other steps; no frame mirror or instantaneous contact swap. Silhouette/toes/eyes face travel before takeoff and landing; four paws support impact then release/rise.",
+          "frames": [
+            323,
+            328,
+            334,
+            338,
+            343,
+            347,
+            350,
+            351,
+            355,
+            359,
+            363,
+            364,
+            372,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            417,
+            418,
+            419,
+            420,
+            422,
+            430,
+            434,
+            438,
+            441,
+            443,
+            479
+          ],
+          "relations": [
+            "actual-supports",
+            "rigid-limbs",
+            "joint-ranges",
+            "floor-contour-clearance",
+            "implemented-control"
+          ],
+          "required": true
+        },
+        {
+          "id": "whole-playback-and-intent",
+          "description": "Actually observe complete encoded20s film at1x and0.5x for continuous arm gait, pull-before-hind, sitting, supported left turn and landing/recovery. Timers, successful export and decoded stills cannot mark playback observed.",
+          "frames": [
+            0,
+            8,
+            12,
+            16,
+            20,
+            24,
+            28,
+            32,
+            36,
+            40,
+            44,
+            48,
+            52,
+            56,
+            60,
+            64,
+            68,
+            72,
+            76,
+            80,
+            85,
+            86,
+            136,
+            144,
+            148,
+            153,
+            158,
+            160,
+            161,
+            168,
+            172,
+            178,
+            179,
+            180,
+            184,
+            190,
+            192,
+            240,
+            252,
+            264,
+            268,
+            269,
+            275,
+            281,
+            292,
+            298,
+            306,
+            312,
+            313,
+            322,
+            323,
+            328,
+            334,
+            338,
+            343,
+            347,
+            350,
+            351,
+            355,
+            359,
+            363,
+            364,
+            372,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            412,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            426,
+            430,
+            434,
+            438,
+            441,
+            443,
+            479
+          ],
+          "relations": [],
+          "required": true
+        },
+        {
+          "id": "body-continuity",
+          "description": "Actual whole torso continuously connects shoulder belt and pelvis through deep lean, landing hold, release and rise. No white slit, hourglass self-crossing, disconnected floating pelvis or lost body mass. Inspect whole silhouette and neck/hips joins with adjacent frames, not only limbs or scalars.",
+          "frames": [
+            0,
+            24,
+            160,
+            281,
+            350,
+            363,
+            364,
+            372,
+            378,
+            379,
+            380,
+            381,
+            382,
+            383,
+            389,
+            396,
+            406,
+            412,
+            416,
+            417,
+            418,
+            419,
+            420,
+            421,
+            422,
+            426,
+            430,
+            438,
+            443,
+            479
+          ],
+          "relations": [
+            "whole-contours"
+          ],
+          "required": true
+        }
+      ]
+    }
+  },
+  "diagnosticModule": "src/examples/black-cat-chair/diagnostics.ts",
+  "independentReview": {
+    "stages": [
+      "model",
+      "final"
+    ]
+  }
+}

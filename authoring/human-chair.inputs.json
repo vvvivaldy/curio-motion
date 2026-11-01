@@ -1,0 +1,27 @@
+{
+  "reference": {
+    "path": "reference/human-chair/whole.svg",
+    "sha256": "c034ac7e70004d9f17e60ebf3a65a8a27520ca4b41e2ae215f9344f468df84b9",
+    "provenance": "Original author-created whole neutral vector study, 2026-10-30; not owner-supplied and not a frame of the finished animation.",
+    "mediaType": "image/svg+xml",
+    "whole": true,
+    "runtimeUsage": false,
+    "distribution": "local-only"
+  },
+  "action": {
+    "path": "authoring/human-chair.action.txt",
+    "sha256": "5b30f55aec0d912b12e065bd09bf53a7ed0cb893e4cc21424018f2d1ed8450d3",
+    "unchanged": true
+  },
+  "method": "Local source scaffold only. The supplied whole reference and ACTION remain authoring inputs, never runtime textures or generated scene instructions.",
+  "ownerFeedback": {
+    "path": "authoring/human-chair.owner-feedback-v2.txt",
+    "sha256": "51d5f449da87246b5da39733fdc767ed23cadc7ca8e5a2d50a630e5062120202",
+    "source": "Unchanged additional owner feedback; original ACTION/reference preserved"
+  },
+  "ownerDepthFeedback": {
+    "path": "authoring/human-chair.owner-feedback-v3.txt",
+    "sha256": "f33ecd25a775fd6cb990455dffa012d3cccc1c841265e446361f9701a5ddc47c",
+    "source": "Exact additional owner depth correction; V1/V2, original ACTION and whole reference preserved"
+  }
+}

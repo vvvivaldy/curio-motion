@@ -1,0 +1,17 @@
+{
+  "reference": {
+    "path": "reference/black-cat-chair/whole.jpg",
+    "sha256": "32bbaa14988fef51fa7b3ddff87cfab2dc4d4de965eb172598189d468d256aaf",
+    "provenance": "Owner-supplied whole packaging photograph; target is drawn mascot on central white pack, not plush toy. Local authoring input only.",
+    "mediaType": "image/jpeg",
+    "whole": true,
+    "runtimeUsage": false,
+    "distribution": "local-only"
+  },
+  "action": {
+    "path": "authoring/black-cat-chair.action.txt",
+    "sha256": "bab1951664f8e3e8ac750295d14bf2a97e7b52e159d971df1da8de64490b7029",
+    "unchanged": true
+  },
+  "method": "Local source scaffold only. The supplied whole reference and ACTION remain authoring inputs, never runtime textures or generated scene instructions."
+}

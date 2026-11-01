@@ -1,0 +1,1576 @@
+{
+  "version": 2,
+  "id": "motion-foundations",
+  "composition": "MotionFoundations",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "durationInFrames": 216
+  },
+  "input": "authoring/motion-foundations.inputs.json",
+  "actionFiles": [
+    "authoring/motion-foundations.action.txt"
+  ],
+  "observations": [
+    "Personally inspected whole historical SVG as1280x720 image: fixed-base two-link mechanical arm, continuous hook at gold ring, capsule, two docks, central curved dome, dotted arch, separate three-part explanatory cards; navy/mint/gold palette.",
+    "SVG/ACTION bytes are recovered historical authoring inputs; reference is never a runtime texture. Requested content is the three mechanisms, not character emotion.",
+    "Actual unmodified draft native0/75/91 personally viewed: arm crosses dome in far hold despite original diagnostics passing. BEFORE and failed probes are preserved."
+  ],
+  "assumptions": [
+    "Exactly one9-second authored mechanical demo,216frames24fps. No alternate characters, new renderer, hosted generation, physics engine or general collision planner.",
+    "Authored dimensions300/260 repair the visible interference while root, capsule/trajectory, hook contact, angular limits and damped response schedule remain unchanged. Dome/body/dock dimensions and visible strokes are shared by drawing and diagnostics.",
+    "Arc-length table is a finite chord approximation; clearances use conservative envelopes with explicit allowances. They do not prove pixel appearance or arbitrary-scene collision avoidance.",
+    "Spring response is analytic about a fixed equilibrium with author-triggered angular-velocity impulses. Final fade is an authored finite gate. Exact-end7.2+1.4 regression fixed without changing216nativeposes.",
+    "Accepted box/base+8source9331freeze and movies remain preserved. Owner acceptance is recorded separately from agent playback observations."
+  ],
+  "actionBeats": [
+    {
+      "time": [
+        0,
+        0.8
+      ],
+      "action": "Left dock, hook/ring contact and whole assembly held."
+    },
+    {
+      "time": [
+        0.8,
+        3
+      ],
+      "action": "Controlled transfer over the actual dome; pointer reacts to start."
+    },
+    {
+      "time": [
+        3,
+        3.5
+      ],
+      "action": "Right dock support; pointer responds to braking."
+    },
+    {
+      "time": [
+        3.5,
+        4.5
+      ],
+      "action": "Unreachable request marker appears; actual capsule/contact stay supported."
+    },
+    {
+      "time": [
+        4.5,
+        5
+      ],
+      "action": "Marker removed; hold before return."
+    },
+    {
+      "time": [
+        5,
+        7.2
+      ],
+      "action": "Return arc through authored nonzero-velocity points; same contact."
+    },
+    {
+      "time": [
+        7.2,
+        8.6
+      ],
+      "action": "Back on left dock; final pointer response settles."
+    },
+    {
+      "time": [
+        8.6,
+        9
+      ],
+      "action": "Exact still endpoint."
+    }
+  ],
+  "diagnosticModule": "src/examples/motion-foundations/diagnostics.ts",
+  "independentReview": {
+    "stages": [
+      "model",
+      "final"
+    ]
+  },
+  "stages": {
+    "model": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "0.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 18,
+          "label": "0.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 19,
+          "label": "0.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 20,
+          "label": "0.833s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 24,
+          "label": "1.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 30,
+          "label": "1.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 36,
+          "label": "1.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 48,
+          "label": "2.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 54,
+          "label": "2.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 66,
+          "label": "2.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 71,
+          "label": "2.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 72,
+          "label": "3.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 73,
+          "label": "3.042s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 74,
+          "label": "3.083s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 75,
+          "label": "3.125s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 83,
+          "label": "3.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 84,
+          "label": "3.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 85,
+          "label": "3.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 91,
+          "label": "3.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 92,
+          "label": "3.833s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 107,
+          "label": "4.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 108,
+          "label": "4.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 109,
+          "label": "4.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 119,
+          "label": "4.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 120,
+          "label": "5.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 121,
+          "label": "5.042s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 137,
+          "label": "5.708s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 138,
+          "label": "5.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 139,
+          "label": "5.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 155,
+          "label": "6.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 156,
+          "label": "6.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 157,
+          "label": "6.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 172,
+          "label": "7.167s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 173,
+          "label": "7.208s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 174,
+          "label": "7.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 192,
+          "label": "8.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 205,
+          "label": "8.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 206,
+          "label": "8.583s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 207,
+          "label": "8.625s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 208,
+          "label": "8.667s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 215,
+          "label": "8.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-assembly",
+          "description": "Whole rigid links/joints, continuous hook and ring/capsule read against the whole design. Initial elbow fits below the heading; labels remain separate, legible and describe the visible event.",
+          "required": true,
+          "frames": [
+            0,
+            36,
+            75,
+            91,
+            138,
+            173,
+            215
+          ],
+          "relations": [
+            "continuous-hook"
+          ]
+        },
+        {
+          "id": "clear-physical-passage",
+          "description": "Capsule including ring, both full-width arm links/joints and the whole hook clear the real curved dome and docks. Layer order cannot excuse an intersection.",
+          "required": true,
+          "frames": [
+            0,
+            20,
+            36,
+            54,
+            66,
+            71,
+            72,
+            74,
+            75,
+            91,
+            107,
+            120,
+            138,
+            156,
+            172,
+            173
+          ],
+          "relations": [
+            "arm-barrier-clearance",
+            "hook-clearance",
+            "arm-dock-clearance",
+            "capsule-clearance"
+          ]
+        },
+        {
+          "id": "locked-grip-and-limits",
+          "description": "The visible hook touches the actual ring hole throughout carrying and rejected command. Same fixed root, rigid authored bones, branch and strict angular limits; no clamp or stale pose.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            24,
+            30,
+            36,
+            48,
+            54,
+            66,
+            71,
+            72,
+            73,
+            74,
+            75,
+            83,
+            84,
+            85,
+            91,
+            92,
+            107,
+            108,
+            109,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": [
+            "locked-grip",
+            "joint-limits"
+          ]
+        },
+        {
+          "id": "route-and-support",
+          "description": "Controlled outward arc, return through-points and exact stops are readable. Capsule rests on its actual specific dock in each hold; no unplanned intermediate stop or collision.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            36,
+            54,
+            71,
+            72,
+            73,
+            75,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            215
+          ],
+          "relations": [
+            "supported-holds"
+          ]
+        },
+        {
+          "id": "damped-pointer",
+          "description": "Pointer responds after start/braking, visibly settles, then remains still at207/208/215 with capsule/arm. Its author-supplied impulses and final fade are a demonstration, not automatic rigid-body dynamics.",
+          "required": true,
+          "frames": [
+            20,
+            24,
+            30,
+            72,
+            75,
+            91,
+            120,
+            138,
+            173,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": [
+            "finite-settle"
+          ]
+        },
+        {
+          "id": "rejected-command",
+          "description": "At83 marker absent,84..107 unreachable goal is separately marked without moving capsule/grip from right dock,108/109 marker is gone. Root/arm stay valid; annotation line is not a physical link.",
+          "required": true,
+          "frames": [
+            75,
+            83,
+            84,
+            85,
+            91,
+            107,
+            108,
+            109
+          ],
+          "relations": [
+            "rejected-request",
+            "locked-grip",
+            "supported-holds"
+          ]
+        }
+      ]
+    },
+    "blocking": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "0.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 18,
+          "label": "0.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 19,
+          "label": "0.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 20,
+          "label": "0.833s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 24,
+          "label": "1.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 30,
+          "label": "1.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 36,
+          "label": "1.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 48,
+          "label": "2.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 54,
+          "label": "2.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 66,
+          "label": "2.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 71,
+          "label": "2.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 72,
+          "label": "3.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 73,
+          "label": "3.042s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 74,
+          "label": "3.083s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 75,
+          "label": "3.125s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 83,
+          "label": "3.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 84,
+          "label": "3.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 85,
+          "label": "3.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 91,
+          "label": "3.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 92,
+          "label": "3.833s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 107,
+          "label": "4.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 108,
+          "label": "4.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 109,
+          "label": "4.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 119,
+          "label": "4.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 120,
+          "label": "5.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 121,
+          "label": "5.042s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 137,
+          "label": "5.708s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 138,
+          "label": "5.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 139,
+          "label": "5.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 155,
+          "label": "6.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 156,
+          "label": "6.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 157,
+          "label": "6.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 172,
+          "label": "7.167s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 173,
+          "label": "7.208s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 174,
+          "label": "7.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 192,
+          "label": "8.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 205,
+          "label": "8.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 206,
+          "label": "8.583s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 207,
+          "label": "8.625s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 208,
+          "label": "8.667s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 215,
+          "label": "8.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-assembly",
+          "description": "Whole rigid links/joints, continuous hook and ring/capsule read against the whole design. Initial elbow fits below the heading; labels remain separate, legible and describe the visible event.",
+          "required": true,
+          "frames": [
+            0,
+            36,
+            75,
+            91,
+            138,
+            173,
+            215
+          ],
+          "relations": [
+            "continuous-hook"
+          ]
+        },
+        {
+          "id": "clear-physical-passage",
+          "description": "Capsule including ring, both full-width arm links/joints and the whole hook clear the real curved dome and docks. Layer order cannot excuse an intersection.",
+          "required": true,
+          "frames": [
+            0,
+            20,
+            36,
+            54,
+            66,
+            71,
+            72,
+            74,
+            75,
+            91,
+            107,
+            120,
+            138,
+            156,
+            172,
+            173
+          ],
+          "relations": [
+            "arm-barrier-clearance",
+            "hook-clearance",
+            "arm-dock-clearance",
+            "capsule-clearance"
+          ]
+        },
+        {
+          "id": "locked-grip-and-limits",
+          "description": "The visible hook touches the actual ring hole throughout carrying and rejected command. Same fixed root, rigid authored bones, branch and strict angular limits; no clamp or stale pose.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            24,
+            30,
+            36,
+            48,
+            54,
+            66,
+            71,
+            72,
+            73,
+            74,
+            75,
+            83,
+            84,
+            85,
+            91,
+            92,
+            107,
+            108,
+            109,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": [
+            "locked-grip",
+            "joint-limits"
+          ]
+        },
+        {
+          "id": "route-and-support",
+          "description": "Controlled outward arc, return through-points and exact stops are readable. Capsule rests on its actual specific dock in each hold; no unplanned intermediate stop or collision.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            36,
+            54,
+            71,
+            72,
+            73,
+            75,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            215
+          ],
+          "relations": [
+            "supported-holds"
+          ]
+        },
+        {
+          "id": "damped-pointer",
+          "description": "Pointer responds after start/braking, visibly settles, then remains still at207/208/215 with capsule/arm. Its author-supplied impulses and final fade are a demonstration, not automatic rigid-body dynamics.",
+          "required": true,
+          "frames": [
+            20,
+            24,
+            30,
+            72,
+            75,
+            91,
+            120,
+            138,
+            173,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": [
+            "finite-settle"
+          ]
+        },
+        {
+          "id": "rejected-command",
+          "description": "At83 marker absent,84..107 unreachable goal is separately marked without moving capsule/grip from right dock,108/109 marker is gone. Root/arm stay valid; annotation line is not a physical link.",
+          "required": true,
+          "frames": [
+            75,
+            83,
+            84,
+            85,
+            91,
+            107,
+            108,
+            109
+          ],
+          "relations": [
+            "rejected-request",
+            "locked-grip",
+            "supported-holds"
+          ]
+        }
+      ]
+    },
+    "motion": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "0.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 18,
+          "label": "0.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 19,
+          "label": "0.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 20,
+          "label": "0.833s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 24,
+          "label": "1.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 30,
+          "label": "1.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 36,
+          "label": "1.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 48,
+          "label": "2.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 54,
+          "label": "2.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 66,
+          "label": "2.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 71,
+          "label": "2.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 72,
+          "label": "3.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 73,
+          "label": "3.042s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 74,
+          "label": "3.083s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 75,
+          "label": "3.125s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 83,
+          "label": "3.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 84,
+          "label": "3.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 85,
+          "label": "3.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 91,
+          "label": "3.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 92,
+          "label": "3.833s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 107,
+          "label": "4.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 108,
+          "label": "4.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 109,
+          "label": "4.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 119,
+          "label": "4.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 120,
+          "label": "5.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 121,
+          "label": "5.042s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 137,
+          "label": "5.708s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 138,
+          "label": "5.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 139,
+          "label": "5.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 155,
+          "label": "6.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 156,
+          "label": "6.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 157,
+          "label": "6.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 172,
+          "label": "7.167s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 173,
+          "label": "7.208s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 174,
+          "label": "7.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 192,
+          "label": "8.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 205,
+          "label": "8.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 206,
+          "label": "8.583s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 207,
+          "label": "8.625s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 208,
+          "label": "8.667s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 215,
+          "label": "8.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-assembly",
+          "description": "Whole rigid links/joints, continuous hook and ring/capsule read against the whole design. Initial elbow fits below the heading; labels remain separate, legible and describe the visible event.",
+          "required": true,
+          "frames": [
+            0,
+            36,
+            75,
+            91,
+            138,
+            173,
+            215
+          ],
+          "relations": [
+            "continuous-hook"
+          ]
+        },
+        {
+          "id": "clear-physical-passage",
+          "description": "Capsule including ring, both full-width arm links/joints and the whole hook clear the real curved dome and docks. Layer order cannot excuse an intersection.",
+          "required": true,
+          "frames": [
+            0,
+            20,
+            36,
+            54,
+            66,
+            71,
+            72,
+            74,
+            75,
+            91,
+            107,
+            120,
+            138,
+            156,
+            172,
+            173
+          ],
+          "relations": [
+            "arm-barrier-clearance",
+            "hook-clearance",
+            "arm-dock-clearance",
+            "capsule-clearance"
+          ]
+        },
+        {
+          "id": "locked-grip-and-limits",
+          "description": "The visible hook touches the actual ring hole throughout carrying and rejected command. Same fixed root, rigid authored bones, branch and strict angular limits; no clamp or stale pose.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            24,
+            30,
+            36,
+            48,
+            54,
+            66,
+            71,
+            72,
+            73,
+            74,
+            75,
+            83,
+            84,
+            85,
+            91,
+            92,
+            107,
+            108,
+            109,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": [
+            "locked-grip",
+            "joint-limits"
+          ]
+        },
+        {
+          "id": "route-and-support",
+          "description": "Controlled outward arc, return through-points and exact stops are readable. Capsule rests on its actual specific dock in each hold; no unplanned intermediate stop or collision.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            36,
+            54,
+            71,
+            72,
+            73,
+            75,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            215
+          ],
+          "relations": [
+            "supported-holds"
+          ]
+        },
+        {
+          "id": "damped-pointer",
+          "description": "Pointer responds after start/braking, visibly settles, then remains still at207/208/215 with capsule/arm. Its author-supplied impulses and final fade are a demonstration, not automatic rigid-body dynamics.",
+          "required": true,
+          "frames": [
+            20,
+            24,
+            30,
+            72,
+            75,
+            91,
+            120,
+            138,
+            173,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": [
+            "finite-settle"
+          ]
+        },
+        {
+          "id": "rejected-command",
+          "description": "At83 marker absent,84..107 unreachable goal is separately marked without moving capsule/grip from right dock,108/109 marker is gone. Root/arm stay valid; annotation line is not a physical link.",
+          "required": true,
+          "frames": [
+            75,
+            83,
+            84,
+            85,
+            91,
+            107,
+            108,
+            109
+          ],
+          "relations": [
+            "rejected-request",
+            "locked-grip",
+            "supported-holds"
+          ]
+        },
+        {
+          "id": "complete-film-rhythm",
+          "description": "Personally inspect full official film at1x and0.5x: continuous transfer/return without hitch, finite secondary response, clear rejected-command interval and intentional supported pauses. Decoded stills alone cannot accept this criterion.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            24,
+            30,
+            36,
+            48,
+            54,
+            66,
+            71,
+            72,
+            73,
+            74,
+            75,
+            83,
+            84,
+            85,
+            91,
+            92,
+            107,
+            108,
+            109,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": []
+        }
+      ]
+    },
+    "final": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "0.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 18,
+          "label": "0.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 19,
+          "label": "0.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 20,
+          "label": "0.833s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 24,
+          "label": "1.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 30,
+          "label": "1.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 36,
+          "label": "1.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 48,
+          "label": "2.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 54,
+          "label": "2.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 66,
+          "label": "2.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 71,
+          "label": "2.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 72,
+          "label": "3.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 73,
+          "label": "3.042s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 74,
+          "label": "3.083s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 75,
+          "label": "3.125s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 83,
+          "label": "3.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 84,
+          "label": "3.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 85,
+          "label": "3.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 91,
+          "label": "3.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 92,
+          "label": "3.833s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 107,
+          "label": "4.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 108,
+          "label": "4.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 109,
+          "label": "4.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 119,
+          "label": "4.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 120,
+          "label": "5.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 121,
+          "label": "5.042s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 137,
+          "label": "5.708s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 138,
+          "label": "5.750s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 139,
+          "label": "5.792s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 155,
+          "label": "6.458s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 156,
+          "label": "6.500s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 157,
+          "label": "6.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 172,
+          "label": "7.167s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 173,
+          "label": "7.208s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 174,
+          "label": "7.250s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 192,
+          "label": "8.000s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 205,
+          "label": "8.542s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 206,
+          "label": "8.583s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 207,
+          "label": "8.625s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 208,
+          "label": "8.667s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        },
+        {
+          "frame": 215,
+          "label": "8.958s / start, arc, far hold, rejection, return or exact-settle neighbor"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-assembly",
+          "description": "Whole rigid links/joints, continuous hook and ring/capsule read against the whole design. Initial elbow fits below the heading; labels remain separate, legible and describe the visible event.",
+          "required": true,
+          "frames": [
+            0,
+            36,
+            75,
+            91,
+            138,
+            173,
+            215
+          ],
+          "relations": [
+            "continuous-hook"
+          ]
+        },
+        {
+          "id": "clear-physical-passage",
+          "description": "Capsule including ring, both full-width arm links/joints and the whole hook clear the real curved dome and docks. Layer order cannot excuse an intersection.",
+          "required": true,
+          "frames": [
+            0,
+            20,
+            36,
+            54,
+            66,
+            71,
+            72,
+            74,
+            75,
+            91,
+            107,
+            120,
+            138,
+            156,
+            172,
+            173
+          ],
+          "relations": [
+            "arm-barrier-clearance",
+            "hook-clearance",
+            "arm-dock-clearance",
+            "capsule-clearance"
+          ]
+        },
+        {
+          "id": "locked-grip-and-limits",
+          "description": "The visible hook touches the actual ring hole throughout carrying and rejected command. Same fixed root, rigid authored bones, branch and strict angular limits; no clamp or stale pose.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            24,
+            30,
+            36,
+            48,
+            54,
+            66,
+            71,
+            72,
+            73,
+            74,
+            75,
+            83,
+            84,
+            85,
+            91,
+            92,
+            107,
+            108,
+            109,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": [
+            "locked-grip",
+            "joint-limits"
+          ]
+        },
+        {
+          "id": "route-and-support",
+          "description": "Controlled outward arc, return through-points and exact stops are readable. Capsule rests on its actual specific dock in each hold; no unplanned intermediate stop or collision.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            36,
+            54,
+            71,
+            72,
+            73,
+            75,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            215
+          ],
+          "relations": [
+            "supported-holds"
+          ]
+        },
+        {
+          "id": "damped-pointer",
+          "description": "Pointer responds after start/braking, visibly settles, then remains still at207/208/215 with capsule/arm. Its author-supplied impulses and final fade are a demonstration, not automatic rigid-body dynamics.",
+          "required": true,
+          "frames": [
+            20,
+            24,
+            30,
+            72,
+            75,
+            91,
+            120,
+            138,
+            173,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": [
+            "finite-settle"
+          ]
+        },
+        {
+          "id": "rejected-command",
+          "description": "At83 marker absent,84..107 unreachable goal is separately marked without moving capsule/grip from right dock,108/109 marker is gone. Root/arm stay valid; annotation line is not a physical link.",
+          "required": true,
+          "frames": [
+            75,
+            83,
+            84,
+            85,
+            91,
+            107,
+            108,
+            109
+          ],
+          "relations": [
+            "rejected-request",
+            "locked-grip",
+            "supported-holds"
+          ]
+        },
+        {
+          "id": "complete-film-rhythm",
+          "description": "Personally inspect full official film at1x and0.5x: continuous transfer/return without hitch, finite secondary response, clear rejected-command interval and intentional supported pauses. Decoded stills alone cannot accept this criterion.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            19,
+            20,
+            24,
+            30,
+            36,
+            48,
+            54,
+            66,
+            71,
+            72,
+            73,
+            74,
+            75,
+            83,
+            84,
+            85,
+            91,
+            92,
+            107,
+            108,
+            109,
+            119,
+            120,
+            121,
+            137,
+            138,
+            139,
+            155,
+            156,
+            157,
+            172,
+            173,
+            174,
+            192,
+            205,
+            206,
+            207,
+            208,
+            215
+          ],
+          "relations": []
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,285 @@
+{
+  "version": 1,
+  "id": "serious-boar",
+  "composition": "SeriousBoar",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "durationInFrames": 576
+  },
+  "input": "reference/serious-boar/authoring-input.json",
+  "actionFiles": [
+    "reference/serious-boar/ACTION.txt"
+  ],
+  "observations": [
+    "Stationary 16:9 storefront, tiled floor and right product shelf.",
+    "Empty wire cart followed by a growing absurd tower of packaged goods.",
+    "A man enters from the left, pushes right; black small italic rule and very large red warning overlay him.",
+    "Exact message: правило: не купишь сейчас — заплатишь больше!!!",
+    "The source cuts to a cashier; user replaces that shot with a savanna snack scene."
+  ],
+  "assumptions": [
+    "The boar design and acacia environment are new authored interpretations, not present in the reference.",
+    "Keep the store actions and editorial hierarchy; extend exit enough to show the cart leaving before the cut.",
+    "User explicitly changed the eating mood to satisfied.",
+    "This visual trial is silent, like the existing examples; source audio is not reused."
+  ],
+  "actionBeats": [
+    "0–4.3: hold empty cart in the shop",
+    "4.3–8.9: build the insect product tower",
+    "8.05–10.1: serious boar arrives and takes handle",
+    "10.1–15: push right while original infographic appears",
+    "15–24: satisfied seated boar, three bag-to-mouth caterpillar snacks and deliberate pauses"
+  ],
+  "stages": {
+    "model": {
+      "criteria": [
+        "Boar has a continuous stocky silhouette, long snout, tusks, ears and serious shop expression",
+        "Four packaged insect families read; no sugar or oil remains",
+        "Savanna boar reads as the same character, visibly relaxed and satisfied"
+      ],
+      "samples": [
+        {
+          "frame": 234,
+          "label": "Serious shop model"
+        },
+        {
+          "frame": 377,
+          "label": "Satisfied seated model"
+        },
+        {
+          "frame": 411,
+          "label": "Mouth and food contact"
+        }
+      ]
+    },
+    "blocking": {
+      "criteria": [
+        "Empty cart, cargo growth, arrival, grip and exit follow the reference order",
+        "Both hoof supports and handle contact agree with the drawing",
+        "Savanna shows a tree, part of a loaded cart and a held open snack bag"
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Action pose 0"
+        },
+        {
+          "frame": 144,
+          "label": "Action pose 144"
+        },
+        {
+          "frame": 228,
+          "label": "Action pose 228"
+        },
+        {
+          "frame": 260,
+          "label": "Action pose 260"
+        },
+        {
+          "frame": 310,
+          "label": "Action pose 310"
+        },
+        {
+          "frame": 359,
+          "label": "Action pose 359"
+        },
+        {
+          "frame": 360,
+          "label": "Action pose 360"
+        },
+        {
+          "frame": 378,
+          "label": "Action pose 378"
+        },
+        {
+          "frame": 408,
+          "label": "Action pose 408"
+        },
+        {
+          "frame": 440,
+          "label": "Action pose 440"
+        },
+        {
+          "frame": 480,
+          "label": "Action pose 480"
+        },
+        {
+          "frame": 530,
+          "label": "Action pose 530"
+        },
+        {
+          "frame": 575,
+          "label": "Action pose 575"
+        }
+      ]
+    },
+    "motion": {
+      "criteria": [
+        "Planted hooves hold and the gripping hoof follows the cart handle",
+        "Each snack travels from the open bag to the mouth before chewing and return",
+        "No elbow branch jumps, accidental prop intersections or unmotivated idle oscillations"
+      ],
+      "samples": [
+        {
+          "frame": 202,
+          "radius": 1,
+          "label": "Transition 202"
+        },
+        {
+          "frame": 228,
+          "radius": 1,
+          "label": "Transition 228"
+        },
+        {
+          "frame": 234,
+          "radius": 1,
+          "label": "Transition 234"
+        },
+        {
+          "frame": 300,
+          "radius": 1,
+          "label": "Transition 300"
+        },
+        {
+          "frame": 358,
+          "radius": 1,
+          "label": "Transition 358"
+        },
+        {
+          "frame": 386,
+          "radius": 1,
+          "label": "Transition 386"
+        },
+        {
+          "frame": 402,
+          "radius": 1,
+          "label": "Transition 402"
+        },
+        {
+          "frame": 415,
+          "radius": 1,
+          "label": "Transition 415"
+        },
+        {
+          "frame": 429,
+          "radius": 1,
+          "label": "Transition 429"
+        },
+        {
+          "frame": 463,
+          "radius": 1,
+          "label": "Transition 463"
+        },
+        {
+          "frame": 479,
+          "radius": 1,
+          "label": "Transition 479"
+        },
+        {
+          "frame": 493,
+          "radius": 1,
+          "label": "Transition 493"
+        },
+        {
+          "frame": 534,
+          "radius": 1,
+          "label": "Transition 534"
+        },
+        {
+          "frame": 550,
+          "radius": 1,
+          "label": "Transition 550"
+        },
+        {
+          "frame": 560,
+          "radius": 1,
+          "label": "Transition 560"
+        }
+      ]
+    },
+    "final": {
+      "criteria": [
+        "Full encoded movie inspected at normal and half speed",
+        "Russian infographic is legible and keeps its original wording and hierarchy",
+        "Satisfied eating, caterpillars and partly visible overflowing cart are clear",
+        "Both previous films and GIFs remain unchanged"
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Encoded frame 0"
+        },
+        {
+          "frame": 156,
+          "label": "Encoded frame 156"
+        },
+        {
+          "frame": 234,
+          "label": "Encoded frame 234"
+        },
+        {
+          "frame": 288,
+          "label": "Encoded frame 288"
+        },
+        {
+          "frame": 312,
+          "label": "Encoded frame 312"
+        },
+        {
+          "frame": 348,
+          "label": "Encoded frame 348"
+        },
+        {
+          "frame": 359,
+          "label": "Encoded frame 359"
+        },
+        {
+          "frame": 360,
+          "label": "Encoded frame 360"
+        },
+        {
+          "frame": 377,
+          "label": "Encoded frame 377"
+        },
+        {
+          "frame": 402,
+          "label": "Encoded frame 402"
+        },
+        {
+          "frame": 411,
+          "label": "Encoded frame 411"
+        },
+        {
+          "frame": 429,
+          "label": "Encoded frame 429"
+        },
+        {
+          "frame": 444,
+          "label": "Encoded frame 444"
+        },
+        {
+          "frame": 479,
+          "label": "Encoded frame 479"
+        },
+        {
+          "frame": 493,
+          "label": "Encoded frame 493"
+        },
+        {
+          "frame": 525,
+          "label": "Encoded frame 525"
+        },
+        {
+          "frame": 550,
+          "label": "Encoded frame 550"
+        },
+        {
+          "frame": 575,
+          "label": "Encoded frame 575"
+        }
+      ]
+    }
+  }
+}

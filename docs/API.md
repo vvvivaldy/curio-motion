@@ -1,6 +1,6 @@
 # Minimal TypeScript API
 
-This is a local source API, not an npm package or an automatic scene generator. The pink-monkey example is its only visual consumer so far; a second example remains separate work.
+This is a local source API, not an npm package or an automatic scene generator. The registered character examples share the scene/stage/Remotion contracts; each keeps its own anatomy, staging and action timing.
 
 | Import | Contract |
 | --- | --- |
@@ -11,12 +11,17 @@ This is a local source API, not an npm package or an automatic scene generator. 
 
 Time is in seconds. `smooth` and `tween` hold at 0/1 outside their interval; `tween` expects finite input and `start < end`. A pose evaluator must be pure: the same time must produce the same pose regardless of seek order. No playback clock, timeline channels or action parser is introduced.
 
+`sampleTravel(time, {start, end, ramp})` in `core/time.ts` returns normalized `{progress, velocity}` with velocity in progress per second. It holds at `{0, 0}` before the interval and `{1, 0}` afterward, uses quintic smooth velocity ramps of `ramp` seconds at each end, and keeps constant speed `1 / (end - start - ramp)` between them. Inputs must be finite, `start < end`, and `0 < ramp <= (end - start) / 2`, with finite representable duration and speed. Multiply progress by an authored distance to advance a root or prop independently of foot swing phases; foot contacts and anatomy still require their own constraints. Sampling is pure and supports arbitrary seek order.
+
+
 `SceneDefinition` supplies:
 
 - `settings`: canvas width/height, background color, fps and duration. Dimensions must be positive safe integers. Settings are copied when a stage is created.
 - `pose(time)`: the example's own pose evaluator; there is no prescribed skeleton or character structure.
 - `createDrawing(root)`: allocate and attach Pixi display objects once, returning a typed drawing context. The stage owns their destruction.
 - `draw(drawing, pose, {frame, time})`: update contours/transforms in the example's chosen layer order. Draw synchronously and clear/redraw reusable Graphics as needed; do not start a ticker or retain accumulated animation time.
+
+The pose need not describe a character. For a chart it can hold bar heights, text opacity and a brief highlight; use the same scene contract with Pixi `Graphics`/`Text` and existing time easing. Keep one zero baseline and linear data scale, reveal summaries after growth, and hold the final pose long enough to read.
 
 Use the existing scene directly:
 
@@ -34,11 +39,17 @@ stage.destroy(); // once, when the owner unmounts; do not draw afterwards
 
 The example chooses anatomy, coordinate spaces, contact schedules, hands, colors, environment and all timing landmarks in `src/examples/pink-monkey/`. `pinkMonkeySettings` supplies identical dimensions/fps/duration to Pixi, the Remotion Composition and the live Player. Remotion still owns `useCurrentFrame`, async initialization/frame readiness and official `renderMedia` export.
 
-No dependencies, raster scene inputs, second scene, hosted service or platform integration were added. The documentation GIF is an export derivative only. Original code is MIT; Remotion retains its separate license.
+Scenes are authored in TypeScript without raster scene inputs or a hosted service. Documentation GIFs are export derivatives only. Original code is MIT; Remotion retains its separate license.
+
+## Anatomical bounds when holding a prop
+
+`solveTwoBone` establishes geometric reach, not an anatomically appropriate shoulder or elbow. `solvePlanarLimb` supplies explicit bend/flexion/wrist limits; the example must also declare a suitable upper-arm sector relative to its torso/shoulder frame. Choose those bounds for the action and proportions. Reject and restage an invalid target rather than clamping the wrist or loosening a bound to pass a bad image.
+
+If a two-handed prop turn would swap the hands or force a shoulder backwards, author a release and regrip: one hand keeps ownership while the other moves to its new anchor, then transfers support. Review both complete shoulder–elbow–wrist chains throughout the transition. A reachable hand and an unbroken grip do not establish a natural pose. Keeping elbows below shoulders is appropriate for the courier's low transfer; it is not a universal rule for raised-arm actions.
 
 ## Shared quality helpers
 
-These helpers are pure TypeScript and contain no monkey dimensions, colors, timing landmarks or renderer clock. The single visual consumer remains the pink-monkey example; reuse is covered with differently sized numeric cases, not claimed as a validated second character.
+These helpers are pure TypeScript and contain no monkey dimensions, colors, timing landmarks or renderer clock. The monkey, Amber robot and cat examples consume applicable subsets; inspect each example and its review evidence rather than treating numeric reuse tests as visual approval.
 
 | Import | Contract |
 | --- | --- |
@@ -155,24 +166,80 @@ Amber uses 960×640 / 30 fps / 300 frames with a two-Graphics Drawing type, whil
 
 The 3D `solveTwoBone` contract and existing monkey motion are unchanged. Amber uses the new planar solver with a 20° minimum elbow flexion and ±75° wrist limits. These are explicit mechanical illustration constraints, not a dynamics simulation or automatic anatomical inference. The [authoring process](AUTHORING.md) couples numerical checks with actual frame review.
 
+## Nested Graphics frames and example registration
 
-## Rigid spaces and directed joints
+`withGraphicsFrame(graphics, frame, draw)` in `core/graphics-frame.ts` appends a `LocalFrame2D` to the current Pixi Graphics transform, executes `draw`, then restores the parent even if drawing throws. Origin/angle/scale must be finite and scale positive. Nested calls compose the same coordinates as `localPoint(localPoint(point, child), parent)`. This keeps a packet's insect illustration, or food held by a hand, inside its actual parent frame. It does not load textures or split a reference into parts.
 
-`core/frame3.ts` exports rigid `Frame3` composition and point/vector conversions. Axes are right-handed and orthonormal; character convention is +X anatomical left, +Y up, +Z forward. Keep anatomical IDs across turns. `affineProject` and its projection ray include camera elevation; use that same view in visibility and diagnostics.
+```ts
+withGraphicsFrame(g, {origin: [320, 200], angle: -0.1, scale: 1.2}, () => {
+  g.rect(-30, -50, 60, 100).fill(0xc7a86d);
+  withGraphicsFrame(g, {origin: [0, 5], angle: 0.2, scale: 1}, () => {
+    g.ellipse(0, 0, 10, 7).fill(0x637452);
+  });
+});
+```
 
-`core/hinge.ts` solves a two-bone hinge in an explicit root frame, directed normal, bend sign and signed flexion range. A rejected target stays rejected; it is not silently projected or clamped. Orient the shoulder/hip or revise the authored pose. `fitPlanarPostureHeight` in kinematics adds a shared height constraint without moving held endpoints; it does not choose a character's motion intent.
+`examples/scenes.ts` is the demo registry outside core. One typed entry supplies its composition ID, settings, pose evaluator, shared Remotion component and direct stage factory. Root, Player and direct preview select that same entry; viewer metadata supplies labels and documentation paths separately. `seriousBoarScene` uses 1280×720 / 24 fps / 576 frames. Its gait, cart/snack anchors and planar limbs reuse existing helpers. Its proportions, mouth curve, snack timing and original drawing remain example code.
 
-## Opaque paper surfaces
+## Object ownership, labels and visible geometry
 
-`core/paper-visibility.ts` clips actual triangle fragments using the view ray and per-surface depth. An average/root-depth sort cannot resolve crossing surfaces. `core/paper-fill.ts` supplies optional seam coverage for the same visible fragments; it is a drawing setting, not contact geometry. Keep surface anchors and rendered outlines consistent.
+`core/relations.ts` defines `ObjectGeometry {id, frame, anchors, regions?}`. Anchors and rectangular regions are local to the object's `LocalFrame2D`. `objectAnchor({object, anchor})` and `objectRegion(object, name)` return transformed scene coordinates. `checkContact`, `checkContainment`, `checkOwnership` and `checkClearance` return a named `pass`/`fail` result with an observation. Segment clearance handles crossing and degenerate segments. Every operand must be in the same scene space; these helpers do not discover silhouettes, depth or collision bodies.
 
-## Finite trajectories and ordinary running
+`createIllustratedObject(root, geometry)` in `core/objects.ts` owns a Pixi Container, art Graphics and masked Text labels as one depth unit. Draw the package in `object.art`, then use `addLabel({id, text, region, fontSize, minFontSize, padding})` for its named label region. It measures actual Pixi Text, rejects content that cannot fit at the minimum size, and clips to the object's region. `setFrame` moves/rotates/scales art and labels together; `inspectLabels` checks measured fit and parent ownership. The object and its peers must use the same untransformed scene root (or an explicitly composed common frame for geometric diagnostics). It does not wrap text, choose readable copy or solve occlusion/layout automatically. Review small labels at normal viewing size.
 
-`createTrajectory` in `core/trajectory.ts` uses explicit positions, optional velocities and accelerations, with finite endpoint holds. Its distance table is an approximation with caller-selected sampling, not collision avoidance.
+`limbShape(root, joint, end, [rootWidth, jointWidth, endWidth])` in `core/limb.ts` returns a continuous closed tapered cubic contour and the same `upper`/`lower` segments for diagnostics. Authors supply meaningful proportions and a solved joint; a nearly folded-back limb is rejected rather than given an invented overlap. Widths, bends, clothes, hands, feet and depth remain authored and require native-frame review.
 
-`createRunPlan({upper,lower,soleToAnkle,start?,duration?,from?,to?,ramp?,firstSide?,forwardLean?})` in `core/run.ts` is opt-in flat-floor running. Lengths use the character's drawing units, time is seconds, `forwardLean` is radians (default Math.PI/8). Station increases forward and height increases up. Use the real sole-to-ankle anchor. Existing walking functions keep their published behavior.
-
-`sample(time)` returns root station/height/velocity, fixed-support or swinging feet, phase, lean and arm timing. The default has a brief recurring flight, early rear-heel recovery, late extension and two shorter braking contacts. The caller supplies its character rig, transforms, contours and camera. It does not infer anatomy from an image or simulate unrestricted physical dynamics. Check the actual leg silhouette and ground clearance; flags alone cannot establish convincing running.
+`drawGeometryOverlay(graphics, objects, paths)` in `core/debug.ts` draws anchor dots, region outlines and supplied joint/trajectory paths in one common scene space. This is an optional evidence-only drawing; keep it out of the final film. It consumes the same geometry, not a second diagnostic skeleton, and does not award an artistic score.
 
 
-`runningUpperArm(centre,drive,upperLength,backDepth,referenceSwing)` in `core/arm-motion.ts` adds a smooth rear shoulder excursion from the actual drawn upper-arm length and back depth. All angles are radians. Forward swing and neutral pose are preserved; negative drive reaches toward the back line. `referenceSwing` is an explicit motion calibration supplied by the caller, not an anatomical constant. The example measures its elbow against the actual torso section at elbow height; inspect that silhouette and reachable joints as well as the wrist.
+### Finite walking passage evidence
+
+`inspectFootPasses([nearTrack, farTrack], forward = [1, 0], transfer = .12)` in `core/gait.ts` reports each swing's signed station at lift/landing relative to the opposite foot, whether that foot stays fixed, and `passed`. It uses the same world contacts as `sampleFootsteps`; `forward` chooses the projected route direction. Negative `behind` and positive `ahead` detect a rear-to-front pass. This catches repeated rear catch-up before visual review; it neither chooses footfalls nor proves natural motion. Treat startup/closing deliberately in the action plan, rather than exempting every swing. `sampleFootsteps.load` stays in0..1 including floating-point roundoff at transfer boundaries.
+
+The carrier probe retains its planted start/end contacts and uses the rear foot first; ordinary body travel still comes from `sampleTravel`, not a jumping support midpoint. Proportions and action choices stay in the example. Inspect swing-knee shape, grounded stance height and real playback after a topology pass.
+
+
+The carrier's compact carry reuses `sampleHandling`, `balancePayload`, actual object frames/anchors and planar FK/IK. Its authored tuck moves the entire carton55*heightScale toward the body after lift and returns to the established world endpoint during placement; grip anchors do not slide. The carrying torso cue uses the real payload ratio times its world-space lever, with an authored0.85visual gain, and blends into the deliberate placement reach. This is staging, not a dynamics model. The previous artistic settling offset is kept separate from actual payload mass. `pose.body` and `pose.boxFaces` supply the same contours/faces to rendering and clearance diagnostics. The constant walking squat was removed; the existing height fitter retains reach constraints instead of forcing an anatomically impossible height. Free approach arms use existing FK/quadratic interpolation tied to the actual opposing foot, then yield to the established pickup preparation.
+
+## Trajectories, damping and explicit contacts
+
+The recovered [motion-foundations study](../src/examples/motion-foundations/scene.ts) is one opt-in consumer of these modules; existing character solvers are unchanged.
+
+- **trajectory.ts:** `createTrajectory(keys)` samples quintic Hermite position, velocity and acceleration in seconds and the caller's coordinates. Keys are C2; omitted derivatives mean zero, so supply velocity at a through-point. End derivatives must be zero, with exact holds outside the authored interval. `parameterizeByDistance(trajectory, samplesPerSegment)` builds a chord-table approximation, then samples position/unit tangent by clamped distance. Density is explicit (default256,8..4096); it is not a guaranteed error bound or collision planner. Apply a separate speed profile such as `sampleTravel`.
+- **spring.ts:** `sampleDampedSpring(elapsed, initial, {frequencyHz,dampingRatio})` is an analytic homogeneous response around a fixed equilibrium, including under/critical/overdamping. Reevaluate from the same initial state on each seek. `sampleSpringImpulse(time, impulse)` adds an authored finite duration and smooth final fade; it returns exact zero at and after `start+duration`. The fade is an authoring gate; impulses, equilibrium and coupling are supplied by the author, not a rigid-body simulation.
+- **constraints.ts:** `attachContacts(orientation, contacts, tolerance)` solves translation for prescribed rotation/scale and rejects incompatible anchors instead of averaging them. `solveLimbContact(request)` adds a fixed root, rigid two-link lengths, chosen bend side and explicit shoulder/elbow/wrist ranges. Expected conflicts return `status:'blocked'` with reasons and no drawable pose; invalid API data throws. It does not clamp joints, reuse the previous frame, move the root or plan obstacle avoidance. Visible contour clearance remains a separate scene check using rendered geometry.
+
+## Human locomotion: authored travel and reach validation
+
+The [human-chair motion](../src/examples/human-chair/motion.ts) uses existing `sampleTravel`, `sampleFootsteps` and `createTrajectory` helpers. Foot contacts and finite body travel are authored together. A smooth hip path keeps reach margin; the example rejects unreachable authored roots. Proportions and action timing remain authoring decisions.
+
+`fitPlanarPostureHeight` in [kinematics](../src/core/kinematics.ts) computes a geometrically feasible vertical correction for supplied limb targets. It does not promise a smooth animation when evaluated independently each frame. Switching the limiting limb can preserve position and contacts while abruptly changing vertical velocity. Check a planned walking path instead of silently using that correction as body motion. Rejected human-chair v1 exposed this problem; v2 uses the existing helpers without changing their contracts. Review whole figures, consecutive steps and encoded motion alongside numerical reach checks.
+
+
+## Opt-in rigid paper spaces and directed joints
+
+`core/frame3.ts` adds a separate `Frame3` contract: right-handed orthonormal axes, no scale/reflection, with finite values checked. For a character using this convention, +X is anatomical left, +Y up, +Z forward. `yawFrame3` keeps the full signed angle; `composeFrame3`, `pointInFrame3`, `vectorInFrame3` and `vectorFromFrame3` connect local body, shoulder and relative neck spaces. Anatomical side IDs stay fixed when the camera moves. A relative head turn changes the head frame; gaze is separate authored feature data. These functions do not choose a character's proportions, views or pose.
+
+`AffineView` / `affineProject` use world +Y up and `screenY = originY + scale * (-Y + elevation * depth)`, where `depth = -X sin(yaw) + Z cos(yaw)`. `affineViewRay` includes elevation; `facingSide` returns front/back/edge from the actual normal and ray. `affineUnprojectAtDepth` round-trips a screen point at a declared depth. The older `spatial.project` / `unproject` conventions and defaults are unchanged.
+
+`core/hinge.ts` offers `solveHingeLimb` above the existing free `solveTwoBone`. The caller supplies a rigid shoulder/hip frame, directed unit hinge normal, branch sign, signed flexion range and plane tolerance. It returns solved geometry with the exact target, or blocked reach/off-plane/singular/joint-limit. It never fixes a conflict by projecting the target, flipping the elbow, clamping a joint or moving a held contact. A shoulder reaching outside the torso's sagittal plane needs its own authored orientation. The shared helper does not infer anatomical limits or correct staging.
+
+## Opt-in opaque paper surface clipping
+
+`core/paper-visibility.ts` accepts explicitly authored `PaperTriangle3` surfaces and the same affine camera. `visibleTriangleFragments` clips each target by the actual per-pixel affine depth of overlapping triangles; an occluder may hide only half of one forearm. A root-depth or average-depth sort cannot express this. IDs must identify unique triangles. `coplanarRank` breaks ties only within the supplied depth tolerance; it must not force a hidden hand through the body.
+
+This bounded helper handles opaque planar triangles, including self occlusion, coplanar ties and edge-on surfaces. The example owns the actual torso/head/limb surfaces, finite thickness, front/back materials, curves and anatomical meaning. It is not an anatomy generator, intersection repairer, transparent renderer or dynamics engine. Drawing and diagnostics must consume the same real surfaces. Use returned fragments as fills/masks for original artwork; do not outline new triangulation/cut edges. Curved artwork needs a declared approximation. Features painted onto a faceted convex surface must be split at its actual triangle boundaries; connecting sampled perimeter points by chords can put the feature underneath the shell.
+
+`check-spatial-controls.ts` exercises rigid parent/child turns, mirrored signed bends, the elevation-dependent projection ray and a crossing surface whose root/mean depth is identical on both sides. These are geometry tests, not visual acceptance. The candidate cat control scenes under `examples/cat-picture-story/spatial-*` exercise the new opt-in path separately from preserved V1; they are not yet an accepted V2 film or an automatic generation service.
+
+
+`core/surface-clearance.ts` supplies `surfaceBoxIntrusions` for a declared world-space axis-aligned solid box and the actual drawn triangles. It clips surfaces against the solid interior and returns offending triangle IDs/fragments. Boundary contact within the small supplied tolerance is permitted. This catches a thigh/shin/torso entering a support even when the chosen contact point or knee centre is valid. The author must declare the real solid and intentional contacts; it does not infer colliders or resolve penetration. Surface intersection alone also cannot detect a box completely enclosed by a closed mesh without touching its boundary; that case needs a separate containment check. Tests include boundary support, translation/winding and a point-only false positive.
+
+
+`core/paper-fill.ts` fills explicit opaque `PaperFillFragment` polygons grouped by pigment. Optional `seamCoveragePx` (default0, limited to0..1 output pixels) adds matching-color subpixel coverage at rasterized cut edges. The candidate paper character opts into0.55px total stroke width (0.275px on each side) after depth clipping; original silhouette ink follows separately. This reduces antialias pinholes and is not a physical contour, collision fix, transparent material or way to reveal a hidden arm. Existing scenes/stage are not changed. Native before/after tests on identical meshes distinguish true art/geometry failures from these raster seams.
+
+## Opt-in ordinary running
+
+`src/core/run.ts` provides `createRunPlan({upper, lower, soleToAnkle, ...})` using the actual `ordinaryRunDefaults` preset for a finite flat-floor run with fixed support soles and recurring flight, sampled in forward station and world-up height; existing `gait.ts` defaults and semantics stay unchanged.
+
+`runningUpperArm(centre,drive,upperLength,backDepth,referenceSwing)` in `core/arm-motion.ts` is an optional dimension-aware rear shoulder excursion. Forward and neutral poses are preserved; the caller supplies actual drawn dimensions and explicit angular calibration, not a pixel elbow offset or universal anatomical norm. Inspect the actual elbow/back contour and solved chain.

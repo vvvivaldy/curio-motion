@@ -1,0 +1,1546 @@
+{
+  "version": 2,
+  "id": "serious-boar-v2",
+  "composition": "SeriousBoarV2",
+  "input": "reference/serious-boar/authoring-input.json",
+  "actionFiles": [
+    "reference/serious-boar/ACTION.txt"
+  ],
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "durationInFrames": 576,
+    "background": 15265507
+  },
+  "observations": [
+    "Whole supplied 19.316667s video inspected on own contact sheet at 2fps; shop window/city, right shelf, empty then overloaded cart, entrance from left, push right, black rule line and large red warning.",
+    "Exact warning: правило: не купишь сейчас — / заплатишь / больше !!!.",
+    "Later source checkout/salary sequence was observed but user requests savanna immediately after cart departure, so the requested continuation replaces it."
+  ],
+  "assumptions": [
+    "Original new anthropomorphic boar forms, clothing, hidden-side anatomy and savanna are author decisions, not reconstructed source assets.",
+    "Silent 24-second film retains shop composition and warning, then adds the requested satisfied snacking continuation."
+  ],
+  "actionBeats": [
+    {
+      "time": [
+        0,
+        2
+      ],
+      "action": "Empty shop cart hold."
+    },
+    {
+      "time": [
+        2,
+        4.62
+      ],
+      "action": "Packages fall and settle once, then the tower holds still."
+    },
+    {
+      "time": [
+        4.1,
+        8.2
+      ],
+      "action": "Smooth nominal approach starts before the first footlift; fixed world plants, raised hips and bounded support shifts."
+    },
+    {
+      "time": [
+        8.25,
+        8.85
+      ],
+      "action": "Both grips close on the handle, then hold."
+    },
+    {
+      "time": [
+        8.9,
+        9.45
+      ],
+      "action": "Source warning appears; loaded held stance is upright and quiet."
+    },
+    {
+      "time": [
+        9.45,
+        15.58
+      ],
+      "action": "Cart and nominal body follow a smooth ramp into constant travel, independently of foot phases; feet step under that path with bounded weight shifts and reachable supports."
+    },
+    {
+      "time": [
+        15.58,
+        16
+      ],
+      "action": "Both boar and cart finish fully offscreen, before direct savanna cut."
+    },
+    {
+      "time": [
+        16,
+        20
+      ],
+      "action": "Satisfied seated hold under acacia, open snack pack and partial full cart."
+    },
+    {
+      "time": [
+        20,
+        21.8
+      ],
+      "action": "One.45s preparation arc, rim pickup hold.05s, continuous.5s lift,.35s visible bite,.45s return arc and chewing."
+    },
+    {
+      "time": [
+        22,
+        23.8
+      ],
+      "action": "Second same deliberate bite cycle, then satisfied final hold."
+    }
+  ],
+  "diagnosticModule": "src/examples/serious-boar-v2/diagnostics.ts",
+  "stages": {
+    "model": {
+      "samples": [
+        {
+          "frame": 216,
+          "label": "serious-boar-and-loaded-cart"
+        },
+        {
+          "frame": 292,
+          "label": "warning-and-complete-silhouette"
+        },
+        {
+          "frame": 408,
+          "label": "seated-model-and-owned-packet"
+        },
+        {
+          "frame": 480,
+          "label": "rest-before-smooth-reach"
+        },
+        {
+          "frame": 485,
+          "label": "single-arc-preparation-left-of-pack"
+        },
+        {
+          "frame": 488,
+          "label": "single-arc-above-open-rim"
+        },
+        {
+          "frame": 491,
+          "label": "whole-caterpillar-picked-from-open-rim"
+        },
+        {
+          "frame": 498,
+          "label": "continuous-lift-visible-food"
+        },
+        {
+          "frame": 505,
+          "label": "whole-food-tip-at-mouth"
+        },
+        {
+          "frame": 509,
+          "label": "visibly-shortened-half-caterpillar"
+        },
+        {
+          "frame": 511,
+          "label": "last-visible-small-bite"
+        },
+        {
+          "frame": 513,
+          "label": "food-gone"
+        },
+        {
+          "frame": 516,
+          "label": "return-arc-and-visible-chew"
+        },
+        {
+          "frame": 520,
+          "label": "return-arc-to-lap"
+        },
+        {
+          "frame": 524,
+          "label": "satisfied-rest-after-return"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-boar",
+          "description": "Whole identifiable boar: bristled head, two nostrils, pointed ears, jaw tusks, connected arms/hands, planted split hooves; serious shop expression.",
+          "required": true,
+          "frames": [
+            216,
+            292
+          ],
+          "relations": [
+            "anatomy/closed-contours"
+          ]
+        },
+        {
+          "id": "owned-packages",
+          "description": "Recognizable drawn insects and legible labels belong inside their packages and occlude with them.",
+          "required": true,
+          "frames": [
+            216
+          ],
+          "relations": [
+            "load-0/insect-contained"
+          ]
+        },
+        {
+          "id": "satisfied-seated",
+          "description": "Low grounded pelvis against the acacia, horizontal thighs with raised distinct knees, visibly separate shins and split hooves; clear satisfied face and edge-held pack.",
+          "required": true,
+          "frames": [
+            408,
+            505
+          ],
+          "relations": [
+            "snack/far-grip",
+            "snack/insect-contained",
+            "face/arm-eye-clearance"
+          ]
+        },
+        {
+          "id": "caterpillar-pick-lift-bite",
+          "description": "One visible caterpillar emerges from the open top, stays connected to fingers during lift, reaches the actual drawn mouth from below, then visibly shortens during bite; the arm never covers the eye and the packet label remains readable.",
+          "required": true,
+          "frames": [
+            491,
+            498,
+            505,
+            509,
+            513,
+            516
+          ],
+          "relations": [
+            "face/arm-eye-clearance"
+          ]
+        },
+        {
+          "id": "real-mouth-contact",
+          "description": "At the held bite the visible caterpillar tip touches the drawn mouth curve, below the nose.",
+          "required": true,
+          "frames": [
+            505
+          ],
+          "relations": [
+            "food/mouth-contact"
+          ]
+        },
+        {
+          "id": "warning-readable",
+          "description": "The unchanged black rule and both red warning lines, including больше !!!, fit the reserved area above the whole head; ears and muzzle never cover letters. Native Text bounds require browser inspection.",
+          "required": true,
+          "frames": [
+            292
+          ],
+          "relations": [
+            "warning/head-clearance"
+          ]
+        },
+        {
+          "id": "seated-shins-separated",
+          "description": "Seated pelvis stays low; forward knees, approximately 50px visible shins, and two hooves have clear separate silhouettes rather than one dark wedge.",
+          "required": true,
+          "frames": [
+            408
+          ]
+        },
+        {
+          "id": "food-at-open-rim",
+          "description": "Before lifting, the actual visible caterpillar tip touches the drawn open packet rim and stays owned by the same continuous foreground hand.",
+          "required": true,
+          "frames": [
+            491
+          ],
+          "relations": [
+            "food/packet-contact",
+            "hand/packet-label-clearance"
+          ]
+        },
+        {
+          "id": "upright-loaded-hold",
+          "description": "Shop stance at hold is visibly upright rather than a persistent crouch. Actual loaded contour knees must stay within the authored55° hold limit; sitting is assessed separately.",
+          "required": true,
+          "frames": [
+            216
+          ],
+          "relations": [
+            "support/loaded-knee-0",
+            "support/loaded-knee-1"
+          ]
+        }
+      ]
+    },
+    "blocking": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "empty-cart-hold"
+        },
+        {
+          "frame": 60,
+          "label": "packages-falling"
+        },
+        {
+          "frame": 110,
+          "label": "early-approach-far-swing"
+        },
+        {
+          "frame": 113,
+          "label": "early-far-touchdown"
+        },
+        {
+          "frame": 151,
+          "label": "visible-third-far-step-onset"
+        },
+        {
+          "frame": 153,
+          "label": "visible-far-mid-swing"
+        },
+        {
+          "frame": 156,
+          "label": "visible-far-touchdown"
+        },
+        {
+          "frame": 159,
+          "label": "near-swing-far-support"
+        },
+        {
+          "frame": 164,
+          "label": "near-touchdown-and-load"
+        },
+        {
+          "frame": 172,
+          "label": "late-approach-far-swing"
+        },
+        {
+          "frame": 178,
+          "label": "late-far-touchdown"
+        },
+        {
+          "frame": 182,
+          "label": "late-near-swing"
+        },
+        {
+          "frame": 185,
+          "label": "approach-final-near-touchdown"
+        },
+        {
+          "frame": 198,
+          "label": "approach-travel-settle"
+        },
+        {
+          "frame": 212,
+          "label": "both-grips-settle"
+        },
+        {
+          "frame": 216,
+          "label": "serious-boar-and-loaded-cart"
+        },
+        {
+          "frame": 224,
+          "label": "deliberate-grip-hold"
+        },
+        {
+          "frame": 232,
+          "label": "push-anticipation-loaded-stance"
+        },
+        {
+          "frame": 234,
+          "label": "first-push-lift"
+        },
+        {
+          "frame": 237,
+          "label": "far-push-swing"
+        },
+        {
+          "frame": 240,
+          "label": "push-far-land-near-lift"
+        },
+        {
+          "frame": 243,
+          "label": "near-push-swing"
+        },
+        {
+          "frame": 246,
+          "label": "near-push-land"
+        },
+        {
+          "frame": 248,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 262,
+          "label": "steady-cart-cruise-next-step"
+        },
+        {
+          "frame": 280,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 292,
+          "label": "warning-and-complete-silhouette"
+        },
+        {
+          "frame": 310,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 330,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 350,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 368,
+          "label": "last-exit-step"
+        },
+        {
+          "frame": 383,
+          "label": "fully-offscreen-last-shop"
+        },
+        {
+          "frame": 384,
+          "label": "direct-cut-to-seated-savanna"
+        },
+        {
+          "frame": 408,
+          "label": "seated-model-and-owned-packet"
+        },
+        {
+          "frame": 480,
+          "label": "rest-before-smooth-reach"
+        },
+        {
+          "frame": 485,
+          "label": "single-arc-preparation-left-of-pack"
+        },
+        {
+          "frame": 488,
+          "label": "single-arc-above-open-rim"
+        },
+        {
+          "frame": 491,
+          "label": "whole-caterpillar-picked-from-open-rim"
+        },
+        {
+          "frame": 498,
+          "label": "continuous-lift-visible-food"
+        },
+        {
+          "frame": 505,
+          "label": "whole-food-tip-at-mouth"
+        },
+        {
+          "frame": 509,
+          "label": "visibly-shortened-half-caterpillar"
+        },
+        {
+          "frame": 511,
+          "label": "last-visible-small-bite"
+        },
+        {
+          "frame": 513,
+          "label": "food-gone"
+        },
+        {
+          "frame": 516,
+          "label": "return-arc-and-visible-chew"
+        },
+        {
+          "frame": 520,
+          "label": "return-arc-to-lap"
+        },
+        {
+          "frame": 524,
+          "label": "satisfied-rest-after-return"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-boar",
+          "description": "Whole identifiable boar: bristled head, two nostrils, pointed ears, jaw tusks, connected arms/hands, planted split hooves; serious shop expression.",
+          "required": true,
+          "frames": [
+            216,
+            292
+          ],
+          "relations": [
+            "anatomy/closed-contours"
+          ]
+        },
+        {
+          "id": "owned-packages",
+          "description": "Recognizable drawn insects and legible labels belong inside their packages and occlude with them.",
+          "required": true,
+          "frames": [
+            216
+          ],
+          "relations": [
+            "load-0/insect-contained"
+          ]
+        },
+        {
+          "id": "satisfied-seated",
+          "description": "Low grounded pelvis against the acacia, horizontal thighs with raised distinct knees, visibly separate shins and split hooves; clear satisfied face and edge-held pack.",
+          "required": true,
+          "frames": [
+            408,
+            505
+          ],
+          "relations": [
+            "snack/far-grip",
+            "snack/insect-contained",
+            "face/arm-eye-clearance"
+          ]
+        },
+        {
+          "id": "caterpillar-pick-lift-bite",
+          "description": "One visible caterpillar emerges from the open top, stays connected to fingers during lift, reaches the actual drawn mouth from below, then visibly shortens during bite; the arm never covers the eye and the packet label remains readable.",
+          "required": true,
+          "frames": [
+            491,
+            498,
+            505,
+            509,
+            513,
+            516
+          ],
+          "relations": [
+            "face/arm-eye-clearance"
+          ]
+        },
+        {
+          "id": "real-mouth-contact",
+          "description": "At the held bite the visible caterpillar tip touches the drawn mouth curve, below the nose.",
+          "required": true,
+          "frames": [
+            505
+          ],
+          "relations": [
+            "food/mouth-contact"
+          ]
+        },
+        {
+          "id": "warning-readable",
+          "description": "The unchanged black rule and both red warning lines, including больше !!!, fit the reserved area above the whole head; ears and muzzle never cover letters. Native Text bounds require browser inspection.",
+          "required": true,
+          "frames": [
+            292
+          ],
+          "relations": [
+            "warning/head-clearance"
+          ]
+        },
+        {
+          "id": "action-order-and-cut",
+          "description": "Empty cart, visible package loading, serious boar approach, settled grip, source warning, supported push completely offscreen, then direct cut to seated savanna at383→384.",
+          "required": true,
+          "frames": [
+            0,
+            60,
+            153,
+            216,
+            292,
+            383,
+            384
+          ]
+        },
+        {
+          "id": "walk-support-and-weight",
+          "description": "Alternating feet lift, pass, land and accept weight; planted soles hold their floor positions while pelvis visibly shifts toward support, with no sliding or oscillating idle.",
+          "required": true,
+          "frames": [
+            110,
+            113,
+            153,
+            156,
+            159,
+            164,
+            172,
+            178,
+            182,
+            185,
+            234,
+            237,
+            240,
+            243,
+            246,
+            368
+          ],
+          "relations": [
+            "support/weight"
+          ]
+        },
+        {
+          "id": "both-hands-cart-contact",
+          "description": "Both rendered hands stay continuously closed around their own points on the same cart handle while the cart rolls; no reaching through packages or floating grip.",
+          "required": true,
+          "frames": [
+            216,
+            232,
+            237,
+            240,
+            243,
+            246,
+            292
+          ],
+          "relations": [
+            "cart/near-grip",
+            "cart/far-grip"
+          ]
+        },
+        {
+          "id": "intentional-holds",
+          "description": "The settled handle grip holds at216→224; the seated pose holds before picking; the smile and chewing hold after visible food disappearance.",
+          "required": true,
+          "frames": [
+            216,
+            224,
+            408,
+            513,
+            524
+          ]
+        },
+        {
+          "id": "cart-and-boar-exit",
+          "description": "The last shop frame is fully clear of the boar and cart before the direct savanna cut; source warning remains visible.",
+          "required": true,
+          "frames": [
+            383
+          ],
+          "relations": [
+            "shop/offscreen"
+          ]
+        },
+        {
+          "id": "food-at-open-rim",
+          "description": "Before lifting, the actual visible caterpillar tip touches the drawn open packet rim and stays owned by the same continuous foreground hand.",
+          "required": true,
+          "frames": [
+            491
+          ],
+          "relations": [
+            "food/packet-contact",
+            "hand/packet-label-clearance"
+          ]
+        },
+        {
+          "id": "upright-loaded-hold",
+          "description": "Shop stance at hold is visibly upright rather than a persistent crouch. Actual loaded contour knees must stay within the authored55° hold limit; sitting is assessed separately.",
+          "required": true,
+          "frames": [
+            216
+          ],
+          "relations": [
+            "support/loaded-knee-0",
+            "support/loaded-knee-1"
+          ]
+        },
+        {
+          "id": "steady-cart-cruise",
+          "description": "Through the cruise the cart rolls at one positive speed across foot swing/plant changes, with smooth start/end ramps. The body only adds a small bounded support shift; no per-step stops or surges.",
+          "required": true,
+          "frames": [
+            240,
+            248,
+            262,
+            280,
+            292,
+            310,
+            330,
+            350
+          ],
+          "relations": [
+            "cart/uniform-progress",
+            "cart/forward"
+          ]
+        },
+        {
+          "id": "smooth-hand-arc",
+          "description": "Preparation uses one continuous.45s arc outside/above the pack; return uses one.45s arc to the lap. No two-frame waypoint throws, label-covering foreground hand or disappearing hand behind the pack. Confirm in neighboring frames and playback.",
+          "required": true,
+          "frames": [
+            480,
+            485,
+            488,
+            491,
+            516,
+            520,
+            524
+          ],
+          "relations": [
+            "hand/packet-label-clearance",
+            "face/arm-eye-clearance"
+          ]
+        }
+      ]
+    },
+    "motion": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "empty-cart-hold"
+        },
+        {
+          "frame": 60,
+          "label": "packages-falling"
+        },
+        {
+          "frame": 110,
+          "label": "early-approach-far-swing",
+          "radius": 1
+        },
+        {
+          "frame": 113,
+          "label": "early-far-touchdown",
+          "radius": 1
+        },
+        {
+          "frame": 151,
+          "label": "visible-third-far-step-onset"
+        },
+        {
+          "frame": 153,
+          "label": "visible-far-mid-swing",
+          "radius": 1
+        },
+        {
+          "frame": 156,
+          "label": "visible-far-touchdown",
+          "radius": 1
+        },
+        {
+          "frame": 159,
+          "label": "near-swing-far-support",
+          "radius": 1
+        },
+        {
+          "frame": 164,
+          "label": "near-touchdown-and-load",
+          "radius": 1
+        },
+        {
+          "frame": 172,
+          "label": "late-approach-far-swing",
+          "radius": 1
+        },
+        {
+          "frame": 178,
+          "label": "late-far-touchdown",
+          "radius": 1
+        },
+        {
+          "frame": 182,
+          "label": "late-near-swing",
+          "radius": 1
+        },
+        {
+          "frame": 185,
+          "label": "approach-final-near-touchdown",
+          "radius": 1
+        },
+        {
+          "frame": 198,
+          "label": "approach-travel-settle"
+        },
+        {
+          "frame": 212,
+          "label": "both-grips-settle"
+        },
+        {
+          "frame": 216,
+          "label": "serious-boar-and-loaded-cart"
+        },
+        {
+          "frame": 224,
+          "label": "deliberate-grip-hold"
+        },
+        {
+          "frame": 232,
+          "label": "push-anticipation-loaded-stance"
+        },
+        {
+          "frame": 234,
+          "label": "first-push-lift",
+          "radius": 1
+        },
+        {
+          "frame": 237,
+          "label": "far-push-swing",
+          "radius": 1
+        },
+        {
+          "frame": 240,
+          "label": "push-far-land-near-lift",
+          "radius": 1
+        },
+        {
+          "frame": 243,
+          "label": "near-push-swing",
+          "radius": 1
+        },
+        {
+          "frame": 246,
+          "label": "near-push-land",
+          "radius": 1
+        },
+        {
+          "frame": 248,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 262,
+          "label": "steady-cart-cruise-next-step"
+        },
+        {
+          "frame": 280,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 292,
+          "label": "warning-and-complete-silhouette"
+        },
+        {
+          "frame": 310,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 330,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 350,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 368,
+          "label": "last-exit-step",
+          "radius": 1
+        },
+        {
+          "frame": 383,
+          "label": "fully-offscreen-last-shop",
+          "radius": 1
+        },
+        {
+          "frame": 384,
+          "label": "direct-cut-to-seated-savanna",
+          "radius": 1
+        },
+        {
+          "frame": 408,
+          "label": "seated-model-and-owned-packet"
+        },
+        {
+          "frame": 480,
+          "label": "rest-before-smooth-reach"
+        },
+        {
+          "frame": 485,
+          "label": "single-arc-preparation-left-of-pack",
+          "radius": 1
+        },
+        {
+          "frame": 488,
+          "label": "single-arc-above-open-rim",
+          "radius": 1
+        },
+        {
+          "frame": 491,
+          "label": "whole-caterpillar-picked-from-open-rim",
+          "radius": 1
+        },
+        {
+          "frame": 498,
+          "label": "continuous-lift-visible-food",
+          "radius": 1
+        },
+        {
+          "frame": 505,
+          "label": "whole-food-tip-at-mouth",
+          "radius": 1
+        },
+        {
+          "frame": 509,
+          "label": "visibly-shortened-half-caterpillar",
+          "radius": 1
+        },
+        {
+          "frame": 511,
+          "label": "last-visible-small-bite"
+        },
+        {
+          "frame": 513,
+          "label": "food-gone",
+          "radius": 1
+        },
+        {
+          "frame": 516,
+          "label": "return-arc-and-visible-chew",
+          "radius": 1
+        },
+        {
+          "frame": 520,
+          "label": "return-arc-to-lap"
+        },
+        {
+          "frame": 524,
+          "label": "satisfied-rest-after-return"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-boar",
+          "description": "Whole identifiable boar: bristled head, two nostrils, pointed ears, jaw tusks, connected arms/hands, planted split hooves; serious shop expression.",
+          "required": true,
+          "frames": [
+            216,
+            292
+          ],
+          "relations": [
+            "anatomy/closed-contours"
+          ]
+        },
+        {
+          "id": "owned-packages",
+          "description": "Recognizable drawn insects and legible labels belong inside their packages and occlude with them.",
+          "required": true,
+          "frames": [
+            216
+          ],
+          "relations": [
+            "load-0/insect-contained"
+          ]
+        },
+        {
+          "id": "satisfied-seated",
+          "description": "Low grounded pelvis against the acacia, horizontal thighs with raised distinct knees, visibly separate shins and split hooves; clear satisfied face and edge-held pack.",
+          "required": true,
+          "frames": [
+            408,
+            505
+          ],
+          "relations": [
+            "snack/far-grip",
+            "snack/insect-contained",
+            "face/arm-eye-clearance"
+          ]
+        },
+        {
+          "id": "caterpillar-pick-lift-bite",
+          "description": "One visible caterpillar emerges from the open top, stays connected to fingers during lift, reaches the actual drawn mouth from below, then visibly shortens during bite; the arm never covers the eye and the packet label remains readable.",
+          "required": true,
+          "frames": [
+            491,
+            498,
+            505,
+            509,
+            513,
+            516
+          ],
+          "relations": [
+            "face/arm-eye-clearance"
+          ]
+        },
+        {
+          "id": "real-mouth-contact",
+          "description": "At the held bite the visible caterpillar tip touches the drawn mouth curve, below the nose.",
+          "required": true,
+          "frames": [
+            505
+          ],
+          "relations": [
+            "food/mouth-contact"
+          ]
+        },
+        {
+          "id": "warning-readable",
+          "description": "The unchanged black rule and both red warning lines, including больше !!!, fit the reserved area above the whole head; ears and muzzle never cover letters. Native Text bounds require browser inspection.",
+          "required": true,
+          "frames": [
+            292
+          ],
+          "relations": [
+            "warning/head-clearance"
+          ]
+        },
+        {
+          "id": "action-order-and-cut",
+          "description": "Empty cart, visible package loading, serious boar approach, settled grip, source warning, supported push completely offscreen, then direct cut to seated savanna at383→384.",
+          "required": true,
+          "frames": [
+            0,
+            60,
+            153,
+            216,
+            292,
+            383,
+            384
+          ]
+        },
+        {
+          "id": "walk-support-and-weight",
+          "description": "Alternating feet lift, pass, land and accept weight; planted soles hold their floor positions while pelvis visibly shifts toward support, with no sliding or oscillating idle.",
+          "required": true,
+          "frames": [
+            110,
+            113,
+            153,
+            156,
+            159,
+            164,
+            172,
+            178,
+            182,
+            185,
+            234,
+            237,
+            240,
+            243,
+            246,
+            368
+          ],
+          "relations": [
+            "support/weight"
+          ]
+        },
+        {
+          "id": "both-hands-cart-contact",
+          "description": "Both rendered hands stay continuously closed around their own points on the same cart handle while the cart rolls; no reaching through packages or floating grip.",
+          "required": true,
+          "frames": [
+            216,
+            232,
+            237,
+            240,
+            243,
+            246,
+            292
+          ],
+          "relations": [
+            "cart/near-grip",
+            "cart/far-grip"
+          ]
+        },
+        {
+          "id": "intentional-holds",
+          "description": "The settled handle grip holds at216→224; the seated pose holds before picking; the smile and chewing hold after visible food disappearance.",
+          "required": true,
+          "frames": [
+            216,
+            224,
+            408,
+            513,
+            524
+          ]
+        },
+        {
+          "id": "cart-and-boar-exit",
+          "description": "The last shop frame is fully clear of the boar and cart before the direct savanna cut; source warning remains visible.",
+          "required": true,
+          "frames": [
+            383
+          ],
+          "relations": [
+            "shop/offscreen"
+          ]
+        },
+        {
+          "id": "food-at-open-rim",
+          "description": "Before lifting, the actual visible caterpillar tip touches the drawn open packet rim and stays owned by the same continuous foreground hand.",
+          "required": true,
+          "frames": [
+            491
+          ],
+          "relations": [
+            "food/packet-contact",
+            "hand/packet-label-clearance"
+          ]
+        },
+        {
+          "id": "upright-loaded-hold",
+          "description": "Shop stance at hold is visibly upright rather than a persistent crouch. Actual loaded contour knees must stay within the authored55° hold limit; sitting is assessed separately.",
+          "required": true,
+          "frames": [
+            216
+          ],
+          "relations": [
+            "support/loaded-knee-0",
+            "support/loaded-knee-1"
+          ]
+        },
+        {
+          "id": "steady-cart-cruise",
+          "description": "Through the cruise the cart rolls at one positive speed across foot swing/plant changes, with smooth start/end ramps. The body only adds a small bounded support shift; no per-step stops or surges.",
+          "required": true,
+          "frames": [
+            240,
+            248,
+            262,
+            280,
+            292,
+            310,
+            330,
+            350
+          ],
+          "relations": [
+            "cart/uniform-progress",
+            "cart/forward"
+          ]
+        },
+        {
+          "id": "smooth-hand-arc",
+          "description": "Preparation uses one continuous.45s arc outside/above the pack; return uses one.45s arc to the lap. No two-frame waypoint throws, label-covering foreground hand or disappearing hand behind the pack. Confirm in neighboring frames and playback.",
+          "required": true,
+          "frames": [
+            480,
+            485,
+            488,
+            491,
+            516,
+            520,
+            524
+          ],
+          "relations": [
+            "hand/packet-label-clearance",
+            "face/arm-eye-clearance"
+          ]
+        }
+      ]
+    },
+    "final": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "empty-cart-hold"
+        },
+        {
+          "frame": 60,
+          "label": "packages-falling"
+        },
+        {
+          "frame": 110,
+          "label": "early-approach-far-swing",
+          "radius": 1
+        },
+        {
+          "frame": 113,
+          "label": "early-far-touchdown",
+          "radius": 1
+        },
+        {
+          "frame": 151,
+          "label": "visible-third-far-step-onset"
+        },
+        {
+          "frame": 153,
+          "label": "visible-far-mid-swing",
+          "radius": 1
+        },
+        {
+          "frame": 156,
+          "label": "visible-far-touchdown",
+          "radius": 1
+        },
+        {
+          "frame": 159,
+          "label": "near-swing-far-support",
+          "radius": 1
+        },
+        {
+          "frame": 164,
+          "label": "near-touchdown-and-load",
+          "radius": 1
+        },
+        {
+          "frame": 172,
+          "label": "late-approach-far-swing",
+          "radius": 1
+        },
+        {
+          "frame": 178,
+          "label": "late-far-touchdown",
+          "radius": 1
+        },
+        {
+          "frame": 182,
+          "label": "late-near-swing",
+          "radius": 1
+        },
+        {
+          "frame": 185,
+          "label": "approach-final-near-touchdown",
+          "radius": 1
+        },
+        {
+          "frame": 198,
+          "label": "approach-travel-settle"
+        },
+        {
+          "frame": 212,
+          "label": "both-grips-settle"
+        },
+        {
+          "frame": 216,
+          "label": "serious-boar-and-loaded-cart"
+        },
+        {
+          "frame": 224,
+          "label": "deliberate-grip-hold"
+        },
+        {
+          "frame": 232,
+          "label": "push-anticipation-loaded-stance"
+        },
+        {
+          "frame": 234,
+          "label": "first-push-lift",
+          "radius": 1
+        },
+        {
+          "frame": 237,
+          "label": "far-push-swing",
+          "radius": 1
+        },
+        {
+          "frame": 240,
+          "label": "push-far-land-near-lift",
+          "radius": 1
+        },
+        {
+          "frame": 243,
+          "label": "near-push-swing",
+          "radius": 1
+        },
+        {
+          "frame": 246,
+          "label": "near-push-land",
+          "radius": 1
+        },
+        {
+          "frame": 248,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 262,
+          "label": "steady-cart-cruise-next-step"
+        },
+        {
+          "frame": 280,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 292,
+          "label": "warning-and-complete-silhouette"
+        },
+        {
+          "frame": 310,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 330,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 350,
+          "label": "steady-cart-cruise"
+        },
+        {
+          "frame": 368,
+          "label": "last-exit-step",
+          "radius": 1
+        },
+        {
+          "frame": 383,
+          "label": "fully-offscreen-last-shop",
+          "radius": 1
+        },
+        {
+          "frame": 384,
+          "label": "direct-cut-to-seated-savanna",
+          "radius": 1
+        },
+        {
+          "frame": 408,
+          "label": "seated-model-and-owned-packet"
+        },
+        {
+          "frame": 480,
+          "label": "rest-before-smooth-reach"
+        },
+        {
+          "frame": 485,
+          "label": "single-arc-preparation-left-of-pack",
+          "radius": 1
+        },
+        {
+          "frame": 488,
+          "label": "single-arc-above-open-rim",
+          "radius": 1
+        },
+        {
+          "frame": 491,
+          "label": "whole-caterpillar-picked-from-open-rim",
+          "radius": 1
+        },
+        {
+          "frame": 498,
+          "label": "continuous-lift-visible-food",
+          "radius": 1
+        },
+        {
+          "frame": 505,
+          "label": "whole-food-tip-at-mouth",
+          "radius": 1
+        },
+        {
+          "frame": 509,
+          "label": "visibly-shortened-half-caterpillar",
+          "radius": 1
+        },
+        {
+          "frame": 511,
+          "label": "last-visible-small-bite"
+        },
+        {
+          "frame": 513,
+          "label": "food-gone",
+          "radius": 1
+        },
+        {
+          "frame": 516,
+          "label": "return-arc-and-visible-chew",
+          "radius": 1
+        },
+        {
+          "frame": 520,
+          "label": "return-arc-to-lap"
+        },
+        {
+          "frame": 524,
+          "label": "satisfied-rest-after-return"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-boar",
+          "description": "Whole identifiable boar: bristled head, two nostrils, pointed ears, jaw tusks, connected arms/hands, planted split hooves; serious shop expression.",
+          "required": true,
+          "frames": [
+            216,
+            292
+          ],
+          "relations": [
+            "anatomy/closed-contours"
+          ]
+        },
+        {
+          "id": "owned-packages",
+          "description": "Recognizable drawn insects and legible labels belong inside their packages and occlude with them.",
+          "required": true,
+          "frames": [
+            216
+          ],
+          "relations": [
+            "load-0/insect-contained"
+          ]
+        },
+        {
+          "id": "satisfied-seated",
+          "description": "Low grounded pelvis against the acacia, horizontal thighs with raised distinct knees, visibly separate shins and split hooves; clear satisfied face and edge-held pack.",
+          "required": true,
+          "frames": [
+            408,
+            505
+          ],
+          "relations": [
+            "snack/far-grip",
+            "snack/insect-contained",
+            "face/arm-eye-clearance"
+          ]
+        },
+        {
+          "id": "caterpillar-pick-lift-bite",
+          "description": "One visible caterpillar emerges from the open top, stays connected to fingers during lift, reaches the actual drawn mouth from below, then visibly shortens during bite; the arm never covers the eye and the packet label remains readable.",
+          "required": true,
+          "frames": [
+            491,
+            498,
+            505,
+            509,
+            513,
+            516
+          ],
+          "relations": [
+            "face/arm-eye-clearance"
+          ]
+        },
+        {
+          "id": "real-mouth-contact",
+          "description": "At the held bite the visible caterpillar tip touches the drawn mouth curve, below the nose.",
+          "required": true,
+          "frames": [
+            505
+          ],
+          "relations": [
+            "food/mouth-contact"
+          ]
+        },
+        {
+          "id": "warning-readable",
+          "description": "The unchanged black rule and both red warning lines, including больше !!!, fit the reserved area above the whole head; ears and muzzle never cover letters. Native Text bounds require browser inspection.",
+          "required": true,
+          "frames": [
+            292
+          ],
+          "relations": [
+            "warning/head-clearance"
+          ]
+        },
+        {
+          "id": "action-order-and-cut",
+          "description": "Empty cart, visible package loading, serious boar approach, settled grip, source warning, supported push completely offscreen, then direct cut to seated savanna at383→384.",
+          "required": true,
+          "frames": [
+            0,
+            60,
+            153,
+            216,
+            292,
+            383,
+            384
+          ]
+        },
+        {
+          "id": "walk-support-and-weight",
+          "description": "Alternating feet lift, pass, land and accept weight; planted soles hold their floor positions while pelvis visibly shifts toward support, with no sliding or oscillating idle.",
+          "required": true,
+          "frames": [
+            110,
+            113,
+            153,
+            156,
+            159,
+            164,
+            172,
+            178,
+            182,
+            185,
+            234,
+            237,
+            240,
+            243,
+            246,
+            368
+          ],
+          "relations": [
+            "support/weight"
+          ]
+        },
+        {
+          "id": "both-hands-cart-contact",
+          "description": "Both rendered hands stay continuously closed around their own points on the same cart handle while the cart rolls; no reaching through packages or floating grip.",
+          "required": true,
+          "frames": [
+            216,
+            232,
+            237,
+            240,
+            243,
+            246,
+            292
+          ],
+          "relations": [
+            "cart/near-grip",
+            "cart/far-grip"
+          ]
+        },
+        {
+          "id": "intentional-holds",
+          "description": "The settled handle grip holds at216→224; the seated pose holds before picking; the smile and chewing hold after visible food disappearance.",
+          "required": true,
+          "frames": [
+            216,
+            224,
+            408,
+            513,
+            524
+          ]
+        },
+        {
+          "id": "cart-and-boar-exit",
+          "description": "The last shop frame is fully clear of the boar and cart before the direct savanna cut; source warning remains visible.",
+          "required": true,
+          "frames": [
+            383
+          ],
+          "relations": [
+            "shop/offscreen"
+          ]
+        },
+        {
+          "id": "food-at-open-rim",
+          "description": "Before lifting, the actual visible caterpillar tip touches the drawn open packet rim and stays owned by the same continuous foreground hand.",
+          "required": true,
+          "frames": [
+            491
+          ],
+          "relations": [
+            "food/packet-contact",
+            "hand/packet-label-clearance"
+          ]
+        },
+        {
+          "id": "upright-loaded-hold",
+          "description": "Shop stance at hold is visibly upright rather than a persistent crouch. Actual loaded contour knees must stay within the authored55° hold limit; sitting is assessed separately.",
+          "required": true,
+          "frames": [
+            216
+          ],
+          "relations": [
+            "support/loaded-knee-0",
+            "support/loaded-knee-1"
+          ]
+        },
+        {
+          "id": "steady-cart-cruise",
+          "description": "Through the cruise the cart rolls at one positive speed across foot swing/plant changes, with smooth start/end ramps. The body only adds a small bounded support shift; no per-step stops or surges.",
+          "required": true,
+          "frames": [
+            240,
+            248,
+            262,
+            280,
+            292,
+            310,
+            330,
+            350
+          ],
+          "relations": [
+            "cart/uniform-progress",
+            "cart/forward"
+          ]
+        },
+        {
+          "id": "smooth-hand-arc",
+          "description": "Preparation uses one continuous.45s arc outside/above the pack; return uses one.45s arc to the lap. No two-frame waypoint throws, label-covering foreground hand or disappearing hand behind the pack. Confirm in neighboring frames and playback.",
+          "required": true,
+          "frames": [
+            480,
+            485,
+            488,
+            491,
+            516,
+            520,
+            524
+          ],
+          "relations": [
+            "hand/packet-label-clearance",
+            "face/arm-eye-clearance"
+          ]
+        }
+      ]
+    }
+  }
+}

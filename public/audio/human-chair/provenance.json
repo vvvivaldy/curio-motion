@@ -1,0 +1,260 @@
+{
+  "version": "original-procedural-foley-v1",
+  "generator": "generate_foley.py",
+  "generatorSha256": "3e30413f6681aef4f61af53790c3a123080d759b9c6efddcf118cc571b672a77",
+  "dependencies": "Python3 standard library only",
+  "python": "3.12.8",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "reproducibility": "Explicit xorshift32 seeds; no runtime randomness, clocks or network. Byte reproduction verified separately in this environment. Cross-platform libm bit identity is not promised without comparing SHA.",
+  "levelPolicy": "Fixed authored gains. No individual normalization, limiter or hard clipping. RMS is unweighted waveform RMS, NOT LUFS. True peak and perceptual loudness are separate checks.",
+  "publication": "Local unpublished trial. No external recordings used. No third-party asset license inferred from project code license.",
+  "assets": [
+    {
+      "id": "step-hard-01",
+      "file": "step-hard-01.wav",
+      "sha256": "f5e7f572535ccab8b27fc3d2d2ccdd90683973a01fe733aad4c97b7739c3c1ea",
+      "format": {
+        "container": "WAV",
+        "encoding": "PCM signed16 little-endian",
+        "sampleRate": 48000,
+        "channels": 1,
+        "samples": 10560
+      },
+      "durationSeconds": 0.22,
+      "attack": {
+        "definition": "Index0 is the first PCM sample. Scheduled contact onset is exact; firstNonzero is measured AFTER PCM16 quantization. Transient peak is the actual maximum absolute sample, not a claim of perceptual onset.",
+        "scheduledOnsetSample": 288,
+        "scheduledOnsetSeconds": 0.006,
+        "firstNonzeroSample": 289,
+        "firstNonzeroSeconds": 0.006020833333333334,
+        "transientPeakSample": 902,
+        "transientPeakSeconds": 0.01879166666666667,
+        "suggestedContactAnchorSample": 289,
+        "suggestedContactAnchorSeconds": 0.006020833333333334,
+        "integrationNote": "Align known onset/attack to visual contact; do not blindly align the beginning of a file. All cues use the SAME48kHz sample grid."
+      },
+      "metrics": {
+        "samplePeakDbFS": -10.771916,
+        "rmsDbFS": -30.290755,
+        "activeRmsDbFS": -30.170243,
+        "clippedSamples": 0,
+        "dcMean": 1.6472556374289773e-07,
+        "lastNonzeroSample": 10270,
+        "trailingExactZeroSamples": 289
+      },
+      "parameters": {
+        "id": "step-hard-01",
+        "kind": "step",
+        "seed": 1193257245,
+        "durationSeconds": 0.22,
+        "scheduledOnsetSample": 288,
+        "timbreScale": 1.0,
+        "decayScale": 1.0,
+        "gain": 1.65
+      },
+      "provenance": "originalprocedural: generated from specified seeded noise, analytic envelopes and weak/broad resonances; no imported recordings or samples",
+      "audition": {
+        "listened": false,
+        "status": "technical candidate; sound identity/naturalness/style and final gain require actual audition"
+      },
+      "optional": false
+    },
+    {
+      "id": "step-hard-02",
+      "file": "step-hard-02.wav",
+      "sha256": "bc55294fe76c21423703e754184238e4b686995ab55ce1516a4e65f9fd201bd8",
+      "format": {
+        "container": "WAV",
+        "encoding": "PCM signed16 little-endian",
+        "sampleRate": 48000,
+        "channels": 1,
+        "samples": 10752
+      },
+      "durationSeconds": 0.224,
+      "attack": {
+        "definition": "Index0 is the first PCM sample. Scheduled contact onset is exact; firstNonzero is measured AFTER PCM16 quantization. Transient peak is the actual maximum absolute sample, not a claim of perceptual onset.",
+        "scheduledOnsetSample": 288,
+        "scheduledOnsetSeconds": 0.006,
+        "firstNonzeroSample": 289,
+        "firstNonzeroSeconds": 0.006020833333333334,
+        "transientPeakSample": 589,
+        "transientPeakSeconds": 0.012270833333333333,
+        "suggestedContactAnchorSample": 289,
+        "suggestedContactAnchorSeconds": 0.006020833333333334,
+        "integrationNote": "Align known onset/attack to visual contact; do not blindly align the beginning of a file. All cues use the SAME48kHz sample grid."
+      },
+      "metrics": {
+        "samplePeakDbFS": -11.9421,
+        "rmsDbFS": -31.352068,
+        "activeRmsDbFS": -31.233738,
+        "clippedSamples": 0,
+        "dcMean": -7.947285970052083e-08,
+        "lastNonzeroSample": 10467,
+        "trailingExactZeroSamples": 284
+      },
+      "parameters": {
+        "id": "step-hard-02",
+        "kind": "step",
+        "seed": 1905640235,
+        "durationSeconds": 0.224,
+        "scheduledOnsetSample": 288,
+        "timbreScale": 0.96,
+        "decayScale": 1.04,
+        "gain": 1.58
+      },
+      "provenance": "originalprocedural: generated from specified seeded noise, analytic envelopes and weak/broad resonances; no imported recordings or samples",
+      "audition": {
+        "listened": false,
+        "status": "technical candidate; sound identity/naturalness/style and final gain require actual audition"
+      },
+      "optional": false
+    },
+    {
+      "id": "step-hard-03",
+      "file": "step-hard-03.wav",
+      "sha256": "24c9e0d54417f55e9fed605ee8546b66877b8dd2c6158a5577d2a525b0617166",
+      "format": {
+        "container": "WAV",
+        "encoding": "PCM signed16 little-endian",
+        "sampleRate": 48000,
+        "channels": 1,
+        "samples": 10368
+      },
+      "durationSeconds": 0.216,
+      "attack": {
+        "definition": "Index0 is the first PCM sample. Scheduled contact onset is exact; firstNonzero is measured AFTER PCM16 quantization. Transient peak is the actual maximum absolute sample, not a claim of perceptual onset.",
+        "scheduledOnsetSample": 288,
+        "scheduledOnsetSeconds": 0.006,
+        "firstNonzeroSample": 289,
+        "firstNonzeroSeconds": 0.006020833333333334,
+        "transientPeakSample": 568,
+        "transientPeakSeconds": 0.011833333333333333,
+        "suggestedContactAnchorSample": 289,
+        "suggestedContactAnchorSeconds": 0.006020833333333334,
+        "integrationNote": "Align known onset/attack to visual contact; do not blindly align the beginning of a file. All cues use the SAME48kHz sample grid."
+      },
+      "metrics": {
+        "samplePeakDbFS": -11.925344,
+        "rmsDbFS": -30.093771,
+        "activeRmsDbFS": -29.970995,
+        "clippedSamples": 0,
+        "dcMean": -1.5894571940104166e-07,
+        "lastNonzeroSample": 10103,
+        "trailingExactZeroSamples": 264
+      },
+      "parameters": {
+        "id": "step-hard-03",
+        "kind": "step",
+        "seed": 465889157,
+        "durationSeconds": 0.216,
+        "scheduledOnsetSample": 288,
+        "timbreScale": 1.045,
+        "decayScale": 0.97,
+        "gain": 1.61
+      },
+      "provenance": "originalprocedural: generated from specified seeded noise, analytic envelopes and weak/broad resonances; no imported recordings or samples",
+      "audition": {
+        "listened": false,
+        "status": "technical candidate; sound identity/naturalness/style and final gain require actual audition"
+      },
+      "optional": false
+    },
+    {
+      "id": "seat-soft-01",
+      "file": "seat-soft-01.wav",
+      "sha256": "38817bacfea5029856f2e697d96abb546c3924252f43864f1d1763d5b8e92262",
+      "format": {
+        "container": "WAV",
+        "encoding": "PCM signed16 little-endian",
+        "sampleRate": 48000,
+        "channels": 1,
+        "samples": 19200
+      },
+      "durationSeconds": 0.4,
+      "attack": {
+        "definition": "Index0 is the first PCM sample. Scheduled contact onset is exact; firstNonzero is measured AFTER PCM16 quantization. Transient peak is the actual maximum absolute sample, not a claim of perceptual onset.",
+        "scheduledOnsetSample": 480,
+        "scheduledOnsetSeconds": 0.01,
+        "firstNonzeroSample": 481,
+        "firstNonzeroSeconds": 0.010020833333333333,
+        "transientPeakSample": 1273,
+        "transientPeakSeconds": 0.026520833333333334,
+        "suggestedContactAnchorSample": 481,
+        "suggestedContactAnchorSeconds": 0.010020833333333333,
+        "integrationNote": "Align known onset/attack to visual contact; do not blindly align the beginning of a file. All cues use the SAME48kHz sample grid."
+      },
+      "metrics": {
+        "samplePeakDbFS": -15.251136,
+        "rmsDbFS": -33.39315,
+        "activeRmsDbFS": -33.282964,
+        "clippedSamples": 0,
+        "dcMean": -6.357828776041667e-09,
+        "lastNonzeroSample": 18891,
+        "trailingExactZeroSamples": 308
+      },
+      "parameters": {
+        "id": "seat-soft-01",
+        "kind": "seat",
+        "seed": 1698473937,
+        "durationSeconds": 0.4,
+        "scheduledOnsetSample": 480,
+        "gain": 1.2
+      },
+      "provenance": "originalprocedural: generated from specified seeded noise, analytic envelopes and weak/broad resonances; no imported recordings or samples",
+      "audition": {
+        "listened": false,
+        "status": "technical candidate; sound identity/naturalness/style and final gain require actual audition"
+      },
+      "optional": false
+    },
+    {
+      "id": "chair-load-01",
+      "file": "chair-load-01.wav",
+      "sha256": "c75a1ca2eb946c2719c6fe2cbb2fe4f31380c16bb89195202070ab50de0b9bac",
+      "format": {
+        "container": "WAV",
+        "encoding": "PCM signed16 little-endian",
+        "sampleRate": 48000,
+        "channels": 1,
+        "samples": 22080
+      },
+      "durationSeconds": 0.46,
+      "attack": {
+        "definition": "Index0 is the first PCM sample. Scheduled contact onset is exact; firstNonzero is measured AFTER PCM16 quantization. Transient peak is the actual maximum absolute sample, not a claim of perceptual onset.",
+        "scheduledOnsetSample": 576,
+        "scheduledOnsetSeconds": 0.012,
+        "firstNonzeroSample": 577,
+        "firstNonzeroSeconds": 0.012020833333333333,
+        "transientPeakSample": 1084,
+        "transientPeakSeconds": 0.022583333333333334,
+        "suggestedContactAnchorSample": 577,
+        "suggestedContactAnchorSeconds": 0.012020833333333333,
+        "integrationNote": "Align known onset/attack to visual contact; do not blindly align the beginning of a file. All cues use the SAME48kHz sample grid."
+      },
+      "metrics": {
+        "samplePeakDbFS": -16.689604,
+        "rmsDbFS": -35.359108,
+        "activeRmsDbFS": -35.244108,
+        "clippedSamples": 0,
+        "dcMean": 5.528546761775362e-09,
+        "lastNonzeroSample": 21660,
+        "trailingExactZeroSamples": 419
+      },
+      "parameters": {
+        "id": "chair-load-01",
+        "kind": "chair",
+        "seed": 1294527089,
+        "durationSeconds": 0.46,
+        "scheduledOnsetSample": 576,
+        "gain": 1.14
+      },
+      "provenance": "originalprocedural: generated from specified seeded noise, analytic envelopes and weak/broad resonances; no imported recordings or samples",
+      "audition": {
+        "listened": false,
+        "status": "technical candidate; sound identity/naturalness/style and final gain require actual audition"
+      },
+      "optional": true,
+      "integrationCaution": "Optional pressure/friction candidate. NOT audition-approved as a wooden-chair creak. Omit if it reads as a squeak/electronic rasp or distracts."
+    }
+  ]
+}

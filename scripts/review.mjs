@@ -6,7 +6,8 @@ import {execFileSync} from 'node:child_process';
 import {bundle} from '@remotion/bundler';
 import {selectComposition,renderFrames,renderMedia} from '@remotion/renderer';
 import {findTool,verifyFfmpeg} from './tools.mjs';
-import {stages,digest,json,projectPath,loadPlan,sampleFrames,checkDelivery} from './lib/authoring.mjs';
+import {stages,digest,json,projectPath,loadPlan,sampleFrames,ffmpegFrameSelection,checkDelivery,criterionId,criterionText,needsIndependentReview} from './lib/authoring.mjs';
+import {captureDiagnostics} from './lib/diagnostics.mjs';
 const {values}=parseArgs({options:{plan:{type:'string'},stage:{type:'string'},film:{type:'string'},receipt:{type:'string'},check:{type:'boolean'}}});
 if(!values.plan)throw Error('Use --plan authoring/<example>.json and --stage model|blocking|motion|final|drafts|all, or --check');
 const loaded=await loadPlan(values.plan),{plan}=loaded;
@@ -49,7 +50,7 @@ try {
       onBrowserLog:log=>{if(log.type==='error')errors.push(log.text);}};
     if(stage==='final') {
       const ffmpeg=findTool('ffmpeg');verifyFfmpeg(ffmpeg);
-      execFileSync(ffmpeg,['-v','error','-i',projectPath(values.film),'-vf',`select=${frames.map(f=>`eq(n\\,${f})`).join('+')}`,
+      execFileSync(ffmpeg,['-v','error','-i',projectPath(values.film),'-vf',`select=${ffmpegFrameSelection(frames)}`,
         '-fps_mode','vfr','-start_number','0',`${dir}/frames/decoded-%06d.png`],{stdio:'inherit'});
       for(const [i,frame] of frames.entries())await rename(`${dir}/frames/decoded-${String(i).padStart(6,'0')}.png`,`${dir}/frames/f${String(frame).padStart(6,'0')}.png`);
       await copyFile(projectPath(values.film),`${dir}/preview.mp4`);
@@ -62,17 +63,28 @@ try {
     }
     if(errors.length)throw Error(`Browser errors: ${errors.join('; ')}`);
     if((await loadPlan(values.plan)).identity!==loaded.identity)throw Error('Source/input/plan changed during capture; discard this incomplete run and recapture');
-    const reference=`data:${loaded.input.reference.path.endsWith('.svg')?'image/svg+xml':'image/png'};base64,${loaded.referenceBytes.toString('base64')}`;
+    const diagnostics=plan.version===2?captureDiagnostics(plan,stage,loaded.source,frames):null;
+    if(diagnostics)await writeFile(`${dir}/diagnostics.json`,JSON.stringify(diagnostics,null,2));
+    const diagnosticMarkup=diagnostics?`<h2>Authored geometry diagnostics</h2><p>${esc(diagnostics.method)}. Source: <code>${esc(diagnostics.sourceSha256)}</code></p>${diagnostics.results.length?`<table><thead><tr><th>Relation</th><th>Frame</th><th>Status</th><th>Observation</th></tr></thead><tbody>${diagnostics.results.map(r=>`<tr><td>${esc(r.relation)}</td><td><a href="frames/f${String(r.frame).padStart(6,'0')}.png">f${r.frame}</a></td><td>${esc(r.status)}</td><td>${esc(r.message)}</td></tr>`).join('')}</tbody></table>`:'<p>No geometry relations declared; visual inspection is still required.</p>'}`:'';
+    const extension=loaded.input.reference.path.split('.').pop().toLowerCase();
+    const mime=loaded.input.reference.mediaType??({mp4:'video/mp4',webm:'video/webm',mov:'video/quicktime',svg:'image/svg+xml',jpg:'image/jpeg',jpeg:'image/jpeg',webp:'image/webp',gif:'image/gif',png:'image/png'}[extension]??'application/octet-stream');
+    const isVideo=mime.startsWith('video/');
+    const reference=`data:${mime};base64,${loaded.referenceBytes.toString('base64')}`;
+    const referenceMarkup=isVideo?`<video class="ref" controls src="${reference}"></video>`:`<img class="ref" src="${reference}">`;
     const cards=frames.map(frame=>`<figure><img src="frames/f${String(frame).padStart(6,'0')}.png"><figcaption>f${frame} · ${(frame/plan.settings.fps).toFixed(3)}s — ${esc(plan.stages[stage].samples.filter(s=>Math.abs(s.frame-frame)<=(s.radius??0)).map(s=>s.label).join('; '))}</figcaption></figure>`).join('');
-    await writeFile(`${dir}/report.html`,`<!doctype html><meta charset="utf-8"><title>${esc(plan.id)} / ${stage}</title><style>body{background:#f7f2e6;color:#263f46;font:16px system-ui;margin:24px}img,video{max-width:100%}.ref{max-height:440px}section{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}figure{margin:0}figcaption{padding:8px}li{margin:8px}code{overflow-wrap:anywhere}@media(max-width:800px){section{grid-template-columns:1fr}}</style><h1>${esc(plan.id)} / ${stage}</h1><p>Whole reference → authored source → actual ${stage==='final'?'decoded MP4':'Remotion'} frames. Visual review pending.</p><code>${loaded.identity}</code><p><img class="ref" src="${reference}"></p><h2>Review criteria</h2><ul>${plan.stages[stage].criteria.map(c=>`<li>${esc(c)}</li>`).join('')}</ul>${['motion','final'].includes(stage)?'<video controls loop src="preview.mp4"></video><p>Inspect at normal speed and 0.5× in your player.</p>':''}<section>${cards}</section>`);
-    const names=[...frames.map(f=>`frames/f${String(f).padStart(6,'0')}.png`),'report.html',...(['motion','final'].includes(stage)?['preview.mp4']:[]),...(stage==='final'?['render-receipt.json']:[])];
+    await writeFile(`${dir}/report.html`,`<!doctype html><meta charset="utf-8"><title>${esc(plan.id)} / ${stage}</title><style>body{background:#f7f2e6;color:#263f46;font:16px system-ui;margin:24px}img,video{max-width:100%}.ref{max-height:440px}section{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}figure{margin:0}figcaption{padding:8px}li{margin:8px}code{overflow-wrap:anywhere}@media(max-width:800px){section{grid-template-columns:1fr}}</style><h1>${esc(plan.id)} / ${stage}</h1><p>Whole reference → authored source → actual ${stage==='final'?'decoded MP4':'Remotion'} frames. Visual review pending.</p><code>${loaded.identity}</code><p>${referenceMarkup}</p><h2>Review criteria</h2><ul>${plan.stages[stage].criteria.map(c=>`<li>${typeof c==='string'?'':`<strong>${esc(c.id)} · ${c.required?'required':'optional'}</strong> — `}${esc(criterionText(c))}${typeof c==='string'?'':`<br>Inspect frames: ${c.frames.map(f=>`<a href="frames/f${String(f).padStart(6,'0')}.png">f${f}</a>`).join(', ')}${c.relations?.length?` · relations: ${c.relations.map(esc).join(', ')}`:''}`}</li>`).join('')}</ul>${['motion','final'].includes(stage)?'<video controls loop src="preview.mp4"></video><p>Inspect at normal speed and 0.5× in your player.</p>':''}${diagnosticMarkup}<section>${cards}</section>`);
+    const names=[...(plan.version===2?['diagnostics.json']:[]),...frames.map(f=>`frames/f${String(f).padStart(6,'0')}.png`),'report.html',...(['motion','final'].includes(stage)?['preview.mp4']:[]),...(stage==='final'?['render-receipt.json']:[])];
     const artifacts=await Promise.all(names.map(async path=>({path,sha256:digest(await readFile(`${dir}/${path}`))})));
-    const capture={version:1,stage,identity:loaded.identity,source:loaded.source,plan:values.plan,input:plan.input,
+    if((await loadPlan(values.plan)).identity!==loaded.identity)throw Error('Source/input/plan changed during diagnostics; recapture');
+    const capture={version:2,planVersion:plan.version,qa:loaded.qa,stage,identity:loaded.identity,source:loaded.source,plan:values.plan,input:plan.input,
       createdAt:new Date().toISOString(),method:stage==='final'?'Decoded official renderMedia MP4':'Official @remotion/renderer renderFrames',
       settings:plan.settings,frames,criteria:plan.stages[stage].criteria,artifacts,pageErrors:errors,platform:process.platform};
     const captureBytes=JSON.stringify(capture,null,2);await writeFile(`${dir}/capture.json`,captureBytes);
-    await writeFile(`${dir}/review.json`,JSON.stringify({captureSha256:digest(captureBytes),decision:'pending',reviewer:'',notes:'',
-      checks:capture.criteria.map(criterion=>({criterion,verdict:'pending',notes:''})),playback:{normal:false,slow:false},issues:[]},null,2));
+    const pendingReview={captureSha256:digest(captureBytes),decision:'pending',reviewer:'',notes:'',
+      checks:capture.criteria.map(c=>({criterion:criterionId(c),verdict:'pending',notes:'',...(plan.version===2?{frames:[]}: {})})),playback:{normal:false,slow:false},issues:[]};
+    await writeFile(`${dir}/review.json`,JSON.stringify(pendingReview,null,2));
+    if(needsIndependentReview(plan,stage))await writeFile(`${dir}/independent-review.json`,JSON.stringify({...pendingReview,
+      role:'independent',authorReviewSha256:'',playback:{...pendingReview.playback,notes:''}},null,2));
     let latest={};try{latest=await json(`${folder}/latest.json`);}catch(e){if(e.code!=='ENOENT')throw e;}
     latest[stage]=run;await writeFile(`${folder}/latest.json`,JSON.stringify(latest,null,2));
     console.log(stage,frames.length,'frames →',`${dir}/report.html`,'(visual review pending)');

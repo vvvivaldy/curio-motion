@@ -1,0 +1,1934 @@
+[
+  {
+    "durationSeconds": 30.104729166666665,
+    "floatPeak": 0.8645182251930237,
+    "rmsDbFS": -33.63823285794422,
+    "activityThreshold": 0.019315242430112272,
+    "events": [
+      {
+        "start": 0.855,
+        "end": 0.935,
+        "peakTime": 0.8713,
+        "peakDbFS": -14.24
+      },
+      {
+        "start": 1.585,
+        "end": 1.695,
+        "peakTime": 1.6148,
+        "peakDbFS": -13.58
+      },
+      {
+        "start": 2.195,
+        "end": 2.335,
+        "peakTime": 2.27,
+        "peakDbFS": -15.86
+      },
+      {
+        "start": 2.855,
+        "end": 3.035,
+        "peakTime": 2.9479,
+        "peakDbFS": -11.95
+      },
+      {
+        "start": 3.585,
+        "end": 3.665,
+        "peakTime": 3.6046,
+        "peakDbFS": -14.92
+      },
+      {
+        "start": 3.785,
+        "end": 3.865,
+        "peakTime": 3.8014,
+        "peakDbFS": -1.55
+      },
+      {
+        "start": 4.285,
+        "end": 4.375,
+        "peakTime": 4.3069,
+        "peakDbFS": -17.54
+      },
+      {
+        "start": 5.025,
+        "end": 5.135,
+        "peakTime": 5.0972,
+        "peakDbFS": -20.11
+      },
+      {
+        "start": 5.705,
+        "end": 5.835,
+        "peakTime": 5.7484,
+        "peakDbFS": -15.29
+      },
+      {
+        "start": 6.395,
+        "end": 6.495,
+        "peakTime": 6.4136,
+        "peakDbFS": -16.31
+      },
+      {
+        "start": 7.095,
+        "end": 7.265,
+        "peakTime": 7.1204,
+        "peakDbFS": -11.17
+      },
+      {
+        "start": 7.795,
+        "end": 7.935,
+        "peakTime": 7.8114,
+        "peakDbFS": -7.71
+      },
+      {
+        "start": 8.535,
+        "end": 8.715,
+        "peakTime": 8.6339,
+        "peakDbFS": -6.97
+      },
+      {
+        "start": 9.335,
+        "end": 9.475,
+        "peakTime": 9.3923,
+        "peakDbFS": -12.02
+      },
+      {
+        "start": 10.095,
+        "end": 10.215,
+        "peakTime": 10.1178,
+        "peakDbFS": -20.16
+      },
+      {
+        "start": 10.865,
+        "end": 10.965,
+        "peakTime": 10.8839,
+        "peakDbFS": -5.99
+      },
+      {
+        "start": 11.625,
+        "end": 11.775,
+        "peakTime": 11.6906,
+        "peakDbFS": -10.01
+      },
+      {
+        "start": 12.365,
+        "end": 12.475,
+        "peakTime": 12.3857,
+        "peakDbFS": -9.3
+      },
+      {
+        "start": 13.135,
+        "end": 13.285,
+        "peakTime": 13.154,
+        "peakDbFS": -16.43
+      },
+      {
+        "start": 13.835,
+        "end": 13.955,
+        "peakTime": 13.9016,
+        "peakDbFS": -14.43
+      },
+      {
+        "start": 14.575,
+        "end": 14.725,
+        "peakTime": 14.6586,
+        "peakDbFS": -18.65
+      },
+      {
+        "start": 15.315,
+        "end": 15.445,
+        "peakTime": 15.3336,
+        "peakDbFS": -9.68
+      },
+      {
+        "start": 16.035,
+        "end": 16.135,
+        "peakTime": 16.0579,
+        "peakDbFS": -10.9
+      },
+      {
+        "start": 16.725,
+        "end": 16.885,
+        "peakTime": 16.7431,
+        "peakDbFS": -13.22
+      },
+      {
+        "start": 17.375,
+        "end": 17.485,
+        "peakTime": 17.3947,
+        "peakDbFS": -5.8
+      },
+      {
+        "start": 18.075,
+        "end": 18.195,
+        "peakTime": 18.0905,
+        "peakDbFS": -5.83
+      },
+      {
+        "start": 18.775,
+        "end": 18.935,
+        "peakTime": 18.7962,
+        "peakDbFS": -16.05
+      },
+      {
+        "start": 19.445,
+        "end": 19.615,
+        "peakTime": 19.4647,
+        "peakDbFS": -1.26
+      },
+      {
+        "start": 20.125,
+        "end": 20.305,
+        "peakTime": 20.1483,
+        "peakDbFS": -13.92
+      },
+      {
+        "start": 20.845,
+        "end": 20.995,
+        "peakTime": 20.8698,
+        "peakDbFS": -9.58
+      },
+      {
+        "start": 21.515,
+        "end": 21.685,
+        "peakTime": 21.5339,
+        "peakDbFS": -14.37
+      },
+      {
+        "start": 22.205,
+        "end": 22.275,
+        "peakTime": 22.223,
+        "peakDbFS": -17.08
+      },
+      {
+        "start": 22.865,
+        "end": 23.065,
+        "peakTime": 22.8947,
+        "peakDbFS": -1.97
+      },
+      {
+        "start": 23.535,
+        "end": 23.625,
+        "peakTime": 23.5501,
+        "peakDbFS": -13.48
+      },
+      {
+        "start": 24.185,
+        "end": 24.355,
+        "peakTime": 24.2018,
+        "peakDbFS": -4.76
+      },
+      {
+        "start": 24.835,
+        "end": 24.925,
+        "peakTime": 24.8568,
+        "peakDbFS": -11.77
+      },
+      {
+        "start": 25.475,
+        "end": 25.555,
+        "peakTime": 25.4905,
+        "peakDbFS": -17.1
+      },
+      {
+        "start": 26.145,
+        "end": 26.295,
+        "peakTime": 26.1683,
+        "peakDbFS": -15.32
+      },
+      {
+        "start": 26.815,
+        "end": 26.875,
+        "peakTime": 26.8388,
+        "peakDbFS": -18.98
+      },
+      {
+        "start": 26.945,
+        "end": 27.025,
+        "peakTime": 26.9635,
+        "peakDbFS": -17.83
+      },
+      {
+        "start": 27.545,
+        "end": 27.705,
+        "peakTime": 27.6148,
+        "peakDbFS": -8.8
+      },
+      {
+        "start": 28.255,
+        "end": 28.505,
+        "peakTime": 28.3981,
+        "peakDbFS": -9.69
+      },
+      {
+        "start": 29.045,
+        "end": 29.205,
+        "peakTime": 29.0698,
+        "peakDbFS": -5.62
+      },
+      {
+        "start": 29.735,
+        "end": 29.875,
+        "peakTime": 29.8,
+        "peakDbFS": -11.41
+      }
+    ],
+    "id": "wood-sneakers",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 1,
+          "channel_layout": "mono",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 424837938,
+          "duration": "30.104729",
+          "bit_rate": "190140",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.99r"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/wood-sneakers-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "30.104729",
+        "size": "716448",
+        "bit_rate": "190388",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 3.657875,
+    "floatPeak": 0.08402815461158752,
+    "rmsDbFS": -36.4921048167001,
+    "activityThreshold": 0.003939584646506684,
+    "events": [
+      {
+        "start": 0.265,
+        "end": 0.605,
+        "peakTime": 0.301,
+        "peakDbFS": -21.8
+      },
+      {
+        "start": 1.105,
+        "end": 1.445,
+        "peakTime": 1.1718,
+        "peakDbFS": -21.83
+      },
+      {
+        "start": 1.935,
+        "end": 2.555,
+        "peakTime": 2.0107,
+        "peakDbFS": -21.51
+      },
+      {
+        "start": 2.895,
+        "end": 3.495,
+        "peakTime": 3.3134,
+        "peakDbFS": -28.23
+      }
+    ],
+    "id": "wood-leather-shoes",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "44100",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 353600,
+          "start_time": "0.025057",
+          "duration_ts": 51619840,
+          "duration": "3.657868",
+          "bit_rate": "150224",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.100"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/wood-leather-shoes-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.025057",
+        "duration": "3.657868",
+        "size": "69655",
+        "bit_rate": "152340",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 29.584791666666668,
+    "floatPeak": 0.503485918045044,
+    "rmsDbFS": -33.61432159976955,
+    "activityThreshold": 0.019651464321556445,
+    "events": [
+      {
+        "start": 1.085,
+        "end": 1.165,
+        "peakTime": 1.1075,
+        "peakDbFS": -20.14
+      },
+      {
+        "start": 1.205,
+        "end": 1.275,
+        "peakTime": 1.227,
+        "peakDbFS": -24.26
+      },
+      {
+        "start": 2.625,
+        "end": 2.785,
+        "peakTime": 2.6472,
+        "peakDbFS": -15.7
+      },
+      {
+        "start": 3.425,
+        "end": 3.505,
+        "peakTime": 3.4467,
+        "peakDbFS": -16.42
+      },
+      {
+        "start": 4.165,
+        "end": 4.255,
+        "peakTime": 4.1875,
+        "peakDbFS": -13.29
+      },
+      {
+        "start": 4.865,
+        "end": 4.935,
+        "peakTime": 4.8864,
+        "peakDbFS": -17.83
+      },
+      {
+        "start": 5.855,
+        "end": 6.005,
+        "peakTime": 5.8827,
+        "peakDbFS": -14.16
+      },
+      {
+        "start": 6.375,
+        "end": 6.435,
+        "peakTime": 6.3953,
+        "peakDbFS": -24.67
+      },
+      {
+        "start": 7.865,
+        "end": 7.995,
+        "peakTime": 7.8859,
+        "peakDbFS": -10.35
+      },
+      {
+        "start": 8.875,
+        "end": 9.025,
+        "peakTime": 8.9471,
+        "peakDbFS": -16.5
+      },
+      {
+        "start": 9.665,
+        "end": 9.765,
+        "peakTime": 9.6913,
+        "peakDbFS": -13.02
+      },
+      {
+        "start": 10.785,
+        "end": 10.855,
+        "peakTime": 10.8012,
+        "peakDbFS": -19.25
+      },
+      {
+        "start": 11.805,
+        "end": 11.955,
+        "peakTime": 11.8269,
+        "peakDbFS": -17.5
+      },
+      {
+        "start": 12.695,
+        "end": 12.775,
+        "peakTime": 12.7133,
+        "peakDbFS": -19.13
+      },
+      {
+        "start": 13.905,
+        "end": 13.965,
+        "peakTime": 13.9291,
+        "peakDbFS": -22.04
+      },
+      {
+        "start": 16.595,
+        "end": 16.735,
+        "peakTime": 16.6203,
+        "peakDbFS": -14.24
+      },
+      {
+        "start": 17.625,
+        "end": 17.725,
+        "peakTime": 17.695,
+        "peakDbFS": -20.36
+      },
+      {
+        "start": 18.455,
+        "end": 18.595,
+        "peakTime": 18.4786,
+        "peakDbFS": -6.1
+      },
+      {
+        "start": 19.235,
+        "end": 19.315,
+        "peakTime": 19.2599,
+        "peakDbFS": -16.33
+      },
+      {
+        "start": 20.095,
+        "end": 20.245,
+        "peakTime": 20.115,
+        "peakDbFS": -9.05
+      },
+      {
+        "start": 20.935,
+        "end": 21.085,
+        "peakTime": 20.9554,
+        "peakDbFS": -18.82
+      },
+      {
+        "start": 21.885,
+        "end": 22.065,
+        "peakTime": 21.9154,
+        "peakDbFS": -6.06
+      },
+      {
+        "start": 22.785,
+        "end": 22.855,
+        "peakTime": 22.807,
+        "peakDbFS": -19.72
+      },
+      {
+        "start": 23.975,
+        "end": 24.135,
+        "peakTime": 23.9989,
+        "peakDbFS": -5.96
+      },
+      {
+        "start": 24.365,
+        "end": 24.435,
+        "peakTime": 24.3675,
+        "peakDbFS": -22.38
+      },
+      {
+        "start": 26.475,
+        "end": 26.655,
+        "peakTime": 26.5049,
+        "peakDbFS": -16.45
+      },
+      {
+        "start": 27.525,
+        "end": 27.685,
+        "peakTime": 27.6179,
+        "peakDbFS": -11.3
+      },
+      {
+        "start": 28.365,
+        "end": 28.515,
+        "peakTime": 28.386,
+        "peakDbFS": -12.32
+      },
+      {
+        "start": 29.435,
+        "end": 29.515,
+        "peakTime": 29.4622,
+        "peakDbFS": -16.94
+      }
+    ],
+    "id": "wood-vans",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 417500580,
+          "duration": "29.584792",
+          "bit_rate": "149264",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.100"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/wood-vans-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "29.584792",
+        "size": "552576",
+        "bit_rate": "149421",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 1.152,
+    "floatPeak": 0.04517102614045143,
+    "rmsDbFS": -49.01829907740095,
+    "activityThreshold": 0.0008224935251720921,
+    "events": [
+      {
+        "start": 0.345,
+        "end": 0.725,
+        "peakTime": 0.4926,
+        "peakDbFS": -26.9
+      }
+    ],
+    "id": "envelope-slide",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 16257024,
+          "duration": "1.152000",
+          "bit_rate": "158367",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.99r"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/envelope-slide-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "1.152000",
+        "size": "23280",
+        "bit_rate": "161666",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 0.16866666666666666,
+    "floatPeak": 0.04255274683237076,
+    "rmsDbFS": -52.02953363704264,
+    "activityThreshold": 0.00037520898364228105,
+    "events": [
+      {
+        "start": 0.005,
+        "end": 0.135,
+        "peakTime": 0.0872,
+        "peakDbFS": -27.42
+      }
+    ],
+    "id": "paper-pickup",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 2380224,
+          "duration": "0.168667",
+          "bit_rate": "186667",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.99r"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/paper-pickup-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "0.168667",
+        "size": "5040",
+        "bit_rate": "239050",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 2.1561875,
+    "floatPeak": 0.11207496374845505,
+    "rmsDbFS": -46.35736710842758,
+    "activityThreshold": 0.0019202935820157208,
+    "events": [
+      {
+        "start": 0.005,
+        "end": 1.205,
+        "peakTime": 0.3222,
+        "peakDbFS": -19.01
+      },
+      {
+        "start": 1.445,
+        "end": 1.865,
+        "peakTime": 1.4846,
+        "peakDbFS": -39.3
+      }
+    ],
+    "id": "page-turn",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "44100",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 353600,
+          "start_time": "0.025057",
+          "duration_ts": 30427840,
+          "duration": "2.156168",
+          "bit_rate": "153712",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.99r"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/page-turn-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.025057",
+        "duration": "2.156168",
+        "size": "42161",
+        "bit_rate": "156429",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 30.4841875,
+    "floatPeak": 0.2491614818572998,
+    "rmsDbFS": -46.81825376159232,
+    "activityThreshold": 0.005509879738324193,
+    "events": [
+      {
+        "start": 0.005,
+        "end": 0.065,
+        "peakTime": 0.0205,
+        "peakDbFS": -20.0
+      },
+      {
+        "start": 0.365,
+        "end": 0.425,
+        "peakTime": 0.3819,
+        "peakDbFS": -19.33
+      },
+      {
+        "start": 1.175,
+        "end": 1.265,
+        "peakTime": 1.1987,
+        "peakDbFS": -18.89
+      },
+      {
+        "start": 1.505,
+        "end": 1.585,
+        "peakTime": 1.5251,
+        "peakDbFS": -17.99
+      },
+      {
+        "start": 1.785,
+        "end": 1.885,
+        "peakTime": 1.808,
+        "peakDbFS": -12.83
+      },
+      {
+        "start": 2.495,
+        "end": 2.625,
+        "peakTime": 2.5139,
+        "peakDbFS": -16.95
+      },
+      {
+        "start": 2.805,
+        "end": 2.875,
+        "peakTime": 2.8262,
+        "peakDbFS": -17.34
+      },
+      {
+        "start": 3.925,
+        "end": 3.985,
+        "peakTime": 3.9424,
+        "peakDbFS": -12.07
+      },
+      {
+        "start": 4.305,
+        "end": 4.365,
+        "peakTime": 4.3257,
+        "peakDbFS": -16.91
+      },
+      {
+        "start": 5.625,
+        "end": 5.695,
+        "peakTime": 5.6492,
+        "peakDbFS": -15.71
+      },
+      {
+        "start": 6.035,
+        "end": 6.095,
+        "peakTime": 6.0618,
+        "peakDbFS": -18.36
+      },
+      {
+        "start": 7.405,
+        "end": 7.475,
+        "peakTime": 7.4298,
+        "peakDbFS": -18.67
+      },
+      {
+        "start": 8.535,
+        "end": 8.595,
+        "peakTime": 8.5555,
+        "peakDbFS": -21.4
+      },
+      {
+        "start": 8.915,
+        "end": 8.985,
+        "peakTime": 8.9418,
+        "peakDbFS": -16.01
+      },
+      {
+        "start": 9.335,
+        "end": 9.415,
+        "peakTime": 9.3622,
+        "peakDbFS": -15.18
+      },
+      {
+        "start": 9.755,
+        "end": 9.825,
+        "peakTime": 9.7811,
+        "peakDbFS": -18.19
+      },
+      {
+        "start": 11.915,
+        "end": 11.995,
+        "peakTime": 11.9451,
+        "peakDbFS": -28.93
+      },
+      {
+        "start": 13.655,
+        "end": 13.775,
+        "peakTime": 13.6884,
+        "peakDbFS": -17.82
+      },
+      {
+        "start": 13.975,
+        "end": 14.075,
+        "peakTime": 14.004,
+        "peakDbFS": -21.11
+      },
+      {
+        "start": 15.665,
+        "end": 15.775,
+        "peakTime": 15.6816,
+        "peakDbFS": -17.95
+      },
+      {
+        "start": 17.125,
+        "end": 17.215,
+        "peakTime": 17.1531,
+        "peakDbFS": -19.36
+      },
+      {
+        "start": 17.425,
+        "end": 17.505,
+        "peakTime": 17.4534,
+        "peakDbFS": -22.92
+      },
+      {
+        "start": 18.665,
+        "end": 18.765,
+        "peakTime": 18.692,
+        "peakDbFS": -20.59
+      },
+      {
+        "start": 18.915,
+        "end": 18.995,
+        "peakTime": 18.937,
+        "peakDbFS": -28.8
+      },
+      {
+        "start": 20.015,
+        "end": 20.075,
+        "peakTime": 20.0411,
+        "peakDbFS": -28.32
+      },
+      {
+        "start": 21.335,
+        "end": 21.475,
+        "peakTime": 21.3601,
+        "peakDbFS": -23.21
+      },
+      {
+        "start": 23.115,
+        "end": 23.205,
+        "peakTime": 23.1375,
+        "peakDbFS": -28.42
+      },
+      {
+        "start": 25.495,
+        "end": 25.605,
+        "peakTime": 25.5534,
+        "peakDbFS": -33.01
+      },
+      {
+        "start": 26.755,
+        "end": 26.825,
+        "peakTime": 26.7939,
+        "peakDbFS": -33.89
+      },
+      {
+        "start": 27.585,
+        "end": 27.715,
+        "peakTime": 27.606,
+        "peakDbFS": -33.75
+      },
+      {
+        "start": 27.755,
+        "end": 27.935,
+        "peakTime": 27.8999,
+        "peakDbFS": -33.61
+      },
+      {
+        "start": 28.015,
+        "end": 28.185,
+        "peakTime": 28.1331,
+        "peakDbFS": -33.31
+      },
+      {
+        "start": 28.805,
+        "end": 28.875,
+        "peakTime": 28.8363,
+        "peakDbFS": -34.66
+      },
+      {
+        "start": 29.585,
+        "end": 29.645,
+        "peakTime": 29.6074,
+        "peakDbFS": -23.91
+      }
+    ],
+    "id": "paper-handling",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 1,
+          "channel_layout": "mono",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 430192854,
+          "duration": "30.484188",
+          "bit_rate": "131484",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.100"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/paper-handling-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "30.484188",
+        "size": "501744",
+        "bit_rate": "131673",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 0.776625,
+    "floatPeak": 0.090788334608078,
+    "rmsDbFS": -41.62331242855952,
+    "activityThreshold": 0.0016903449102723608,
+    "events": [
+      {
+        "start": 0.0,
+        "end": 0.395,
+        "peakTime": 0.117,
+        "peakDbFS": -20.84
+      }
+    ],
+    "id": "paper-brush",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "44100",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 353600,
+          "start_time": "0.025057",
+          "duration_ts": 10959680,
+          "duration": "0.776621",
+          "bit_rate": "196395",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.100"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/paper-brush-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.025057",
+        "duration": "0.776621",
+        "size": "19880",
+        "bit_rate": "204784",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 1.8369791666666666,
+    "floatPeak": 0.9699376225471497,
+    "rmsDbFS": -30.693892706711203,
+    "activityThreshold": 0.024208237527395374,
+    "events": [
+      {
+        "start": 0.825,
+        "end": 0.915,
+        "peakTime": 0.8434,
+        "peakDbFS": -0.27
+      }
+    ],
+    "id": "wood-desk-tap",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 1,
+          "channel_layout": "mono",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 25923450,
+          "duration": "1.836979",
+          "bit_rate": "181538",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.100"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/wood-desk-tap-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "1.836979",
+        "size": "42480",
+        "bit_rate": "184999",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 1.081,
+    "floatPeak": 0.9893061220645905,
+    "rmsDbFS": -17.266339595113784,
+    "activityThreshold": 0.05018606399079071,
+    "events": [
+      {
+        "start": 0.155,
+        "end": 0.505,
+        "peakTime": 0.2042,
+        "peakDbFS": -0.09
+      }
+    ],
+    "id": "wood-table-tap",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "44100",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 353600,
+          "start_time": "0.025057",
+          "duration_ts": 15255040,
+          "duration": "1.080998",
+          "bit_rate": "190459",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.99r"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/wood-table-tap-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.025057",
+        "duration": "1.080998",
+        "size": "26742",
+        "bit_rate": "197906",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 4.128,
+    "floatPeak": 0.05517493560910225,
+    "rmsDbFS": -47.644182314469106,
+    "activityThreshold": 0.002449296068355995,
+    "events": [
+      {
+        "start": 0.0,
+        "end": 1.175,
+        "peakTime": 0.5449,
+        "peakDbFS": -40.15
+      },
+      {
+        "start": 1.305,
+        "end": 1.415,
+        "peakTime": 1.3695,
+        "peakDbFS": -44.28
+      },
+      {
+        "start": 1.825,
+        "end": 2.555,
+        "peakTime": 1.9978,
+        "peakDbFS": -44.29
+      },
+      {
+        "start": 2.625,
+        "end": 2.755,
+        "peakTime": 2.728,
+        "peakDbFS": -44.68
+      },
+      {
+        "start": 2.875,
+        "end": 2.995,
+        "peakTime": 2.9663,
+        "peakDbFS": -46.24
+      },
+      {
+        "start": 3.045,
+        "end": 3.125,
+        "peakTime": 3.0947,
+        "peakDbFS": -45.05
+      },
+      {
+        "start": 3.165,
+        "end": 4.128,
+        "peakTime": 3.644,
+        "peakDbFS": -25.17
+      }
+    ],
+    "id": "leather-rustle",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 1,
+          "channel_layout": "mono",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 58254336,
+          "duration": "4.128000",
+          "bit_rate": "179607",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.98r"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/leather-rustle-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "4.128000",
+        "size": "93216",
+        "bit_rate": "180651",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 38.452895833333336,
+    "floatPeak": 0.01655864529311657,
+    "rmsDbFS": -61.57716883422423,
+    "activityThreshold": 0.00033567672639795126,
+    "events": [
+      {
+        "start": 0.0,
+        "end": 8.995,
+        "peakTime": 3.3949,
+        "peakDbFS": -39.94
+      },
+      {
+        "start": 9.035,
+        "end": 12.895,
+        "peakTime": 10.8712,
+        "peakDbFS": -40.37
+      },
+      {
+        "start": 12.935,
+        "end": 13.125,
+        "peakTime": 13.0214,
+        "peakDbFS": -57.11
+      },
+      {
+        "start": 13.295,
+        "end": 14.975,
+        "peakTime": 14.5628,
+        "peakDbFS": -39.51
+      },
+      {
+        "start": 15.015,
+        "end": 15.185,
+        "peakTime": 15.0792,
+        "peakDbFS": -60.83
+      },
+      {
+        "start": 15.265,
+        "end": 15.595,
+        "peakTime": 15.4759,
+        "peakDbFS": -57.53
+      },
+      {
+        "start": 15.645,
+        "end": 38.4529,
+        "peakTime": 24.2497,
+        "peakDbFS": -35.62
+      }
+    ],
+    "id": "cotton-rustle",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 542647266,
+          "duration": "38.452896",
+          "bit_rate": "152449",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.99r"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/cotton-rustle-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "38.452896",
+        "size": "733584",
+        "bit_rate": "152619",
+        "probe_score": 52
+      }
+    }
+  },
+  {
+    "durationSeconds": 12.7211875,
+    "floatPeak": 0.033949367702007294,
+    "rmsDbFS": -61.90545553660051,
+    "activityThreshold": 0.0005263335283635245,
+    "events": [
+      {
+        "start": 0.305,
+        "end": 0.455,
+        "peakTime": 0.3806,
+        "peakDbFS": -48.54
+      },
+      {
+        "start": 0.495,
+        "end": 1.495,
+        "peakTime": 1.4025,
+        "peakDbFS": -29.38
+      },
+      {
+        "start": 1.535,
+        "end": 1.935,
+        "peakTime": 1.7869,
+        "peakDbFS": -42.81
+      },
+      {
+        "start": 2.055,
+        "end": 2.515,
+        "peakTime": 2.122,
+        "peakDbFS": -49.78
+      },
+      {
+        "start": 3.005,
+        "end": 3.345,
+        "peakTime": 3.2336,
+        "peakDbFS": -42.85
+      },
+      {
+        "start": 3.545,
+        "end": 3.765,
+        "peakTime": 3.67,
+        "peakDbFS": -44.27
+      },
+      {
+        "start": 3.825,
+        "end": 3.945,
+        "peakTime": 3.8893,
+        "peakDbFS": -49.65
+      },
+      {
+        "start": 5.095,
+        "end": 5.355,
+        "peakTime": 5.239,
+        "peakDbFS": -42.14
+      },
+      {
+        "start": 5.455,
+        "end": 5.875,
+        "peakTime": 5.6704,
+        "peakDbFS": -41.49
+      },
+      {
+        "start": 6.025,
+        "end": 6.745,
+        "peakTime": 6.3588,
+        "peakDbFS": -39.7
+      },
+      {
+        "start": 7.115,
+        "end": 7.395,
+        "peakTime": 7.2925,
+        "peakDbFS": -39.53
+      },
+      {
+        "start": 8.535,
+        "end": 9.105,
+        "peakTime": 8.9367,
+        "peakDbFS": -46.83
+      },
+      {
+        "start": 9.195,
+        "end": 9.405,
+        "peakTime": 9.3414,
+        "peakDbFS": -47.25
+      },
+      {
+        "start": 9.465,
+        "end": 9.525,
+        "peakTime": 9.4922,
+        "peakDbFS": -60.97
+      },
+      {
+        "start": 10.305,
+        "end": 10.375,
+        "peakTime": 10.3339,
+        "peakDbFS": -53.07
+      },
+      {
+        "start": 10.555,
+        "end": 11.275,
+        "peakTime": 11.1735,
+        "peakDbFS": -35.15
+      },
+      {
+        "start": 11.335,
+        "end": 11.625,
+        "peakTime": 11.4974,
+        "peakDbFS": -40.48
+      },
+      {
+        "start": 11.895,
+        "end": 11.975,
+        "peakTime": 11.9332,
+        "peakDbFS": -53.84
+      },
+      {
+        "start": 12.155,
+        "end": 12.215,
+        "peakTime": 12.1817,
+        "peakDbFS": -54.69
+      },
+      {
+        "start": 12.395,
+        "end": 12.485,
+        "peakTime": 12.4425,
+        "peakDbFS": -49.54
+      },
+      {
+        "start": 12.655,
+        "end": 12.7212,
+        "peakTime": 12.6777,
+        "peakDbFS": -53.2
+      }
+    ],
+    "id": "cloth-movement",
+    "probe": {
+      "streams": [
+        {
+          "index": 0,
+          "codec_name": "mp3",
+          "codec_long_name": "MP3 (MPEG audio layer 3)",
+          "codec_type": "audio",
+          "codec_tag_string": "[0][0][0][0]",
+          "codec_tag": "0x0000",
+          "mime_codec_string": "mp4a.40.34",
+          "sample_fmt": "fltp",
+          "sample_rate": "48000",
+          "channels": 2,
+          "channel_layout": "stereo",
+          "bits_per_sample": 0,
+          "initial_padding": 0,
+          "r_frame_rate": "0/0",
+          "avg_frame_rate": "0/0",
+          "time_base": "1/14112000",
+          "start_pts": 324870,
+          "start_time": "0.023021",
+          "duration_ts": 179521398,
+          "duration": "12.721187",
+          "bit_rate": "191459",
+          "disposition": {
+            "default": 0,
+            "dub": 0,
+            "original": 0,
+            "comment": 0,
+            "lyrics": 0,
+            "karaoke": 0,
+            "forced": 0,
+            "hearing_impaired": 0,
+            "visual_impaired": 0,
+            "clean_effects": 0,
+            "attached_pic": 0,
+            "timed_thumbnails": 0,
+            "non_diegetic": 0,
+            "captions": 0,
+            "descriptions": 0,
+            "metadata": 0,
+            "dependent": 0,
+            "still_image": 0,
+            "multilayer": 0
+          },
+          "tags": {
+            "encoder": "LAME3.98r"
+          },
+          "side_data_list": [
+            {
+              "side_data_type": "Replay Gain"
+            }
+          ]
+        }
+      ],
+      "format": {
+        "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17eec-03da-7240-b2b4-dc64c573cef9/stage6-audio-expansion-2026-11-01/originals/cloth-movement-official-hq-preview.mp3",
+        "nb_streams": 1,
+        "nb_programs": 0,
+        "nb_stream_groups": 0,
+        "format_name": "mp3",
+        "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+        "start_time": "0.023021",
+        "duration": "12.721188",
+        "size": "305568",
+        "bit_rate": "192163",
+        "probe_score": 52
+      }
+    }
+  }
+]

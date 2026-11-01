@@ -1,0 +1,17 @@
+{
+  "reference": {
+    "path": "reference/ivory-carrier/whole.png",
+    "sha256": "07b038b0dcd9fa8c0f7550a32bc6d5923c31ff65e434f22450f58c1eaf5bb38a",
+    "provenance": "Original whole AI-generated stickman design, built-in imagegen, 2026-10-27; selected before authoring code; owner style examples are separate local-only guidance.",
+    "mediaType": "image/png",
+    "whole": true,
+    "runtimeUsage": false,
+    "distribution": "local-only"
+  },
+  "action": {
+    "path": "authoring/ivory-carrier.action.txt",
+    "sha256": "cc0257a770e79706d98f24c7b1b0710896d50667231d517bf16c6a648894971d",
+    "unchanged": true
+  },
+  "method": "Local source scaffold only. The supplied whole reference and ACTION remain authoring inputs, never runtime textures or generated scene instructions."
+}

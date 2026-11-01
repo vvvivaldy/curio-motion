@@ -1,0 +1,1359 @@
+{
+  "version": 2,
+  "id": "carrier-small-box",
+  "composition": "CarrierSmallBox",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "durationInFrames": 240
+  },
+  "input": "authoring/ivory-carrier.inputs.json",
+  "actionFiles": [
+    "authoring/ivory-carrier.action.txt",
+    "authoring/ivory-carrier.tempo-followup.txt"
+  ],
+  "observations": [
+    "Whole independent image selected before scene code: ivory round head, face turned right in three-quarter view, narrow continuous torso, separated capsule arms/legs, small mitten hands and elongated feet against charcoal.",
+    "Owner screenshots guide dark sparse stickman staging; their running/sofa actions and wording are not requested in this film."
+  ],
+  "assumptions": [
+    "Finite stress design: heightScale=1, boxScale=0.8, tableHeight=152. Same whole reference and unchanged original action/tempo followup as ordinary carrier.",
+    "This parameter package tests exactly eight existing registered designs through one CarrierDesign implementation. It makes no claim about arbitrary sizes or automatic first-pass success.",
+    "Ordinary accepted cf289 base, all previous movies and negative probes are preserved. MODEL and FINAL selected controls plus dense/event geometry and native parity supplement owner playback; pending playback remains pending."
+  ],
+  "actionBeats": [
+    {
+      "time": [
+        0,
+        1.8666666666666665
+      ],
+      "action": "Approach; prepare hands before squatting"
+    },
+    {
+      "time": [
+        2,
+        3.266666666666667
+      ],
+      "action": "Bend with separated elbows/knees, reach and close both grips"
+    },
+    {
+      "time": [
+        3.3333333333333335,
+        3.5
+      ],
+      "action": "Accept load while box is still on floor"
+    },
+    {
+      "time": [
+        3.5,
+        4.433333333333334
+      ],
+      "action": "Lift through legs; bring box toward body"
+    },
+    {
+      "time": [
+        4.433333333333334,
+        4.666666666666667
+      ],
+      "action": "Brief raised hold"
+    },
+    {
+      "time": [
+        4.666666666666667,
+        7.733333333333333
+      ],
+      "action": "Carry with world-fixed planted contacts"
+    },
+    {
+      "time": [
+        7.933333333333334,
+        8.366666666666667
+      ],
+      "action": "Lower and land box on actual bench"
+    },
+    {
+      "time": [
+        8.386666666666667,
+        8.700000000000001
+      ],
+      "action": "Transfer load to bench"
+    },
+    {
+      "time": [
+        8.733333333333333,
+        8.866666666666667
+      ],
+      "action": "Open hands on supported carton"
+    },
+    {
+      "time": [
+        8.866666666666667,
+        9.9
+      ],
+      "action": "Withdraw clear of bench, then lower arms beside thighs"
+    },
+    {
+      "time": [
+        9.9,
+        10
+      ],
+      "action": "Final pose"
+    }
+  ],
+  "diagnosticModule": "src/examples/ivory-carrier/variant-diagnostics.ts",
+  "independentReview": {
+    "stages": [
+      "model",
+      "final"
+    ]
+  },
+  "stages": {
+    "model": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "0.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 14,
+          "label": "0.583s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 20,
+          "label": "0.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 37,
+          "label": "1.542s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 44,
+          "label": "1.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 52,
+          "label": "2.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 57,
+          "label": "2.375s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 58,
+          "label": "2.417s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 59,
+          "label": "2.458s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 64,
+          "label": "2.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 69,
+          "label": "2.875s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 72,
+          "label": "3.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 74,
+          "label": "3.083s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 78,
+          "label": "3.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 84,
+          "label": "3.500s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 88,
+          "label": "3.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 90,
+          "label": "3.750s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 92,
+          "label": "3.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 96,
+          "label": "4.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 107,
+          "label": "4.458s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 128,
+          "label": "5.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 144,
+          "label": "6.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 160,
+          "label": "6.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 184,
+          "label": "7.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 188,
+          "label": "7.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 196,
+          "label": "8.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 197,
+          "label": "8.208s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 198,
+          "label": "8.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 200,
+          "label": "8.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 208,
+          "label": "8.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 213,
+          "label": "8.875s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 215,
+          "label": "8.958s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 219,
+          "label": "9.125s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 220,
+          "label": "9.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 222,
+          "label": "9.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 224,
+          "label": "9.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 226,
+          "label": "9.417s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 232,
+          "label": "9.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 239,
+          "label": "9.958s / size, pickup, stance or bench hazard control"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-anatomy",
+          "description": "Continuous torso and distinct whole arm/leg chains in approach, squat, carrying and withdrawal. Intended depth overlap may remain; no fused forearm/shin silhouette.",
+          "required": true,
+          "frames": [
+            14,
+            20,
+            52,
+            64,
+            72,
+            84,
+            96,
+            128,
+            144,
+            160,
+            200,
+            224,
+            239
+          ],
+          "relations": []
+        },
+        {
+          "id": "close-readable-grips",
+          "description": "Stand close to the fixed floor box before grip. Low reach may open the elbows naturally. Both actual C-palms, their curls and contact with the box remain readable; never approve from anchor equality alone.",
+          "required": true,
+          "frames": [
+            52,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            92,
+            96
+          ],
+          "relations": []
+        },
+        {
+          "id": "load-and-support",
+          "description": "Two grips close before load/lift; box stays close during walking with alternate passing feet, fixed support contacts and coherent load response. Bench supports the actual box before hands release.",
+          "required": true,
+          "frames": [
+            78,
+            84,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213
+          ],
+          "relations": []
+        },
+        {
+          "id": "clear-release",
+          "description": "Both hands and forearms clear the actual bench corner/top through withdrawal and settle. Preserve small and large payload shapes and the quiet endpoint.",
+          "required": true,
+          "frames": [
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": []
+        },
+        {
+          "id": "finite-matrix-geometry",
+          "description": "Same strict IK, bone lengths, real contour/contact/forearm-shin and release relations for exactly the eight declared designs; geometry pass is not appearance approval.",
+          "required": true,
+          "frames": [
+            0,
+            14,
+            20,
+            37,
+            44,
+            52,
+            57,
+            58,
+            59,
+            64,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            90,
+            92,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            188,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": [
+            "parameter-matrix"
+          ]
+        }
+      ]
+    },
+    "blocking": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "0.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 14,
+          "label": "0.583s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 20,
+          "label": "0.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 37,
+          "label": "1.542s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 44,
+          "label": "1.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 52,
+          "label": "2.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 57,
+          "label": "2.375s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 58,
+          "label": "2.417s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 59,
+          "label": "2.458s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 64,
+          "label": "2.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 69,
+          "label": "2.875s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 72,
+          "label": "3.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 74,
+          "label": "3.083s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 78,
+          "label": "3.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 84,
+          "label": "3.500s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 88,
+          "label": "3.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 90,
+          "label": "3.750s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 92,
+          "label": "3.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 96,
+          "label": "4.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 107,
+          "label": "4.458s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 128,
+          "label": "5.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 144,
+          "label": "6.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 160,
+          "label": "6.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 184,
+          "label": "7.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 188,
+          "label": "7.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 196,
+          "label": "8.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 197,
+          "label": "8.208s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 198,
+          "label": "8.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 200,
+          "label": "8.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 208,
+          "label": "8.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 213,
+          "label": "8.875s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 215,
+          "label": "8.958s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 219,
+          "label": "9.125s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 220,
+          "label": "9.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 222,
+          "label": "9.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 224,
+          "label": "9.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 226,
+          "label": "9.417s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 232,
+          "label": "9.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 239,
+          "label": "9.958s / size, pickup, stance or bench hazard control"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-anatomy",
+          "description": "Continuous torso and distinct whole arm/leg chains in approach, squat, carrying and withdrawal. Intended depth overlap may remain; no fused forearm/shin silhouette.",
+          "required": true,
+          "frames": [
+            14,
+            20,
+            52,
+            64,
+            72,
+            84,
+            96,
+            128,
+            144,
+            160,
+            200,
+            224,
+            239
+          ],
+          "relations": []
+        },
+        {
+          "id": "close-readable-grips",
+          "description": "Stand close to the fixed floor box before grip. Low reach may open the elbows naturally. Both actual C-palms, their curls and contact with the box remain readable; never approve from anchor equality alone.",
+          "required": true,
+          "frames": [
+            52,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            92,
+            96
+          ],
+          "relations": []
+        },
+        {
+          "id": "load-and-support",
+          "description": "Two grips close before load/lift; box stays close during walking with alternate passing feet, fixed support contacts and coherent load response. Bench supports the actual box before hands release.",
+          "required": true,
+          "frames": [
+            78,
+            84,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213
+          ],
+          "relations": []
+        },
+        {
+          "id": "clear-release",
+          "description": "Both hands and forearms clear the actual bench corner/top through withdrawal and settle. Preserve small and large payload shapes and the quiet endpoint.",
+          "required": true,
+          "frames": [
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": []
+        },
+        {
+          "id": "finite-matrix-geometry",
+          "description": "Same strict IK, bone lengths, real contour/contact/forearm-shin and release relations for exactly the eight declared designs; geometry pass is not appearance approval.",
+          "required": true,
+          "frames": [
+            0,
+            14,
+            20,
+            37,
+            44,
+            52,
+            57,
+            58,
+            59,
+            64,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            90,
+            92,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            188,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": [
+            "parameter-matrix"
+          ]
+        }
+      ]
+    },
+    "motion": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "0.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 14,
+          "label": "0.583s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 20,
+          "label": "0.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 37,
+          "label": "1.542s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 44,
+          "label": "1.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 52,
+          "label": "2.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 57,
+          "label": "2.375s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 58,
+          "label": "2.417s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 59,
+          "label": "2.458s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 64,
+          "label": "2.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 69,
+          "label": "2.875s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 72,
+          "label": "3.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 74,
+          "label": "3.083s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 78,
+          "label": "3.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 84,
+          "label": "3.500s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 88,
+          "label": "3.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 90,
+          "label": "3.750s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 92,
+          "label": "3.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 96,
+          "label": "4.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 107,
+          "label": "4.458s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 128,
+          "label": "5.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 144,
+          "label": "6.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 160,
+          "label": "6.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 184,
+          "label": "7.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 188,
+          "label": "7.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 196,
+          "label": "8.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 197,
+          "label": "8.208s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 198,
+          "label": "8.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 200,
+          "label": "8.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 208,
+          "label": "8.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 213,
+          "label": "8.875s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 215,
+          "label": "8.958s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 219,
+          "label": "9.125s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 220,
+          "label": "9.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 222,
+          "label": "9.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 224,
+          "label": "9.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 226,
+          "label": "9.417s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 232,
+          "label": "9.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 239,
+          "label": "9.958s / size, pickup, stance or bench hazard control"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-anatomy",
+          "description": "Continuous torso and distinct whole arm/leg chains in approach, squat, carrying and withdrawal. Intended depth overlap may remain; no fused forearm/shin silhouette.",
+          "required": true,
+          "frames": [
+            14,
+            20,
+            52,
+            64,
+            72,
+            84,
+            96,
+            128,
+            144,
+            160,
+            200,
+            224,
+            239
+          ],
+          "relations": []
+        },
+        {
+          "id": "close-readable-grips",
+          "description": "Stand close to the fixed floor box before grip. Low reach may open the elbows naturally. Both actual C-palms, their curls and contact with the box remain readable; never approve from anchor equality alone.",
+          "required": true,
+          "frames": [
+            52,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            92,
+            96
+          ],
+          "relations": []
+        },
+        {
+          "id": "load-and-support",
+          "description": "Two grips close before load/lift; box stays close during walking with alternate passing feet, fixed support contacts and coherent load response. Bench supports the actual box before hands release.",
+          "required": true,
+          "frames": [
+            78,
+            84,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213
+          ],
+          "relations": []
+        },
+        {
+          "id": "clear-release",
+          "description": "Both hands and forearms clear the actual bench corner/top through withdrawal and settle. Preserve small and large payload shapes and the quiet endpoint.",
+          "required": true,
+          "frames": [
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": []
+        },
+        {
+          "id": "finite-matrix-geometry",
+          "description": "Same strict IK, bone lengths, real contour/contact/forearm-shin and release relations for exactly the eight declared designs; geometry pass is not appearance approval.",
+          "required": true,
+          "frames": [
+            0,
+            14,
+            20,
+            37,
+            44,
+            52,
+            57,
+            58,
+            59,
+            64,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            90,
+            92,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            188,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": [
+            "parameter-matrix"
+          ]
+        },
+        {
+          "id": "encoded-rhythm",
+          "description": "Full official 10-second movie at normal and half speed: no throw, hitch, repeated step-together gait or unintended stop; deliberate grip/load/support holds remain. Static frames alone cannot accept this criterion.",
+          "required": true,
+          "frames": [
+            0,
+            14,
+            20,
+            37,
+            44,
+            52,
+            57,
+            58,
+            59,
+            64,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            90,
+            92,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            188,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": []
+        }
+      ]
+    },
+    "final": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "0.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 14,
+          "label": "0.583s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 20,
+          "label": "0.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 37,
+          "label": "1.542s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 44,
+          "label": "1.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 52,
+          "label": "2.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 57,
+          "label": "2.375s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 58,
+          "label": "2.417s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 59,
+          "label": "2.458s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 64,
+          "label": "2.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 69,
+          "label": "2.875s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 72,
+          "label": "3.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 74,
+          "label": "3.083s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 78,
+          "label": "3.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 84,
+          "label": "3.500s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 88,
+          "label": "3.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 90,
+          "label": "3.750s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 92,
+          "label": "3.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 96,
+          "label": "4.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 107,
+          "label": "4.458s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 128,
+          "label": "5.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 144,
+          "label": "6.000s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 160,
+          "label": "6.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 184,
+          "label": "7.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 188,
+          "label": "7.833s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 196,
+          "label": "8.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 197,
+          "label": "8.208s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 198,
+          "label": "8.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 200,
+          "label": "8.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 208,
+          "label": "8.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 213,
+          "label": "8.875s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 215,
+          "label": "8.958s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 219,
+          "label": "9.125s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 220,
+          "label": "9.167s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 222,
+          "label": "9.250s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 224,
+          "label": "9.333s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 226,
+          "label": "9.417s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 232,
+          "label": "9.667s / size, pickup, stance or bench hazard control"
+        },
+        {
+          "frame": 239,
+          "label": "9.958s / size, pickup, stance or bench hazard control"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-anatomy",
+          "description": "Continuous torso and distinct whole arm/leg chains in approach, squat, carrying and withdrawal. Intended depth overlap may remain; no fused forearm/shin silhouette.",
+          "required": true,
+          "frames": [
+            14,
+            20,
+            52,
+            64,
+            72,
+            84,
+            96,
+            128,
+            144,
+            160,
+            200,
+            224,
+            239
+          ],
+          "relations": []
+        },
+        {
+          "id": "close-readable-grips",
+          "description": "Stand close to the fixed floor box before grip. Low reach may open the elbows naturally. Both actual C-palms, their curls and contact with the box remain readable; never approve from anchor equality alone.",
+          "required": true,
+          "frames": [
+            52,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            92,
+            96
+          ],
+          "relations": []
+        },
+        {
+          "id": "load-and-support",
+          "description": "Two grips close before load/lift; box stays close during walking with alternate passing feet, fixed support contacts and coherent load response. Bench supports the actual box before hands release.",
+          "required": true,
+          "frames": [
+            78,
+            84,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213
+          ],
+          "relations": []
+        },
+        {
+          "id": "clear-release",
+          "description": "Both hands and forearms clear the actual bench corner/top through withdrawal and settle. Preserve small and large payload shapes and the quiet endpoint.",
+          "required": true,
+          "frames": [
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": []
+        },
+        {
+          "id": "finite-matrix-geometry",
+          "description": "Same strict IK, bone lengths, real contour/contact/forearm-shin and release relations for exactly the eight declared designs; geometry pass is not appearance approval.",
+          "required": true,
+          "frames": [
+            0,
+            14,
+            20,
+            37,
+            44,
+            52,
+            57,
+            58,
+            59,
+            64,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            90,
+            92,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            188,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": [
+            "parameter-matrix"
+          ]
+        },
+        {
+          "id": "encoded-rhythm",
+          "description": "Full official 10-second movie at normal and half speed: no throw, hitch, repeated step-together gait or unintended stop; deliberate grip/load/support holds remain. Static frames alone cannot accept this criterion.",
+          "required": true,
+          "frames": [
+            0,
+            14,
+            20,
+            37,
+            44,
+            52,
+            57,
+            58,
+            59,
+            64,
+            69,
+            72,
+            74,
+            78,
+            84,
+            88,
+            90,
+            92,
+            96,
+            107,
+            128,
+            144,
+            160,
+            184,
+            188,
+            196,
+            197,
+            198,
+            200,
+            208,
+            213,
+            215,
+            219,
+            220,
+            222,
+            224,
+            226,
+            232,
+            239
+          ],
+          "relations": []
+        }
+      ]
+    }
+  }
+}

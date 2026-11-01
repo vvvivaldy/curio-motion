@@ -1,13 +1,15 @@
-# Curio Motion — standalone agent instructions
+# Curio Motion — instructions for coding agents
 
-- This is a separate code-authored animation prototype. Read README, docs/ARCHITECTURE.md and docs/ROADMAP.md first.
-- Preserve the visible baseline before refactoring. Pixi draws contours; Remotion owns composition/time/export. Do not substitute a prerecorded MP4, image sprites or cut-up reference parts.
-- The character/reference/action examples are authored demonstrations, not an automatic service. Keep public claims factual.
-- Use pinned local dependencies and `npm ci`. No global installs, accounts, credentials, network AI, publishing or platform integration unless explicitly requested.
-- Run `npm run check`; for render/bridge changes also run `npm run check:port` and `npm run render` using an existing Chrome. Review actual frames and contacts; numerical checks alone do not prove artistic quality.
-- Preserve whole silhouettes, stable supports, continuous hand shape and deliberate holds. Do not add oscillation merely to keep pixels moving.
-- Original code MIT; dependency and artwork notices remain separate. Never call Remotion MIT.
-- Keep changes small and reviewable. Do not build a new language or huge framework as the first extraction step.
-- Publication is a separate authorized action; verify repository owner/name/auth before any GitHub operation. The authorized destination is vvvivaldy/curio-motion; check origin and the recorded publication status.
+Read [AGENT_START_HERE_RU.md](AGENT_START_HERE_RU.md), [README](README.md) and the project-local [curio-authoring skill](.agents/skills/curio-authoring/SKILL.md). This folder is a source-project beta (`private: true`), not an npm package or an automatic image-to-animation service. Chat history is not required.
 
-- For authoring/visual repairs use `.agents/skills/curio-authoring/SKILL.md`. Use the ordinary-run helper for ordinary running; review actual silhouettes, contacts and dangerous neighboring frames before approving a film.
+- Use Node ≥22.12, the pinned dependencies and `npm ci`. Use an existing Chrome/Chromium; set `CHROME_PATH` if necessary. No global tools, accounts, hosted AI or automatic browser download is required for runtime.
+- Pixi draws code-authored vector geometry; Remotion owns composition, frame time, Player and official MP4 export. Keep pose evaluation pure and seekable. Do not replace the scene with a prerecorded movie, sliced reference parts or image sprites.
+- Choose a relevant source example in `src/examples/`. Character proportions, drawing style, anatomy and action timing remain authored there; shared geometry belongs in core only for an observed reusable need. Do not build a new language, universal rig or large framework speculatively.
+- For a new scene use `npm run create:example -- …` as described in [AUTHORING](docs/AUTHORING.md). The starter is blank and requires explicit registry/metadata edits; it does not infer the drawing or finish the action.
+- Inspect the whole reference and agree on visible/sounding criteria. Preserve the baseline. Start with control drawings, then blocking, transitions, deliberate holds and sound. A solver's reach pass does not approve anatomy: inspect both full limb chains, bend directions, supports and dangerous neighboring frames.
+- Keep anatomical left/right IDs, torso orientation, independent head turns and actual depth/surface visibility consistent. A hand layer cannot disappear just because the head turns. Props need front/back materials where exposed.
+- Choose recorded effects by material/action from the [sound catalog](docs/SFX_CATALOG_RU.md), preserve credits and use actual contact times. Different source recordings provide variety. An offscreen source can remain audible; fade departing footsteps over a plausible short distance instead of cutting sound at the image boundary.
+- Run `npm run check`. For drawing/motion/bridge changes also run relevant `npm run check:port` and official `npm run render` with the intended `COMPOSITION_ID`; use `RENDER_AUDIO_CODEC=aac` for the sound examples. Inspect encoded frames and playback. Report frames actually viewed, continuous playback actually observed and audio actually heard separately. Pending review remains pending.
+- Return concrete defects with film version, frame/time, visible/sounding symptom, repair and before/after evidence. Required defects block delivery; numerical passes and hashes establish technical behavior/identity, not artistic acceptance.
+- Whole user references are authoring-only and default to `local-only`. Git ignore is not enough: verify the manifest-driven build filter before sharing. Original code is MIT; artwork/audio and Remotion have separate notices. Never call Remotion MIT.
+- Continue authorized reversible work without repeated permission requests. Publishing, sending messages to external services or adding a new integration requires applicable authorization. Do not infer permission to push, tag, release or deploy from an animation-authoring task; require the owner's applicable publication instruction.

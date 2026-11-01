@@ -1,0 +1,67 @@
+{
+  "repository": "cxong/cdogs-sdl",
+  "commit": "c70d1feaf9d89cf80e23265b256d9a364848e6ea",
+  "actualZIPMatchesAllTileFilesAndLicense": true,
+  "files": [
+    {
+      "path": "sounds/footsteps/tile/0.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "f76b31475a44d21044dec9e5ee3001fad68c50b5f43bf6d5eb39641bab677257"
+    },
+    {
+      "path": "sounds/footsteps/tile/1.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "ae430e116eb2aee50873a7b9a7f408ffad8dc62d251222d4379ea8c2daebf6e2"
+    },
+    {
+      "path": "sounds/footsteps/tile/2.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "920828f7aee17680a9633402f016c490545ce208d3b5883ab013b717dec26eaa"
+    },
+    {
+      "path": "sounds/footsteps/tile/3.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "d0d5c49ffb2a04006250fe035bca526c39884450e2ba05c425e1d0435d04682e"
+    },
+    {
+      "path": "sounds/footsteps/tile/4.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "3dbea760a2e835193acbdda0b924173fc0d8d869baf4c4de2dd4ac4b8f780a60"
+    },
+    {
+      "path": "sounds/footsteps/tile/5.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "8e104f1ec3f7e788043ead41f477c6a078aff7587ecb4d00c9642d59fe750225"
+    },
+    {
+      "path": "sounds/footsteps/tile/6.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "bcd7c761553af9506f18a530eb4d0306054ff4893665de3bad774db9b86607d2"
+    },
+    {
+      "path": "sounds/footsteps/tile/7.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "c884e912d345d85d51c849ef14c2259524c45fe9f7b6de35120e4a8af718550a"
+    },
+    {
+      "path": "sounds/footsteps/tile/8.ogg",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "e6c019a03edbf9461229d4f563d826327879048579d1331536041483887b6154"
+    },
+    {
+      "path": "sounds/footsteps/tile/license.txt",
+      "gitBlobMatch": true,
+      "sizeMatch": true,
+      "sha256": "c76a91a912d00bf084e5835964ea5c8b44f47794112c5d9e6d296cca44da0a40"
+    }
+  ]
+}

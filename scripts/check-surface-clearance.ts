@@ -1,0 +1,22 @@
+import assert from 'node:assert/strict';
+import {surfaceBoxIntrusions,type AxisAlignedBox3} from '../src/core/surface-clearance';
+import {add3} from '../src/core/frame3';
+import type {Vec3} from '../src/core/spatial';
+import type {PaperTriangle3} from '../src/core/paper-visibility';
+const box:AxisAlignedBox3={min:[40,118,-175],max:[210,128,-55]};
+const surface=(vertices:readonly[Vec3,Vec3,Vec3]):PaperTriangle3=>({id:'actual-shin',owner:'character',vertices});
+const crossing=surface([[70,127,-80],[80,130,-80],[70,130,-90]]);
+assert.equal(surfaceBoxIntrusions([crossing],box).length,1);
+assert.equal(surfaceBoxIntrusions([surface([[70,128,-80],[80,128,-80],[70,128,-90]])],box).length,0,'Contact on actual seat top is allowed');
+assert.equal(surfaceBoxIntrusions([surface([[70,129,-80],[80,130,-80],[70,130,-90]])],box).length,0);
+assert.equal(surfaceBoxIntrusions([surface([[0,127,-80],[10,130,-80],[0,130,-90]])],box).length,0);
+assert.equal(surfaceBoxIntrusions([surface([[70,127,-40],[80,130,-40],[70,130,-30]])],box).length,0);
+assert.equal(surfaceBoxIntrusions([{...crossing,vertices:[...crossing.vertices].reverse() as [Vec3,Vec3,Vec3]}],box).length,1);
+const shift:Vec3=[17,-3,85],moved={min:add3(box.min,shift),max:add3(box.max,shift)};
+assert.equal(surfaceBoxIntrusions([{...crossing,vertices:crossing.vertices.map(v=>add3(v,shift)) as [Vec3,Vec3,Vec3]}],moved).length,1);
+// An above-ground joint/contact point does not clear the actual drawn shin envelope.
+const floor={min:[-20,-1,-20] as Vec3,max:[20,0,20] as Vec3};
+assert(10>0);assert.equal(surfaceBoxIntrusions([surface([[-3,-.5,-2],[3,2,-2],[0,2,2]])],floor).length,1);
+assert.throws(()=>surfaceBoxIntrusions([crossing],box,5),RangeError);
+assert.throws(()=>surfaceBoxIntrusions([crossing],{min:[0,0,0],max:[0,1,1]}),RangeError);
+console.log('PASS actual surface/solid interior clipping, allowed support contact and point-only false positive');

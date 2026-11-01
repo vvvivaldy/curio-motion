@@ -1,16 +1,22 @@
-# Small steps, visible evidence
+# Development direction
 
-1. Completed: reproduced the packaged baseline after `npm ci` on macOS with existing Chrome 152; compared supports, hands, silhouette and frame timing.
-2. Completed: extracted the [minimal TypeScript API](API.md) for time/easing, pose evaluation and drawing context. The example stays readable; no parser or universal engine was introduced. See [verification](VERIFICATION.md) for before/after evidence.
-3. Quality foundations implemented: shared eye aperture/pupil clipping, contact-aware step position/heading, coordinate frames, tread targets and robust two-bone solving. The example uses a fixed view while turning and one coherent tracking view while riding. The subsequent gait package implements shared foot tracks, load transfer, heel/toe pivots and support-height constraints, with four advancing steps in the example. The third quality package implements compatible hand contours, local wrist frames, shared surface anchors and two deliberate scratch strokes. The fourth quality package adds whole-view contour interpolation, authored front/¾/profile model forms, non-collapsing foot contours and opaque stair solids/panels. Action poses remain unchanged. Review and remaining limits are recorded in [QUALITY_PLAN_RU](QUALITY_PLAN_RU.md).
-4. Completed: the separately authorized Amber robot waters a plant through the same scene/geometry API and a shared Remotion bridge. It uses different dimensions, fps, proportions and prop contacts; both films are checked. See [REUSE](REUSE.md) for concrete reuse and limits. Further extraction requires another observed need, not a new framework in advance.
-5. Improve tests and cross-platform rendering. Add real Linux/Windows evidence before claiming support.
-6. Completed locally: [staged authoring and quality workflow](AUTHORING.md), with pinned whole input, model/blocking/motion/final captures, explicit visual reviews, a frame error ledger and stale-evidence rejection. Both examples exercise it. It remains a coding-agent/developer process; model-provider automation and unseen-reference quality trials are future scope.
+Curio Motion supports a coding agent or developer authoring short 2D scenes from a whole reference and an explicit action. The useful outcome is an editable scene and a finished film. It is not an automatic reference-conversion service.
 
-Outside the current implementation: additional unrequested scenes, automatic arbitrary character conversion, hosted inference, production queues or integration into another platform. Repository publication is recorded separately in [GITHUB_LAUNCH](GITHUB_LAUNCH.md). Future scope belongs to the owner.
+## Current beta and next work
 
-## Runnable black cat example — 30 October 2026
+`0.2.0-beta.1` consolidates the independent character/infographic work, user/agent instructions and an exact source ZIP tested from a clean folder. Publication is authorized as a [GitHub prerelease](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1); [verification](BETA_0_2_0_VERIFICATION_RU.md) records the tested scope. The next work is use on real tasks and concrete repairs. See [BETA](../BETA.md) for release gates, [next steps](NEXT_STEPS_RU.md) for current status and the [Russian plan](DEVELOPMENT_PLAN_RU.md) for context.
 
-The owner accepted the black-cat chair film after corrections to gait, pulling up, sitting, turning before the jump and torso continuity. Its editable source is now included with the required shared geometry helpers, a live `npm run demo:cat` command and the existing official `BlackCatChair` export. The private reference photograph and development QA history are not prerequisites for running the example. See [run and edit the cat](BLACK_CAT.md).
+## Existing foundations
 
-The publication step preserves the six accepted scene files and checks the existing monkey and robot alongside the cat. It does not add an automatic motion planner or publish other locally developed scenes. A further portability trial on a separately chosen character/action is a proposed next step and requires the owner's choice; it has not been started by this publication task.
+- Typed scenes and pure frame evaluation; Pixi vector drawing and one Remotion composition/Player/export owner.
+- Explicit coordinate spaces, contacts, foot tracks/load transfer, finite travel/run plans, constrained limbs, contours, opaque surfaces, owned objects and labels. These are authoring helpers, not automatic physics or anatomy approval.
+- Multiple authored character/actions and styles, recorded effects and an educational infographic. Preserved examples show concrete reuse, not an arbitrary-reference success rate.
+- A blank-scene scaffold, local authoring skill, private-input build filter and staged frame-linked review. Identity hashes detect stale evidence; explicit visual/sound inspection remains necessary.
+
+Historical mechanism and example records stay in [ARCHITECTURE](ARCHITECTURE.md), [VERIFICATION](VERIFICATION.md), [REUSE](REUSE.md) and the scene-specific review folders. Their pass counts and acceptance statements apply to those versions, not automatically to this beta archive.
+
+## After beta
+
+Use the package on small real tasks, collect reproducible failures and fix repeated setup/API/authoring problems. Define the supported interface and compatibility expectations before 1.0. Add other runtime platforms only when their browser/export path is actually tested; Linux type/build CI alone is insufficient.
+
+New styles, more sound families, lip sync, automatic rigs, a scene language or a hosted renderer are separate possibilities, not a required feature checklist. Prefer a focused repair or instruction improvement when it solves the observed problem. [Usage guidance](USAGE_RU.md) starts with an author and a human reviewer; a critic/mathematician is added for a concrete need.

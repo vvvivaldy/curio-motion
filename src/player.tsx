@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import { createRoot } from 'react-dom/client';
 import { Player, type PlayerRef } from '@remotion/player';
 import {scenes} from './examples/scenes';
+import {renderExampleNavigation} from './example-navigation';
+renderExampleNavigation('player.html');
 import { exampleChoice } from './example-choice';
 const {settings,Component:Scene}=scenes[exampleChoice(location.search)];
 function Preview() {

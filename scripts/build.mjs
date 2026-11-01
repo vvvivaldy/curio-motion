@@ -1,7 +1,11 @@
 import { build } from 'vite';
 import { cp } from 'node:fs/promises';
-import { resolve } from 'node:path';
-const privateCatReference=resolve('reference/black-cat-chair');
+import {localOnlyInputs,distributionFilter} from './lib/distribution.mjs';
+const localInputs=await localOnlyInputs();
 await build();
-// Keep the bundled film and reference available in the static viewer as well.
-for (const folder of ['docs/assets', 'reference']) await cp(folder, `dist/${folder}`, { recursive: true, filter: source => resolve(source)!==privateCatReference });
+// Public references and authored films belong in the viewer. The user's local
+// recording is an authoring input, excluded from distribution as well as Git.
+for (const folder of ['docs/assets', 'reference']) await cp(folder, `dist/${folder}`, {
+  recursive: true,
+  filter: distributionFilter(localInputs),
+});

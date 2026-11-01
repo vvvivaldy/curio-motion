@@ -1,0 +1,1655 @@
+{
+  "schema": "curio-courier-recorded-sfx-package-v1",
+  "scope": "Additive portable candidate package; no original library files changed",
+  "createdDate": "2026-11-01",
+  "sourceRecordingCount": 13,
+  "assetCount": 16,
+  "groups": [
+    "bag-material",
+    "footsteps",
+    "paper-handling",
+    "paper-slide",
+    "wood-contact"
+  ],
+  "sourceKindImportant": "All original downloads are official public HQ MP3 previews, not native WAV masters. PCM conversion does not restore lost information.",
+  "sources": [
+    {
+      "id": "wood-sneakers",
+      "author": "sturmankin",
+      "title": "wood_10a_startassneakers_walk.wav",
+      "page": "https://freesound.org/people/sturmankin/sounds/273374/",
+      "officialPreview": "https://cdn.freesound.org/previews/273/273374_4181170-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/wood-sneakers-official-hq-preview.mp3",
+      "sourceSha256": "d5c49a3aad1c74898ae10be2ec2dd86dc015276c72051e4d96930e5fe7c5c7b6",
+      "sourceBytes": 716448,
+      "pageFile": "sources/wood-sneakers.html",
+      "pageSha256": "b40e3fcaac9a2f7ef1ec5ef1418ba87f6c9d19aad6b41a3759c888ec3c30e42b",
+      "licenseEvidenceFile": "sources/wood-sneakers-license.txt",
+      "licenseEvidenceSha256": "6509b86b95a34a1612504f5023eff837a11e3e18c832484ce86ae7217384742f",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "Walking on a wooden floor: low sneakers. Recorded with a ZOOM H2 in a basement of a house: a large wooden table placed on a carpet over concrete. Normalized with Audacity.",
+      "decodedMono48kDurationSeconds": 30.104729166666665
+    },
+    {
+      "id": "wood-leather-shoes",
+      "author": "Al3x-K",
+      "title": "SFX_Footsteps_Shoes_Normal_01",
+      "page": "https://freesound.org/people/Al3x-K/sounds/848694/",
+      "officialPreview": "https://cdn.freesound.org/previews/848/848694_15531862-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/wood-leather-shoes-official-hq-preview.mp3",
+      "sourceSha256": "5f3a7a2dfd24419a3813abb55f5acef1b36921774ab53fadb6a28d0f95c64cf3",
+      "sourceBytes": 69655,
+      "pageFile": "sources/wood-leather-shoes.html",
+      "pageSha256": "b10c74c8e139f9d015651d1d8933499282af9a6d2e4b8fa17ea8ea83b70b4592",
+      "licenseEvidenceFile": "sources/wood-leather-shoes-license.txt",
+      "licenseEvidenceSha256": "256778359942bdbb9a846d8e413a3996c5a7cca99fd1a4fcb00c26c53d6bd8cb",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "Footsteps on wooden floor with leather shoes with a slight shoe squeak at the end",
+      "decodedMono48kDurationSeconds": 3.657875
+    },
+    {
+      "id": "wood-vans",
+      "author": "sillygrizzlies",
+      "title": "Walking Footsteps on Wood",
+      "page": "https://freesound.org/people/sillygrizzlies/sounds/635058/",
+      "officialPreview": "https://cdn.freesound.org/previews/635/635058_5756735-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/wood-vans-official-hq-preview.mp3",
+      "sourceSha256": "baa2e3fbee497056cade6146f2b952a8ff295b30defce31200d3377874fdca5b",
+      "sourceBytes": 552576,
+      "pageFile": "sources/wood-vans.html",
+      "pageSha256": "826197d8223380aff47508a6f7d1921556ea0c2d85ecb98d380cc7917baf7de9",
+      "licenseEvidenceFile": "sources/wood-vans-license.txt",
+      "licenseEvidenceSha256": "57477b057b4de663ad8dff25776ff2b0c6651de1be928c55b3edeb76d1aa13da",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "Foley recording of walking footsteps on hardwood floors with sneaker shoes on (specifically Vans).",
+      "decodedMono48kDurationSeconds": 29.584791666666668
+    },
+    {
+      "id": "envelope-slide",
+      "author": "MTJohnson",
+      "title": "Sliding Envelope.wav",
+      "page": "https://freesound.org/people/MTJohnson/sounds/444431/",
+      "officialPreview": "https://cdn.freesound.org/previews/444/444431_8522109-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/envelope-slide-official-hq-preview.mp3",
+      "sourceSha256": "08ccc42b35d09cc7394d1bb1312c51b54c4ef0cf01141fadd0b916bfadc271d7",
+      "sourceBytes": 23280,
+      "pageFile": "sources/envelope-slide.html",
+      "pageSha256": "dc7f9c8d7d15d45fe86bf2f8ad1676da3678a0d1eb3300ae42b2e527c6250dbf",
+      "licenseEvidenceFile": "sources/envelope-slide-license.txt",
+      "licenseEvidenceSha256": "16b8f1b5b9b4155e89a414f10526bd312aa263e3a23d98f57e098997144ab283",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "Sliding an envelope across a desk",
+      "decodedMono48kDurationSeconds": 1.152
+    },
+    {
+      "id": "paper-pickup",
+      "author": "MTJohnson",
+      "title": "Picking up Dollar.wav",
+      "page": "https://freesound.org/people/MTJohnson/sounds/444434/",
+      "officialPreview": "https://cdn.freesound.org/previews/444/444434_8522109-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/paper-pickup-official-hq-preview.mp3",
+      "sourceSha256": "303aa0a72c0b554315b4e79f913f0a76da845a6835adadcd76f9d449eb6f7bfc",
+      "sourceBytes": 5040,
+      "pageFile": "sources/paper-pickup.html",
+      "pageSha256": "2e3e8ce0c375946fb717f5f69c93a394e5dec5c893f864be9c1f9a72911e2556",
+      "licenseEvidenceFile": "sources/paper-pickup-license.txt",
+      "licenseEvidenceSha256": "1b1c4b961c9f1d77aa7aa8248015b3add3af136a88a130badf7d8ba7fe2ee958",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "picking up a dollar off the ground.",
+      "decodedMono48kDurationSeconds": 0.16866666666666666
+    },
+    {
+      "id": "page-turn",
+      "author": "kevinpro",
+      "title": "Page Flip",
+      "page": "https://freesound.org/people/kevinpro/sounds/382230/",
+      "officialPreview": "https://cdn.freesound.org/previews/382/382230_3142833-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/page-turn-official-hq-preview.mp3",
+      "sourceSha256": "56ff8c83af3a81380c1629059fd8e67e1ea0ded343bd5d830073c4c431a00cca",
+      "sourceBytes": 42161,
+      "pageFile": "sources/page-turn.html",
+      "pageSha256": "a05c3f516ec2b57444537017996b3da6cc5549307be5e564a3d43bfebacd6f22",
+      "licenseEvidenceFile": "sources/page-turn-license.txt",
+      "licenseEvidenceSha256": "e351bf77cf9ff4486b064163b4fc03c92db7a54e00f86d2301c09d86c790059c",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "The sound of a page turning.",
+      "decodedMono48kDurationSeconds": 2.1561875
+    },
+    {
+      "id": "paper-handling",
+      "author": "IENBA",
+      "title": "Tapping and handling paper",
+      "page": "https://freesound.org/people/IENBA/sounds/834340/",
+      "officialPreview": "https://cdn.freesound.org/previews/834/834340_9616576-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/paper-handling-official-hq-preview.mp3",
+      "sourceSha256": "d0a03e3cd58139f4098c399e2689a0e49d4cd01308735f6a6c85543e6d3ec667",
+      "sourceBytes": 501744,
+      "pageFile": "sources/paper-handling.html",
+      "pageSha256": "a1be3186ae17bc599f8b76bac95b70cb294a4b561c331a7ebaa672a000ec15ca",
+      "licenseEvidenceFile": "sources/paper-handling-license.txt",
+      "licenseEvidenceSha256": "59ffc9c5a5858b67a3421e59c17100f51cbf67578d91b9db0326e100740461e2",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "Tapping and passing finger through a paper sheet. Foley recording created for an animated short.\n\nGear: Zoom H4n\nMic: Sennheiser MKH50",
+      "decodedMono48kDurationSeconds": 30.4841875
+    },
+    {
+      "id": "paper-brush",
+      "author": "brokenmachinery",
+      "title": "paper-slide",
+      "page": "https://freesound.org/people/brokenmachinery/sounds/730078/",
+      "officialPreview": "https://cdn.freesound.org/previews/730/730078_15107455-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/paper-brush-official-hq-preview.mp3",
+      "sourceSha256": "11bded69428e230105c8b6d0585ea056aa12278bb85d1e8409bdda627e04f455",
+      "sourceBytes": 19880,
+      "pageFile": "sources/paper-brush.html",
+      "pageSha256": "b18b2e7909444638e423ef9eb060f122aa878415bed7c33f6a27a607615a5e1b",
+      "licenseEvidenceFile": "sources/paper-brush-license.txt",
+      "licenseEvidenceSha256": "bc7410303a103372f9a614e6a1d7d84a25c62ac1e41fed99ed12043c4f17671d",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "sliding a piece of paper.  a gentle brushing type sound.",
+      "decodedMono48kDurationSeconds": 0.776625
+    },
+    {
+      "id": "wood-desk-tap",
+      "author": "AidanSounds",
+      "title": "Wooden Tap",
+      "page": "https://freesound.org/people/AidanSounds/sounds/704935/",
+      "officialPreview": "https://cdn.freesound.org/previews/704/704935_13867041-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/wood-desk-tap-official-hq-preview.mp3",
+      "sourceSha256": "36c6223fac242af33d8a92e42d8ffe3f84974861006c2cb36c2b083452066114",
+      "sourceBytes": 42480,
+      "pageFile": "sources/wood-desk-tap.html",
+      "pageSha256": "36424a5deaec242257a0b11dd56388568927983d521dee0fd4e4eebf32625b48",
+      "licenseEvidenceFile": "sources/wood-desk-tap-license.txt",
+      "licenseEvidenceSha256": "6670a31b9977dad7d47b141fd12aa575b4dd3efd5dcfedbceea0700e5e3ea568",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "I AM BACK AFTER 11 MONTHS! I am not deceased, retired or anything. Missed me? Anyway, this is just a basic tap on a wooden desk. That’s basically all I can say about it… lame.",
+      "decodedMono48kDurationSeconds": 1.8369791666666666
+    },
+    {
+      "id": "wood-table-tap",
+      "author": "zembacraftworks",
+      "title": "Tap on Wooden Table",
+      "page": "https://freesound.org/people/zembacraftworks/sounds/427393/",
+      "officialPreview": "https://cdn.freesound.org/previews/427/427393_8617763-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/wood-table-tap-official-hq-preview.mp3",
+      "sourceSha256": "0c1ac8e87fc7df30b60f51fb7edb75343fd1a475bec99f104e69a422106b02de",
+      "sourceBytes": 26742,
+      "pageFile": "sources/wood-table-tap.html",
+      "pageSha256": "6a6c4d4de922ce254c4ff4047dc4eba6cae2330945b60b61055a78a9561435e3",
+      "licenseEvidenceFile": "sources/wood-table-tap-license.txt",
+      "licenseEvidenceSha256": "cbe079d1f01da5b447386bfb499fd95904b4f100c5d8c7a8ead99a067355eadf",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "A tap on a wooden tabletop.",
+      "decodedMono48kDurationSeconds": 1.081
+    },
+    {
+      "id": "leather-rustle",
+      "author": "jfreem3",
+      "title": "LeatherRustle.L.wav",
+      "page": "https://freesound.org/people/jfreem3/sounds/108533/",
+      "officialPreview": "https://cdn.freesound.org/previews/108/108533_1795554-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/leather-rustle-official-hq-preview.mp3",
+      "sourceSha256": "35e6b2c8ec443be7957dc0b46d6fe1aef8367359a8c9cf0953380fed94fba7b7",
+      "sourceBytes": 93216,
+      "pageFile": "sources/leather-rustle.html",
+      "pageSha256": "d45632268f58534f9dd1d6b84d9bd6a1e0ef6c77fef6e7eb74e866d6944f5eaa",
+      "licenseEvidenceFile": "sources/leather-rustle-license.txt",
+      "licenseEvidenceSha256": "7fa81e8b0fe2b869179ecbc403126aca9ccc60e7be90d794c09a17a328e3e61a",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "An instance of a leather jacket being rustled quickly.",
+      "decodedMono48kDurationSeconds": 4.128
+    },
+    {
+      "id": "cotton-rustle",
+      "author": "khenshom",
+      "title": "Foley - Cotton clothes rustling - Fabric movement sound.wav",
+      "page": "https://freesound.org/people/khenshom/sounds/481075/",
+      "officialPreview": "https://cdn.freesound.org/previews/481/481075_6652872-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/cotton-rustle-official-hq-preview.mp3",
+      "sourceSha256": "9b7e5537e661d7a561fc462d9363febd8b68956ae1b252af8b672953468b66e1",
+      "sourceBytes": 733584,
+      "pageFile": "sources/cotton-rustle.html",
+      "pageSha256": "b3d6583a10391e2da2a72af2b8c66288991a92c78f2851ed2ef373b255b05c91",
+      "licenseEvidenceFile": "sources/cotton-rustle-license.txt",
+      "licenseEvidenceSha256": "aae58de7050601b4a0beed3d0d130d29e1b6d6639b9e4a4595ac5270edc909ec",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "Foley sound of a movement or rustle of fabric - cotton clothes. Recorded with Audio-Technica boom mic on Tascam DR60dM2",
+      "decodedMono48kDurationSeconds": 38.452895833333336
+    },
+    {
+      "id": "cloth-movement",
+      "author": "pushkin",
+      "title": "cloth 01.wav",
+      "page": "https://freesound.org/people/pushkin/sounds/100413/",
+      "officialPreview": "https://cdn.freesound.org/previews/100/100413_336074-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "sourceFile": "originals/cloth-movement-official-hq-preview.mp3",
+      "sourceSha256": "e6ea3da05cbf4a39a777dabc37ef9078ba7d0594265a2241ce4aacd61a9469dd",
+      "sourceBytes": 305568,
+      "pageFile": "sources/cloth-movement.html",
+      "pageSha256": "06ba7dc9c20c32c5fc5899b3c8832670c1943e0335393345dca48c530e70fce1",
+      "licenseEvidenceFile": "sources/cloth-movement-license.txt",
+      "licenseEvidenceSha256": "516ec253c169265109ff5ef3a65b5331c082be04b01c47a5acaa82954ff71368",
+      "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+      "auditioned": false,
+      "creatorDescriptionFromSavedPage": "Foley cloth movement. AKG 460 with CK-1 capsule into Neve 1272 preamp, Apogee mini-me converter. Edited in Samplitude.",
+      "decodedMono48kDurationSeconds": 12.7211875
+    }
+  ],
+  "entries": [
+    {
+      "id": "shoe-wood-sneaker-01",
+      "labelRu": "Кеды по дереву: более тихий удар",
+      "group": "footsteps",
+      "variant": 1,
+      "sourceId": "wood-sneakers",
+      "sameTakeVariant": true,
+      "material": "wood / low sneakers",
+      "role": "single-human-shoe-footstep",
+      "authors": [
+        "sturmankin"
+      ],
+      "sourcePage": "https://freesound.org/people/sturmankin/sounds/273374/",
+      "sourceURLs": [
+        "https://freesound.org/people/sturmankin/sounds/273374/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/wood-sneakers-license.txt",
+      "packageFile": "assets/shoe-wood-sneaker-01.wav",
+      "path": "public/audio/sfx/courier/shoe-wood-sneaker-01.wav",
+      "staticFilePath": "audio/sfx/courier/shoe-wood-sneaker-01.wav",
+      "file": "audio/sfx/courier/shoe-wood-sneaker-01.wav",
+      "sha256": "3ea433bf45baef7c8e54b609173440051af12cb7215f6d3450594f792333b51e",
+      "bytes": 30764,
+      "samples": 15360,
+      "durationSeconds": 0.32,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -15.514388127900009,
+      "rmsDbFS": -33.72970473971999,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.06483333333333334,
+      "technicalActivityAnchorSeconds": 0.055,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.015625,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/wood-sneakers-official-hq-preview.mp3",
+        "sourceSha256": "d5c49a3aad1c74898ae10be2ec2dd86dc015276c72051e4d96930e5fe7c5c7b6",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          1.55,
+          1.87
+        ],
+        "sourceCutSamples48k": [
+          74400,
+          89760
+        ],
+        "gain": 0.8,
+        "cosineFadeSeconds": [
+          0.001,
+          0.012
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Записана человеческая обувь по деревянной поверхности; фоли для лап енота в обуви.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "shoe-wood-sneaker-02",
+      "labelRu": "Кеды по дереву: более громкий удар",
+      "group": "footsteps",
+      "variant": 2,
+      "sourceId": "wood-sneakers",
+      "sameTakeVariant": true,
+      "material": "wood / low sneakers",
+      "role": "single-human-shoe-footstep",
+      "authors": [
+        "sturmankin"
+      ],
+      "sourcePage": "https://freesound.org/people/sturmankin/sounds/273374/",
+      "sourceURLs": [
+        "https://freesound.org/people/sturmankin/sounds/273374/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/wood-sneakers-license.txt",
+      "packageFile": "assets/shoe-wood-sneaker-02.wav",
+      "path": "public/audio/sfx/courier/shoe-wood-sneaker-02.wav",
+      "staticFilePath": "audio/sfx/courier/shoe-wood-sneaker-02.wav",
+      "file": "audio/sfx/courier/shoe-wood-sneaker-02.wav",
+      "sha256": "94064bdff6220a2bc1970d0613ea1889a26567b16b9c08a1287b575c26707f09",
+      "bytes": 30764,
+      "samples": 15360,
+      "durationSeconds": 0.32,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -9.650179943577285,
+      "rmsDbFS": -30.185974157014627,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.0514375,
+      "technicalActivityAnchorSeconds": 0.05,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.015625,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/wood-sneakers-official-hq-preview.mp3",
+        "sourceSha256": "d5c49a3aad1c74898ae10be2ec2dd86dc015276c72051e4d96930e5fe7c5c7b6",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          7.76,
+          8.08
+        ],
+        "sourceCutSamples48k": [
+          372480,
+          387840
+        ],
+        "gain": 0.8,
+        "cosineFadeSeconds": [
+          0.001,
+          0.012
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Другой реальный контакт того же take; не отдельная исходная запись и не pitch/gain-копия первого.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "shoe-wood-leather-01",
+      "labelRu": "Кожаная обувь по дереву: удар 1",
+      "group": "footsteps",
+      "variant": 3,
+      "sourceId": "wood-leather-shoes",
+      "sameTakeVariant": true,
+      "material": "wood / leather shoes",
+      "role": "single-human-shoe-footstep",
+      "authors": [
+        "Al3x-K"
+      ],
+      "sourcePage": "https://freesound.org/people/Al3x-K/sounds/848694/",
+      "sourceURLs": [
+        "https://freesound.org/people/Al3x-K/sounds/848694/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/wood-leather-shoes-license.txt",
+      "packageFile": "assets/shoe-wood-leather-01.wav",
+      "path": "public/audio/sfx/courier/shoe-wood-leather-01.wav",
+      "staticFilePath": "audio/sfx/courier/shoe-wood-leather-01.wav",
+      "file": "audio/sfx/courier/shoe-wood-leather-01.wav",
+      "sha256": "64ea58dbfc24ec1aef0c7e396b78e16d83701c828cec00aa19569d5aad1b08fe",
+      "bytes": 38444,
+      "samples": 19200,
+      "durationSeconds": 0.4,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -12.262412582027984,
+      "rmsDbFS": -23.15446267413927,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.06104166666666667,
+      "technicalActivityAnchorSeconds": 0.04,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.0125,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/wood-leather-shoes-official-hq-preview.mp3",
+        "sourceSha256": "5f3a7a2dfd24419a3813abb55f5acef1b36921774ab53fadb6a28d0f95c64cf3",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          0.24,
+          0.64
+        ],
+        "sourceCutSamples48k": [
+          11520,
+          30720
+        ],
+        "gain": 3,
+        "cosineFadeSeconds": [
+          0.002,
+          0.015
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Реальная кожаная обувь по деревянному полу; фрагмент до описанного автором финального скрипа.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "shoe-wood-leather-02",
+      "labelRu": "Кожаная обувь по дереву: удар 2",
+      "group": "footsteps",
+      "variant": 4,
+      "sourceId": "wood-leather-shoes",
+      "sameTakeVariant": true,
+      "material": "wood / leather shoes",
+      "role": "single-human-shoe-footstep",
+      "authors": [
+        "Al3x-K"
+      ],
+      "sourcePage": "https://freesound.org/people/Al3x-K/sounds/848694/",
+      "sourceURLs": [
+        "https://freesound.org/people/Al3x-K/sounds/848694/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/wood-leather-shoes-license.txt",
+      "packageFile": "assets/shoe-wood-leather-02.wav",
+      "path": "public/audio/sfx/courier/shoe-wood-leather-02.wav",
+      "staticFilePath": "audio/sfx/courier/shoe-wood-leather-02.wav",
+      "file": "audio/sfx/courier/shoe-wood-leather-02.wav",
+      "sha256": "e462c51e71dbd678d5d160c4832cba65951d3e27a5253627fb631c68236b44bb",
+      "bytes": 38444,
+      "samples": 19200,
+      "durationSeconds": 0.4,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -12.291828605154526,
+      "rmsDbFS": -21.858033943730838,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.09183333333333334,
+      "technicalActivityAnchorSeconds": 0.045,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.0125,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/wood-leather-shoes-official-hq-preview.mp3",
+        "sourceSha256": "5f3a7a2dfd24419a3813abb55f5acef1b36921774ab53fadb6a28d0f95c64cf3",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          1.08,
+          1.48
+        ],
+        "sourceCutSamples48k": [
+          51840,
+          71040
+        ],
+        "gain": 3,
+        "cosineFadeSeconds": [
+          0.002,
+          0.015
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Другой контакт той же короткой исходной записи; не новый исходный take.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "shoe-wood-vans-01",
+      "labelRu": "Vans по деревянному полу: удар 1",
+      "group": "footsteps",
+      "variant": 5,
+      "sourceId": "wood-vans",
+      "sameTakeVariant": true,
+      "material": "hardwood / Vans sneakers",
+      "role": "single-human-shoe-footstep",
+      "authors": [
+        "sillygrizzlies"
+      ],
+      "sourcePage": "https://freesound.org/people/sillygrizzlies/sounds/635058/",
+      "sourceURLs": [
+        "https://freesound.org/people/sillygrizzlies/sounds/635058/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/wood-vans-license.txt",
+      "packageFile": "assets/shoe-wood-vans-01.wav",
+      "path": "public/audio/sfx/courier/shoe-wood-vans-01.wav",
+      "staticFilePath": "audio/sfx/courier/shoe-wood-vans-01.wav",
+      "file": "audio/sfx/courier/shoe-wood-vans-01.wav",
+      "sha256": "6d760ff2bbd58a3202049db02795ee0fdd5f10935e35f889ae4c3e8f61aa0c57",
+      "bytes": 30764,
+      "samples": 15360,
+      "durationSeconds": 0.32,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -15.228150963485632,
+      "rmsDbFS": -32.511953977622,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.06752083333333334,
+      "technicalActivityAnchorSeconds": 0.06,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.015625,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/wood-vans-official-hq-preview.mp3",
+        "sourceSha256": "baa2e3fbee497056cade6146f2b952a8ff295b30defce31200d3377874fdca5b",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          4.12,
+          4.44
+        ],
+        "sourceCutSamples48k": [
+          197760,
+          213120
+        ],
+        "gain": 0.8,
+        "cosineFadeSeconds": [
+          0.001,
+          0.014
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Реальные кроссовки Vans по деревянному полу; источник может содержать скрипы пола/подошвы.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "shoe-wood-vans-02",
+      "labelRu": "Vans по деревянному полу: удар 2",
+      "group": "footsteps",
+      "variant": 6,
+      "sourceId": "wood-vans",
+      "sameTakeVariant": true,
+      "material": "hardwood / Vans sneakers",
+      "role": "single-human-shoe-footstep",
+      "authors": [
+        "sillygrizzlies"
+      ],
+      "sourcePage": "https://freesound.org/people/sillygrizzlies/sounds/635058/",
+      "sourceURLs": [
+        "https://freesound.org/people/sillygrizzlies/sounds/635058/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/wood-vans-license.txt",
+      "packageFile": "assets/shoe-wood-vans-02.wav",
+      "path": "public/audio/sfx/courier/shoe-wood-vans-02.wav",
+      "staticFilePath": "audio/sfx/courier/shoe-wood-vans-02.wav",
+      "file": "audio/sfx/courier/shoe-wood-vans-02.wav",
+      "sha256": "a979f725b6bb22d41327d460a9fba44b37cae64108fba388f788f8cc9c00450a",
+      "bytes": 32684,
+      "samples": 16320,
+      "durationSeconds": 0.34,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -18.438846912559054,
+      "rmsDbFS": -39.722661688007,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.107125,
+      "technicalActivityAnchorSeconds": 0.045,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.029411764705882353,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/wood-vans-official-hq-preview.mp3",
+        "sourceSha256": "baa2e3fbee497056cade6146f2b952a8ff295b30defce31200d3377874fdca5b",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          8.84,
+          9.18
+        ],
+        "sourceCutSamples48k": [
+          424320,
+          440640
+        ],
+        "gain": 0.8,
+        "cosineFadeSeconds": [
+          0.001,
+          0.014
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Другой контакт того же take; оставлена естественная разница удара.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "paper-pickup-note",
+      "labelRu": "Взятие тонкой бумаги",
+      "group": "paper-handling",
+      "variant": 1,
+      "sourceId": "paper-pickup",
+      "sameTakeVariant": false,
+      "material": "thin paper / banknote",
+      "role": "paper-pickup-foley",
+      "authors": [
+        "MTJohnson"
+      ],
+      "sourcePage": "https://freesound.org/people/MTJohnson/sounds/444434/",
+      "sourceURLs": [
+        "https://freesound.org/people/MTJohnson/sounds/444434/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/paper-pickup-license.txt",
+      "packageFile": "assets/paper-pickup-note.wav",
+      "path": "public/audio/sfx/courier/paper-pickup-note.wav",
+      "staticFilePath": "audio/sfx/courier/paper-pickup-note.wav",
+      "file": "audio/sfx/courier/paper-pickup-note.wav",
+      "sha256": "a760381235f075c1b6e23992b1b7a5530c3da22b0c7c0eedbda90c70ffd0be8d",
+      "bytes": 13964,
+      "samples": 6960,
+      "durationSeconds": 0.145,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -15.380985809363139,
+      "rmsDbFS": -39.332329077012474,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.08720833333333333,
+      "technicalActivityAnchorSeconds": 0.025,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.13793103448275862,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/paper-pickup-official-hq-preview.mp3",
+        "sourceSha256": "303aa0a72c0b554315b4e79f913f0a76da845a6835adadcd76f9d449eb6f7bfc",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          0,
+          0.145
+        ],
+        "sourceCutSamples48k": [
+          0,
+          6960
+        ],
+        "gain": 4,
+        "cosineFadeSeconds": [
+          0.002,
+          0.008
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Исходник — поднятие долларовой банкноты, а не конверта; предложенное фоли короткого захвата конверта.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "paper-turn-book",
+      "labelRu": "Переворот бумажной страницы",
+      "group": "paper-handling",
+      "variant": 2,
+      "sourceId": "page-turn",
+      "sameTakeVariant": false,
+      "material": "book paper",
+      "role": "paper-turn-foley",
+      "authors": [
+        "kevinpro"
+      ],
+      "sourcePage": "https://freesound.org/people/kevinpro/sounds/382230/",
+      "sourceURLs": [
+        "https://freesound.org/people/kevinpro/sounds/382230/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/page-turn-license.txt",
+      "packageFile": "assets/paper-turn-book.wav",
+      "path": "public/audio/sfx/courier/paper-turn-book.wav",
+      "staticFilePath": "audio/sfx/courier/paper-turn-book.wav",
+      "file": "audio/sfx/courier/paper-turn-book.wav",
+      "sha256": "6747c3f755c1d9007d42bfd0f8d7025e7d29d79d23e33738de3bef0e661bfd05",
+      "bytes": 74924,
+      "samples": 37440,
+      "durationSeconds": 0.78,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -15.487543251727931,
+      "rmsDbFS": -38.80601433844137,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.3222083333333333,
+      "technicalActivityAnchorSeconds": 0.13,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.03205128205128205,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/page-turn-official-hq-preview.mp3",
+        "sourceSha256": "56ff8c83af3a81380c1629059fd8e67e1ea0ded343bd5d830073c4c431a00cca",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          0,
+          0.78
+        ],
+        "sourceCutSamples48k": [
+          0,
+          37440
+        ],
+        "gain": 1.5,
+        "cosineFadeSeconds": [
+          0.003,
+          0.025
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Реальная книжная страница, а не запечатанный конверт; кандидат фоли поворота конверта в руках.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "paper-finger-pass",
+      "labelRu": "Пальцы по листу: мягкий шелест",
+      "group": "paper-handling",
+      "variant": 3,
+      "sourceId": "paper-handling",
+      "sameTakeVariant": false,
+      "material": "paper sheet",
+      "role": "paper-handling-foley",
+      "authors": [
+        "IENBA"
+      ],
+      "sourcePage": "https://freesound.org/people/IENBA/sounds/834340/",
+      "sourceURLs": [
+        "https://freesound.org/people/IENBA/sounds/834340/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/paper-handling-license.txt",
+      "packageFile": "assets/paper-finger-pass.wav",
+      "path": "public/audio/sfx/courier/paper-finger-pass.wav",
+      "staticFilePath": "audio/sfx/courier/paper-finger-pass.wav",
+      "file": "audio/sfx/courier/paper-finger-pass.wav",
+      "sha256": "466238014ada41aaadb8ecccdac05762583730efd0d3353c09149b422dd54535",
+      "bytes": 81644,
+      "samples": 40800,
+      "durationSeconds": 0.85,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -15.245000415206038,
+      "rmsDbFS": -28.23680622061495,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.733125,
+      "technicalActivityAnchorSeconds": 0.005,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.0,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/paper-handling-official-hq-preview.mp3",
+        "sourceSha256": "d0a03e3cd58139f4098c399e2689a0e49d4cd01308735f6a6c85543e6d3ec667",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          27.4,
+          28.25
+        ],
+        "sourceCutSamples48k": [
+          1315200,
+          1356000
+        ],
+        "gain": 8,
+        "cosineFadeSeconds": [
+          0.012,
+          0.025
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Автор записал касания и проведение пальцем по бумажному листу; кандидат для поддержки/укладывания конверта.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "envelope-desk-slide",
+      "labelRu": "Конверт скользит по столу",
+      "group": "paper-slide",
+      "variant": 1,
+      "sourceId": "envelope-slide",
+      "sameTakeVariant": false,
+      "material": "paper envelope / desk",
+      "role": "envelope-sliding",
+      "authors": [
+        "MTJohnson"
+      ],
+      "sourcePage": "https://freesound.org/people/MTJohnson/sounds/444431/",
+      "sourceURLs": [
+        "https://freesound.org/people/MTJohnson/sounds/444431/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/envelope-slide-license.txt",
+      "packageFile": "assets/envelope-desk-slide.wav",
+      "path": "public/audio/sfx/courier/envelope-desk-slide.wav",
+      "staticFilePath": "audio/sfx/courier/envelope-desk-slide.wav",
+      "file": "audio/sfx/courier/envelope-desk-slide.wav",
+      "sha256": "727ce5fa60add6ac1e749e21eb26e42de95eb237d2d89a945e607c595e861c18",
+      "bytes": 44204,
+      "samples": 22080,
+      "durationSeconds": 0.46,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -14.862564564735962,
+      "rmsDbFS": -32.99524092187368,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.18260416666666668,
+      "technicalActivityAnchorSeconds": 0.08,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.021739130434782608,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/envelope-slide-official-hq-preview.mp3",
+        "sourceSha256": "08ccc42b35d09cc7394d1bb1312c51b54c4ef0cf01141fadd0b916bfadc271d7",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          0.31,
+          0.77
+        ],
+        "sourceCutSamples48k": [
+          14880,
+          36960
+        ],
+        "gain": 4,
+        "cosineFadeSeconds": [
+          0.006,
+          0.02
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Записано скольжение настоящего конверта по письменному столу.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "paper-soft-brush",
+      "labelRu": "Бумага: мягкое короткое скольжение",
+      "group": "paper-slide",
+      "variant": 2,
+      "sourceId": "paper-brush",
+      "sameTakeVariant": false,
+      "material": "paper sheet",
+      "role": "paper-sliding",
+      "authors": [
+        "brokenmachinery"
+      ],
+      "sourcePage": "https://freesound.org/people/brokenmachinery/sounds/730078/",
+      "sourceURLs": [
+        "https://freesound.org/people/brokenmachinery/sounds/730078/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/paper-brush-license.txt",
+      "packageFile": "assets/paper-soft-brush.wav",
+      "path": "public/audio/sfx/courier/paper-soft-brush.wav",
+      "staticFilePath": "audio/sfx/courier/paper-soft-brush.wav",
+      "file": "audio/sfx/courier/paper-soft-brush.wav",
+      "sha256": "78836abb17f73a941a1e02532d589f970508d0a0a2cf162aa2e2f4cccc30c6d1",
+      "bytes": 46124,
+      "samples": 23040,
+      "durationSeconds": 0.48,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -14.818659384623366,
+      "rmsDbFS": -33.517002877694075,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.117,
+      "technicalActivityAnchorSeconds": 0.01,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.020833333333333332,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/paper-brush-official-hq-preview.mp3",
+        "sourceSha256": "11bded69428e230105c8b6d0585ea056aa12278bb85d1e8409bdda627e04f455",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          0,
+          0.48
+        ],
+        "sourceCutSamples48k": [
+          0,
+          23040
+        ],
+        "gain": 2,
+        "cosineFadeSeconds": [
+          0.003,
+          0.02
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Записано движение листа бумаги; кандидат более мягкого движения конверта.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "wood-desk-touch",
+      "labelRu": "Короткое касание деревянного стола",
+      "group": "wood-contact",
+      "variant": 1,
+      "sourceId": "wood-desk-tap",
+      "sameTakeVariant": false,
+      "material": "wooden desk",
+      "role": "single-wood-tap",
+      "authors": [
+        "AidanSounds"
+      ],
+      "sourcePage": "https://freesound.org/people/AidanSounds/sounds/704935/",
+      "sourceURLs": [
+        "https://freesound.org/people/AidanSounds/sounds/704935/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/wood-desk-tap-license.txt",
+      "packageFile": "assets/wood-desk-touch.wav",
+      "path": "public/audio/sfx/courier/wood-desk-touch.wav",
+      "staticFilePath": "audio/sfx/courier/wood-desk-touch.wav",
+      "file": "audio/sfx/courier/wood-desk-touch.wav",
+      "sha256": "9f57714c10efd693d32dd09631fad2fed986a9c7dd0053ab353b7204001d37e0",
+      "bytes": 16364,
+      "samples": 8160,
+      "durationSeconds": 0.17,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -15.159559743880997,
+      "rmsDbFS": -35.25385237035715,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.033416666666666664,
+      "technicalActivityAnchorSeconds": 0.03,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.5,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/wood-desk-tap-official-hq-preview.mp3",
+        "sourceSha256": "36c6223fac242af33d8a92e42d8ffe3f84974861006c2cb36c2b083452066114",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          0.81,
+          0.98
+        ],
+        "sourceCutSamples48k": [
+          38880,
+          47040
+        ],
+        "gain": 0.18,
+        "cosineFadeSeconds": [
+          0.001,
+          0.012
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Записано касание деревянного стола; снижение уровня для мягкого контакта лапы со стойкой.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "wood-table-touch",
+      "labelRu": "Касание столешницы: отдельная запись 2",
+      "group": "wood-contact",
+      "variant": 2,
+      "sourceId": "wood-table-tap",
+      "sameTakeVariant": false,
+      "material": "wooden tabletop",
+      "role": "single-wood-tap",
+      "authors": [
+        "zembacraftworks"
+      ],
+      "sourcePage": "https://freesound.org/people/zembacraftworks/sounds/427393/",
+      "sourceURLs": [
+        "https://freesound.org/people/zembacraftworks/sounds/427393/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/wood-table-tap-license.txt",
+      "packageFile": "assets/wood-table-touch.wav",
+      "path": "public/audio/sfx/courier/wood-table-touch.wav",
+      "staticFilePath": "audio/sfx/courier/wood-table-touch.wav",
+      "file": "audio/sfx/courier/wood-table-touch.wav",
+      "sha256": "9809164945a51ea3d6c9cdc1b01a1ddc5b4e1d358b859198fb02f0bc4b7dd92e",
+      "bytes": 47564,
+      "samples": 23760,
+      "durationSeconds": 0.495,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -16.57269960904802,
+      "rmsDbFS": -30.359747646310783,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.05925,
+      "technicalActivityAnchorSeconds": 0.04,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.2828282828282828,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/wood-table-tap-official-hq-preview.mp3",
+        "sourceSha256": "0c1ac8e87fc7df30b60f51fb7edb75343fd1a475bec99f104e69a422106b02de",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          0.145,
+          0.64
+        ],
+        "sourceCutSamples48k": [
+          6960,
+          30720
+        ],
+        "gain": 0.15,
+        "cosineFadeSeconds": [
+          0.002,
+          0.02
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Другая реальная запись и автор; материал подтверждён описанием, характер и мягкость требуют слуховой оценки.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "bag-leather-flex",
+      "labelRu": "Кожа: короткое движение",
+      "group": "bag-material",
+      "variant": 1,
+      "sourceId": "leather-rustle",
+      "sameTakeVariant": false,
+      "material": "leather jacket",
+      "role": "leather-movement-foley",
+      "authors": [
+        "jfreem3"
+      ],
+      "sourcePage": "https://freesound.org/people/jfreem3/sounds/108533/",
+      "sourceURLs": [
+        "https://freesound.org/people/jfreem3/sounds/108533/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/leather-rustle-license.txt",
+      "packageFile": "assets/bag-leather-flex.wav",
+      "path": "public/audio/sfx/courier/bag-leather-flex.wav",
+      "staticFilePath": "audio/sfx/courier/bag-leather-flex.wav",
+      "file": "audio/sfx/courier/bag-leather-flex.wav",
+      "sha256": "067462fe38377d24dbe173203110d1145815ed49491f925f64057cc8ac3e0767",
+      "bytes": 72044,
+      "samples": 36000,
+      "durationSeconds": 0.75,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -15.622605082014221,
+      "rmsDbFS": -32.010712004025514,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.344,
+      "technicalActivityAnchorSeconds": 0.27,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.0,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/leather-rustle-official-hq-preview.mp3",
+        "sourceSha256": "35e6b2c8ec443be7957dc0b46d6fe1aef8367359a8c9cf0953380fed94fba7b7",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          3.3,
+          4.05
+        ],
+        "sourceCutSamples48k": [
+          158400,
+          194400
+        ],
+        "gain": 3,
+        "cosineFadeSeconds": [
+          0.012,
+          0.025
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Источник — движение кожаной куртки; фоли для сгиба кожаной сумки, не буквальная запись сумки.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "bag-cotton-rustle",
+      "labelRu": "Хлопок: движение мягкой сумки",
+      "group": "bag-material",
+      "variant": 2,
+      "sourceId": "cotton-rustle",
+      "sameTakeVariant": false,
+      "material": "cotton clothing",
+      "role": "cotton-movement-foley",
+      "authors": [
+        "khenshom"
+      ],
+      "sourcePage": "https://freesound.org/people/khenshom/sounds/481075/",
+      "sourceURLs": [
+        "https://freesound.org/people/khenshom/sounds/481075/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/cotton-rustle-license.txt",
+      "packageFile": "assets/bag-cotton-rustle.wav",
+      "path": "public/audio/sfx/courier/bag-cotton-rustle.wav",
+      "staticFilePath": "audio/sfx/courier/bag-cotton-rustle.wav",
+      "file": "audio/sfx/courier/bag-cotton-rustle.wav",
+      "sha256": "13bc7754c87ade4a52029cb95d1808c1072832bbfff9e2e4178534dc53330eb7",
+      "bytes": 115244,
+      "samples": 57600,
+      "durationSeconds": 1.2,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -15.85796545917519,
+      "rmsDbFS": -33.857920476849195,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.844875,
+      "technicalActivityAnchorSeconds": 0.01,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.008333333333333333,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/cotton-rustle-official-hq-preview.mp3",
+        "sourceSha256": "9b7e5537e661d7a561fc462d9363febd8b68956ae1b252af8b672953468b66e1",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          2.55,
+          3.75
+        ],
+        "sourceCutSamples48k": [
+          122400,
+          180000
+        ],
+        "gain": 16,
+        "cosineFadeSeconds": [
+          0.015,
+          0.03
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Источник — хлопковая одежда; фоли тканевой сумки, не запись именно почтовой сумки.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    },
+    {
+      "id": "bag-cloth-shift",
+      "labelRu": "Ткань: небольшой сдвиг",
+      "group": "bag-material",
+      "variant": 3,
+      "sourceId": "cloth-movement",
+      "sameTakeVariant": false,
+      "material": "cloth",
+      "role": "cloth-movement-foley",
+      "authors": [
+        "pushkin"
+      ],
+      "sourcePage": "https://freesound.org/people/pushkin/sounds/100413/",
+      "sourceURLs": [
+        "https://freesound.org/people/pushkin/sounds/100413/",
+        "https://creativecommons.org/publicdomain/zero/1.0/"
+      ],
+      "license": "CC0-1.0",
+      "licenseAsDistributed": "CC0-1.0; separate media license, not relicensed by Curio MIT code",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "licenseEvidenceFile": "sources/cloth-movement-license.txt",
+      "packageFile": "assets/bag-cloth-shift.wav",
+      "path": "public/audio/sfx/courier/bag-cloth-shift.wav",
+      "staticFilePath": "audio/sfx/courier/bag-cloth-shift.wav",
+      "file": "audio/sfx/courier/bag-cloth-shift.wav",
+      "sha256": "a87d87c9ddb669c56226457fc07fb76fd1939d91b8482de5b0c3cc706b82fbb6",
+      "bytes": 48044,
+      "samples": 24000,
+      "durationSeconds": 0.5,
+      "sampleRate": 48000,
+      "channels": 1,
+      "codec": "pcm_s16le",
+      "format": "PCM16 WAV",
+      "samplePeakDbFS": -18.770659579890218,
+      "rmsDbFS": -36.50231786974666,
+      "fullScaleSamples": 0,
+      "peakSeconds": 0.23358333333333334,
+      "technicalActivityAnchorSeconds": 0.01,
+      "activityAnchorDefinition": "first 5ms RMS bin >=20% maximum; technical activity, not perceived onset",
+      "quietBinFractionBelowMinus65dBFS": 0.04,
+      "firstSample": 0,
+      "lastSample": 0,
+      "derivation": {
+        "sourceFile": "originals/cloth-movement-official-hq-preview.mp3",
+        "sourceSha256": "e6ea3da05cbf4a39a777dabc37ef9078ba7d0594265a2241ce4aacd61a9469dd",
+        "sourceKind": "official public HQ MP3 preview, not the original/native lossless master",
+        "sourceCutSeconds": [
+          3.0,
+          3.5
+        ],
+        "sourceCutSamples48k": [
+          144000,
+          168000
+        ],
+        "gain": 16,
+        "cosineFadeSeconds": [
+          0.012,
+          0.025
+        ],
+        "operation": "ffmpeg decode and resample to 48k float32 preserving channels; arithmetic channel mean (stereo L+R / 2, mono unchanged); exact sample slice; declared gain; cosine edge fades; round(x*32767) to PCM16; no pitch, time stretch, synthesis, denoise, or layered composite",
+        "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+        "preparationScript": "prepare_package.py",
+        "preparationScriptSha256": "466ed4d81dd99642041b68de8f7bef870f6b418d0f9a597bbf67c560f17408bb",
+        "decodeScript": "analyze_sources.py",
+        "decodeScriptSha256": "9953f05dfda2dd07772ff862631a624481595a028cc8574286a791c064e78a6a"
+      },
+      "foley": {
+        "recordedSubjectAndUseRu": "Источник — отдельная запись движения ткани другим автором; для укладывания бумаги или успокоения сумки.",
+        "contextListeningPending": true
+      },
+      "auditioned": false,
+      "auditionApproved": false,
+      "pitchOrPlaybackRateModified": false
+    }
+  ],
+  "pathPolicy": {
+    "packageFile": "relative to this package",
+    "path": "proposed repository path after explicit integration",
+    "staticFilePath": "relative to public root for Remotion staticFile",
+    "integration": "Copy only assets/*.wav to public/audio/sfx/courier; preserve SOURCES_RU.md, sources/, originals/, scripts, and manifest under assets/sfx/courier; entries shape is additive to main catalog entries. Do not blindly overwrite catalog.json."
+  },
+  "audition": {
+    "wav": "audition.wav",
+    "wavSha256": "5e9d0f619aba2f16b3408d81ae1392316b682f6f7af60c06850d1a4e2b888c83",
+    "mp3": "audition.mp3",
+    "mp3Sha256": "02239efd2d5a9882577ffc6781c8e89ea564253dafcb8d83e29579c7f8f30487",
+    "durationSeconds": 21.579999999999995,
+    "index": "AUDITION_RU.md",
+    "segments": [
+      {
+        "index": 1,
+        "id": "shoe-wood-sneaker-01",
+        "labelRu": "Кеды по дереву: более тихий удар",
+        "sourceId": "wood-sneakers",
+        "group": "footsteps",
+        "startSeconds": 0.75,
+        "endSeconds": 1.07,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 2,
+        "id": "shoe-wood-sneaker-02",
+        "labelRu": "Кеды по дереву: более громкий удар",
+        "sourceId": "wood-sneakers",
+        "group": "footsteps",
+        "startSeconds": 1.72,
+        "endSeconds": 2.04,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 3,
+        "id": "shoe-wood-leather-01",
+        "labelRu": "Кожаная обувь по дереву: удар 1",
+        "sourceId": "wood-leather-shoes",
+        "group": "footsteps",
+        "startSeconds": 2.69,
+        "endSeconds": 3.09,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 4,
+        "id": "shoe-wood-leather-02",
+        "labelRu": "Кожаная обувь по дереву: удар 2",
+        "sourceId": "wood-leather-shoes",
+        "group": "footsteps",
+        "startSeconds": 3.74,
+        "endSeconds": 4.14,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 5,
+        "id": "shoe-wood-vans-01",
+        "labelRu": "Vans по деревянному полу: удар 1",
+        "sourceId": "wood-vans",
+        "group": "footsteps",
+        "startSeconds": 4.79,
+        "endSeconds": 5.11,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 6,
+        "id": "shoe-wood-vans-02",
+        "labelRu": "Vans по деревянному полу: удар 2",
+        "sourceId": "wood-vans",
+        "group": "footsteps",
+        "startSeconds": 5.76,
+        "endSeconds": 6.1,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 7,
+        "id": "paper-pickup-note",
+        "labelRu": "Взятие тонкой бумаги",
+        "sourceId": "paper-pickup",
+        "group": "paper-handling",
+        "startSeconds": 7.35,
+        "endSeconds": 7.495,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 8,
+        "id": "paper-turn-book",
+        "labelRu": "Переворот бумажной страницы",
+        "sourceId": "page-turn",
+        "group": "paper-handling",
+        "startSeconds": 8.145,
+        "endSeconds": 8.925,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 9,
+        "id": "paper-finger-pass",
+        "labelRu": "Пальцы по листу: мягкий шелест",
+        "sourceId": "paper-handling",
+        "group": "paper-handling",
+        "startSeconds": 9.575,
+        "endSeconds": 10.425,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 10,
+        "id": "envelope-desk-slide",
+        "labelRu": "Конверт скользит по столу",
+        "sourceId": "envelope-slide",
+        "group": "paper-slide",
+        "startSeconds": 11.675,
+        "endSeconds": 12.135,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 11,
+        "id": "paper-soft-brush",
+        "labelRu": "Бумага: мягкое короткое скольжение",
+        "sourceId": "paper-brush",
+        "group": "paper-slide",
+        "startSeconds": 12.785,
+        "endSeconds": 13.265,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 12,
+        "id": "wood-desk-touch",
+        "labelRu": "Короткое касание деревянного стола",
+        "sourceId": "wood-desk-tap",
+        "group": "wood-contact",
+        "startSeconds": 14.515,
+        "endSeconds": 14.685,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 13,
+        "id": "wood-table-touch",
+        "labelRu": "Касание столешницы: отдельная запись 2",
+        "sourceId": "wood-table-tap",
+        "group": "wood-contact",
+        "startSeconds": 15.335,
+        "endSeconds": 15.83,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 14,
+        "id": "bag-leather-flex",
+        "labelRu": "Кожа: короткое движение",
+        "sourceId": "leather-rustle",
+        "group": "bag-material",
+        "startSeconds": 17.08,
+        "endSeconds": 17.83,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 15,
+        "id": "bag-cotton-rustle",
+        "labelRu": "Хлопок: движение мягкой сумки",
+        "sourceId": "cotton-rustle",
+        "group": "bag-material",
+        "startSeconds": 18.48,
+        "endSeconds": 19.68,
+        "additionalGain": 1.0
+      },
+      {
+        "index": 16,
+        "id": "bag-cloth-shift",
+        "labelRu": "Ткань: небольшой сдвиг",
+        "sourceId": "cloth-movement",
+        "group": "bag-material",
+        "startSeconds": 20.33,
+        "endSeconds": 20.83,
+        "additionalGain": 1.0
+      }
+    ],
+    "additionalGain": 1.0,
+    "note": "PCM cuts joined without overlap or pitch change; 0.65s gaps / 1.25s between groups, 0.75s head/tail. No voice/music. MP3 is listening derivative."
+  },
+  "review": {
+    "listeningObserved": false,
+    "ownerSoundAcceptance": "pending",
+    "technicalVerification": "analysis/verification.json after verify_package.py",
+    "semanticFit": "Based on primary creator descriptions and waveform boundaries; owner listening and final-film sync/mix pending.",
+    "sourceDiversity": "13 distinct source downloads by 12 author accounts; only the 3 footwear source recordings provide 2 cuts each. Same-take cuts explicitly linked; never counted as separate source recordings."
+  },
+  "verificationBaseline": {
+    "inventoryFile": "analysis/library-inventory.json",
+    "inventorySha256": "50f06b9929fd2a5296cd5f59d04af78de8a2643ba7641d536e0d2ec04974b228",
+    "scope": "saved original library before courier addition; source/working-audio duplicate comparison only",
+    "liveInstalledCatalogScanned": false,
+    "originalLibraryRootRequired": false
+  }
+}

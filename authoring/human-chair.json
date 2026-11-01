@@ -1,0 +1,5461 @@
+{
+  "version": 2,
+  "id": "human-chair",
+  "composition": "HumanChair",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "durationInFrames": 348
+  },
+  "input": "authoring/human-chair.inputs.json",
+  "actionFiles": [
+    "authoring/human-chair.action.txt",
+    "authoring/human-chair.owner-feedback-v2.txt",
+    "authoring/human-chair.owner-feedback-v3.txt"
+  ],
+  "observations": [
+    "Inspected the original author-created whole neutral SVG: ordinary clothed adult, normal-size head, short hair, distinct hands and flat-soled shoes, warm wooden armless chair; no mascot anatomy.",
+    "Chair seat is the drawn polygon at near y=500; floor is y=600. Full figure is visible and the neutral reference is authoring-only.",
+    "Owner rejectedV1 for jerky movement, incoherent face, protruding chair joint and limping. Older passes do not override rejection. Actual234→235 dip maps by step4 toV2 approximately270→271. V1/reference/source/captures preserved.",
+    "Owner rejected V2 rightward limb depth: screen-left shoulder/arm/hand and hip/leg/shoe must be nearer; accepted leftward direction must remain. Immutable V2 source/movie and actual screenshot copied before edits to qa/human-chair-revision-v3/before."
+  ],
+  "assumptions": [
+    "The whole SVG is an author-created design study, not an owner-supplied image or a frame of the finished scene. Unseen left/frontal views and all action poses are authored.",
+    "Stable anatomical sides 0/1 retain their whole shoulder/arm/hand and hip/leg/shoe identities. In the rightward view side 1 (screen-left) is near; in the leftward view side 0 (screen-right) is near. One signed view depth drives attachments, shading and painter order. Floor lane endpoints change only in authored swing steps; planted supports do not follow yaw. Geometric constraints do not prove the visible overlap.",
+    "V2 is14.5seconds348frames. Contacts share body travel; explicit reachable pelvis and C2 rise through-keys replace reactive height correction/stops. Four required owner repairs need actual encoded AFTER review; no automatic beauty or biomechanical claim."
+  ],
+  "actionBeats": [
+    "0.15..3.55 approach with same-travel contacts, authored smooth height and counterarms, then brake.",
+    "3.8..4.74 supported turn; cohesive face and smooth whole-body width.",
+    "5..6.35 controlled sit;6.35..7 quiet seated hold.",
+    "7..7.8 forward preparation with seat retained;7.8..9.05 continuous release/rise over fixed soles.",
+    "9.3..14.18 regular departure, final foot landing14.28 and exit before14.5."
+  ],
+  "stages": {
+    "model": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 18,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 28,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 85,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 103,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 120,
+          "label": "Sit"
+        },
+        {
+          "frame": 135,
+          "label": "Sit"
+        },
+        {
+          "frame": 156,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 187,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 196,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 209,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 218,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 247,
+          "label": "Departure/exit"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ordinary-human",
+          "description": "Ordinary adult with distinct attached hands/feet and continuous authored whole views",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            85,
+            103,
+            120,
+            135,
+            156,
+            187,
+            196,
+            209,
+            218,
+            247
+          ]
+        },
+        {
+          "id": "continuous-filled-body",
+          "description": "Visible filled neck/shoulders/torso/pelvis and limb attachments remain continuous without white slits or collapse",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            85,
+            103,
+            120,
+            135,
+            156,
+            187,
+            196,
+            209,
+            218,
+            247
+          ],
+          "relations": [
+            "filled-torso",
+            "bone-lengths"
+          ]
+        },
+        {
+          "id": "human-gait",
+          "description": "Both passing drawings show a bent swing leg, an opposite planted shoe and relaxed counterposed arms; timing is reviewed in motion/final.",
+          "required": true,
+          "frames": [
+            18,
+            28,
+            247
+          ]
+        },
+        {
+          "id": "supported-turn",
+          "description": "Right, frontal and left held views retain whole body volume and noncollapsed shoes; supported turning steps are reviewed in motion/final.",
+          "required": true,
+          "frames": [
+            85,
+            103,
+            120
+          ],
+          "relations": [
+            "locked-supports",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "seated-hold",
+          "description": "The seated drawing visibly touches the actual fixed seat with both shoes on the floor; duration and transition are reviewed in motion/final.",
+          "required": true,
+          "frames": [
+            135,
+            156
+          ],
+          "relations": [
+            "actual-seat-contact",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "supported-rise",
+          "description": "Forward leaning, seat release and standing controls preserve a filled body and fixed soles; the temporal transfer is reviewed in motion/final.",
+          "required": true,
+          "frames": [
+            187,
+            196,
+            209,
+            218
+          ],
+          "relations": [
+            "actual-seat-contact",
+            "locked-supports"
+          ]
+        },
+        {
+          "id": "owner-anatomical-depth",
+          "description": "REQUIRED V3 OWNER REPAIR: rightward screen-left whole shoulder/elbow/wrist/hand and hip/knee/ankle/shoe chains are nearer, with coherent attachment and occlusion, not merely changed colors. Preserve the correct opposite leftward view; stable anatomical identity and cuff/sole ownership through all turn crossings. Actual decoded observation required.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            85,
+            103,
+            120,
+            135,
+            156,
+            187,
+            196,
+            209,
+            218,
+            247
+          ],
+          "relations": [
+            "anatomical-depth"
+          ]
+        }
+      ]
+    },
+    "blocking": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 18,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 28,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 42,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 82,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 90,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 92,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 97,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 102,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 103,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 108,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 114,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 120,
+          "label": "Sit"
+        },
+        {
+          "frame": 135,
+          "label": "Sit"
+        },
+        {
+          "frame": 152,
+          "label": "Sit"
+        },
+        {
+          "frame": 153,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 156,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 168,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 187,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 188,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 196,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 209,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 218,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 224,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 238,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 247,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 266,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 270,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 271,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 280,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 316,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 317,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 335,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 343,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 347,
+          "label": "Departure/exit"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ordinary-human",
+          "description": "Ordinary adult with distinct attached hands/feet and continuous authored whole views",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            92,
+            102,
+            103,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            224,
+            238,
+            247,
+            280,
+            335,
+            343,
+            347
+          ]
+        },
+        {
+          "id": "continuous-filled-body",
+          "description": "Visible filled neck/shoulders/torso/pelvis and limb attachments remain continuous without white slits or collapse",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            92,
+            102,
+            103,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            224,
+            238,
+            247,
+            280,
+            335,
+            343,
+            347
+          ],
+          "relations": [
+            "filled-torso",
+            "bone-lengths"
+          ]
+        },
+        {
+          "id": "human-gait",
+          "description": "Alternating passing feet, relaxed counter arms, brisk forward travel and natural braking read as a human walk",
+          "required": true,
+          "frames": [
+            18,
+            28,
+            82,
+            247
+          ]
+        },
+        {
+          "id": "supported-turn",
+          "description": "Actual alternating turn steps, fixed opposite support and coherent continuous foot/pelvis/shoulder views; no mirror-sign flip",
+          "required": true,
+          "frames": [
+            92,
+            102,
+            103,
+            114
+          ],
+          "relations": [
+            "locked-supports",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "seated-hold",
+          "description": "Drawn pelvis actually contacts the fixed chair; feet stay on floor through a quiet brief seated hold",
+          "required": true,
+          "frames": [
+            135,
+            152,
+            153,
+            156,
+            168
+          ],
+          "relations": [
+            "actual-seat-contact",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "supported-rise",
+          "description": "Forward lean and pelvis preparation precede seat release; soles stay fixed during continuous rise before departure",
+          "required": true,
+          "frames": [
+            187,
+            188,
+            196,
+            209,
+            218,
+            224
+          ],
+          "relations": [
+            "actual-seat-contact",
+            "locked-supports"
+          ]
+        },
+        {
+          "id": "owner-anatomical-depth",
+          "description": "REQUIRED V3 OWNER REPAIR: rightward screen-left whole shoulder/elbow/wrist/hand and hip/knee/ankle/shoe chains are nearer, with coherent attachment and occlusion, not merely changed colors. Preserve the correct opposite leftward view; stable anatomical identity and cuff/sole ownership through all turn crossings. Actual decoded observation required.",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            90,
+            92,
+            97,
+            102,
+            103,
+            108,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            238,
+            247
+          ],
+          "relations": [
+            "anatomical-depth"
+          ]
+        }
+      ]
+    },
+    "motion": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 1,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 2,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 3,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 4,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 5,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 6,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 7,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 8,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 9,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 10,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 11,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 12,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 13,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 14,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 15,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 16,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 17,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 18,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 19,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 20,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 21,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 22,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 23,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 24,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 25,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 26,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 27,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 28,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 29,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 30,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 31,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 32,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 33,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 34,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 35,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 36,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 37,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 38,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 39,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 40,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 41,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 42,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 43,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 44,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 45,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 46,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 47,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 48,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 49,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 50,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 51,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 52,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 53,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 54,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 55,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 56,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 57,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 58,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 59,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 60,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 61,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 62,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 63,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 64,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 65,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 66,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 67,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 68,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 69,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 70,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 71,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 72,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 73,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 74,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 75,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 76,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 77,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 78,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 79,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 80,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 81,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 82,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 83,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 84,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 85,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 86,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 87,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 88,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 89,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 90,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 91,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 92,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 93,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 94,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 95,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 96,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 97,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 98,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 99,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 100,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 101,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 102,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 103,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 104,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 105,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 106,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 107,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 108,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 109,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 110,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 111,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 112,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 113,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 114,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 115,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 116,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 117,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 118,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 119,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 120,
+          "label": "Sit"
+        },
+        {
+          "frame": 121,
+          "label": "Sit"
+        },
+        {
+          "frame": 122,
+          "label": "Sit"
+        },
+        {
+          "frame": 123,
+          "label": "Sit"
+        },
+        {
+          "frame": 124,
+          "label": "Sit"
+        },
+        {
+          "frame": 125,
+          "label": "Sit"
+        },
+        {
+          "frame": 126,
+          "label": "Sit"
+        },
+        {
+          "frame": 127,
+          "label": "Sit"
+        },
+        {
+          "frame": 128,
+          "label": "Sit"
+        },
+        {
+          "frame": 129,
+          "label": "Sit"
+        },
+        {
+          "frame": 130,
+          "label": "Sit"
+        },
+        {
+          "frame": 131,
+          "label": "Sit"
+        },
+        {
+          "frame": 132,
+          "label": "Sit"
+        },
+        {
+          "frame": 133,
+          "label": "Sit"
+        },
+        {
+          "frame": 134,
+          "label": "Sit"
+        },
+        {
+          "frame": 135,
+          "label": "Sit"
+        },
+        {
+          "frame": 136,
+          "label": "Sit"
+        },
+        {
+          "frame": 137,
+          "label": "Sit"
+        },
+        {
+          "frame": 138,
+          "label": "Sit"
+        },
+        {
+          "frame": 139,
+          "label": "Sit"
+        },
+        {
+          "frame": 140,
+          "label": "Sit"
+        },
+        {
+          "frame": 141,
+          "label": "Sit"
+        },
+        {
+          "frame": 142,
+          "label": "Sit"
+        },
+        {
+          "frame": 143,
+          "label": "Sit"
+        },
+        {
+          "frame": 144,
+          "label": "Sit"
+        },
+        {
+          "frame": 145,
+          "label": "Sit"
+        },
+        {
+          "frame": 146,
+          "label": "Sit"
+        },
+        {
+          "frame": 147,
+          "label": "Sit"
+        },
+        {
+          "frame": 148,
+          "label": "Sit"
+        },
+        {
+          "frame": 149,
+          "label": "Sit"
+        },
+        {
+          "frame": 150,
+          "label": "Sit"
+        },
+        {
+          "frame": 151,
+          "label": "Sit"
+        },
+        {
+          "frame": 152,
+          "label": "Sit"
+        },
+        {
+          "frame": 153,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 154,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 155,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 156,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 157,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 158,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 159,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 160,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 161,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 162,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 163,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 164,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 165,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 166,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 167,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 168,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 169,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 170,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 171,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 172,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 173,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 174,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 175,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 176,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 177,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 178,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 179,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 180,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 181,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 182,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 183,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 184,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 185,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 186,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 187,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 188,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 189,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 190,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 191,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 192,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 193,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 194,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 195,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 196,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 197,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 198,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 199,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 200,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 201,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 202,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 203,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 204,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 205,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 206,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 207,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 208,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 209,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 210,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 211,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 212,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 213,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 214,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 215,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 216,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 217,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 218,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 219,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 220,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 221,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 222,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 223,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 224,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 225,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 226,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 227,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 228,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 229,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 230,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 231,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 232,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 233,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 234,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 235,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 236,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 237,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 238,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 239,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 240,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 241,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 242,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 243,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 244,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 245,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 246,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 247,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 248,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 249,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 250,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 251,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 252,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 253,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 254,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 255,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 256,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 257,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 258,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 259,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 260,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 261,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 262,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 263,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 264,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 265,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 266,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 267,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 268,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 269,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 270,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 271,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 272,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 273,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 274,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 275,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 276,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 277,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 278,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 279,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 280,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 281,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 282,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 283,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 284,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 285,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 286,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 287,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 288,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 289,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 290,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 291,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 292,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 293,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 294,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 295,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 296,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 297,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 298,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 299,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 300,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 301,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 302,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 303,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 304,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 305,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 306,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 307,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 308,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 309,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 310,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 311,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 312,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 313,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 314,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 315,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 316,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 317,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 318,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 319,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 320,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 321,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 322,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 323,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 324,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 325,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 326,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 327,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 328,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 329,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 330,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 331,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 332,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 333,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 334,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 335,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 336,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 337,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 338,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 339,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 340,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 341,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 342,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 343,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 344,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 345,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 346,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 347,
+          "label": "Departure/exit"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ordinary-human",
+          "description": "Ordinary adult with distinct attached hands/feet and continuous authored whole views",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            92,
+            102,
+            103,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            224,
+            238,
+            247,
+            280,
+            335,
+            343,
+            347
+          ]
+        },
+        {
+          "id": "continuous-filled-body",
+          "description": "Visible filled neck/shoulders/torso/pelvis and limb attachments remain continuous without white slits or collapse",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            92,
+            102,
+            103,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            224,
+            238,
+            247,
+            280,
+            335,
+            343,
+            347
+          ],
+          "relations": [
+            "filled-torso",
+            "bone-lengths"
+          ]
+        },
+        {
+          "id": "human-gait",
+          "description": "Alternating passing feet, relaxed counter arms, brisk forward travel and natural braking read as a human walk",
+          "required": true,
+          "frames": [
+            18,
+            28,
+            82,
+            247
+          ]
+        },
+        {
+          "id": "supported-turn",
+          "description": "Actual alternating turn steps, fixed opposite support and coherent continuous foot/pelvis/shoulder views; no mirror-sign flip",
+          "required": true,
+          "frames": [
+            92,
+            102,
+            103,
+            114
+          ],
+          "relations": [
+            "locked-supports",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "seated-hold",
+          "description": "Drawn pelvis actually contacts the fixed chair; feet stay on floor through a quiet brief seated hold",
+          "required": true,
+          "frames": [
+            135,
+            152,
+            153,
+            156,
+            168
+          ],
+          "relations": [
+            "actual-seat-contact",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "supported-rise",
+          "description": "Forward lean and pelvis preparation precede seat release; soles stay fixed during continuous rise before departure",
+          "required": true,
+          "frames": [
+            187,
+            188,
+            196,
+            209,
+            218,
+            224
+          ],
+          "relations": [
+            "actual-seat-contact",
+            "locked-supports"
+          ]
+        },
+        {
+          "id": "complete-sequence",
+          "description": "Encoded complete action reads coherently at normal and half speed, including holds and leaving the frame",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            92,
+            102,
+            103,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            224,
+            238,
+            247,
+            280,
+            335,
+            343,
+            347
+          ]
+        },
+        {
+          "id": "owner-smooth-motion",
+          "description": "REQUIRED OWNER REPAIR: no abrupt local body drop, whipping limbs or disconnected stop/restart in sit/rise; inspect actual continuous drawings, not metrics.",
+          "required": true,
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            308,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341,
+            342,
+            343,
+            344,
+            345,
+            346,
+            347
+          ],
+          "relations": [
+            "authored-root"
+          ]
+        },
+        {
+          "id": "owner-coherent-face",
+          "description": "REQUIRED OWNER REPAIR: jaw/nose/eyes/brows/mouth/ears/hair form one readable human face through the whole turn.",
+          "required": true,
+          "frames": [
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            0,
+            156,
+            187
+          ],
+          "relations": [
+            "face-geometry"
+          ]
+        },
+        {
+          "id": "owner-chair-joint",
+          "description": "REQUIRED OWNER REPAIR: no protruding leg tooth above the real seat and preserved contact.",
+          "required": true,
+          "frames": [
+            0,
+            156,
+            187,
+            347
+          ],
+          "relations": [
+            "chair-join",
+            "actual-seat-contact"
+          ]
+        },
+        {
+          "id": "owner-unbroken-gait",
+          "description": "REQUIRED OWNER REPAIR: full alternating approach/departure cycles and closing do not repeat unilateral collapse or accidental short middle step. Review phase-aligned BEFORE/AFTER.",
+          "required": true,
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            308,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341,
+            342,
+            343,
+            344,
+            345,
+            346,
+            347
+          ],
+          "relations": [
+            "authored-root",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "owner-anatomical-depth",
+          "description": "REQUIRED V3 OWNER REPAIR: rightward screen-left whole shoulder/elbow/wrist/hand and hip/knee/ankle/shoe chains are nearer, with coherent attachment and occlusion, not merely changed colors. Preserve the correct opposite leftward view; stable anatomical identity and cuff/sole ownership through all turn crossings. Actual decoded observation required.",
+          "required": true,
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256
+          ],
+          "relations": [
+            "anatomical-depth"
+          ]
+        }
+      ]
+    },
+    "final": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 1,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 2,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 3,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 4,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 5,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 6,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 7,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 8,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 9,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 10,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 11,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 12,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 13,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 14,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 15,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 16,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 17,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 18,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 19,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 20,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 21,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 22,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 23,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 24,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 25,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 26,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 27,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 28,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 29,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 30,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 31,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 32,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 33,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 34,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 35,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 36,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 37,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 38,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 39,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 40,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 41,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 42,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 43,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 44,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 45,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 46,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 47,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 48,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 49,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 50,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 51,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 52,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 53,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 54,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 55,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 56,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 57,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 58,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 59,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 60,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 61,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 62,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 63,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 64,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 65,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 66,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 67,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 68,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 69,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 70,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 71,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 72,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 73,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 74,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 75,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 76,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 77,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 78,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 79,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 80,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 81,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 82,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 83,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 84,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 85,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 86,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 87,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 88,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 89,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 90,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 91,
+          "label": "Approach/brake"
+        },
+        {
+          "frame": 92,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 93,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 94,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 95,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 96,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 97,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 98,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 99,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 100,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 101,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 102,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 103,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 104,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 105,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 106,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 107,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 108,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 109,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 110,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 111,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 112,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 113,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 114,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 115,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 116,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 117,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 118,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 119,
+          "label": "Supported turn/face"
+        },
+        {
+          "frame": 120,
+          "label": "Sit"
+        },
+        {
+          "frame": 121,
+          "label": "Sit"
+        },
+        {
+          "frame": 122,
+          "label": "Sit"
+        },
+        {
+          "frame": 123,
+          "label": "Sit"
+        },
+        {
+          "frame": 124,
+          "label": "Sit"
+        },
+        {
+          "frame": 125,
+          "label": "Sit"
+        },
+        {
+          "frame": 126,
+          "label": "Sit"
+        },
+        {
+          "frame": 127,
+          "label": "Sit"
+        },
+        {
+          "frame": 128,
+          "label": "Sit"
+        },
+        {
+          "frame": 129,
+          "label": "Sit"
+        },
+        {
+          "frame": 130,
+          "label": "Sit"
+        },
+        {
+          "frame": 131,
+          "label": "Sit"
+        },
+        {
+          "frame": 132,
+          "label": "Sit"
+        },
+        {
+          "frame": 133,
+          "label": "Sit"
+        },
+        {
+          "frame": 134,
+          "label": "Sit"
+        },
+        {
+          "frame": 135,
+          "label": "Sit"
+        },
+        {
+          "frame": 136,
+          "label": "Sit"
+        },
+        {
+          "frame": 137,
+          "label": "Sit"
+        },
+        {
+          "frame": 138,
+          "label": "Sit"
+        },
+        {
+          "frame": 139,
+          "label": "Sit"
+        },
+        {
+          "frame": 140,
+          "label": "Sit"
+        },
+        {
+          "frame": 141,
+          "label": "Sit"
+        },
+        {
+          "frame": 142,
+          "label": "Sit"
+        },
+        {
+          "frame": 143,
+          "label": "Sit"
+        },
+        {
+          "frame": 144,
+          "label": "Sit"
+        },
+        {
+          "frame": 145,
+          "label": "Sit"
+        },
+        {
+          "frame": 146,
+          "label": "Sit"
+        },
+        {
+          "frame": 147,
+          "label": "Sit"
+        },
+        {
+          "frame": 148,
+          "label": "Sit"
+        },
+        {
+          "frame": 149,
+          "label": "Sit"
+        },
+        {
+          "frame": 150,
+          "label": "Sit"
+        },
+        {
+          "frame": 151,
+          "label": "Sit"
+        },
+        {
+          "frame": 152,
+          "label": "Sit"
+        },
+        {
+          "frame": 153,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 154,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 155,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 156,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 157,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 158,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 159,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 160,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 161,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 162,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 163,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 164,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 165,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 166,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 167,
+          "label": "Seated hold"
+        },
+        {
+          "frame": 168,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 169,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 170,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 171,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 172,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 173,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 174,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 175,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 176,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 177,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 178,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 179,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 180,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 181,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 182,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 183,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 184,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 185,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 186,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 187,
+          "label": "Prepare rise"
+        },
+        {
+          "frame": 188,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 189,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 190,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 191,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 192,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 193,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 194,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 195,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 196,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 197,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 198,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 199,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 200,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 201,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 202,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 203,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 204,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 205,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 206,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 207,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 208,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 209,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 210,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 211,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 212,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 213,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 214,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 215,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 216,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 217,
+          "label": "Continuous rise"
+        },
+        {
+          "frame": 218,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 219,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 220,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 221,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 222,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 223,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 224,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 225,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 226,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 227,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 228,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 229,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 230,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 231,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 232,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 233,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 234,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 235,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 236,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 237,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 238,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 239,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 240,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 241,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 242,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 243,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 244,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 245,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 246,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 247,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 248,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 249,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 250,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 251,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 252,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 253,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 254,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 255,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 256,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 257,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 258,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 259,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 260,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 261,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 262,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 263,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 264,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 265,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 266,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 267,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 268,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 269,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 270,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 271,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 272,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 273,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 274,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 275,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 276,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 277,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 278,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 279,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 280,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 281,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 282,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 283,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 284,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 285,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 286,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 287,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 288,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 289,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 290,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 291,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 292,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 293,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 294,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 295,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 296,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 297,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 298,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 299,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 300,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 301,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 302,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 303,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 304,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 305,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 306,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 307,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 308,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 309,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 310,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 311,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 312,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 313,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 314,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 315,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 316,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 317,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 318,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 319,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 320,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 321,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 322,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 323,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 324,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 325,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 326,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 327,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 328,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 329,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 330,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 331,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 332,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 333,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 334,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 335,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 336,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 337,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 338,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 339,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 340,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 341,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 342,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 343,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 344,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 345,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 346,
+          "label": "Departure/exit"
+        },
+        {
+          "frame": 347,
+          "label": "Departure/exit"
+        }
+      ],
+      "criteria": [
+        {
+          "id": "ordinary-human",
+          "description": "Ordinary adult with distinct attached hands/feet and continuous authored whole views",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            92,
+            102,
+            103,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            224,
+            238,
+            247,
+            280,
+            335,
+            343,
+            347
+          ]
+        },
+        {
+          "id": "continuous-filled-body",
+          "description": "Visible filled neck/shoulders/torso/pelvis and limb attachments remain continuous without white slits or collapse",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            92,
+            102,
+            103,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            224,
+            238,
+            247,
+            280,
+            335,
+            343,
+            347
+          ],
+          "relations": [
+            "filled-torso",
+            "bone-lengths"
+          ]
+        },
+        {
+          "id": "human-gait",
+          "description": "Alternating passing feet, relaxed counter arms, brisk forward travel and natural braking read as a human walk",
+          "required": true,
+          "frames": [
+            18,
+            28,
+            82,
+            247
+          ]
+        },
+        {
+          "id": "supported-turn",
+          "description": "Actual alternating turn steps, fixed opposite support and coherent continuous foot/pelvis/shoulder views; no mirror-sign flip",
+          "required": true,
+          "frames": [
+            92,
+            102,
+            103,
+            114
+          ],
+          "relations": [
+            "locked-supports",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "seated-hold",
+          "description": "Drawn pelvis actually contacts the fixed chair; feet stay on floor through a quiet brief seated hold",
+          "required": true,
+          "frames": [
+            135,
+            152,
+            153,
+            156,
+            168
+          ],
+          "relations": [
+            "actual-seat-contact",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "supported-rise",
+          "description": "Forward lean and pelvis preparation precede seat release; soles stay fixed during continuous rise before departure",
+          "required": true,
+          "frames": [
+            187,
+            188,
+            196,
+            209,
+            218,
+            224
+          ],
+          "relations": [
+            "actual-seat-contact",
+            "locked-supports"
+          ]
+        },
+        {
+          "id": "complete-sequence",
+          "description": "Encoded complete action reads coherently at normal and half speed, including holds and leaving the frame",
+          "required": true,
+          "frames": [
+            0,
+            18,
+            28,
+            42,
+            82,
+            92,
+            102,
+            103,
+            114,
+            120,
+            135,
+            152,
+            153,
+            156,
+            168,
+            187,
+            188,
+            196,
+            209,
+            218,
+            224,
+            238,
+            247,
+            280,
+            335,
+            343,
+            347
+          ]
+        },
+        {
+          "id": "owner-smooth-motion",
+          "description": "REQUIRED OWNER REPAIR: no abrupt local body drop, whipping limbs or disconnected stop/restart in sit/rise; inspect actual continuous drawings, not metrics.",
+          "required": true,
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            308,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341,
+            342,
+            343,
+            344,
+            345,
+            346,
+            347
+          ],
+          "relations": [
+            "authored-root"
+          ]
+        },
+        {
+          "id": "owner-coherent-face",
+          "description": "REQUIRED OWNER REPAIR: jaw/nose/eyes/brows/mouth/ears/hair form one readable human face through the whole turn.",
+          "required": true,
+          "frames": [
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            0,
+            156,
+            187
+          ],
+          "relations": [
+            "face-geometry"
+          ]
+        },
+        {
+          "id": "owner-chair-joint",
+          "description": "REQUIRED OWNER REPAIR: no protruding leg tooth above the real seat and preserved contact.",
+          "required": true,
+          "frames": [
+            0,
+            156,
+            187,
+            347
+          ],
+          "relations": [
+            "chair-join",
+            "actual-seat-contact"
+          ]
+        },
+        {
+          "id": "owner-unbroken-gait",
+          "description": "REQUIRED OWNER REPAIR: full alternating approach/departure cycles and closing do not repeat unilateral collapse or accidental short middle step. Review phase-aligned BEFORE/AFTER.",
+          "required": true,
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            222,
+            223,
+            224,
+            225,
+            226,
+            227,
+            228,
+            229,
+            230,
+            231,
+            232,
+            233,
+            234,
+            235,
+            236,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256,
+            257,
+            258,
+            259,
+            260,
+            261,
+            262,
+            263,
+            264,
+            265,
+            266,
+            267,
+            268,
+            269,
+            270,
+            271,
+            272,
+            273,
+            274,
+            275,
+            276,
+            277,
+            278,
+            279,
+            280,
+            281,
+            282,
+            283,
+            284,
+            285,
+            286,
+            287,
+            288,
+            289,
+            290,
+            291,
+            292,
+            293,
+            294,
+            295,
+            296,
+            297,
+            298,
+            299,
+            300,
+            301,
+            302,
+            303,
+            304,
+            305,
+            306,
+            307,
+            308,
+            309,
+            310,
+            311,
+            312,
+            313,
+            314,
+            315,
+            316,
+            317,
+            318,
+            319,
+            320,
+            321,
+            322,
+            323,
+            324,
+            325,
+            326,
+            327,
+            328,
+            329,
+            330,
+            331,
+            332,
+            333,
+            334,
+            335,
+            336,
+            337,
+            338,
+            339,
+            340,
+            341,
+            342,
+            343,
+            344,
+            345,
+            346,
+            347
+          ],
+          "relations": [
+            "authored-root",
+            "actual-floor-soles"
+          ]
+        },
+        {
+          "id": "owner-anatomical-depth",
+          "description": "REQUIRED V3 OWNER REPAIR: rightward screen-left whole shoulder/elbow/wrist/hand and hip/knee/ankle/shoe chains are nearer, with coherent attachment and occlusion, not merely changed colors. Preserve the correct opposite leftward view; stable anatomical identity and cuff/sole ownership through all turn crossings. Actual decoded observation required.",
+          "required": true,
+          "frames": [
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30,
+            31,
+            32,
+            33,
+            34,
+            35,
+            36,
+            37,
+            38,
+            39,
+            40,
+            41,
+            42,
+            43,
+            44,
+            45,
+            46,
+            47,
+            48,
+            49,
+            50,
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            58,
+            59,
+            60,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            72,
+            73,
+            74,
+            75,
+            76,
+            77,
+            78,
+            79,
+            80,
+            81,
+            82,
+            83,
+            84,
+            85,
+            86,
+            87,
+            88,
+            89,
+            90,
+            91,
+            92,
+            93,
+            94,
+            95,
+            96,
+            97,
+            98,
+            99,
+            100,
+            101,
+            102,
+            103,
+            104,
+            105,
+            106,
+            107,
+            108,
+            109,
+            110,
+            111,
+            112,
+            113,
+            114,
+            115,
+            116,
+            117,
+            118,
+            119,
+            120,
+            121,
+            122,
+            123,
+            124,
+            125,
+            126,
+            127,
+            128,
+            129,
+            130,
+            131,
+            132,
+            133,
+            134,
+            135,
+            136,
+            137,
+            138,
+            139,
+            140,
+            141,
+            142,
+            143,
+            144,
+            145,
+            146,
+            147,
+            148,
+            149,
+            150,
+            151,
+            152,
+            153,
+            154,
+            155,
+            156,
+            157,
+            158,
+            159,
+            160,
+            161,
+            162,
+            163,
+            164,
+            165,
+            166,
+            167,
+            168,
+            169,
+            170,
+            171,
+            172,
+            173,
+            174,
+            175,
+            176,
+            177,
+            178,
+            179,
+            180,
+            181,
+            182,
+            183,
+            184,
+            185,
+            186,
+            187,
+            188,
+            189,
+            190,
+            191,
+            192,
+            193,
+            194,
+            195,
+            196,
+            197,
+            198,
+            199,
+            200,
+            201,
+            202,
+            203,
+            204,
+            205,
+            206,
+            207,
+            208,
+            209,
+            210,
+            211,
+            212,
+            213,
+            214,
+            215,
+            216,
+            217,
+            218,
+            219,
+            220,
+            221,
+            237,
+            238,
+            239,
+            240,
+            241,
+            242,
+            243,
+            244,
+            245,
+            246,
+            247,
+            248,
+            249,
+            250,
+            251,
+            252,
+            253,
+            254,
+            255,
+            256
+          ],
+          "relations": [
+            "anatomical-depth"
+          ]
+        }
+      ]
+    }
+  },
+  "diagnosticModule": "src/examples/human-chair/diagnostics.ts",
+  "independentReview": {
+    "stages": [
+      "model",
+      "final"
+    ]
+  }
+}
