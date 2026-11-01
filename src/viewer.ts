@@ -17,7 +17,7 @@ video.style.aspectRatio=`${example.settings.width} / ${example.settings.height}`
 seek.max=String(last);counter.textContent=`0 / ${last}`;
 document.querySelector('#example-title')!.textContent=example.title;
 document.querySelector('#description')!.textContent=example.description;
-document.querySelector('#format')!.textContent=`${example.settings.durationInFrames/example.settings.fps} seconds · ${example.settings.width}×${example.settings.height} · ${example.settings.fps} fps · ${key==='cat-picture-story-v3'?'recorded sound':'audio' in example&&example.audio?'sound trial':'silent'}.`;
+document.querySelector('#format')!.textContent=`${example.settings.durationInFrames/example.settings.fps} seconds · ${example.settings.width}×${example.settings.height} · ${example.settings.fps} fps · ${key==='cat-picture-story-v3'?'recorded sound':'audio' in example&&example.audio?'sound':'silent'}.`;
 video.controls='audio' in example&&example.audio===true;
 const refImage=document.querySelector<HTMLImageElement>('#reference')!,refVideo=document.querySelector<HTMLVideoElement>('#reference-video')!;
 const wholeReference=example.reference,videoReference=wholeReference?/\.(mp4|webm|mov)$/i.test(wholeReference):false;

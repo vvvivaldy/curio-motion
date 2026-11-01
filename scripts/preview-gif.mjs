@@ -5,7 +5,7 @@ import { findTool, verifyFfmpeg } from './tools.mjs';
 
 // Documentation derivative only: never imported by the Pixi/Remotion scene.
 const input = resolve(process.env.GIF_INPUT ?? 'docs/assets/demo-v5.mp4');
-const output = resolve(process.env.GIF_OUTPUT ?? 'docs/assets/demo.gif');
+const output = resolve(process.env.GIF_OUTPUT ?? 'outputs/demo.gif');
 if (input === output) throw new Error('GIF input and output must differ');
 const fps = Number(process.env.GIF_FPS ?? 12);
 if (!Number.isFinite(fps) || fps < 1 || fps > 50) throw new RangeError('GIF_FPS must be 1..50');

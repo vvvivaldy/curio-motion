@@ -1,6 +1,6 @@
 # Local development and rendering
 
-[README](../README.md) · [User/agent guide](USAGE_RU.md) · [Beta scope](../BETA.md)
+[README](../README.md) · [User/agent guide](USAGE_RU.md) · [Support scope](SUPPORT_RU.md)
 
 ## Requirements and first run
 
@@ -93,7 +93,7 @@ Use an unpacked candidate copy, not the maintainer's working checkout. Verify th
 
 For a scaffold smoke, save a short UTF-8 action file outside existing source files and use the distributable `reference/amber-robot/design.svg` as the whole reference. Run the documented `create:example` command with a fresh ID; inspect the generated blank files/instructions. This trial does not require inventing another large film. Generated starter files are a preparation check, not a finished animation.
 
-Record environment, commands, actual exported files, blockers and any undocumented steps. Do not call the archive accepted just because one preserved example was accepted earlier. [Beta gates](../BETA.md) separate these claims.
+Record environment, commands, actual exported files, blockers and any undocumented steps. Do not call the archive accepted just because one preserved example was accepted earlier. [Release verification](RELEASE_1_0_0_RU.md) separate these claims.
 
 ## Troubleshooting and limits
 

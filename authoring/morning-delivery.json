@@ -11,7 +11,7 @@
   "input": "authoring/morning-delivery.inputs.json",
   "actionFiles": [
     "authoring/morning-delivery.action.txt",
-    "docs/STAGE_2_BRIEF_RU.md"
+    "authoring/morning-delivery.brief.md"
   ],
   "observations": [
     "Осмотрен цельный кадр220 принятого фильма енота: бирюзовая форма, охристая открытая сумка, бежевый почтовый интерьер, связные ноги и низкий хват письма у сумки.",

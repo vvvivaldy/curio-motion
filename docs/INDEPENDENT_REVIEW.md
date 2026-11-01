@@ -15,7 +15,7 @@ itself require exporting a new film.
 Capture with the existing commands (replace the example and output paths):
 
 ```sh
-npm run review -- --plan authoring/new-example.json --stage drafts
+npm run review -- --plan authoring/new-example.json --stage model
 npm run review -- --plan authoring/new-example.json --stage final \
   --film outputs/new-example.mp4 --receipt qa/NewExample-render.json
 ```

@@ -1,6 +1,6 @@
 # Как пользоваться Curio Motion с агентом
 
-[Установка и команды](DEVELOPMENT.md) · [Инструкции агента](../AGENT_START_HERE_RU.md) · [Границы беты](../BETA.md)
+[Установка и команды](DEVELOPMENT.md) · [Инструкции агента](../AGENT_START_HERE_RU.md) · [Поддержка 1.0](SUPPORT_RU.md)
 
 ## Настроить папку один раз
 

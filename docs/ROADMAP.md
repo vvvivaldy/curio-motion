@@ -1,22 +1,14 @@
 # Development direction
 
-Curio Motion supports a coding agent or developer authoring short 2D scenes from a whole reference and an explicit action. The useful outcome is an editable scene and a finished film. It is not an automatic reference-conversion service.
+Stable [1.0.0](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0) is published. Curio Motion remains an editable TypeScript source project for short 2D scenes, with local preview/export and recorded sound.
 
-## Current beta and path to 1.0
+Development follows reproducible user problems:
 
-The five preparation packages are complete and the exact RC is owner-accepted. The owner separately authorized stable 1.0 publication. [Release 1.0](RELEASE_1_0_0_RU.md) describes delivery and external public-verification receipts; preserved beta/RC records remain historical. Future work follows concrete user obstacles rather than a feature quota.
+- Fix concrete installation, API, movement, layering, infographic and sound defects.
+- Improve examples and instructions where a new author gets stuck.
+- Add a reusable helper only when a real scene needs it.
+- Expand platform support after testing that platform's actual browser and export path.
 
-## Existing foundations
+New styles, sound packs, lip sync, automatic rigs and hosted rendering are possible directions, not a mandatory feature quota. The supported scope and compatibility rules are in [SUPPORT](SUPPORT_RU.md) and [COMPATIBILITY](COMPATIBILITY_RU.md).
 
-- Typed scenes and pure frame evaluation; Pixi vector drawing and one Remotion composition/Player/export owner.
-- Explicit coordinate spaces, contacts, foot tracks/load transfer, finite travel/run plans, constrained limbs, contours, opaque surfaces, owned objects and labels. These are authoring helpers, not automatic physics or anatomy approval.
-- Multiple authored character/actions and styles, recorded effects and an educational infographic. Preserved examples show concrete reuse, not an arbitrary-reference success rate.
-- A blank-scene scaffold, local authoring skill, private-input build filter and staged frame-linked review. Identity hashes detect stale evidence; explicit visual/sound inspection remains necessary.
-
-Historical mechanism and example records stay in [ARCHITECTURE](ARCHITECTURE.md), [VERIFICATION](VERIFICATION.md), [REUSE](REUSE.md) and the scene-specific review folders. Their pass counts and acceptance statements apply to those versions, not automatically to this beta archive.
-
-## After beta
-
-Use the package on small real tasks, collect reproducible failures and fix repeated setup/API/authoring problems. Define the supported interface and compatibility expectations before 1.0. Add other runtime platforms only when their browser/export path is actually tested; Linux type/build CI alone is insufficient.
-
-New styles, more sound families, lip sync, automatic rigs, a scene language or a hosted renderer are separate possibilities, not a required feature checklist. Prefer a focused repair or instruction improvement when it solves the observed problem. [Usage guidance](USAGE_RU.md) starts with an author and a human reviewer; a critic/mathematician is added for a concrete need.
+[Current examples](EXAMPLES.md) · [report a reproducible issue](https://github.com/vvvivaldy/curio-motion/issues/new?template=bug.yml).
