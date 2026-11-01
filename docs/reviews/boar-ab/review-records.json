@@ -1,0 +1,677 @@
+[
+  {
+    "stage": "model",
+    "run": "model-20261027151754286-5e55669c",
+    "review": {
+      "captureSha256": "a04fb8679eb3f396a0231df78634525a898faf99960d3bcaa10f82fcefdf0efe",
+      "decision": "accept",
+      "reviewer": "Codex root + independent visual subagent (agent review, not owner approval)",
+      "notes": "Model/control drawings inspected against requested visible criteria. Independent observations: qa/independent-boar-review/observations.json. CUA local browser observation blocked by security policy; no workaround attempted. Normal/slow playback not claimed.",
+      "checks": [
+        {
+          "criterion": "whole-boar",
+          "verdict": "pass",
+          "frames": [
+            216,
+            292
+          ],
+          "notes": "216/292: connected bristled head, nostrils, ears/tusks, arms and split hooves; low straight brow reads serious. Inspected whole native and decoded frames."
+        },
+        {
+          "criterion": "owned-packages",
+          "verdict": "pass",
+          "frames": [
+            216
+          ],
+          "notes": "216/292: each opaque pack owns its insect drawing and contained label; foreground packs occlude whole rear objects. Natural pile overlap is retained."
+        },
+        {
+          "criterion": "satisfied-seated",
+          "verdict": "pass",
+          "frames": [
+            408,
+            505
+          ],
+          "notes": "408/505: low pelvis against trunk, forward thighs, separate shins and hooves; closed curved eye and lifted smile read satisfied. Foreground arm leaves expression and packet label clear."
+        },
+        {
+          "criterion": "caterpillar-pick-lift-bite",
+          "verdict": "pass",
+          "frames": [
+            491,
+            498,
+            505,
+            509,
+            513,
+            516
+          ],
+          "notes": "491 at open rim, 498 lifted, 505 at lower drawn mouth; 509/511 shorten and 513 disappears; 516 begins return/chew. Inspected all 51 decoded excerpt frames477–527, model poses and encoded final505/509/513."
+        },
+        {
+          "criterion": "real-mouth-contact",
+          "verdict": "pass",
+          "frames": [
+            505
+          ],
+          "notes": "505: caterpillar tip meets lower mouth curve below snout and tusks in actual native and encoded image, rather than entering a nostril."
+        },
+        {
+          "criterion": "warning-readable",
+          "verdict": "pass",
+          "frames": [
+            292
+          ],
+          "notes": "292: black italic rule and both complete red lines plus underline fit in upper-left region; head/ear do not cross letters. Native rendered text pixels and final decoded image inspected; no claim of a new runtime Text-bounds browser probe."
+        },
+        {
+          "criterion": "seated-shins-separated",
+          "verdict": "pass",
+          "frames": [
+            408
+          ],
+          "notes": "408: two raised knees, short separate vertical shins and split hooves read distinctly; the pelvis sits low. Legs are authored flat forms, not force-simulated anatomy."
+        },
+        {
+          "criterion": "food-at-open-rim",
+          "verdict": "pass",
+          "frames": [
+            491
+          ],
+          "notes": "491: actual visible caterpillar emerges at the open packet rim and remains connected to the same hand; the packet name remains visible."
+        },
+        {
+          "criterion": "upright-loaded-hold",
+          "verdict": "pass",
+          "frames": [
+            216
+          ],
+          "notes": "216: held shop legs have mild bend rather than deep crouch. Actual contour knee checks pass; native216 and full decoded216 inspected."
+        }
+      ],
+      "playback": {
+        "normal": false,
+        "slow": false
+      },
+      "issues": []
+    }
+  },
+  {
+    "stage": "blocking",
+    "run": "blocking-20261027151801352-5e55669c",
+    "review": {
+      "captureSha256": "71449051f1f0545a193e116cefda5cb72f37651466d265dc3fa1b00b5dc8182c",
+      "decision": "accept",
+      "reviewer": "Codex root; prior control drawings also reviewed by an independent static reviewer (agent review, not owner approval)",
+      "notes": "Accepted after current-source control poses and full final/motion MP4 browser playback at1x/0.5x. Live screen sequences and enlarged approach/push/bite observations were inspected; callbacks establish playback completion, not artistic quality. Evidence qa/playback-review-20261027. No new blocking defect found; no scene/core source change.",
+      "checks": [
+        {
+          "criterion": "whole-boar",
+          "verdict": "pass",
+          "frames": [
+            216,
+            292
+          ],
+          "notes": "216/292: connected bristled head, nostrils, ears/tusks, arms and split hooves; low straight brow reads serious. Inspected whole native and decoded frames."
+        },
+        {
+          "criterion": "owned-packages",
+          "verdict": "pass",
+          "frames": [
+            216
+          ],
+          "notes": "216/292: each opaque pack owns its insect drawing and contained label; foreground packs occlude whole rear objects. Natural pile overlap is retained."
+        },
+        {
+          "criterion": "satisfied-seated",
+          "verdict": "pass",
+          "frames": [
+            408,
+            505
+          ],
+          "notes": "408/505: low pelvis against trunk, forward thighs, separate shins and hooves; closed curved eye and lifted smile read satisfied. Foreground arm leaves expression and packet label clear."
+        },
+        {
+          "criterion": "caterpillar-pick-lift-bite",
+          "verdict": "pass",
+          "frames": [
+            491,
+            498,
+            505,
+            509,
+            513,
+            516
+          ],
+          "notes": "491 at open rim, 498 lifted, 505 at lower drawn mouth; 509/511 shorten and 513 disappears; 516 begins return/chew. Inspected all 51 decoded excerpt frames477–527, model poses and encoded final505/509/513."
+        },
+        {
+          "criterion": "real-mouth-contact",
+          "verdict": "pass",
+          "frames": [
+            505
+          ],
+          "notes": "505: caterpillar tip meets lower mouth curve below snout and tusks in actual native and encoded image, rather than entering a nostril."
+        },
+        {
+          "criterion": "warning-readable",
+          "verdict": "pass",
+          "frames": [
+            292
+          ],
+          "notes": "292: black italic rule and both complete red lines plus underline fit in upper-left region; head/ear do not cross letters. Native rendered text pixels and final decoded image inspected; no claim of a new runtime Text-bounds browser probe."
+        },
+        {
+          "criterion": "action-order-and-cut",
+          "verdict": "pass",
+          "frames": [
+            0,
+            60,
+            153,
+            216,
+            292,
+            383,
+            384
+          ],
+          "notes": "Observed empty cart, loading, approach, grip, warning/push and exit in blocking poses and whole-film sheet.383 contains no boar/cart,384 cuts directly to seated savanna."
+        },
+        {
+          "criterion": "walk-support-and-weight",
+          "verdict": "pass",
+          "frames": [
+            110,
+            113,
+            153,
+            156,
+            159,
+            164,
+            172,
+            178,
+            182,
+            185,
+            234,
+            237,
+            240,
+            243,
+            246,
+            368
+          ],
+          "notes": "Follow-up full final/motion playback at1x and0.5x: alternating lift, pass and touchdown read coherently; selected planted hooves hold against the floor pattern. No new visible foot-slide or permanent crouch found. Profile leg overlap remains a deliberate flat-view simplification."
+        },
+        {
+          "criterion": "both-hands-cart-contact",
+          "verdict": "pass",
+          "frames": [
+            216,
+            232,
+            237,
+            240,
+            243,
+            246,
+            292
+          ],
+          "notes": "Follow-up playback: both drawn grips remain on the same handle throughout push and exit; there is no hand release, branch flip or hand through the pile."
+        },
+        {
+          "criterion": "intentional-holds",
+          "verdict": "pass",
+          "frames": [
+            216,
+            224,
+            408,
+            513,
+            524
+          ],
+          "notes": "Follow-up playback: approach settles before grip, warning has a quiet held beat;16–20s establishes the seated savanna, then two separated bites and a final rest. No arbitrary idle oscillation was added."
+        },
+        {
+          "criterion": "cart-and-boar-exit",
+          "verdict": "pass",
+          "frames": [
+            383
+          ],
+          "notes": "383 shop is fully clear of both boar and cart;384 shows direct savanna cut. Source warning remains visible in last shop frame."
+        },
+        {
+          "criterion": "food-at-open-rim",
+          "verdict": "pass",
+          "frames": [
+            491
+          ],
+          "notes": "491: actual visible caterpillar emerges at the open packet rim and remains connected to the same hand; the packet name remains visible."
+        },
+        {
+          "criterion": "upright-loaded-hold",
+          "verdict": "pass",
+          "frames": [
+            216
+          ],
+          "notes": "216: held shop legs have mild bend rather than deep crouch. Actual contour knee checks pass; native216 and full decoded216 inspected."
+        },
+        {
+          "criterion": "steady-cart-cruise",
+          "verdict": "pass",
+          "frames": [
+            240,
+            248,
+            262,
+            280,
+            292,
+            310,
+            330,
+            350
+          ],
+          "notes": "Follow-up normal/half-speed playback: cart advances continuously across foot swing/plant phases, without the rejected motion3 per-step pauses/surges. Start is smooth and both boar/cart leave fully before the cut."
+        },
+        {
+          "criterion": "smooth-hand-arc",
+          "verdict": "pass",
+          "frames": [
+            480,
+            485,
+            488,
+            491,
+            516,
+            520,
+            524
+          ],
+          "notes": "Follow-up both bites at1x/0.5x and enlarged live-screen sequences: a single preparation arc clears the packet/label, the food reaches the drawn lower mouth and shortens, then the hand returns continuously. Tight elbow folds/mitten hands remain stylization; no new contour break, snap, eye cover or label cover found."
+        }
+      ],
+      "playback": {
+        "normal": true,
+        "slow": true
+      },
+      "issues": [],
+      "playbackEvidence": {
+        "final": "qa/playback-review-20261027/playback.json",
+        "motion": "qa/playback-review-20261027/motion-playback.json",
+        "sourceUnchanged": true
+      }
+    }
+  },
+  {
+    "stage": "motion",
+    "run": "motion-20261027151814143-5e55669c",
+    "review": {
+      "captureSha256": "c166717351b4c5db0b5659f90b3b0d478c17e6a31abe21504a29d1ae0addf4e5",
+      "decision": "accept",
+      "reviewer": "Codex root; prior control drawings also reviewed by an independent static reviewer (agent review, not owner approval)",
+      "notes": "Accepted after current-source control poses and full final/motion MP4 browser playback at1x/0.5x. Live screen sequences and enlarged approach/push/bite observations were inspected; callbacks establish playback completion, not artistic quality. Evidence qa/playback-review-20261027. No new blocking defect found; no scene/core source change.",
+      "checks": [
+        {
+          "criterion": "whole-boar",
+          "verdict": "pass",
+          "frames": [
+            216,
+            292
+          ],
+          "notes": "216/292: connected bristled head, nostrils, ears/tusks, arms and split hooves; low straight brow reads serious. Inspected whole native and decoded frames."
+        },
+        {
+          "criterion": "owned-packages",
+          "verdict": "pass",
+          "frames": [
+            216
+          ],
+          "notes": "216/292: each opaque pack owns its insect drawing and contained label; foreground packs occlude whole rear objects. Natural pile overlap is retained."
+        },
+        {
+          "criterion": "satisfied-seated",
+          "verdict": "pass",
+          "frames": [
+            408,
+            505
+          ],
+          "notes": "408/505: low pelvis against trunk, forward thighs, separate shins and hooves; closed curved eye and lifted smile read satisfied. Foreground arm leaves expression and packet label clear."
+        },
+        {
+          "criterion": "caterpillar-pick-lift-bite",
+          "verdict": "pass",
+          "frames": [
+            491,
+            498,
+            505,
+            509,
+            513,
+            516
+          ],
+          "notes": "491 at open rim, 498 lifted, 505 at lower drawn mouth; 509/511 shorten and 513 disappears; 516 begins return/chew. Inspected all 51 decoded excerpt frames477–527, model poses and encoded final505/509/513."
+        },
+        {
+          "criterion": "real-mouth-contact",
+          "verdict": "pass",
+          "frames": [
+            505
+          ],
+          "notes": "505: caterpillar tip meets lower mouth curve below snout and tusks in actual native and encoded image, rather than entering a nostril."
+        },
+        {
+          "criterion": "warning-readable",
+          "verdict": "pass",
+          "frames": [
+            292
+          ],
+          "notes": "292: black italic rule and both complete red lines plus underline fit in upper-left region; head/ear do not cross letters. Native rendered text pixels and final decoded image inspected; no claim of a new runtime Text-bounds browser probe."
+        },
+        {
+          "criterion": "action-order-and-cut",
+          "verdict": "pass",
+          "frames": [
+            0,
+            60,
+            153,
+            216,
+            292,
+            383,
+            384
+          ],
+          "notes": "Observed empty cart, loading, approach, grip, warning/push and exit in blocking poses and whole-film sheet.383 contains no boar/cart,384 cuts directly to seated savanna."
+        },
+        {
+          "criterion": "walk-support-and-weight",
+          "verdict": "pass",
+          "frames": [
+            110,
+            113,
+            153,
+            156,
+            159,
+            164,
+            172,
+            178,
+            182,
+            185,
+            234,
+            237,
+            240,
+            243,
+            246,
+            368
+          ],
+          "notes": "Follow-up full final/motion playback at1x and0.5x: alternating lift, pass and touchdown read coherently; selected planted hooves hold against the floor pattern. No new visible foot-slide or permanent crouch found. Profile leg overlap remains a deliberate flat-view simplification."
+        },
+        {
+          "criterion": "both-hands-cart-contact",
+          "verdict": "pass",
+          "frames": [
+            216,
+            232,
+            237,
+            240,
+            243,
+            246,
+            292
+          ],
+          "notes": "Follow-up playback: both drawn grips remain on the same handle throughout push and exit; there is no hand release, branch flip or hand through the pile."
+        },
+        {
+          "criterion": "intentional-holds",
+          "verdict": "pass",
+          "frames": [
+            216,
+            224,
+            408,
+            513,
+            524
+          ],
+          "notes": "Follow-up playback: approach settles before grip, warning has a quiet held beat;16–20s establishes the seated savanna, then two separated bites and a final rest. No arbitrary idle oscillation was added."
+        },
+        {
+          "criterion": "cart-and-boar-exit",
+          "verdict": "pass",
+          "frames": [
+            383
+          ],
+          "notes": "383 shop is fully clear of both boar and cart;384 shows direct savanna cut. Source warning remains visible in last shop frame."
+        },
+        {
+          "criterion": "food-at-open-rim",
+          "verdict": "pass",
+          "frames": [
+            491
+          ],
+          "notes": "491: actual visible caterpillar emerges at the open packet rim and remains connected to the same hand; the packet name remains visible."
+        },
+        {
+          "criterion": "upright-loaded-hold",
+          "verdict": "pass",
+          "frames": [
+            216
+          ],
+          "notes": "216: held shop legs have mild bend rather than deep crouch. Actual contour knee checks pass; native216 and full decoded216 inspected."
+        },
+        {
+          "criterion": "steady-cart-cruise",
+          "verdict": "pass",
+          "frames": [
+            240,
+            248,
+            262,
+            280,
+            292,
+            310,
+            330,
+            350
+          ],
+          "notes": "Follow-up normal/half-speed playback: cart advances continuously across foot swing/plant phases, without the rejected motion3 per-step pauses/surges. Start is smooth and both boar/cart leave fully before the cut."
+        },
+        {
+          "criterion": "smooth-hand-arc",
+          "verdict": "pass",
+          "frames": [
+            480,
+            485,
+            488,
+            491,
+            516,
+            520,
+            524
+          ],
+          "notes": "Follow-up both bites at1x/0.5x and enlarged live-screen sequences: a single preparation arc clears the packet/label, the food reaches the drawn lower mouth and shortens, then the hand returns continuously. Tight elbow folds/mitten hands remain stylization; no new contour break, snap, eye cover or label cover found."
+        }
+      ],
+      "playback": {
+        "normal": true,
+        "slow": true
+      },
+      "issues": [],
+      "playbackEvidence": {
+        "final": "qa/playback-review-20261027/playback.json",
+        "motion": "qa/playback-review-20261027/motion-playback.json",
+        "sourceUnchanged": true
+      }
+    }
+  },
+  {
+    "stage": "final",
+    "run": "final-20261027152034561-5e55669c",
+    "review": {
+      "captureSha256": "56f42b250f44e94123077fe0f52da700179285f7577117fbb051663ffe37a748",
+      "decision": "accept",
+      "reviewer": "Codex root; prior control drawings also reviewed by an independent static reviewer (agent review, not owner approval)",
+      "notes": "Accepted after current-source control poses and full final/motion MP4 browser playback at1x/0.5x. Live screen sequences and enlarged approach/push/bite observations were inspected; callbacks establish playback completion, not artistic quality. Evidence qa/playback-review-20261027. No new blocking defect found; no scene/core source change.",
+      "checks": [
+        {
+          "criterion": "whole-boar",
+          "verdict": "pass",
+          "frames": [
+            216,
+            292
+          ],
+          "notes": "216/292: connected bristled head, nostrils, ears/tusks, arms and split hooves; low straight brow reads serious. Inspected whole native and decoded frames."
+        },
+        {
+          "criterion": "owned-packages",
+          "verdict": "pass",
+          "frames": [
+            216
+          ],
+          "notes": "216/292: each opaque pack owns its insect drawing and contained label; foreground packs occlude whole rear objects. Natural pile overlap is retained."
+        },
+        {
+          "criterion": "satisfied-seated",
+          "verdict": "pass",
+          "frames": [
+            408,
+            505
+          ],
+          "notes": "408/505: low pelvis against trunk, forward thighs, separate shins and hooves; closed curved eye and lifted smile read satisfied. Foreground arm leaves expression and packet label clear."
+        },
+        {
+          "criterion": "caterpillar-pick-lift-bite",
+          "verdict": "pass",
+          "frames": [
+            491,
+            498,
+            505,
+            509,
+            513,
+            516
+          ],
+          "notes": "491 at open rim, 498 lifted, 505 at lower drawn mouth; 509/511 shorten and 513 disappears; 516 begins return/chew. Inspected all 51 decoded excerpt frames477–527, model poses and encoded final505/509/513."
+        },
+        {
+          "criterion": "real-mouth-contact",
+          "verdict": "pass",
+          "frames": [
+            505
+          ],
+          "notes": "505: caterpillar tip meets lower mouth curve below snout and tusks in actual native and encoded image, rather than entering a nostril."
+        },
+        {
+          "criterion": "warning-readable",
+          "verdict": "pass",
+          "frames": [
+            292
+          ],
+          "notes": "292: black italic rule and both complete red lines plus underline fit in upper-left region; head/ear do not cross letters. Native rendered text pixels and final decoded image inspected; no claim of a new runtime Text-bounds browser probe."
+        },
+        {
+          "criterion": "action-order-and-cut",
+          "verdict": "pass",
+          "frames": [
+            0,
+            60,
+            153,
+            216,
+            292,
+            383,
+            384
+          ],
+          "notes": "Observed empty cart, loading, approach, grip, warning/push and exit in blocking poses and whole-film sheet.383 contains no boar/cart,384 cuts directly to seated savanna."
+        },
+        {
+          "criterion": "walk-support-and-weight",
+          "verdict": "pass",
+          "frames": [
+            110,
+            113,
+            153,
+            156,
+            159,
+            164,
+            172,
+            178,
+            182,
+            185,
+            234,
+            237,
+            240,
+            243,
+            246,
+            368
+          ],
+          "notes": "Follow-up full final/motion playback at1x and0.5x: alternating lift, pass and touchdown read coherently; selected planted hooves hold against the floor pattern. No new visible foot-slide or permanent crouch found. Profile leg overlap remains a deliberate flat-view simplification."
+        },
+        {
+          "criterion": "both-hands-cart-contact",
+          "verdict": "pass",
+          "frames": [
+            216,
+            232,
+            237,
+            240,
+            243,
+            246,
+            292
+          ],
+          "notes": "Follow-up playback: both drawn grips remain on the same handle throughout push and exit; there is no hand release, branch flip or hand through the pile."
+        },
+        {
+          "criterion": "intentional-holds",
+          "verdict": "pass",
+          "frames": [
+            216,
+            224,
+            408,
+            513,
+            524
+          ],
+          "notes": "Follow-up playback: approach settles before grip, warning has a quiet held beat;16–20s establishes the seated savanna, then two separated bites and a final rest. No arbitrary idle oscillation was added."
+        },
+        {
+          "criterion": "cart-and-boar-exit",
+          "verdict": "pass",
+          "frames": [
+            383
+          ],
+          "notes": "383 shop is fully clear of both boar and cart;384 shows direct savanna cut. Source warning remains visible in last shop frame."
+        },
+        {
+          "criterion": "food-at-open-rim",
+          "verdict": "pass",
+          "frames": [
+            491
+          ],
+          "notes": "491: actual visible caterpillar emerges at the open packet rim and remains connected to the same hand; the packet name remains visible."
+        },
+        {
+          "criterion": "upright-loaded-hold",
+          "verdict": "pass",
+          "frames": [
+            216
+          ],
+          "notes": "216: held shop legs have mild bend rather than deep crouch. Actual contour knee checks pass; native216 and full decoded216 inspected."
+        },
+        {
+          "criterion": "steady-cart-cruise",
+          "verdict": "pass",
+          "frames": [
+            240,
+            248,
+            262,
+            280,
+            292,
+            310,
+            330,
+            350
+          ],
+          "notes": "Follow-up normal/half-speed playback: cart advances continuously across foot swing/plant phases, without the rejected motion3 per-step pauses/surges. Start is smooth and both boar/cart leave fully before the cut."
+        },
+        {
+          "criterion": "smooth-hand-arc",
+          "verdict": "pass",
+          "frames": [
+            480,
+            485,
+            488,
+            491,
+            516,
+            520,
+            524
+          ],
+          "notes": "Follow-up both bites at1x/0.5x and enlarged live-screen sequences: a single preparation arc clears the packet/label, the food reaches the drawn lower mouth and shortens, then the hand returns continuously. Tight elbow folds/mitten hands remain stylization; no new contour break, snap, eye cover or label cover found."
+        }
+      ],
+      "playback": {
+        "normal": true,
+        "slow": true
+      },
+      "issues": [],
+      "playbackEvidence": {
+        "final": "qa/playback-review-20261027/playback.json",
+        "motion": "qa/playback-review-20261027/motion-playback.json",
+        "sourceUnchanged": true
+      }
+    }
+  }
+]

@@ -1,0 +1,80 @@
+{
+  "status": "completed by agent visual review",
+  "finalFilm": {
+    "sha256": "04fc516d9b8d3e8299e212a9258605c1cbe5f8782f3b8ccbd4d88677ccc3b057",
+    "runs": [
+      {
+        "rate": 1,
+        "startedAt": "2026-10-27T16:03:09.298Z",
+        "callbacks": 576,
+        "firstMediaTime": 0,
+        "lastMediaTime": 23.958333,
+        "sha256": "04fc516d9b8d3e8299e212a9258605c1cbe5f8782f3b8ccbd4d88677ccc3b057",
+        "elapsedMs": 24034.80000000028,
+        "endedAt": "2026-10-27T16:03:33.333Z",
+        "duration": 24,
+        "finalTime": 24,
+        "error": null
+      },
+      {
+        "rate": 0.5,
+        "startedAt": "2026-10-27T16:04:04.207Z",
+        "callbacks": 576,
+        "firstMediaTime": 0,
+        "lastMediaTime": 23.958333,
+        "sha256": "04fc516d9b8d3e8299e212a9258605c1cbe5f8782f3b8ccbd4d88677ccc3b057",
+        "elapsedMs": 48010.5,
+        "endedAt": "2026-10-27T16:04:52.217Z",
+        "duration": 24,
+        "finalTime": 24,
+        "error": null
+      }
+    ]
+  },
+  "motionPreview": {
+    "sha256": "5995b8a9a3010a5b6964af1501ef638f4a4fe5b58d8edee1badc099263bbc106",
+    "runs": [
+      {
+        "rate": 1,
+        "startedAt": "2026-10-27T16:10:36.426Z",
+        "callbacks": 575,
+        "firstMediaTime": 0.041667,
+        "lastMediaTime": 23.958333,
+        "sha256": "5995b8a9a3010a5b6964af1501ef638f4a4fe5b58d8edee1badc099263bbc106",
+        "elapsedMs": 24003.30000000028,
+        "endedAt": "2026-10-27T16:11:00.429Z",
+        "duration": 24,
+        "finalTime": 24,
+        "error": null
+      },
+      {
+        "rate": 0.5,
+        "startedAt": "2026-10-27T16:11:20.359Z",
+        "callbacks": 576,
+        "firstMediaTime": 0,
+        "lastMediaTime": 23.958333,
+        "sha256": "5995b8a9a3010a5b6964af1501ef638f4a4fe5b58d8edee1badc099263bbc106",
+        "elapsedMs": 48030,
+        "endedAt": "2026-10-27T16:12:08.389Z",
+        "duration": 24,
+        "finalTime": 24,
+        "error": null
+      }
+    ]
+  },
+  "observationMethod": "CUA browser playback with continuous live screenshots; whole-film overviews and enlarged critical screen sequences reviewed alongside native/decoded source frames. Not inferred from callback count alone.",
+  "screenEvidence": {
+    "finalNormal": 387,
+    "finalSlow": 714,
+    "motionNormalSelected": 68,
+    "motionSlowSelected": 121
+  },
+  "newBlockingDefectsFound": false,
+  "sourceChanges": false,
+  "remainingStyleLimits": [
+    "mitten-like hands",
+    "tight but connected elbow folds during preparation/return",
+    "some profile leg overlap",
+    "simple flat vector illustration; no force/mass simulation"
+  ]
+}

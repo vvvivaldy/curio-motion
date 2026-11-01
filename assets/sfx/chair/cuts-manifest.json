@@ -1,0 +1,223 @@
+{
+  "version": "recorded-chair-v2-candidates-01",
+  "generatorSha256": "e4c83574dbe96d22065a93cfce929b23f1ed56ea0a1334b066183dbba494a1f1",
+  "ffmpegVersion": "ffmpeg version 9.0.2 Copyright (c) 2000-2026 the FFmpeg developers",
+  "sources": {
+    "unkleceeg-276473": {
+      "file": "unkleceeg-276473-hq.mp3",
+      "sha256": "e7652d394e6ef808f31590181a49ae3134bf170468ef3072cdcfc21ec295cb04",
+      "title": "Chair creaking back and forth 01.wav",
+      "author": "unkleceeg",
+      "sourceUrl": "https://freesound.org/people/unkleceeg/sounds/276473/",
+      "downloadUrl": "https://cdn.freesound.org/previews/276/276473_3327014-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "authorRecordingDescription": "Author describes a chair creaking back and forth, recorded with a Zoom Q2HD; wood tag on the source page.",
+      "attributionRequired": false,
+      "credit": "Chair creaking back and forth 01.wav — unkleceeg — Freesound276473 — CC0 1.0."
+    },
+    "trashcan-783598": {
+      "file": "trashcan-783598-hq.mp3",
+      "sha256": "b0e1323cf5c2a47d7bdd05928edb93e9e0e33e128229c65631e86b1b0bfbc3f9",
+      "title": "011 - Pulling Out Chair, Sitting",
+      "author": "Trashcan_Studios",
+      "sourceUrl": "https://freesound.org/people/Trashcan_Studios/sounds/783598/",
+      "downloadUrl": "https://cdn.freesound.org/previews/783/783598_12973965-hq.mp3",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "authorRecordingDescription": "Author describes pulling a wooden chair out and sitting, recorded at a cabin in Jasper in December2024.",
+      "attributionRequired": true,
+      "credit": "011 - Pulling Out Chair, Sitting — Trashcan_Studios — https://freesound.org/people/Trashcan_Studios/sounds/783598/ — CC BY 4.0 https://creativecommons.org/licenses/by/4.0/. Modified: excerpt, stereo-to-mono downmix, gain, short edge fades, PCM16/48kHz conversion."
+    }
+  },
+  "cuts": [
+    {
+      "id": "chair-creak-cc0-01",
+      "file": "chair-creak-cc0-01.wav",
+      "sha256": "889c62fb45b269682e60a8afe56c3c961d0d9f3915e003c78b868c79494c6bbc",
+      "sourceId": "unkleceeg-276473",
+      "sourceSha256": "e7652d394e6ef808f31590181a49ae3134bf170468ef3072cdcfc21ec295cb04",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Chair creaking back and forth 01.wav — unkleceeg — Freesound276473 — CC0 1.0.",
+      "sourceCut": {
+        "coordinateSystem": "Decoded officialMP3 timeline from first output sample, mono48kHz. FFmpeg handles MP3 priming before cuts. NOT original native-WAV sample offsets.",
+        "startSampleInclusive": 228096,
+        "endSampleExclusive": 254400,
+        "startSeconds": 4.752,
+        "endSeconds": 5.3
+      },
+      "format": {
+        "codec": "pcm_s16le",
+        "container": "wav",
+        "sampleRate": 48000,
+        "channels": 1,
+        "samples": 26304,
+        "durationSeconds": 0.548
+      },
+      "processing": {
+        "downmix": "Existing FFmpeg default stereo-to-mono, before cut",
+        "gainDb": 0.0,
+        "fadeInSamples": 96,
+        "fadeOutSamples": 1440,
+        "fadeShape": "raised cosine",
+        "timeStretch": false,
+        "pitchShift": false,
+        "denoise": false,
+        "synthesis": false
+      },
+      "attack": {
+        "activityAnchorSample": 384,
+        "activityAnchorSeconds": 0.008,
+        "activityDefinition": "First non-overlapping5ms original-PCM RMS block >=-38.956596dBFS within fixed search range; technical alignment anchor only.",
+        "activityResolutionSamples": 240,
+        "firstNonzeroSample": 7,
+        "firstNonzeroSeconds": 0.00014583333333333335,
+        "peakSample": 5670,
+        "peakSeconds": 0.118125,
+        "leadingExactSilenceSamples": 7,
+        "note": "Pre-roll retains quiet recorded ambience; firstNonzero is not the audible attack. Use activityAnchor, inspect/listen for final placement at seatContact6.35s."
+      },
+      "metrics": {
+        "samplePeakDbFS": -9.811899733094002,
+        "rmsDbFS": -33.06289402170626,
+        "clippedSamples": 0,
+        "firstSample": 0,
+        "lastSample": 0,
+        "dcMean": -3.2342553428779844e-05
+      },
+      "purpose": "Primary short creak candidate for seat-load; one isolated energy event around4.76..5.14s, not audition-verified.",
+      "audition": {
+        "listened": false,
+        "ownerAuditionPending": true,
+        "naturalnessApproved": false
+      }
+    },
+    {
+      "id": "chair-creak-cc0-02",
+      "file": "chair-creak-cc0-02.wav",
+      "sha256": "44cc1437d8f4044fdef92141663965c3d361580fcf8963898a0a590579b2cc22",
+      "sourceId": "unkleceeg-276473",
+      "sourceSha256": "e7652d394e6ef808f31590181a49ae3134bf170468ef3072cdcfc21ec295cb04",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "credit": "Chair creaking back and forth 01.wav — unkleceeg — Freesound276473 — CC0 1.0.",
+      "sourceCut": {
+        "coordinateSystem": "Decoded officialMP3 timeline from first output sample, mono48kHz. FFmpeg handles MP3 priming before cuts. NOT original native-WAV sample offsets.",
+        "startSampleInclusive": 356976,
+        "endSampleExclusive": 374880,
+        "startSeconds": 7.437,
+        "endSeconds": 7.81
+      },
+      "format": {
+        "codec": "pcm_s16le",
+        "container": "wav",
+        "sampleRate": 48000,
+        "channels": 1,
+        "samples": 17904,
+        "durationSeconds": 0.373
+      },
+      "processing": {
+        "downmix": "Existing FFmpeg default stereo-to-mono, before cut",
+        "gainDb": -2.0,
+        "fadeInSamples": 96,
+        "fadeOutSamples": 1440,
+        "fadeShape": "raised cosine",
+        "timeStretch": false,
+        "pitchShift": false,
+        "denoise": false,
+        "synthesis": false
+      },
+      "attack": {
+        "activityAnchorSample": 384,
+        "activityAnchorSeconds": 0.008,
+        "activityDefinition": "First non-overlapping5ms original-PCM RMS block >=-36.656051dBFS within fixed search range; technical alignment anchor only.",
+        "activityResolutionSamples": 240,
+        "firstNonzeroSample": 6,
+        "firstNonzeroSeconds": 0.000125,
+        "peakSample": 5558,
+        "peakSeconds": 0.11579166666666667,
+        "leadingExactSilenceSamples": 6,
+        "note": "Pre-roll retains quiet recorded ambience; firstNonzero is not the audible attack. Use activityAnchor, inspect/listen for final placement at seatContact6.35s."
+      },
+      "metrics": {
+        "samplePeakDbFS": -11.304623366357092,
+        "rmsDbFS": -33.30727012667065,
+        "clippedSamples": 0,
+        "firstSample": 0,
+        "lastSample": 0,
+        "dcMean": -1.969392860010333e-05
+      },
+      "purpose": "Alternative short creak candidate, isolated energy event around7.44..7.65s, not audition-verified.",
+      "audition": {
+        "listened": false,
+        "ownerAuditionPending": true,
+        "naturalnessApproved": false
+      }
+    },
+    {
+      "id": "chair-seat-ccby-01",
+      "file": "chair-seat-ccby-01.wav",
+      "sha256": "d09e4555816f3543471741acf1d490f2490f152f5d52bb6d2259bf2ed2562659",
+      "sourceId": "trashcan-783598",
+      "sourceSha256": "b0e1323cf5c2a47d7bdd05928edb93e9e0e33e128229c65631e86b1b0bfbc3f9",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "credit": "011 - Pulling Out Chair, Sitting — Trashcan_Studios — https://freesound.org/people/Trashcan_Studios/sounds/783598/ — CC BY 4.0 https://creativecommons.org/licenses/by/4.0/. Modified: excerpt, stereo-to-mono downmix, gain, short edge fades, PCM16/48kHz conversion.",
+      "sourceCut": {
+        "coordinateSystem": "Decoded officialMP3 timeline from first output sample, mono48kHz. FFmpeg handles MP3 priming before cuts. NOT original native-WAV sample offsets.",
+        "startSampleInclusive": 397776,
+        "endSampleExclusive": 438720,
+        "startSeconds": 8.287,
+        "endSeconds": 9.14
+      },
+      "format": {
+        "codec": "pcm_s16le",
+        "container": "wav",
+        "sampleRate": 48000,
+        "channels": 1,
+        "samples": 40944,
+        "durationSeconds": 0.853
+      },
+      "processing": {
+        "downmix": "Existing FFmpeg default stereo-to-mono, before cut",
+        "gainDb": 4.0,
+        "fadeInSamples": 96,
+        "fadeOutSamples": 1440,
+        "fadeShape": "raised cosine",
+        "timeStretch": false,
+        "pitchShift": false,
+        "denoise": false,
+        "synthesis": false
+      },
+      "attack": {
+        "activityAnchorSample": 384,
+        "activityAnchorSeconds": 0.008,
+        "activityDefinition": "First non-overlapping5ms original-PCM RMS block >=-45.000000dBFS within fixed search range; technical alignment anchor only.",
+        "activityResolutionSamples": 240,
+        "firstNonzeroSample": 3,
+        "firstNonzeroSeconds": 6.25e-05,
+        "peakSample": 21734,
+        "peakSeconds": 0.45279166666666665,
+        "leadingExactSilenceSamples": 3,
+        "note": "Pre-roll retains quiet recorded ambience; firstNonzero is not the audible attack. Use activityAnchor, inspect/listen for final placement at seatContact6.35s."
+      },
+      "metrics": {
+        "samplePeakDbFS": -19.694761939561218,
+        "rmsDbFS": -32.80195822459432,
+        "clippedSamples": 0,
+        "firstSample": 0,
+        "lastSample": 0,
+        "dcMean": 5.676579596522079e-06
+      },
+      "purpose": "Optional alternative from recorded wooden-chair pull/sit scene, late isolated event; exact event identity needs owner audition.",
+      "audition": {
+        "listened": false,
+        "ownerAuditionPending": true,
+        "naturalnessApproved": false
+      }
+    }
+  ],
+  "important": "Preserved originals are the official public HQMP3 preview bytes, NOT nativeWAV masters. No login/download restriction was bypassed. Lossless native masters were not obtained. PCM output does not restore information lost in MP3.",
+  "listened": false
+}

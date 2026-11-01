@@ -1,0 +1,16 @@
+{
+  "reference": {
+    "path": "reference/stage6-private/raccoon-whole.png",
+    "sha256": "6a40e753ec22ff576e1d5c9a70b9101fec18ff69892c0f23b4ab7b3a33c98231",
+    "runtimeUsage": false,
+    "distribution": "local-only",
+    "includedInDistribution": false
+  },
+  "provenance": "Owner supplied whole PNG; read only as authoring material. New vector drawing is code.",
+  "private": true,
+  "action": {
+    "path": "authoring/raccoon-courier.action.txt",
+    "sha256": "23328a615da1edac8a340ae84f54e4051bab31ae39ecaf51bf09b4c71e809198"
+  },
+  "distributionNote": "The whole owner reference is private, excluded from this beta; provenance only. Runtime and export use authored vectors and do not require this PNG."
+}

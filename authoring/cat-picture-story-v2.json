@@ -1,0 +1,1068 @@
+{
+  "version": 2,
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "durationInFrames": 840
+  },
+  "input": "authoring/cat-picture-story.inputs.json",
+  "actionFiles": [
+    "authoring/cat-picture-story.action.txt"
+  ],
+  "observations": [
+    "All5 whole style references viewed; matte flat cut-paper colors, stable layered edges, large white eyes/small pupils, simple coherent room depth. Owner authorized a new original cat, not the former mascot."
+  ],
+  "assumptions": [
+    "New original stocky charcoal cat and colored room/furniture; all hidden geometry and two camera views authored. Whole references authoring-only; no runtime bitmap or cut-up parts.",
+    "Root authorized35seconds within the owner30–35second brief to complete departure and retain an empty-room clock hold. OriginalACTION bytes remain unchanged."
+  ],
+  "actionBeats": [
+    "0–5 room/visible pendulum, cat enters and notices chair",
+    "5–12 assess/jump/grip/arm pull before hind paws assist",
+    "12–17 proud seat, chair touches wall and picture slips",
+    "17–20 one real coherent camera move",
+    "20–23 picture falls outside cat/landing region; fright after impact",
+    "23–28 prepare and jump toward free space, hind then fore landing and absorption",
+    "28–35 look, compose/groom, dignified complete exit and empty-room clock hold"
+  ],
+  "id": "cat-picture-story-v2",
+  "composition": "CatPictureStoryV2",
+  "diagnosticModule": "src/examples/cat-picture-story/spatial-diagnostics.ts",
+  "independentReview": {
+    "stages": [
+      "final"
+    ]
+  },
+  "stages": {
+    "model": {
+      "samples": [
+        {
+          "frame": 100,
+          "label": "model spatial story frame 100",
+          "radius": 0
+        },
+        {
+          "frame": 131,
+          "label": "model spatial story frame 131",
+          "radius": 0
+        },
+        {
+          "frame": 148,
+          "label": "model spatial story frame 148",
+          "radius": 0
+        },
+        {
+          "frame": 196,
+          "label": "model spatial story frame 196",
+          "radius": 0
+        },
+        {
+          "frame": 210,
+          "label": "model spatial story frame 210",
+          "radius": 0
+        },
+        {
+          "frame": 218,
+          "label": "model spatial story frame 218",
+          "radius": 0
+        },
+        {
+          "frame": 268,
+          "label": "model spatial story frame 268",
+          "radius": 0
+        },
+        {
+          "frame": 286,
+          "label": "model spatial story frame 286",
+          "radius": 0
+        },
+        {
+          "frame": 314,
+          "label": "model spatial story frame 314",
+          "radius": 0
+        },
+        {
+          "frame": 320,
+          "label": "model spatial story frame 320",
+          "radius": 0
+        },
+        {
+          "frame": 336,
+          "label": "model spatial story frame 336",
+          "radius": 0
+        },
+        {
+          "frame": 456,
+          "label": "model spatial story frame 456",
+          "radius": 0
+        },
+        {
+          "frame": 480,
+          "label": "model spatial story frame 480",
+          "radius": 0
+        },
+        {
+          "frame": 519,
+          "label": "model spatial story frame 519",
+          "radius": 0
+        },
+        {
+          "frame": 524,
+          "label": "model spatial story frame 524",
+          "radius": 0
+        },
+        {
+          "frame": 558,
+          "label": "model spatial story frame 558",
+          "radius": 0
+        },
+        {
+          "frame": 581,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 582,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 583,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 609,
+          "label": "model spatial story frame 609",
+          "radius": 0
+        },
+        {
+          "frame": 610,
+          "label": "model spatial story frame 610",
+          "radius": 0
+        },
+        {
+          "frame": 611,
+          "label": "model spatial story frame 611",
+          "radius": 0
+        },
+        {
+          "frame": 612,
+          "label": "model spatial story frame 612",
+          "radius": 0
+        },
+        {
+          "frame": 614,
+          "label": "model spatial story frame 614",
+          "radius": 0
+        },
+        {
+          "frame": 780,
+          "label": "model spatial story frame 780",
+          "radius": 0
+        },
+        {
+          "frame": 792,
+          "label": "model spatial story frame 792",
+          "radius": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-anatomy",
+          "description": "Whole front, profile and back retain the paper cat; body turn and signed elbow/knee branches read clearly",
+          "required": true,
+          "frames": [
+            100,
+            131,
+            148,
+            196,
+            218,
+            268,
+            336
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "arm-visibility",
+          "description": "Actual overlaps explain every hidden arm section during approach, camera move and head-only lookback",
+          "required": true,
+          "frames": [
+            100,
+            210,
+            456,
+            480,
+            519,
+            780,
+            792
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "pad-landing",
+          "description": "Hind pads then forepads accept landing; knees and shins stay above the floor and the contour remains connected",
+          "required": true,
+          "frames": [
+            609,
+            610,
+            611,
+            612,
+            614
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "chair-contact",
+          "description": "Torso contact with the whole raked backrest is readable; head, arms, tail and feet remain outside its solid",
+          "required": true,
+          "frames": [
+            286,
+            314,
+            320,
+            336,
+            456,
+            524,
+            558
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "takeoff-head-continuity",
+          "description": "Actual head surface orientation stays continuous through takeoff; verify shell vertices and the full drawing, not just head origin",
+          "required": true,
+          "frames": [
+            581,
+            582,
+            583
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        }
+      ]
+    },
+    "blocking": {
+      "samples": [
+        {
+          "frame": 100,
+          "label": "blocking spatial story frame 100",
+          "radius": 0
+        },
+        {
+          "frame": 131,
+          "label": "blocking spatial story frame 131",
+          "radius": 0
+        },
+        {
+          "frame": 148,
+          "label": "blocking spatial story frame 148",
+          "radius": 0
+        },
+        {
+          "frame": 196,
+          "label": "blocking spatial story frame 196",
+          "radius": 0
+        },
+        {
+          "frame": 210,
+          "label": "blocking spatial story frame 210",
+          "radius": 0
+        },
+        {
+          "frame": 218,
+          "label": "blocking spatial story frame 218",
+          "radius": 0
+        },
+        {
+          "frame": 268,
+          "label": "blocking spatial story frame 268",
+          "radius": 0
+        },
+        {
+          "frame": 286,
+          "label": "blocking spatial story frame 286",
+          "radius": 0
+        },
+        {
+          "frame": 314,
+          "label": "blocking spatial story frame 314",
+          "radius": 0
+        },
+        {
+          "frame": 320,
+          "label": "blocking spatial story frame 320",
+          "radius": 0
+        },
+        {
+          "frame": 336,
+          "label": "blocking spatial story frame 336",
+          "radius": 0
+        },
+        {
+          "frame": 456,
+          "label": "blocking spatial story frame 456",
+          "radius": 0
+        },
+        {
+          "frame": 480,
+          "label": "blocking spatial story frame 480",
+          "radius": 0
+        },
+        {
+          "frame": 519,
+          "label": "blocking spatial story frame 519",
+          "radius": 0
+        },
+        {
+          "frame": 524,
+          "label": "blocking spatial story frame 524",
+          "radius": 0
+        },
+        {
+          "frame": 558,
+          "label": "blocking spatial story frame 558",
+          "radius": 0
+        },
+        {
+          "frame": 581,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 582,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 583,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 609,
+          "label": "blocking spatial story frame 609",
+          "radius": 0
+        },
+        {
+          "frame": 610,
+          "label": "blocking spatial story frame 610",
+          "radius": 0
+        },
+        {
+          "frame": 611,
+          "label": "blocking spatial story frame 611",
+          "radius": 0
+        },
+        {
+          "frame": 612,
+          "label": "blocking spatial story frame 612",
+          "radius": 0
+        },
+        {
+          "frame": 614,
+          "label": "blocking spatial story frame 614",
+          "radius": 0
+        },
+        {
+          "frame": 780,
+          "label": "blocking spatial story frame 780",
+          "radius": 0
+        },
+        {
+          "frame": 792,
+          "label": "blocking spatial story frame 792",
+          "radius": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-anatomy",
+          "description": "Whole front, profile and back retain the paper cat; body turn and signed elbow/knee branches read clearly",
+          "required": true,
+          "frames": [
+            100,
+            131,
+            148,
+            196,
+            218,
+            268,
+            336
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "arm-visibility",
+          "description": "Actual overlaps explain every hidden arm section during approach, camera move and head-only lookback",
+          "required": true,
+          "frames": [
+            100,
+            210,
+            456,
+            480,
+            519,
+            780,
+            792
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "pad-landing",
+          "description": "Hind pads then forepads accept landing; knees and shins stay above the floor and the contour remains connected",
+          "required": true,
+          "frames": [
+            609,
+            610,
+            611,
+            612,
+            614
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "chair-contact",
+          "description": "Torso contact with the whole raked backrest is readable; head, arms, tail and feet remain outside its solid",
+          "required": true,
+          "frames": [
+            286,
+            314,
+            320,
+            336,
+            456,
+            524,
+            558
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "takeoff-head-continuity",
+          "description": "Actual head surface orientation stays continuous through takeoff; verify shell vertices and the full drawing, not just head origin",
+          "required": true,
+          "frames": [
+            581,
+            582,
+            583
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        }
+      ]
+    },
+    "motion": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "motion spatial story frame 0",
+          "radius": 0
+        },
+        {
+          "frame": 100,
+          "label": "motion spatial story frame 100",
+          "radius": 0
+        },
+        {
+          "frame": 131,
+          "label": "motion spatial story frame 131",
+          "radius": 0
+        },
+        {
+          "frame": 148,
+          "label": "motion spatial story frame 148",
+          "radius": 1
+        },
+        {
+          "frame": 196,
+          "label": "motion spatial story frame 196",
+          "radius": 0
+        },
+        {
+          "frame": 210,
+          "label": "motion spatial story frame 210",
+          "radius": 0
+        },
+        {
+          "frame": 218,
+          "label": "motion spatial story frame 218",
+          "radius": 0
+        },
+        {
+          "frame": 268,
+          "label": "motion spatial story frame 268",
+          "radius": 1
+        },
+        {
+          "frame": 286,
+          "label": "motion spatial story frame 286",
+          "radius": 0
+        },
+        {
+          "frame": 314,
+          "label": "motion spatial story frame 314",
+          "radius": 0
+        },
+        {
+          "frame": 320,
+          "label": "motion spatial story frame 320",
+          "radius": 0
+        },
+        {
+          "frame": 336,
+          "label": "motion spatial story frame 336",
+          "radius": 0
+        },
+        {
+          "frame": 456,
+          "label": "motion spatial story frame 456",
+          "radius": 0
+        },
+        {
+          "frame": 480,
+          "label": "motion spatial story frame 480",
+          "radius": 0
+        },
+        {
+          "frame": 519,
+          "label": "motion spatial story frame 519",
+          "radius": 0
+        },
+        {
+          "frame": 524,
+          "label": "motion spatial story frame 524",
+          "radius": 0
+        },
+        {
+          "frame": 558,
+          "label": "motion spatial story frame 558",
+          "radius": 0
+        },
+        {
+          "frame": 581,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 582,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 583,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 609,
+          "label": "motion spatial story frame 609",
+          "radius": 1
+        },
+        {
+          "frame": 610,
+          "label": "motion spatial story frame 610",
+          "radius": 0
+        },
+        {
+          "frame": 611,
+          "label": "motion spatial story frame 611",
+          "radius": 0
+        },
+        {
+          "frame": 612,
+          "label": "motion spatial story frame 612",
+          "radius": 1
+        },
+        {
+          "frame": 614,
+          "label": "motion spatial story frame 614",
+          "radius": 0
+        },
+        {
+          "frame": 707,
+          "label": "motion spatial story frame 707",
+          "radius": 0
+        },
+        {
+          "frame": 720,
+          "label": "motion spatial story frame 720",
+          "radius": 0
+        },
+        {
+          "frame": 728,
+          "label": "motion spatial story frame 728",
+          "radius": 0
+        },
+        {
+          "frame": 780,
+          "label": "motion spatial story frame 780",
+          "radius": 1
+        },
+        {
+          "frame": 792,
+          "label": "motion spatial story frame 792",
+          "radius": 0
+        },
+        {
+          "frame": 839,
+          "label": "motion spatial story frame 839",
+          "radius": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-anatomy",
+          "description": "Whole front, profile and back retain the paper cat; body turn and signed elbow/knee branches read clearly",
+          "required": true,
+          "frames": [
+            100,
+            131,
+            148,
+            196,
+            218,
+            268,
+            336
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "arm-visibility",
+          "description": "Actual overlaps explain every hidden arm section during approach, camera move and head-only lookback",
+          "required": true,
+          "frames": [
+            100,
+            210,
+            456,
+            480,
+            519,
+            780,
+            792
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "pad-landing",
+          "description": "Hind pads then forepads accept landing; knees and shins stay above the floor and the contour remains connected",
+          "required": true,
+          "frames": [
+            609,
+            610,
+            611,
+            612,
+            614
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "picture-back",
+          "description": "Fallen picture visibly shows its actual cardboard back while its established physical path stays unchanged",
+          "required": true,
+          "frames": [
+            519,
+            612,
+            780
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "head-and-groom",
+          "description": "Head motion leaves shoulders alone; connected hand makes visible cheek and chest contact",
+          "required": true,
+          "frames": [
+            707,
+            720,
+            728,
+            780
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "chair-contact",
+          "description": "Torso contact with the whole raked backrest is readable; head, arms, tail and feet remain outside its solid",
+          "required": true,
+          "frames": [
+            286,
+            314,
+            320,
+            336,
+            456,
+            524,
+            558
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "whole-story",
+          "description": "Normal and half-speed encoded film preserve all action beats, deliberate holds and complete departure",
+          "required": true,
+          "frames": [
+            0,
+            839
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "takeoff-head-continuity",
+          "description": "Actual head surface orientation stays continuous through takeoff; verify shell vertices and the full drawing, not just head origin",
+          "required": true,
+          "frames": [
+            581,
+            582,
+            583
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        }
+      ]
+    },
+    "final": {
+      "samples": [
+        {
+          "frame": 0,
+          "label": "final spatial story frame 0",
+          "radius": 0
+        },
+        {
+          "frame": 100,
+          "label": "final spatial story frame 100",
+          "radius": 0
+        },
+        {
+          "frame": 131,
+          "label": "final spatial story frame 131",
+          "radius": 0
+        },
+        {
+          "frame": 148,
+          "label": "final spatial story frame 148",
+          "radius": 0
+        },
+        {
+          "frame": 196,
+          "label": "final spatial story frame 196",
+          "radius": 0
+        },
+        {
+          "frame": 210,
+          "label": "final spatial story frame 210",
+          "radius": 0
+        },
+        {
+          "frame": 218,
+          "label": "final spatial story frame 218",
+          "radius": 0
+        },
+        {
+          "frame": 268,
+          "label": "final spatial story frame 268",
+          "radius": 0
+        },
+        {
+          "frame": 286,
+          "label": "final spatial story frame 286",
+          "radius": 0
+        },
+        {
+          "frame": 314,
+          "label": "final spatial story frame 314",
+          "radius": 0
+        },
+        {
+          "frame": 320,
+          "label": "final spatial story frame 320",
+          "radius": 0
+        },
+        {
+          "frame": 336,
+          "label": "final spatial story frame 336",
+          "radius": 0
+        },
+        {
+          "frame": 456,
+          "label": "final spatial story frame 456",
+          "radius": 0
+        },
+        {
+          "frame": 480,
+          "label": "final spatial story frame 480",
+          "radius": 0
+        },
+        {
+          "frame": 519,
+          "label": "final spatial story frame 519",
+          "radius": 0
+        },
+        {
+          "frame": 524,
+          "label": "final spatial story frame 524",
+          "radius": 0
+        },
+        {
+          "frame": 558,
+          "label": "final spatial story frame 558",
+          "radius": 0
+        },
+        {
+          "frame": 581,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 582,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 583,
+          "label": "Actual head before/at/after takeoff"
+        },
+        {
+          "frame": 609,
+          "label": "final spatial story frame 609",
+          "radius": 0
+        },
+        {
+          "frame": 610,
+          "label": "final spatial story frame 610",
+          "radius": 0
+        },
+        {
+          "frame": 611,
+          "label": "final spatial story frame 611",
+          "radius": 0
+        },
+        {
+          "frame": 612,
+          "label": "final spatial story frame 612",
+          "radius": 0
+        },
+        {
+          "frame": 614,
+          "label": "final spatial story frame 614",
+          "radius": 0
+        },
+        {
+          "frame": 707,
+          "label": "final spatial story frame 707",
+          "radius": 0
+        },
+        {
+          "frame": 720,
+          "label": "final spatial story frame 720",
+          "radius": 0
+        },
+        {
+          "frame": 728,
+          "label": "final spatial story frame 728",
+          "radius": 0
+        },
+        {
+          "frame": 780,
+          "label": "final spatial story frame 780",
+          "radius": 0
+        },
+        {
+          "frame": 792,
+          "label": "final spatial story frame 792",
+          "radius": 0
+        },
+        {
+          "frame": 839,
+          "label": "final spatial story frame 839",
+          "radius": 0
+        }
+      ],
+      "criteria": [
+        {
+          "id": "whole-anatomy",
+          "description": "Whole front, profile and back retain the paper cat; body turn and signed elbow/knee branches read clearly",
+          "required": true,
+          "frames": [
+            100,
+            131,
+            148,
+            196,
+            218,
+            268,
+            336
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "arm-visibility",
+          "description": "Actual overlaps explain every hidden arm section during approach, camera move and head-only lookback",
+          "required": true,
+          "frames": [
+            100,
+            210,
+            456,
+            480,
+            519,
+            780,
+            792
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "pad-landing",
+          "description": "Hind pads then forepads accept landing; knees and shins stay above the floor and the contour remains connected",
+          "required": true,
+          "frames": [
+            609,
+            610,
+            611,
+            612,
+            614
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "picture-back",
+          "description": "Fallen picture visibly shows its actual cardboard back while its established physical path stays unchanged",
+          "required": true,
+          "frames": [
+            519,
+            612,
+            780
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "head-and-groom",
+          "description": "Head motion leaves shoulders alone; connected hand makes visible cheek and chest contact",
+          "required": true,
+          "frames": [
+            707,
+            720,
+            728,
+            780
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "chair-contact",
+          "description": "Torso contact with the whole raked backrest is readable; head, arms, tail and feet remain outside its solid",
+          "required": true,
+          "frames": [
+            286,
+            314,
+            320,
+            336,
+            456,
+            524,
+            558
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "whole-story",
+          "description": "Normal and half-speed encoded film preserve all action beats, deliberate holds and complete departure",
+          "required": true,
+          "frames": [
+            0,
+            839
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        },
+        {
+          "id": "takeoff-head-continuity",
+          "description": "Actual head surface orientation stays continuous through takeoff; verify shell vertices and the full drawing, not just head origin",
+          "required": true,
+          "frames": [
+            581,
+            582,
+            583
+          ],
+          "relations": [
+            "actual-chair-clearance",
+            "actual-floor-clearance",
+            "directed-hinges"
+          ]
+        }
+      ]
+    }
+  },
+  "status": "Candidate prepared; fresh captures, actual encoded review and owner acceptance remain pending. No V1 gates inherited."
+}

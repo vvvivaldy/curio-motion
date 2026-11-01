@@ -1,0 +1,8 @@
+Primary sound page: https://freesound.org/people/kevinpro/sounds/382230/
+Creator account: kevinpro
+Title: Page Flip
+License observed on saved primary page: Creative Commons 0 / CC0-1.0
+Canonical license: https://creativecommons.org/publicdomain/zero/1.0/
+Exact primary-page license markup:
+</span> <a title="Go to the full license text" href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank" class="bw-link--black text-20 h-spacing-left-2 padding-right-4">Creative Commons 0</a>
+No statement that Curio code MIT relicenses this media.

@@ -1,0 +1,17 @@
+{
+  "reference": {
+    "path": "reference/serious-boar/source.mp4",
+    "sha256": "44e3ff56d58d235e5444980bfc8daff0ae6f926be258702206c9e5c971adc9e1",
+    "dimensions": [
+      1280,
+      720
+    ],
+    "duration": 19.316667,
+    "mediaType": "video/mp4",
+    "runtimeUsage": false,
+    "distribution": "local-only"
+  },
+  "action": "reference/serious-boar/ACTION.txt",
+  "method": "Independent user-provided whole video reference, interpreted by a coding agent. New original boar and savanna scene are authored as TypeScript, with the same scene API. No automatic image/video reconstruction.",
+  "provenance": "User supplied this screen recording on 2026-10-27. Kept locally, excluded from source distribution."
+}

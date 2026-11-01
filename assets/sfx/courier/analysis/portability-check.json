@@ -1,0 +1,18 @@
+{
+  "status": "PASS",
+  "test": "Relocated package under assets/sfx/courier with identical installed public/audio/sfx/courier WAV, run from another cwd",
+  "copyRoot": "/private/tmp/courier-portability-0761y4x4",
+  "verificationChecks": 203,
+  "baselineDistinctAudioHashesCompared": 89,
+  "liveInstalledCatalogScanned": false,
+  "originalLibraryRootRequired": false,
+  "originalLibraryAccessGuard": "Python audit hook denies original-root file/directory access and child arguments referencing it; not an OS syscall trace",
+  "guardSelfTestPassed": true,
+  "originalLibraryAccessAttemptsDuringVerification": 0,
+  "sameVerificationReportBytesAsOriginalPackage": true,
+  "ownAssetTamperRejectedByIndependentSHA": true,
+  "baselineTamperRejectedByPinnedInventorySHA": true,
+  "verificationScriptSha256": "81460306b03659e779f6f2a2dddb4178460e71bb646d9b207b54df200076fdd2",
+  "baselineInventorySha256": "50f06b9929fd2a5296cd5f59d04af78de8a2643ba7641d536e0d2ec04974b228",
+  "audioBytesChanged": false
+}

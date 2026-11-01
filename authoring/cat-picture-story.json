@@ -1,0 +1,687 @@
+{
+  "version": 2,
+  "id": "cat-picture-story",
+  "composition": "CatPictureStory",
+  "settings": {
+    "width": 1280,
+    "height": 720,
+    "fps": 24,
+    "durationInFrames": 840
+  },
+  "input": "authoring/cat-picture-story.inputs.json",
+  "actionFiles": [
+    "authoring/cat-picture-story.action.txt"
+  ],
+  "observations": [
+    "All5 whole style references viewed; matte flat cut-paper colors, stable layered edges, large white eyes/small pupils, simple coherent room depth. Owner authorized a new original cat, not the former mascot."
+  ],
+  "assumptions": [
+    "New original stocky charcoal cat and colored room/furniture; all hidden geometry and two camera views authored. Whole references authoring-only; no runtime bitmap or cut-up parts.",
+    "Root authorized35seconds within the owner30–35second brief to complete departure and retain an empty-room clock hold. OriginalACTION bytes remain unchanged."
+  ],
+  "actionBeats": [
+    "0–5 room/visible pendulum, cat enters and notices chair",
+    "5–12 assess/jump/grip/arm pull before hind paws assist",
+    "12–17 proud seat, chair touches wall and picture slips",
+    "17–20 one real coherent camera move",
+    "20–23 picture falls outside cat/landing region; fright after impact",
+    "23–28 prepare and jump toward free space, hind then fore landing and absorption",
+    "28–35 look, compose/groom, dignified complete exit and empty-room clock hold"
+  ],
+  "stages": {
+    "model": {
+      "criteria": [
+        {
+          "id": "model-1",
+          "description": "New original cat preserves the approved matte paper style, continuous whole anatomy and readable front/left views",
+          "required": true,
+          "frames": [
+            100,
+            274,
+            513,
+            612
+          ]
+        },
+        {
+          "id": "model-2",
+          "description": "Opaque chair, clock, frame and cat forms share actual drawn geometry and coherent depth",
+          "required": true,
+          "frames": [
+            148,
+            336,
+            480,
+            513
+          ]
+        }
+      ],
+      "samples": [
+        {
+          "frame": 100,
+          "label": "Alternating walk and contralateral hands"
+        },
+        {
+          "frame": 148,
+          "label": "Both actual forepaw pads grip the chair corners"
+        },
+        {
+          "frame": 274,
+          "label": "Pelvis reaches the actual seat before far foot releases"
+        },
+        {
+          "frame": 336,
+          "label": "Quiet confident throne hold"
+        },
+        {
+          "frame": 480,
+          "label": "Lower side camera settled"
+        },
+        {
+          "frame": 513,
+          "label": "Fright follows impact"
+        },
+        {
+          "frame": 612,
+          "label": "Forepads follow and body absorbs impact"
+        }
+      ]
+    },
+    "blocking": {
+      "criteria": [
+        {
+          "id": "blocking-1",
+          "description": "Action order, supports, grip and release read in the full frame",
+          "required": true,
+          "frames": [
+            148,
+            196,
+            218,
+            274,
+            609,
+            612,
+            707,
+            729,
+            825,
+            839
+          ]
+        },
+        {
+          "id": "blocking-2",
+          "description": "Requested emotion is visible in face and body",
+          "required": true,
+          "frames": [
+            274,
+            336,
+            513,
+            569,
+            707
+          ]
+        },
+        {
+          "id": "blocking-3",
+          "description": "Backrest tap precedes visible picture slip; actual fall stays clear of the left escape and behind chair front legs",
+          "required": true,
+          "frames": [
+            321,
+            326,
+            334,
+            505,
+            519
+          ]
+        },
+        {
+          "id": "blocking-4",
+          "description": "Entire cat leaves the frame and the final empty-room hold retains the visible clock",
+          "required": true,
+          "frames": [
+            825,
+            839
+          ]
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Entrance from free left side"
+        },
+        {
+          "frame": 100,
+          "label": "Alternating walk and contralateral hands"
+        },
+        {
+          "frame": 124,
+          "label": "Approach settled, before crouch"
+        },
+        {
+          "frame": 148,
+          "label": "Both actual forepaw pads grip the chair corners"
+        },
+        {
+          "frame": 196,
+          "label": "Torso traction before hind assistance"
+        },
+        {
+          "frame": 218,
+          "label": "First hind pad supports the raised body"
+        },
+        {
+          "frame": 246,
+          "label": "Both hind pads on seat"
+        },
+        {
+          "frame": 274,
+          "label": "Pelvis reaches the actual seat before far foot releases"
+        },
+        {
+          "frame": 321,
+          "label": "Torso presses actual backrest inset"
+        },
+        {
+          "frame": 326,
+          "label": "Rear post tops touch the wall"
+        },
+        {
+          "frame": 334,
+          "label": "Picture right edge has slipped lower"
+        },
+        {
+          "frame": 336,
+          "label": "Quiet confident throne hold"
+        },
+        {
+          "frame": 408,
+          "label": "Camera move begins from same world"
+        },
+        {
+          "frame": 456,
+          "label": "Intermediate coherent camera view"
+        },
+        {
+          "frame": 480,
+          "label": "Lower side camera settled"
+        },
+        {
+          "frame": 505,
+          "label": "Actual outer picture corner hits floor"
+        },
+        {
+          "frame": 513,
+          "label": "Fright follows impact"
+        },
+        {
+          "frame": 519,
+          "label": "Picture tips behind chair front leg"
+        },
+        {
+          "frame": 569,
+          "label": "Whole body and face look toward free left landing"
+        },
+        {
+          "frame": 582,
+          "label": "Takeoff from seated supports"
+        },
+        {
+          "frame": 609,
+          "label": "Hind pads meet floor first"
+        },
+        {
+          "frame": 612,
+          "label": "Forepads follow and body absorbs impact"
+        },
+        {
+          "frame": 660,
+          "label": "Forepaws lift before body rises"
+        },
+        {
+          "frame": 707,
+          "label": "Real paw contacts current cheek boundary"
+        },
+        {
+          "frame": 729,
+          "label": "Real chest-edge grooming stroke"
+        },
+        {
+          "frame": 780,
+          "label": "Departure with deliberate lookback"
+        },
+        {
+          "frame": 825,
+          "label": "Whole cat has left the frame"
+        },
+        {
+          "frame": 839,
+          "label": "Empty room and visible working pendulum"
+        }
+      ]
+    },
+    "motion": {
+      "criteria": [
+        {
+          "id": "motion-1",
+          "description": "Contacts and continuous contours hold through neighboring frames",
+          "required": true,
+          "frames": [
+            124,
+            148,
+            218,
+            274,
+            326,
+            505,
+            582,
+            609,
+            612,
+            707,
+            729
+          ]
+        },
+        {
+          "id": "motion-2",
+          "description": "Deliberate pauses stay still; motion has readable intention",
+          "required": true,
+          "frames": [
+            336,
+            408,
+            513,
+            780,
+            825,
+            839
+          ]
+        },
+        {
+          "id": "motion-3",
+          "description": "Face and body turn left before takeoff, stay connected through flight, then recover toward camera for actual grooming",
+          "required": true,
+          "frames": [
+            569,
+            582,
+            609,
+            707,
+            729
+          ]
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Entrance from free left side",
+          "radius": 1
+        },
+        {
+          "frame": 100,
+          "label": "Alternating walk and contralateral hands",
+          "radius": 1
+        },
+        {
+          "frame": 124,
+          "label": "Approach settled, before crouch",
+          "radius": 1
+        },
+        {
+          "frame": 148,
+          "label": "Both actual forepaw pads grip the chair corners",
+          "radius": 1
+        },
+        {
+          "frame": 196,
+          "label": "Torso traction before hind assistance",
+          "radius": 1
+        },
+        {
+          "frame": 218,
+          "label": "First hind pad supports the raised body",
+          "radius": 1
+        },
+        {
+          "frame": 246,
+          "label": "Both hind pads on seat",
+          "radius": 1
+        },
+        {
+          "frame": 274,
+          "label": "Pelvis reaches the actual seat before far foot releases",
+          "radius": 1
+        },
+        {
+          "frame": 321,
+          "label": "Torso presses actual backrest inset",
+          "radius": 1
+        },
+        {
+          "frame": 326,
+          "label": "Rear post tops touch the wall",
+          "radius": 1
+        },
+        {
+          "frame": 334,
+          "label": "Picture right edge has slipped lower",
+          "radius": 1
+        },
+        {
+          "frame": 336,
+          "label": "Quiet confident throne hold",
+          "radius": 1
+        },
+        {
+          "frame": 408,
+          "label": "Camera move begins from same world",
+          "radius": 1
+        },
+        {
+          "frame": 456,
+          "label": "Intermediate coherent camera view",
+          "radius": 1
+        },
+        {
+          "frame": 480,
+          "label": "Lower side camera settled",
+          "radius": 1
+        },
+        {
+          "frame": 505,
+          "label": "Actual outer picture corner hits floor",
+          "radius": 1
+        },
+        {
+          "frame": 513,
+          "label": "Fright follows impact",
+          "radius": 1
+        },
+        {
+          "frame": 519,
+          "label": "Picture tips behind chair front leg",
+          "radius": 1
+        },
+        {
+          "frame": 569,
+          "label": "Whole body and face look toward free left landing",
+          "radius": 1
+        },
+        {
+          "frame": 582,
+          "label": "Takeoff from seated supports",
+          "radius": 1
+        },
+        {
+          "frame": 609,
+          "label": "Hind pads meet floor first",
+          "radius": 1
+        },
+        {
+          "frame": 612,
+          "label": "Forepads follow and body absorbs impact",
+          "radius": 1
+        },
+        {
+          "frame": 660,
+          "label": "Forepaws lift before body rises",
+          "radius": 1
+        },
+        {
+          "frame": 707,
+          "label": "Real paw contacts current cheek boundary",
+          "radius": 1
+        },
+        {
+          "frame": 729,
+          "label": "Real chest-edge grooming stroke",
+          "radius": 1
+        },
+        {
+          "frame": 780,
+          "label": "Departure with deliberate lookback",
+          "radius": 1
+        },
+        {
+          "frame": 825,
+          "label": "Whole cat has left the frame",
+          "radius": 1
+        },
+        {
+          "frame": 839,
+          "label": "Empty room and visible working pendulum",
+          "radius": 1
+        }
+      ]
+    },
+    "final": {
+      "criteria": [
+        {
+          "id": "final-1",
+          "description": "Encoded film watched at normal and slow speed",
+          "required": true,
+          "frames": [
+            0,
+            336,
+            513,
+            609,
+            729,
+            839
+          ]
+        },
+        {
+          "id": "final-2",
+          "description": "Geometry and visual meaning reviewed with remaining limitations recorded",
+          "required": true,
+          "frames": [
+            0,
+            100,
+            124,
+            148,
+            196,
+            218,
+            246,
+            274,
+            321,
+            326,
+            334,
+            336,
+            408,
+            456,
+            480,
+            505,
+            513,
+            519,
+            569,
+            582,
+            609,
+            612,
+            660,
+            707,
+            729,
+            780,
+            825,
+            839
+          ]
+        },
+        {
+          "id": "final-3",
+          "description": "Recorded sound is reviewed in context: clock phase continuous; impacts, grips, landings and rustle match actual actions; hearing is not inferred from signal metrics",
+          "required": true,
+          "frames": [
+            148,
+            274,
+            326,
+            505,
+            513,
+            609,
+            612,
+            707,
+            729,
+            839
+          ]
+        },
+        {
+          "id": "final-4",
+          "description": "Complete departure and empty-room ending survive actual encoding; old approved films and whole authoring-only inputs remain preserved",
+          "required": true,
+          "frames": [
+            825,
+            839
+          ]
+        }
+      ],
+      "samples": [
+        {
+          "frame": 0,
+          "label": "Entrance from free left side"
+        },
+        {
+          "frame": 100,
+          "label": "Alternating walk and contralateral hands"
+        },
+        {
+          "frame": 124,
+          "label": "Approach settled, before crouch"
+        },
+        {
+          "frame": 148,
+          "label": "Both actual forepaw pads grip the chair corners"
+        },
+        {
+          "frame": 196,
+          "label": "Torso traction before hind assistance"
+        },
+        {
+          "frame": 218,
+          "label": "First hind pad supports the raised body"
+        },
+        {
+          "frame": 246,
+          "label": "Both hind pads on seat"
+        },
+        {
+          "frame": 274,
+          "label": "Pelvis reaches the actual seat before far foot releases"
+        },
+        {
+          "frame": 321,
+          "label": "Torso presses actual backrest inset"
+        },
+        {
+          "frame": 326,
+          "label": "Rear post tops touch the wall"
+        },
+        {
+          "frame": 334,
+          "label": "Picture right edge has slipped lower"
+        },
+        {
+          "frame": 336,
+          "label": "Quiet confident throne hold"
+        },
+        {
+          "frame": 408,
+          "label": "Camera move begins from same world"
+        },
+        {
+          "frame": 456,
+          "label": "Intermediate coherent camera view"
+        },
+        {
+          "frame": 480,
+          "label": "Lower side camera settled"
+        },
+        {
+          "frame": 505,
+          "label": "Actual outer picture corner hits floor"
+        },
+        {
+          "frame": 513,
+          "label": "Fright follows impact"
+        },
+        {
+          "frame": 519,
+          "label": "Picture tips behind chair front leg"
+        },
+        {
+          "frame": 569,
+          "label": "Whole body and face look toward free left landing"
+        },
+        {
+          "frame": 582,
+          "label": "Takeoff from seated supports"
+        },
+        {
+          "frame": 609,
+          "label": "Hind pads meet floor first"
+        },
+        {
+          "frame": 612,
+          "label": "Forepads follow and body absorbs impact"
+        },
+        {
+          "frame": 660,
+          "label": "Forepaws lift before body rises"
+        },
+        {
+          "frame": 707,
+          "label": "Real paw contacts current cheek boundary"
+        },
+        {
+          "frame": 729,
+          "label": "Real chest-edge grooming stroke"
+        },
+        {
+          "frame": 780,
+          "label": "Departure with deliberate lookback"
+        },
+        {
+          "frame": 825,
+          "label": "Whole cat has left the frame"
+        },
+        {
+          "frame": 839,
+          "label": "Empty room and visible working pendulum"
+        }
+      ]
+    }
+  },
+  "modelControlGate": {
+    "status": "Root/independent held drawing gate closed; not a full-film acceptance",
+    "handoff": "qa/cat-picture-story-controls-v1/seat-repair-handoff.json",
+    "sourceSha256": "b9ce1465beec8330d754868960450c630a19bfa9a90353cfe58da8693af2abcd",
+    "fullMotionStarted": true
+  },
+  "independentReview": {
+    "stages": [
+      "final"
+    ]
+  },
+  "motionGate": {
+    "status": "SCOPED_KEY_AND_NEIGHBOR_VISUAL_PASS: root and independent critic; full continuous playback remains unobserved",
+    "frozenSources": [
+      "56afa30669a3b55872d4d5862996e8a982b707873c07d5132318e89f500d0b2f",
+      "dda3fd56497141f42eb5328b390002d6d16827914b3f43a49b86bdd31a26eb10"
+    ],
+    "criticReview": {
+      "path": "qa/cat-picture-story-blocking-v1/independent-blocking-visual.json",
+      "sha256": "5e0a4d9b316534d86dfc74e6e006524e5133ec2c1d24199caf9d144a207fbf6f",
+      "origin": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ef2-cbcd-75b3-bf80-7c801efa3820/cat-picture-story-2026-10-31/encoded-motion-inspection-v2/critic-silent-blocking-scoped-verdict.json"
+    },
+    "exitReview": {
+      "path": "qa/cat-picture-story-blocking-v1/independent-exit-visual.json",
+      "sha256": "e7a28c1c25137eacf400e8b16a311541608f1e07448cd5c31a148d417664c8f2",
+      "origin": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ef2-cbcd-75b3-bf80-7c801efa3820/cat-picture-story-2026-10-31/blocking-v3-exit-fb0ca93d588f/critic-exit-after-scoped-verdict.json"
+    },
+    "normalPlaybackObserved": false,
+    "slowPlaybackObserved": false
+  },
+  "audioGate": {
+    "status": "Independent technical cue/WAV/event audit passed; actual AAC comparison available, listening unobserved",
+    "review": {
+      "path": "qa/cat-picture-story-blocking-v1/independent-runtime-audio.json",
+      "sha256": "61176745a0209a711ff1df698bb45955ce37a925c451f72ddfe70ba9673cef00",
+      "origin": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/cat-picture-story-audit-2026-10-31/runtime-audio-audit-01/report.json"
+    },
+    "current35SecondReference": "qa/cat-picture-story-blocking-v1/sound-mix-v3-35s-reference-check.json",
+    "audioHeard": false
+  },
+  "finalExport": {
+    "file": "docs/assets/cat-picture-story-v1.mp4",
+    "receipt": "qa/CatPictureStory-render.json",
+    "sourceSha256": "e7fc28dd3b647c3a3a742b7edc511c3424463e680cf924dd65b84e594b8ca2e7",
+    "ownerAccepted": false,
+    "normalPlaybackObserved": false,
+    "slowPlaybackObserved": false,
+    "audioHeard": false
+  }
+}

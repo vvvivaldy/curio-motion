@@ -1,0 +1,1 @@
+Owner review of v2: «все хорошо, но ... на том кадре тело обрывается — там белый пропуск ... Исправьте сейчас». Screenshot shows four-paw landing/recovery around15–16seconds. Repair actual continuous torso; preserve accepted action/timing/ear/gait/pull/sitting/turn. V2 source96/moviea37 and its incomplete frame acceptance are preserved as rejected-for-body-gap.

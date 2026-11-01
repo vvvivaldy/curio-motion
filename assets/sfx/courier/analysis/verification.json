@@ -1,0 +1,1009 @@
+{
+  "status": "PASS",
+  "checks": [
+    {
+      "check": "13 distinct source recording byte hashes",
+      "pass": true
+    },
+    {
+      "check": "wood-sneakers: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-sneakers: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-sneakers: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-sneakers: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-sneakers: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-leather-shoes: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-leather-shoes: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-leather-shoes: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-leather-shoes: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-leather-shoes: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-vans: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-vans: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-vans: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-vans: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-vans: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "envelope-slide: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "envelope-slide: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "envelope-slide: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "envelope-slide: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "envelope-slide: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "page-turn: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "page-turn: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "page-turn: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "page-turn: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "page-turn: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "paper-handling: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-handling: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-handling: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-handling: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "paper-handling: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "paper-brush: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-brush: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-brush: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-brush: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "paper-brush: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-tap: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-tap: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-tap: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-tap: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-tap: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-table-tap: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-table-tap: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-table-tap: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-table-tap: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "wood-table-tap: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "leather-rustle: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "leather-rustle: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "leather-rustle: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "leather-rustle: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "leather-rustle: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "cotton-rustle: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "cotton-rustle: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "cotton-rustle: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "cotton-rustle: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "cotton-rustle: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "cloth-movement: sourceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "cloth-movement: pageFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "cloth-movement: licenseEvidenceFile SHA256",
+      "pass": true
+    },
+    {
+      "check": "cloth-movement: CC0 license on primary page",
+      "pass": true
+    },
+    {
+      "check": "cloth-movement: exact HQ preview URL belongs to primary page",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-01: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-01: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-01: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-01: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-01: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-01: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-01: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-02: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-02: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-02: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-02: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-02: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-02: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-02: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-01: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-01: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-01: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-01: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-01: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-01: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-01: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-02: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-02: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-02: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-02: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-02: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-02: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-02: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-01: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-01: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-01: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-01: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-01: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-01: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-01: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-02: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-02: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-02: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-02: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-02: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-02: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-02: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup-note: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup-note: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup-note: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup-note: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup-note: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup-note: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup-note: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "paper-turn-book: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-turn-book: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "paper-turn-book: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "paper-turn-book: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "paper-turn-book: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "paper-turn-book: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "paper-turn-book: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "paper-finger-pass: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-finger-pass: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "paper-finger-pass: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "paper-finger-pass: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "paper-finger-pass: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "paper-finger-pass: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "paper-finger-pass: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "envelope-desk-slide: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "envelope-desk-slide: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "envelope-desk-slide: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "envelope-desk-slide: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "envelope-desk-slide: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "envelope-desk-slide: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "envelope-desk-slide: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "paper-soft-brush: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "paper-soft-brush: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "paper-soft-brush: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "paper-soft-brush: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "paper-soft-brush: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "paper-soft-brush: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "paper-soft-brush: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-touch: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-touch: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-touch: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-touch: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-touch: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-touch: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-touch: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "wood-table-touch: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "wood-table-touch: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "wood-table-touch: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "wood-table-touch: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "wood-table-touch: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "wood-table-touch: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "wood-table-touch: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "bag-leather-flex: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "bag-leather-flex: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "bag-leather-flex: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "bag-leather-flex: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "bag-leather-flex: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "bag-leather-flex: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "bag-leather-flex: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "bag-cotton-rustle: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "bag-cotton-rustle: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "bag-cotton-rustle: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "bag-cotton-rustle: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "bag-cotton-rustle: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "bag-cotton-rustle: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "bag-cotton-rustle: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "bag-cloth-shift: derivative SHA256",
+      "pass": true
+    },
+    {
+      "check": "bag-cloth-shift: duration/size/format",
+      "pass": true
+    },
+    {
+      "check": "bag-cloth-shift: non-silent usable numerical level",
+      "pass": true
+    },
+    {
+      "check": "bag-cloth-shift: no full-scale/clipped PCM samples",
+      "pass": true
+    },
+    {
+      "check": "bag-cloth-shift: zero endpoints after cosine fades",
+      "pass": true
+    },
+    {
+      "check": "bag-cloth-shift: exact source-range/gain/fade reconstruction",
+      "pass": true
+    },
+    {
+      "check": "bag-cloth-shift: 4x oversampled peak has headroom",
+      "pass": true
+    },
+    {
+      "check": "16 distinct derivative byte hashes",
+      "pass": true
+    },
+    {
+      "check": "no identical/delayed/scaled waveform clone among candidates",
+      "pass": true
+    },
+    {
+      "check": "saved original baseline inventory SHA256",
+      "pass": true
+    },
+    {
+      "check": "saved original baseline has declared nonempty file list",
+      "pass": true
+    },
+    {
+      "check": "saved original baseline has valid distinct SHA256 count",
+      "pass": true
+    },
+    {
+      "check": "source recordings are not byte copies of saved original baseline audio",
+      "pass": true
+    },
+    {
+      "check": "working WAV are not byte duplicates of saved original baseline audio",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-01: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-sneaker-02: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-01: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-leather-02: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-01: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "shoe-wood-vans-02: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "paper-pickup-note: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "paper-turn-book: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "paper-finger-pass: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "envelope-desk-slide: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "paper-soft-brush: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "wood-desk-touch: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "wood-table-touch: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "bag-leather-flex: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "bag-cotton-rustle: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "bag-cloth-shift: audition contains exact PCM bytes at declared times",
+      "pass": true
+    },
+    {
+      "check": "audition hashes",
+      "pass": true
+    },
+    {
+      "check": "MP3 audition decode headroom",
+      "pass": true
+    }
+  ],
+  "checkCount": 203,
+  "assets": [
+    {
+      "id": "shoe-wood-sneaker-01",
+      "samplePeakDbFS": -15.514388127900009,
+      "oversampled4xPeakDbFS": -15.508952468050222,
+      "rmsDbFS": -33.72970473971999,
+      "quietBinFractionBelowMinus65dBFS": 0.015625,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "shoe-wood-sneaker-02",
+      "samplePeakDbFS": -9.650179943577285,
+      "oversampled4xPeakDbFS": -9.643497620880105,
+      "rmsDbFS": -30.185974157014627,
+      "quietBinFractionBelowMinus65dBFS": 0.015625,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "shoe-wood-leather-01",
+      "samplePeakDbFS": -12.262412582027984,
+      "oversampled4xPeakDbFS": -12.245540295184345,
+      "rmsDbFS": -23.15446267413927,
+      "quietBinFractionBelowMinus65dBFS": 0.0125,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "shoe-wood-leather-02",
+      "samplePeakDbFS": -12.291828605154526,
+      "oversampled4xPeakDbFS": -12.291828605154526,
+      "rmsDbFS": -21.858033943730838,
+      "quietBinFractionBelowMinus65dBFS": 0.0125,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "shoe-wood-vans-01",
+      "samplePeakDbFS": -15.228150963485632,
+      "oversampled4xPeakDbFS": -15.223227506054933,
+      "rmsDbFS": -32.511953977622,
+      "quietBinFractionBelowMinus65dBFS": 0.015625,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "shoe-wood-vans-02",
+      "samplePeakDbFS": -18.438846912559054,
+      "oversampled4xPeakDbFS": -18.43647848115627,
+      "rmsDbFS": -39.722661688007,
+      "quietBinFractionBelowMinus65dBFS": 0.029411764705882353,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "paper-pickup-note",
+      "samplePeakDbFS": -15.380985809363139,
+      "oversampled4xPeakDbFS": -14.992989466677447,
+      "rmsDbFS": -39.332329077012474,
+      "quietBinFractionBelowMinus65dBFS": 0.13793103448275862,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "paper-turn-book",
+      "samplePeakDbFS": -15.487543251727931,
+      "oversampled4xPeakDbFS": -15.476341321097724,
+      "rmsDbFS": -38.80601433844137,
+      "quietBinFractionBelowMinus65dBFS": 0.03205128205128205,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "paper-finger-pass",
+      "samplePeakDbFS": -15.245000415206038,
+      "oversampled4xPeakDbFS": -14.708663896983303,
+      "rmsDbFS": -28.23680622061495,
+      "quietBinFractionBelowMinus65dBFS": 0.0,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "envelope-desk-slide",
+      "samplePeakDbFS": -14.862564564735962,
+      "oversampled4xPeakDbFS": -14.573332720124474,
+      "rmsDbFS": -32.99524092187368,
+      "quietBinFractionBelowMinus65dBFS": 0.021739130434782608,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "paper-soft-brush",
+      "samplePeakDbFS": -14.818659384623366,
+      "oversampled4xPeakDbFS": -14.818659384623366,
+      "rmsDbFS": -33.517002877694075,
+      "quietBinFractionBelowMinus65dBFS": 0.020833333333333332,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "wood-desk-touch",
+      "samplePeakDbFS": -15.159559743880997,
+      "oversampled4xPeakDbFS": -15.159559743880997,
+      "rmsDbFS": -35.25385237035715,
+      "quietBinFractionBelowMinus65dBFS": 0.5,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "wood-table-touch",
+      "samplePeakDbFS": -16.57269960904802,
+      "oversampled4xPeakDbFS": -16.57269960904802,
+      "rmsDbFS": -30.359747646310783,
+      "quietBinFractionBelowMinus65dBFS": 0.2828282828282828,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "bag-leather-flex",
+      "samplePeakDbFS": -15.622605082014221,
+      "oversampled4xPeakDbFS": -15.615131538609031,
+      "rmsDbFS": -32.010712004025514,
+      "quietBinFractionBelowMinus65dBFS": 0.0,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "bag-cotton-rustle",
+      "samplePeakDbFS": -15.85796545917519,
+      "oversampled4xPeakDbFS": -15.775107824645625,
+      "rmsDbFS": -33.857920476849195,
+      "quietBinFractionBelowMinus65dBFS": 0.008333333333333333,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    },
+    {
+      "id": "bag-cloth-shift",
+      "samplePeakDbFS": -18.770659579890218,
+      "oversampled4xPeakDbFS": -18.770659579890218,
+      "rmsDbFS": -36.50231786974666,
+      "quietBinFractionBelowMinus65dBFS": 0.04,
+      "note": "Quiet head/tail bins are allowed for isolated natural transients; no all-silent candidate."
+    }
+  ],
+  "largestWaveformCorrelations": [
+    {
+      "a": "shoe-wood-leather-01",
+      "b": "shoe-wood-leather-02",
+      "absoluteLagCorrelation": 0.7921969208573306
+    },
+    {
+      "a": "shoe-wood-sneaker-01",
+      "b": "shoe-wood-sneaker-02",
+      "absoluteLagCorrelation": 0.44744736232230425
+    },
+    {
+      "a": "shoe-wood-sneaker-02",
+      "b": "wood-desk-touch",
+      "absoluteLagCorrelation": 0.3223255400560009
+    },
+    {
+      "a": "wood-desk-touch",
+      "b": "wood-table-touch",
+      "absoluteLagCorrelation": 0.31121019005121425
+    },
+    {
+      "a": "shoe-wood-sneaker-01",
+      "b": "wood-desk-touch",
+      "absoluteLagCorrelation": 0.2982944697775794
+    },
+    {
+      "a": "shoe-wood-vans-01",
+      "b": "wood-desk-touch",
+      "absoluteLagCorrelation": 0.27117855307728833
+    },
+    {
+      "a": "shoe-wood-vans-02",
+      "b": "wood-desk-touch",
+      "absoluteLagCorrelation": 0.27089390134352825
+    },
+    {
+      "a": "paper-turn-book",
+      "b": "bag-leather-flex",
+      "absoluteLagCorrelation": 0.24911006950632264
+    }
+  ],
+  "duplicateComparison": {
+    "mode": "saved-original-library-baseline",
+    "baselineName": "original library before courier addition",
+    "baselineInventoryFile": "analysis/library-inventory.json",
+    "baselineInventorySha256": "50f06b9929fd2a5296cd5f59d04af78de8a2643ba7641d536e0d2ec04974b228",
+    "baselineAudioFileCount": 89,
+    "baselineDistinctAudioHashesCompared": 89,
+    "liveInstalledCatalogScanned": false,
+    "originalLibraryRootRequired": false,
+    "scope": "Compares new source/working hashes to the frozen pre-addition baseline only. It does not scan or assess the current installed catalog."
+  },
+  "independentByteReconstruction": "reads local manifest and untouched local source MP3 anew; exact declared sample ranges and transforms compared to each local output PCM; independent of baseline duplicate comparison and no import of preparation plans",
+  "limitations": [
+    "No auditory perception, no subjective sound/noise/material approval.",
+    "No final-scene cue, playback, encoded-film mix or sync verification: separate integration work.",
+    "Duplicate comparison is against the saved original baseline; the live installed catalog is not inspected.",
+    "4x resampled sample peaks are not claimed as a certified BS.1770 true-peak measurement."
+  ],
+  "verificationScriptSha256": "81460306b03659e779f6f2a2dddb4178460e71bb646d9b207b54df200076fdd2"
+}

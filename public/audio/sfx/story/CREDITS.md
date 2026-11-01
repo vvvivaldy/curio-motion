@@ -1,6 +1,6 @@
 # Story sound candidates — credits and processing
 
-These recordings supply foley for the code-authored paper-cat story. The six source recordings are official Freesound HQ MP3 previews, not original WAV masters. The ten WAV files are exact copies of prepared PCM16 mono, 48 kHz cuts; no conversion was rerun during import. Technical activity anchors are distinct from perceived timing.
+These are local candidates for the paper-cat story. The six source recordings are official Freesound HQ MP3 previews, not original WAV masters. The ten WAV files are exact copies of prepared PCM16 mono, 48 kHz cuts; no conversion was rerun during import. Final timbre, balance, cue synchronization and listening remain pending.
 
 | Original title | Creator | Primary source | License |
 | --- | --- | --- | --- |
@@ -13,7 +13,7 @@ These recordings supply foley for the code-authored paper-cat story. The six sou
 
 **Cat Hiss** by **cdonahueucsd**, [original recording page](https://freesound.org/people/cdonahueucsd/sounds/620962/), [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/). Changes: decoded from the official HQ MP3 preview to mono, 48 kHz, selected 0.000–0.650 s, gain 2.5 before PCM16 quantization, cosine edge fades 3 ms/20 ms. Duration/pitch were not stretched. Keep this attribution with use of the derived hiss.
 
-The other five recordings are CC0; authors and original links are retained above. Exact cuts, source hashes, gain, fades and technical timing anchors for all ten candidates are recorded in [catalog.json](catalog.json). Raw source downloads and authoring QA are not included in this package.
+The other five recordings are CC0; authors and original links are retained above. Exact cuts, source hashes, gain, fades and technical timing anchors for all ten candidates are recorded in the separate story catalog and cuts-manifest.json. Saved source MP3 bytes and primary HTML pages are under assets/sfx/story/originals/ and assets/sfx/story/sources/.
 
 The barefoot-tile recordings are proposed **foley for paws**, not recordings of real cat paws. Soft Fabric Rustle 2 is proposed **foley for grooming**, not a fur recording. A wooden-drop cut may be reused quietly for a chair/wall tap only when declared in the eventual cue schedule.
 

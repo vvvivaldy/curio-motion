@@ -1,0 +1,23 @@
+import assert from 'node:assert/strict';
+import {createDeliveryData,formatDeliveryShare,findUniqueDeliveryMaximum} from '../src/examples/delivery-infographic/data';
+
+const categories=(values:readonly number[])=>values.map((value,i)=>({label:`Пункт ${i+1}`,value,color:i+1}));
+const alternate=createDeliveryData(categories([1,2,3]));
+assert.equal(alternate.total,6);
+assert.deepEqual(alternate.categories.map(c=>formatDeliveryShare(c.sharePercent)),['16.7%','33.3%','50%']);
+assert.deepEqual(alternate.categories.map(c=>[c.label,c.value,c.color]),[['Пункт 1',1,1],['Пункт 2',2,2],['Пункт 3',3,3]]);
+const zeroCategory=createDeliveryData(categories([0,7,13]));
+assert.equal(zeroCategory.total,20);
+assert.deepEqual(zeroCategory.categories.map(c=>formatDeliveryShare(c.sharePercent)),['0%','35%','65%']);
+const upperBound=createDeliveryData(categories([30,0,1]));
+assert.equal(upperBound.total,31);
+assert.deepEqual(upperBound.categories.map(c=>formatDeliveryShare(c.sharePercent)),['96.8%','0%','3.2%']);
+assert.equal(findUniqueDeliveryMaximum(upperBound.categories),0,'maximum follows the first column');
+assert.equal(findUniqueDeliveryMaximum(alternate.categories),2);
+assert.equal(findUniqueDeliveryMaximum(createDeliveryData(categories([12,12,5])).categories),null,'two equal maxima have no unique winner');
+assert.equal(findUniqueDeliveryMaximum(createDeliveryData(categories([3,3,3])).categories),null,'three equal maxima have no unique winner');
+assert.deepEqual([20,30,50].map(formatDeliveryShare),['20%','30%','50%']);
+for(const values of [[1,2],[1,2,3,4]])assert.throws(()=>createDeliveryData(categories(values)),/ровно 3/);
+for(const invalid of [NaN,Infinity,-1,31,1.5])assert.throws(()=>createDeliveryData(categories([1,invalid,3])),/целым числом от 0 до 30/);
+assert.throws(()=>createDeliveryData(categories([0,0,0])),/больше нуля/);
+console.log('PASS delivery data: totals/shares, fractional percentages, first-column maximum, ties, zero/bounds, invalid data rejected');

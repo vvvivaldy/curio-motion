@@ -1,0 +1,227 @@
+{
+  "retrievedDate": "2026-10-31",
+  "sources": [
+    {
+      "file": "unkleceeg-276473-hq.mp3",
+      "sha256": "e7652d394e6ef808f31590181a49ae3134bf170468ef3072cdcfc21ec295cb04",
+      "title": "Chair creaking back and forth 01.wav",
+      "author": "unkleceeg",
+      "sourceUrl": "https://freesound.org/people/unkleceeg/sounds/276473/",
+      "downloadUrl": "https://cdn.freesound.org/previews/276/276473_3327014-hq.mp3",
+      "license": "CC0-1.0",
+      "licenseUrl": "https://creativecommons.org/publicdomain/zero/1.0/",
+      "authorRecordingDescription": "Author describes a chair creaking back and forth, recorded with a Zoom Q2HD; wood tag on the source page.",
+      "attributionRequired": false,
+      "credit": "Chair creaking back and forth 01.wav — unkleceeg — Freesound276473 — CC0 1.0.",
+      "id": "unkleceeg-276473",
+      "unalteredDownloadedBytes": {
+        "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/originals/unkleceeg-276473-hq.mp3",
+        "sha256": "e7652d394e6ef808f31590181a49ae3134bf170468ef3072cdcfc21ec295cb04",
+        "byteCount": 202632,
+        "kind": "Official publicHQMP3 preview. This is NOT the uploaded nativeWAV master."
+      },
+      "sourceEvidence": {
+        "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/sources/unkleceeg-276473.html",
+        "sha256": "c6050f044e4d4c6715794e04ff55991afcbdd5efdaeb98b0ef4f934fdd19c1cf",
+        "retrievedDate": "2026-10-31",
+        "sourcePageContainsThisDownloadUrl": true,
+        "sourcePageContainsAuthorAndExactLicenseUrl": true
+      },
+      "licenseEvidence": [
+        {
+          "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/sources/cc0-1.0.html",
+          "sha256": "abb4d48fc8b85de52b377dd105532c6c549f515d492a8e1712bc99e7316a1f12"
+        },
+        {
+          "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/sources/cc0-1.0-legalcode.html",
+          "sha256": "b43732f4c1463b087cf10d4daf8d8766514b2bf8f21bc5ef50905f95be227726"
+        }
+      ],
+      "nativeMasterDownloaded": false,
+      "nativeMasterWhyNot": "Freesound nativeWAV download is login-gated. No account/registration, authenticated request or guessed master URL was used. Official publicHQ preview retained instead.",
+      "actualDownloadedAudioProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "mp3",
+            "codec_long_name": "MP3 (MPEG audio layer 3)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "mp4a.40.34",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/14112000",
+            "start_pts": 324870,
+            "start_time": "0.023021",
+            "duration_ts": 142454172,
+            "duration": "10.094542",
+            "bit_rate": "160057",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "encoder": "LAME3.99r"
+            },
+            "side_data_list": [
+              {
+                "side_data_type": "Replay Gain"
+              }
+            ]
+          }
+        ],
+        "format": {
+          "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/originals/unkleceeg-276473-hq.mp3",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mp3",
+          "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+          "start_time": "0.023021",
+          "duration": "10.094542",
+          "size": "202632",
+          "bit_rate": "160587",
+          "probe_score": 52
+        }
+      },
+      "listened": false,
+      "ownerAuditionPending": true
+    },
+    {
+      "file": "trashcan-783598-hq.mp3",
+      "sha256": "b0e1323cf5c2a47d7bdd05928edb93e9e0e33e128229c65631e86b1b0bfbc3f9",
+      "title": "011 - Pulling Out Chair, Sitting",
+      "author": "Trashcan_Studios",
+      "sourceUrl": "https://freesound.org/people/Trashcan_Studios/sounds/783598/",
+      "downloadUrl": "https://cdn.freesound.org/previews/783/783598_12973965-hq.mp3",
+      "license": "CC-BY-4.0",
+      "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+      "authorRecordingDescription": "Author describes pulling a wooden chair out and sitting, recorded at a cabin in Jasper in December2024.",
+      "attributionRequired": true,
+      "credit": "011 - Pulling Out Chair, Sitting — Trashcan_Studios — https://freesound.org/people/Trashcan_Studios/sounds/783598/ — CC BY 4.0 https://creativecommons.org/licenses/by/4.0/. Modified: excerpt, stereo-to-mono downmix, gain, short edge fades, PCM16/48kHz conversion.",
+      "id": "trashcan-783598",
+      "unalteredDownloadedBytes": {
+        "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/originals/trashcan-783598-hq.mp3",
+        "sha256": "b0e1323cf5c2a47d7bdd05928edb93e9e0e33e128229c65631e86b1b0bfbc3f9",
+        "byteCount": 176088,
+        "kind": "Official publicHQMP3 preview. This is NOT the uploaded nativeWAV master."
+      },
+      "sourceEvidence": {
+        "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/sources/trashcan-783598.html",
+        "sha256": "27e6896bb08f4e939fcdeca863bcfd397de6acdbb28b2883a1566fe03a40f2fe",
+        "retrievedDate": "2026-10-31",
+        "sourcePageContainsThisDownloadUrl": true,
+        "sourcePageContainsAuthorAndExactLicenseUrl": true
+      },
+      "licenseEvidence": [
+        {
+          "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/sources/cc-by-4.0.html",
+          "sha256": "8dda1ccec4be91fc80821d4e4fd5c568072b9a3a74b2fdc07c249a27e920ef01"
+        },
+        {
+          "path": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/sources/cc-by-4.0-legalcode.html",
+          "sha256": "58230517b7895aa219ff46a6ed63e67057a1582fb9ea054b16728a8c13525650"
+        }
+      ],
+      "nativeMasterDownloaded": false,
+      "nativeMasterWhyNot": "Freesound nativeWAV download is login-gated. No account/registration, authenticated request or guessed master URL was used. Official publicHQ preview retained instead.",
+      "actualDownloadedAudioProbe": {
+        "streams": [
+          {
+            "index": 0,
+            "codec_name": "mp3",
+            "codec_long_name": "MP3 (MPEG audio layer 3)",
+            "codec_type": "audio",
+            "codec_tag_string": "[0][0][0][0]",
+            "codec_tag": "0x0000",
+            "mime_codec_string": "mp4a.40.34",
+            "sample_fmt": "fltp",
+            "sample_rate": "48000",
+            "channels": 2,
+            "channel_layout": "stereo",
+            "bits_per_sample": 0,
+            "initial_padding": 0,
+            "r_frame_rate": "0/0",
+            "avg_frame_rate": "0/0",
+            "time_base": "1/14112000",
+            "start_pts": 324870,
+            "start_time": "0.023021",
+            "duration_ts": 165492012,
+            "duration": "11.727042",
+            "bit_rate": "119788",
+            "disposition": {
+              "default": 0,
+              "dub": 0,
+              "original": 0,
+              "comment": 0,
+              "lyrics": 0,
+              "karaoke": 0,
+              "forced": 0,
+              "hearing_impaired": 0,
+              "visual_impaired": 0,
+              "clean_effects": 0,
+              "attached_pic": 0,
+              "timed_thumbnails": 0,
+              "non_diegetic": 0,
+              "captions": 0,
+              "descriptions": 0,
+              "metadata": 0,
+              "dependent": 0,
+              "still_image": 0,
+              "multilayer": 0
+            },
+            "tags": {
+              "encoder": "LAME3.100"
+            },
+            "side_data_list": [
+              {
+                "side_data_type": "Replay Gain"
+              }
+            ]
+          }
+        ],
+        "format": {
+          "filename": "/Users/gutya/.codex/visualizations/2026/10/27/01a17ebf-a8c7-74a1-a2cd-52c544301f33/human-chair-audio-v2-recorded/originals/trashcan-783598-hq.mp3",
+          "nb_streams": 1,
+          "nb_programs": 0,
+          "nb_stream_groups": 0,
+          "format_name": "mp3",
+          "format_long_name": "MP2/3 (MPEG audio layer 2/3)",
+          "start_time": "0.023021",
+          "duration": "11.727042",
+          "size": "176088",
+          "bit_rate": "120124",
+          "probe_score": 52
+        }
+      },
+      "listened": false,
+      "ownerAuditionPending": true
+    }
+  ],
+  "provenanceLimit": "Original recordings as described by their authors on primary Freesound pages; downloaded media are the catalog publicHQMP3 versions. No auditory/forensic verification of recording identity or content beyond metadata and official URL binding.",
+  "licenseScope": "The selected CC0/CCBY grants are for the sound assets; not a project-only royalty-free grant with a standalone-asset prohibition. CC BY attribution and modification notices must accompany redistribution. Code MIT does not replace these asset licenses."
+}

@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { sampleFootsteps, supportBalance } from '../src/core/gait';
+import { sampleFootsteps, supportBalance, inspectFootPasses } from '../src/core/gait';
 import { placeOnPivot, rotatePoint, type Point2 } from '../src/core/spatial';
 import { fitVerticalShift } from '../src/core/kinematics';
 import type { Step2D } from '../src/core/contacts';
@@ -50,3 +50,22 @@ assert.equal(fitVerticalShift(supports, 30), 18);
 assert.throws(() => fitVerticalShift([{ ...supports[0], reach: 5 }]));
 assert.throws(() => fitVerticalShift([supports[0], { root: [0, 30, 0], target: [0, 0, 0], reach: 1 }]));
 console.log('PASS shared foot tracks, support transfer, fixed rocker pivots, height constraints and reverse seeks');
+
+
+// Catches the actual step-together defect: copying the front landing to the rear foot.
+for(const direction of [1,-1])for(const size of [.5,1,2]){
+ const point=(x:number):Point2=>[direction*x*size,0];
+ const from=[point(10),point(0)] as const;
+ const tracks:Step2D[][]=[
+  [{start:2,end:2.4,from:from[0],to:point(30),lift:4*size}],
+  [{start:1,end:1.4,from:from[1],to:point(20),lift:4*size}],
+ ];
+ const passes=inspectFootPasses(tracks as [Step2D[],Step2D[]],[direction,0],.1);
+ assert.deepEqual(passes.map(p=>p.foot),[1,0]);assert(passes.every(p=>p.passed));
+ const bad=[tracks[0],[{...tracks[1][0],start:3,end:3.4,to:point(20)}]] as [Step2D[],Step2D[]];
+ assert(inspectFootPasses(bad,[direction,0],.1).some(p=>!p.passed),'repeated rear catch-up must be detected');
+}
+assert.throws(()=>inspectFootPasses([[],[]],[0,0]));
+const roundoffSteps:Step2D[]=[{start:7.52,end:7.88,from:[0,0],to:[10,0],lift:1}];
+for(let i=-100;i<=100;i++){const sample=sampleFootsteps(7.52+i*1e-10,roundoffSteps,.04);assert(sample.load>=0&&sample.load<=1);}
+console.log('PASS passing-foot evidence catches step-together tracks, both directions/scales; fractional load bounds');

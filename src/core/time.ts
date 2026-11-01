@@ -61,3 +61,23 @@ export function sampleTravel(time: number, {start, end, ramp}: TravelInterval): 
   }
   return {progress: clamp(maximumVelocity * (elapsed - ramp / 2)), velocity: maximumVelocity};
 }
+
+
+/** Owner's default direction for newly authored motion; existing timelines remain explicit. */
+export const DEFAULT_AUTHORING_TEMPO = 1.5;
+
+/** Compress a source action timeline at unchanged export fps. No Player speed toggle.
+ * Source action is sampled purely; output FrameContext remains the actual export frame/time.
+ * Use actionTime in pose and diagnostic adapters, never a second accumulated clock.
+ */
+export function retimeTimeline(source:Timeline, tempo=DEFAULT_AUTHORING_TEMPO){
+  validateTimeline(source);
+  const frames=Math.ceil(source.durationInFrames/tempo);
+  if(!Number.isFinite(tempo)||tempo<=0||!Number.isSafeInteger(frames)||frames<1)
+    throw new RangeError('Positive finite tempo and representable output frame count required');
+  const maximum=(source.durationInFrames-1)/source.fps;
+  return {tempo,timeline:{fps:source.fps,durationInFrames:frames},actionTime(time:number){
+    if(!Number.isFinite(time)||time<0)throw new RangeError('Nonnegative finite output time required');
+    return Math.min(maximum,time*tempo);
+  }};
+}

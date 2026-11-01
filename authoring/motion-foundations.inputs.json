@@ -1,0 +1,17 @@
+{
+  "reference": {
+    "path": "reference/motion-foundations/whole.svg",
+    "sha256": "57ed231049bd3ee210a981a10c15700f651615407f7580c4b92b3d44e731c6af",
+    "provenance": "Original local vector design study authored for the requested technical demo; not an owner-supplied character reference",
+    "mediaType": "image/svg+xml",
+    "whole": true,
+    "runtimeUsage": false,
+    "distribution": "local-only"
+  },
+  "action": {
+    "path": "authoring/motion-foundations.action.txt",
+    "sha256": "6e73c205d28f4db1b0a25ec207db53718a27dd361ce8d22aaf8e9c64e73f1672",
+    "unchanged": true
+  },
+  "method": "Local source scaffold only. The supplied whole reference and ACTION remain authoring inputs, never runtime textures or generated scene instructions."
+}

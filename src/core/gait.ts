@@ -1,5 +1,5 @@
 import { sampleStep, type Step2D } from './contacts';
-import { mix, tween } from './time';
+import { clamp, mix, tween } from './time';
 import type { Point2 } from './spatial';
 
 /** One foot's authored contacts, in a single surface coordinate space. No playback state. */
@@ -18,7 +18,7 @@ export function sampleFootsteps(time: number, steps: readonly Step2D[], transfer
     if (time >= step.start) index = i;
     const unload = tween(time, step.start - transfer, step.start);
     const accept = tween(time, step.end, step.end + transfer);
-    load = Math.min(load, 1 - unload + accept);
+    load = Math.min(load, clamp(1 - unload + accept));
     if (time >= step.start - transfer && time <= step.end + transfer) {
       roll = time < step.start ? unload : time > step.end ? accept - 1
         : mix(1, -1, sampleStep(time, step).progress);
@@ -44,6 +44,7 @@ export function supportBalance(contacts: readonly { ground: Point2; load: number
   contacts.forEach((c, i) => { center[0] += c.ground[0] * weights[i]; center[1] += c.ground[1] * weights[i]; });
   return { center, weights };
 }
+
 
 /** Evidence for finite authored walking tracks, not an automatic gait planner.
  * A regular swing must start behind, pass, and land ahead of a stationary opposite foot.

@@ -1,0 +1,16 @@
+{
+  "reference": {
+    "path": "reference/stage6-private/infographic-whole.png",
+    "sha256": "575de93962a7855d03fa163770f419938007c6c7364594ffa0eb5f3ee5526c2e",
+    "runtimeUsage": false,
+    "distribution": "local-only",
+    "includedInDistribution": false
+  },
+  "provenance": "Owner supplied whole PNG; read only as authoring material. New vector drawing is code.",
+  "private": true,
+  "action": {
+    "path": "authoring/delivery-infographic.action.txt",
+    "sha256": "1087d72b9fe91cd0f6725da786d92338725f5906812f4324a772921a7221740d"
+  },
+  "distributionNote": "The whole owner reference is private, excluded from this beta; provenance only. Runtime and export use authored vectors and do not require this PNG."
+}
