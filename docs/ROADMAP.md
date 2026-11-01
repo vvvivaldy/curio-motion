@@ -1,6 +1,6 @@
 # Development direction
 
-Stable [1.0.0](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0) is published. Curio Motion remains an editable TypeScript source project for short 2D scenes, with local preview/export and recorded sound.
+The stable 1.x source project is distributed through [GitHub releases](https://github.com/vvvivaldy/curio-motion/releases). Curio Motion remains an editable TypeScript source project for short 2D scenes, with local preview/export and recorded sound.
 
 Development follows reproducible user problems:
 

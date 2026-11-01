@@ -1,7 +1,7 @@
 {
   "name": "curio-motion",
   "displayName": "Curio Motion",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Code-authored 2D character animation in TypeScript. PixiJS contours, seekable motion and local MP4 export with Remotion.",
   "topics": [
     "2d-animation",
@@ -25,11 +25,10 @@
   "originalCodeLicense": "MIT",
   "remotionLicense": "SEE LICENSE IN LICENSE.md",
   "release": {
-    "version": "1.0.0",
-    "tag": "v1.0.0",
-    "url": "https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0",
-    "commit": "03e70695b3626a23ca177a6ab5a906b836de968e",
-    "status": "published-stable",
-    "notes": "The release tag/ZIP are immutable; main may contain subsequent housekeeping."
+    "version": "1.0.1",
+    "tag": "v1.0.1",
+    "url": "https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.1",
+    "verification": "Actual publication, tag commit and downloaded ZIP are recorded in the external release reports.",
+    "notes": "This source snapshot precedes upload; existing tags and release archives are unchanged."
   }
 }

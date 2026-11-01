@@ -1,10 +1,10 @@
 # Changes
 
-## Unreleased — repository housekeeping
+## 1.0.1 — 2026-11-01
 
 - Remove completed production plans, progress receipts, review dumps and superseded media from the maintained checkout. Their history remains in the unchanged v1.0.0 tag.
 - Separate beta studies from current examples in documentation and demo navigation. Keep selected films, API contracts, privacy manifests and media credits.
-- Update setup/release links to the published stable version; runtime dependencies and animation geometry are unchanged.
+- Ship the cleaned source tree in a new versioned release ZIP and update setup/release links. Runtime dependencies, stable contracts, animation geometry and retained films are unchanged.
 
 ## 1.0.0 — 2026-11-01
 
