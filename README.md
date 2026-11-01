@@ -4,7 +4,7 @@
 
 **Editable 2D animation in TypeScript.** PixiJS draws vector geometry; Remotion controls frames, live preview and MP4 export.
 
-[Stable 1.0.0 and verified ZIP](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.0) · [Русский](README_RU.md) · [Documentation](docs/README.md)
+[Release 1.0.1 and source ZIP](https://github.com/vvvivaldy/curio-motion/releases/tag/v1.0.1) · [Русский](README_RU.md) · [Documentation](docs/README.md)
 
 ## Start
 
@@ -32,7 +32,7 @@ Open the address printed by Vite. Click play to hear sound. `npm run dev` starts
 | Cat: chair, clock and falling picture | `/player.html?example=cat-picture-story-v3` | [35 seconds](docs/assets/cat-picture-story-v3.mp4) |
 | Neon drawing with glow and floor reflection | `/player.html?example=human-chair-neon-confident` | [8 seconds](docs/assets/human-chair-neon-confident-v1.mp4) |
 
-[All current examples and beta archive](docs/EXAMPLES.md). Cleanup applies to the main branch; the original 1.0.0 release ZIP is unchanged. Earlier experiments are labelled separately; superseded exports and production logs are available in Git history rather than the current checkout. These examples are authored scenes, not automatic conversion of an arbitrary reference.
+[All current examples and beta archive](docs/EXAMPLES.md). Version 1.0.1 includes the cleaned source archive; the original 1.0.0 ZIP is unchanged. Earlier experiments are labelled separately; superseded exports and production logs are available in Git history rather than the current checkout. These examples are authored scenes, not automatic conversion of an arbitrary reference.
 
 `/viewer.html?example=…` shows the saved film and source; `/index.html?example=…` shows direct Pixi rendering. Private authoring references are not needed to run the included scenes.
 

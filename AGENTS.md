@@ -1,6 +1,6 @@
 # Curio Motion — instructions for coding agents
 
-Read [AGENT_START_HERE_RU.md](AGENT_START_HERE_RU.md), [README](README.md) and the project-local [curio-authoring skill](.agents/skills/curio-authoring/SKILL.md). This folder is the 1.0.0 source-project release (`private: true`), not an npm package or an automatic image-to-animation service. Chat history is not required. Read [release status](docs/RELEASE_1_0_0_RU.md) for actual public tag/commit/asset verification.
+Read [AGENT_START_HERE_RU.md](AGENT_START_HERE_RU.md), [README](README.md) and the project-local [curio-authoring skill](.agents/skills/curio-authoring/SKILL.md). This folder is the 1.0.1 source-project release (`private: true`), not an npm package or an automatic image-to-animation service. Chat history is not required. Read [release status](docs/RELEASE_RU.md) for actual public tag/commit/asset verification.
 
 - Use Node ≥22.12, the pinned dependencies and `npm ci`. Use an existing Chrome/Chromium; set `CHROME_PATH` if necessary. No global tools, accounts, hosted AI or automatic browser download is required for runtime.
 - Pixi draws code-authored vector geometry; Remotion owns composition, frame time, Player and official MP4 export. Keep pose evaluation pure and seekable. Do not replace the scene with a prerecorded movie, sliced reference parts or image sprites.

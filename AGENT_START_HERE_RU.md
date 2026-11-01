@@ -7,7 +7,7 @@ Curio Motion — локальный проект для 2D-анимации ко
 1. [README_RU](README_RU.md): установка, Player и примеры.
 2. [USAGE_RU](docs/USAGE_RU.md): задание, роли и порядок работы с человеком.
 3. [Локальный навык](.agents/skills/curio-authoring/SKILL.md), [API](docs/API.md), [AUTHORING](docs/AUTHORING.md): фактические интерфейсы, scaffold и проверка.
-4. [Выпуск 1.0](docs/RELEASE_1_0_0_RU.md), [совместимость/переход](docs/COMPATIBILITY_RU.md); [каталог примеров](docs/EXAMPLES.md) отделяет бета-пробы. [Архитектура](docs/ARCHITECTURE.md) объясняет внутренние решения; старые QA-отчёты являются историей конкретных версий.
+4. [Выпуск 1.0](docs/RELEASE_RU.md), [совместимость/переход](docs/COMPATIBILITY_RU.md); [каталог примеров](docs/EXAMPLES.md) отделяет бета-пробы. [Архитектура](docs/ARCHITECTURE.md) объясняет внутренние решения; старые QA-отчёты являются историей конкретных версий.
 
 Официально проверенная среда релиза — macOS arm64; Windows/Linux не проверены. Нужны Node ≥22.12 (контрольная LTS 26.13.0), npm, WebGL и установленный отдельно Chrome/Chromium. В корне проекта:
 

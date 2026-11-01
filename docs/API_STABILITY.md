@@ -1,6 +1,6 @@
 # Public source API: 1.0 contract baseline
 
-This is the agreed boundary for 1.x, implemented and checked during stage 1. The source version is `1.0.0`, `private: true`; there is no npm import entrypoint. Use relative imports from existing source files. No import relocation is required.
+This is the agreed boundary for 1.x, implemented and checked during stage 1. The source version is `1.0.1`, `private: true`; there is no npm import entrypoint. Use relative imports from existing source files. No import relocation is required.
 
 The machine-readable [registry](API_STABILITY.json) classifies every export of all 27 core modules and the shared Remotion bridge: a module default applies unless a name is explicitly stable. `npm run check:api` resolves the names with TypeScript and rejects missing modules/exports, duplicate classifications and missing stable consumer imports. The registry format is an internal checking artifact, not an application configuration API.
 

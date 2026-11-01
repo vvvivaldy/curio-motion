@@ -4,9 +4,9 @@
 
 ## Requirements and first run
 
-The verified scope is macOS arm64 with the recorded Chrome/WebGL environment; Linux/Windows are unverified. Node 22.12.0 / npm 10.9.0 is the compatibility minimum; the recommended control runtime is Node 26.13.0 LTS / npm 11.20.0. See [release status](RELEASE_1_0_0_RU.md) for the exact archive receipt and public-verification state.
+The verified scope is macOS arm64 with the recorded Chrome/WebGL environment; Linux/Windows are unverified. Node 22.12.0 / npm 10.9.0 is the compatibility minimum; the recommended control runtime is Node 26.13.0 LTS / npm 11.20.0. See [release status](RELEASE_RU.md) for the exact archive receipt and public-verification state.
 
-Use **Node ≥22.12**, npm and a WebGL-capable browser. This is the 1.0.0 source project (`private: true`), not an npm-distributed library package. Unpack the matching archive into a writable project folder. Installation needs npm registry access; included scene preview/export needs no account, API key or remote AI service.
+Use **Node ≥22.12**, npm and a WebGL-capable browser. This is the 1.0.1 source project (`private: true`), not an npm-distributed library package. Unpack the matching archive into a writable project folder. Installation needs npm registry access; included scene preview/export needs no account, API key or remote AI service.
 
 ```sh
 npm ci
@@ -93,7 +93,7 @@ Use an unpacked candidate copy, not the maintainer's working checkout. Verify th
 
 For a scaffold smoke, save a short UTF-8 action file outside existing source files and use the distributable `reference/amber-robot/design.svg` as the whole reference. Run the documented `create:example` command with a fresh ID; inspect the generated blank files/instructions. This trial does not require inventing another large film. Generated starter files are a preparation check, not a finished animation.
 
-Record environment, commands, actual exported files, blockers and any undocumented steps. Do not call the archive accepted just because one preserved example was accepted earlier. [Release verification](RELEASE_1_0_0_RU.md) separate these claims.
+Record environment, commands, actual exported files, blockers and any undocumented steps. Do not call the archive accepted just because one preserved example was accepted earlier. [Release verification](RELEASE_RU.md) separate these claims.
 
 ## Troubleshooting and limits
 
