@@ -2,9 +2,9 @@
 
 Curio Motion supports a coding agent or developer authoring short 2D scenes from a whole reference and an explicit action. The useful outcome is an editable scene and a finished film. It is not an automatic reference-conversion service.
 
-## Current beta and next work
+## Current beta and path to 1.0
 
-`0.2.0-beta.1` consolidates the independent character/infographic work, user/agent instructions and an exact source ZIP tested from a clean folder. Publication is authorized as a [GitHub prerelease](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1); [verification](BETA_0_2_0_VERIFICATION_RU.md) records the tested scope. The next work is use on real tasks and concrete repairs. See [BETA](../BETA.md) for release gates, [next steps](NEXT_STEPS_RU.md) for current status and the [Russian plan](DEVELOPMENT_PLAN_RU.md) for context.
+[0.2.0-beta.1](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1) remains the latest public prerelease. Work packages 1–4 of the [1.0 plan](PLAN_1_0_RU.md) are complete for the agreed macOS scope. Package 5 prepares local 1.0.0-rc.1, exact Git/ZIP identity and final gates; owner acceptance and publication remain separate. See [RC status](RC_1_0_0_RU.md).
 
 ## Existing foundations
 

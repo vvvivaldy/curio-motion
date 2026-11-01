@@ -1,4 +1,6 @@
 import './check-stage6';
+import './check-public-api';
+import './check-morning-delivery';
 import './check-run';
 import './check-cat-story-head';
 import './check-cat-story-v3';

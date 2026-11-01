@@ -1,5 +1,6 @@
 # Curio Motion 0.2.0-beta.1 — source-project beta
 
+Historical 0.2 beta record. The current local source is 1.0.0-rc.1; see [RC status](docs/RC_1_0_0_RU.md). Statements below apply to the published 0.2 beta artifact, not a claim that the RC is published.
 This is a **source-project beta**, with `private: true` in `package.json`; it is not an npm-published package. The [GitHub prerelease](https://github.com/vvvivaldy/curio-motion/releases/tag/v0.2.0-beta.1) supplies the exact ZIP that passed the recorded clean-install trial. The Git tag adds publication documentation and its own manifest; rendering inputs are identical. A version number, preserved film or old CI badge alone does not establish verification.
 
 ## Included and changed

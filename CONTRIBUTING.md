@@ -1,6 +1,6 @@
 # Contributing to Curio Motion
 
-Thanks for helping make code-authored animation easier to understand and improve. This is a source-project beta with multiple authored character and infographic examples; small, reviewable changes are especially useful. Read the [README](README.md), [architecture](docs/ARCHITECTURE.md) and [roadmap](docs/ROADMAP.md) first.
+Thanks for helping make code-authored animation easier to understand and improve. This is the locally prepared 1.0.0-rc.1 source project with multiple authored character and infographic examples; small, reviewable changes are especially useful. Read the [README](README.md), [architecture](docs/ARCHITECTURE.md) and [roadmap](docs/ROADMAP.md) first.
 
 ## Useful first contributions
 

@@ -1,0 +1,172 @@
+{
+  "schemaVersion": 1,
+  "scope": "1.0 contract baseline; local 1.0.0-rc.1 candidate, not a stable publication",
+  "unlistedSourcePaths": "internal; editable examples are templates, not stable export contracts",
+  "modules": {
+    "src/core/arm-motion.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/constraints.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/contacts.ts": {
+      "default": "experimental",
+      "stable": [
+        "Step2D",
+        "Staircase2D",
+        "sampleStep",
+        "treadPoint"
+      ]
+    },
+    "src/core/contour.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/debug.ts": {
+      "default": "internal",
+      "stable": []
+    },
+    "src/core/eye.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/frame3.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/gait.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/gesture.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/graphics-frame.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/handling.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/hinge.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/kinematics.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/limb.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/objects.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/paper-fill.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/paper-visibility.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/relations.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/run.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/spatial.ts": {
+      "default": "experimental",
+      "stable": [
+        "Point2",
+        "Frame2D",
+        "transformPoint",
+        "inverseTransformPoint"
+      ]
+    },
+    "src/core/spring.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/stage.ts": {
+      "default": "experimental",
+      "stable": [
+        "SceneSettings",
+        "SceneDefinition",
+        "createPixiStage"
+      ]
+    },
+    "src/core/stair-solid.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/surface-clearance.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/time.ts": {
+      "default": "experimental",
+      "stable": [
+        "Timeline",
+        "FrameContext",
+        "clamp",
+        "mix",
+        "smooth",
+        "tween",
+        "validateTimeline",
+        "evaluateFrame"
+      ]
+    },
+    "src/core/trajectory.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/core/views.ts": {
+      "default": "experimental",
+      "stable": []
+    },
+    "src/remotion/create-scene.tsx": {
+      "default": "experimental",
+      "stable": [
+        "createRemotionScene"
+      ]
+    }
+  },
+  "commands": {
+    "stable": [
+      "dev",
+      "demo",
+      "typecheck",
+      "test",
+      "build",
+      "check",
+      "render",
+      "create:example"
+    ],
+    "experimental": [
+      "check:api",
+      "check:api:browser",
+      "check:port",
+      "check:starter",
+      "check:objects",
+      "review",
+      "capture:controls",
+      "verify:package"
+    ],
+    "unlisted": "internal convenience scripts; no stable output schema"
+  },
+  "documentation": {
+    "contracts": "docs/API_STABILITY.md",
+    "support": "docs/SUPPORT_RU.md",
+    "compatibility": "docs/COMPATIBILITY_RU.md"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "schemaVersion": 1,
+  "status": "STAGE_3_COMPLETE_SUBJECT_TO_EXTERNAL_FINAL_GATE",
+  "stage": 3,
+  "progress": {
+    "percent": 100,
+    "completedTasks": 6,
+    "totalTasks": 6
+  },
+  "artifact": {
+    "version": "0.2.0-beta.1",
+    "candidate": "stage3",
+    "sourceKind": "working-tree",
+    "commitIdentityClaim": false,
+    "archiveAndShaLocation": "External ZIP, .zip.sha256 and .zip.receipt.json; archive hash is not embedded in its own source payload."
+  },
+  "codeHashes": {
+    "scripts/package-release.mjs": "de04136fdfdfb0ed79b63f0672a6d6fed71142cd8e08f1d096b5c1e799c5b794",
+    "scripts/verify-package.mjs": "9085593be0e98a9725d4c6852e05aa638f15b3b1ae392d3c49f1d928232349f9",
+    "scripts/lib/package-files.mjs": "aec0fb1696c3f05aa6734ebee155830131ee9e0c83e30b8bfbb334912b7eec1a",
+    "scripts/lib/package-zip.mjs": "ddff10616d2c766b9969e007c0aa76479015b631f2e541ff500679b3fe077f48",
+    "scripts/lib/package-secrets.mjs": "4918af27dcbf6011b2d33585b93c528fb3f919e3f25a6d014bb335c9094afb6e",
+    "scripts/lib/package-release.mjs": "ce8c45a8be8b6ec4d847697ac38d8b9634038ac26f8e2b53ca9da12742cdfe76",
+    "scripts/lib/package-checksums.mjs": "6936eb39801e4ba117290758e2b75858896b0ff9ea1c7c740e2a23cd7aaafc54",
+    "scripts/check-release.mjs": "6d7e0e64c859846b847429072cdb16524dd14eef0602a805cda4fb317cb45a34",
+    "scripts/check-package-checksums.mjs": "23cb8ae8a230605dea04a683ea7da73fe1d4c8241609c60bf92b16a878d9b1f7"
+  },
+  "checks": {
+    "releaseTests": 27,
+    "adversarialFixtures": "Known failure classes plus independently prepared fixtures; exact final logs recorded outside payload.",
+    "nestedCourierEntries": 73,
+    "provenanceBindings": 460,
+    "provenanceTargets": 187,
+    "provenanceManifests": 12,
+    "knownCredentialPatterns": 5,
+    "repeatedBuild": "Final gate requires byte-identical ZIP for the same source/candidate in two output directories.",
+    "cleanArchive": "Final gate requires verification before npm ci and a full check in an independently extracted copy with its own node_modules.",
+    "gitHistory": "Tip integrity plus known-credential/private/path checks of every new commit; safe intermediate commits may predate final release manifests."
+  },
+  "media": {
+    "acceptedMorningSha256": "49dc9b46b89d3a21d6b5f39180f7d1ecadb6beeb0fc878d97a4e298ee0ae7736",
+    "currentImageExportSourceSha256": "53117620ac7df4e2a5b8ce3065944e0a95ce408e21b1ef12ec15902119a43c34",
+    "officialFrames": 864,
+    "officialFps": 24,
+    "byteExactAcceptedMovie": true,
+    "pilotPortComparisons": 150,
+    "newArtisticAcceptanceRequired": false
+  },
+  "expectedGeneratedDifferences": [
+    "MANIFEST.sha256",
+    "PACKAGE_SOURCE.json"
+  ],
+  "publicationPerformed": false,
+  "limits": [
+    "Stage4 exact Node/platform/RC matrix has not been performed here.",
+    "Known credential scan is bounded, not a complete security audit or proof of licensing.",
+    "Source root policy controls what is included; raw local-only backups and operational directories are excluded.",
+    "Archive profile is bounded classic ZIP STORE; no general ZIP/Zip64/encryption/symlink support claim.",
+    "External final-gate receipt identifies the exact completed archive and review results; do not infer its SHA from this internal document."
+  ]
+}

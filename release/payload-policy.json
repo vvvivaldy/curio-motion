@@ -1,0 +1,94 @@
+{
+  "schemaVersion": 1,
+  "rootFiles": [
+    ".editorconfig",
+    ".gitignore",
+    "AGENTS.md",
+    "AGENT_START_HERE_RU.md",
+    "ASSETS.md",
+    "BETA.md",
+    "CHANGELOG.md",
+    "CODE_OF_CONDUCT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "PROMPT_FOR_NEW_AGENT_RU.txt",
+    "README.md",
+    "README_RU.md",
+    "SECURITY.md",
+    "THIRD_PARTY_NOTICES.md",
+    "authoring-input.json",
+    "index.html",
+    "package-lock.json",
+    "package.json",
+    "player.html",
+    "repository-metadata.json",
+    "tsconfig.json",
+    "viewer.html",
+    "vite.config.ts"
+  ],
+  "directories": [
+    ".agents/skills/curio-authoring",
+    ".github",
+    "assets",
+    "authoring",
+    "docs",
+    "public",
+    "reference",
+    "release",
+    "scripts",
+    "src"
+  ],
+  "excludedSegments": [
+    ".git",
+    "node_modules",
+    ".vite-cache",
+    "qa",
+    "outputs",
+    "dist",
+    "__pycache__"
+  ],
+  "excludedBasenames": [
+    ".DS_Store"
+  ],
+  "excludedSuffixes": [
+    ".log",
+    ".pyc"
+  ],
+  "generated": [
+    "MANIFEST.sha256",
+    "PACKAGE_SOURCE.json"
+  ],
+  "required": [
+    "package.json",
+    "package-lock.json",
+    "README.md",
+    "README_RU.md",
+    "LICENSE",
+    "THIRD_PARTY_NOTICES.md",
+    "ASSETS.md",
+    "AGENTS.md",
+    ".agents/skills/curio-authoring/SKILL.md",
+    "src/core/stage.ts",
+    "src/remotion/create-scene.tsx",
+    "src/examples/morning-delivery/scene.ts",
+    "docs/assets/morning-delivery-accepted-v1.mp4",
+    "public/audio/sfx/courier/CREDITS.md",
+    "assets/sfx/courier/SHA256SUMS.txt",
+    "release/payload-policy.json",
+    "scripts/package-release.mjs",
+    "scripts/verify-package.mjs",
+    "scripts/lib/package-files.mjs",
+    "scripts/lib/package-secrets.mjs",
+    "scripts/lib/package-zip.mjs",
+    "scripts/lib/package-release.mjs",
+    "scripts/lib/package-checksums.mjs",
+    "docs/PACKAGING_RU.md"
+  ],
+  "zip": {
+    "method": "STORE",
+    "date": "1980-01-01T00:00:00",
+    "mode": "0644",
+    "maxArchiveBytes": 536870912
+  },
+  "notes": "Maintainer source snapshot policy, not a stable authoring API. Declared local-only whole inputs and env files are excluded; selected symlinks are rejected."
+}
