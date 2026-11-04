@@ -2,10 +2,11 @@
 
 ## Актуальные примеры
 
-Это выбранные версии сцен, включённые в 1.0. Рисунок, пропорции и постановка заданы их исходниками; качество не распространяется автоматически на нового персонажа.
+Это выбранные сцены из текущей ветки. Рисунок, пропорции и постановка заданы их исходниками; качество не распространяется автоматически на нового персонажа.
 
 | Пример | Player / composition | Фильм и описание |
 | --- | --- | --- |
+| «Ноябрь отменён», английская версия | `november-cancelled` / `NovemberCancelled` | [Фильм](assets/november-cancelled-en.mp4), [исходники и экспорт](NOVEMBER_CANCELLED.md) |
 | Утренний маршрут | `morning-delivery` / `MorningDelivery` | [Фильм](assets/morning-delivery-accepted-v1.mp4), [устройство](MORNING_DELIVERY_RU.md) |
 | Енот и письмо | `raccoon-courier` / `RaccoonCourier` | [Фильм](assets/raccoon-courier-anatomy-sound-v3.mp4), [устройство](RACCOON_COURIER_RU.md) |
 | Учебная инфографика | `delivery-infographic` / `DeliveryInfographic` | [Фильм](assets/delivery-infographic-first-pass.mp4), [данные](DELIVERY_INFOGRAPHIC_RU.md) |

@@ -21,6 +21,8 @@ Included MP4s are project-created renderer output. The current cat GIF is a deri
 
 MorningDelivery combines the existing courier and educational chart with new vector titles. The owner accepted its 36-second film. It retains the courier audio credits below.
 
+[November Cancelled](docs/NOVEMBER_CANCELLED.md) is the English version of a CurioWorks cartoon. It retains the original artwork, animation, music and sound effects. English speech was generated with Kokoro-82M (Apache 2.0 model); only the finished audio is distributed.
+
 ## Recorded footsteps and wooden chair
 
 The 59 footstep OGG sources from seven materials were compiled by congusbongus from named Freesound authors under the distributed pack's **CC BY 3.0**. The seven notices, individual authors, source URLs and original-page licence facts remain in [credits](public/audio/sfx/CREDITS.md) and [catalog](public/audio/sfx/catalog.json). This pack is not MIT or CC0. Selected tile WAVs use uniform 0.5 headroom gain and short fades; preparation commands and hashes are retained.

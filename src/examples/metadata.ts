@@ -1,4 +1,5 @@
 import {raccoonCourierSettings} from './raccoon-courier/settings';
+import {scene as novemberCancelledScene} from './november-cancelled/reel';
 import {morningDeliverySettings} from './morning-delivery/settings';
 import {deliveryInfographicSettings} from './delivery-infographic/settings';
 import {catPictureStorySettings} from './cat-picture-story/settings';
@@ -15,6 +16,7 @@ import { seriousBoarV2Settings } from './serious-boar-v2/settings';
 import { seriousBoarSettings } from './serious-boar/settings';
 // Demo navigation only. The reusable stage and Remotion bridge know no example IDs.
 export const examples={
+ 'november-cancelled':{title:'November Cancelled · English',settings:novemberCancelledScene.settings,reference:null,audio:true,film:'docs/assets/november-cancelled-en.mp4',description:'A 50-second vertical cartoon: a polar bear cancels November and December goes behind a paywall. English dialogue, captions and on-screen lettering.'},
  'morning-delivery':{title:'Утренний маршрут · персонаж и инфографика',settings:morningDeliverySettings,reference:null,audio:true,film:'docs/assets/morning-delivery-accepted-v1.mp4',description:'36-секундная рабочая задача: живые исходники принятого енота, записанные контакты с затуханием ухода, учебная сводка 12/18/30 и новые векторные титры. Итоговый фильм принят владельцем и включён в 1.0.'},
  'raccoon-courier':{title:'Енот-почтальон · конверт и сумка',settings:raccoonCourierSettings,reference:null,audio:true,film:'docs/assets/raccoon-courier-anatomy-sound-v3.mp4',description:'Принятая владельцем 16-секундная авторская сцена: обычный бег, одноручный переворот, поддержанные перехваты и вкладка конверта в сумку. Новые записи обуви по дереву, бумаги и кожи. Фильм сохранён точно; изменения исходников требуют своей проверки.'},
  'delivery-infographic':{title:'Утренние доставки · учебная инфографика',settings:deliveryInfographicSettings,reference:null,audio:false,film:'docs/assets/delivery-infographic-first-pass.mp4',description:'12-секундная живая векторная инфографика на учебных данных трёх пунктов: общий ноль и масштаб 0–30, вычисляемые доли и итог. Последние три секунды неподвижны. Без звука.'},
