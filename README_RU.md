@@ -24,6 +24,7 @@ npm run demo:raccoon
 
 | Пример | Живая сцена | Фильм |
 | --- | --- | --- |
+| «Ноябрь отменён»: вертикальный мультфильм на английском | `/player.html?example=november-cancelled` | [50 секунд](docs/assets/november-cancelled-en.mp4) |
 | Утренний маршрут: персонаж, звук и инфографика | `/player.html?example=morning-delivery` | [36 секунд](docs/assets/morning-delivery-accepted-v1.mp4) |
 | Енот-курьер: письмо, хват и сумка | `/player.html?example=raccoon-courier` | [16 секунд](docs/assets/raccoon-courier-anatomy-sound-v3.mp4) |
 | Инфографика с изменяемыми учебными данными | `/player.html?example=delivery-infographic` | [12 секунд](docs/assets/delivery-infographic-first-pass.mp4) |

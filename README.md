@@ -26,6 +26,7 @@ Open the address printed by Vite. Click play to hear sound. `npm run dev` starts
 
 | Example | Live Player | Film |
 | --- | --- | --- |
+| November Cancelled: a vertical cartoon with English voices | `/player.html?example=november-cancelled` | [50 seconds](docs/assets/november-cancelled-en.mp4) |
 | Morning delivery: character, sound and infographic | `/player.html?example=morning-delivery` | [36 seconds](docs/assets/morning-delivery-accepted-v1.mp4) |
 | Raccoon courier: envelope, grips and bag | `/player.html?example=raccoon-courier` | [16 seconds](docs/assets/raccoon-courier-anatomy-sound-v3.mp4) |
 | Educational infographic with editable synthetic data | `/player.html?example=delivery-infographic` | [12 seconds](docs/assets/delivery-infographic-first-pass.mp4) |

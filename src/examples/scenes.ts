@@ -1,4 +1,6 @@
 import {raccoonCourierScene} from './raccoon-courier/scene';
+import {scene as novemberCancelledScene} from './november-cancelled/reel';
+import {NovemberCancelled} from './november-cancelled/sound';
 import {morningDeliveryScene} from './morning-delivery/scene';
 import {MorningDelivery} from './morning-delivery/sound';
 import {RaccoonCourier} from './raccoon-courier/sound';
@@ -33,6 +35,7 @@ function entry<P,D>(id:string,scene:SceneDefinition<P,D>){
 // Demo registration stays outside core. All preview/export entry points select
 // the same typed scene; a third example needs no new renderer branch.
 export const scenes={
+ 'november-cancelled':{...entry('NovemberCancelled',novemberCancelledScene),Component:NovemberCancelled},
  'morning-delivery':{...entry('MorningDelivery',morningDeliveryScene),Component:MorningDelivery},
  'raccoon-courier':{...entry('RaccoonCourier',raccoonCourierScene),Component:RaccoonCourier},
  'delivery-infographic':entry('DeliveryInfographic',deliveryInfographicScene),
